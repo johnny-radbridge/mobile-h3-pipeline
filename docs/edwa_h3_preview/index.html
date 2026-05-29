@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9b08441eac632560b2c524e09c2b41b2 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_9b08441eac632560b2c524e09c2b41b2" ></div>
+        
+    
+        <style>
+            .edwa-layer-search-wrap {
+                display: block;
+                padding: 6px 8px 8px;
+                margin-bottom: 4px;
+                border-bottom: 1px solid #ddd;
+            }
+            .edwa-layer-search {
+                width: 100%;
+                box-sizing: border-box;
+                font: 12px/1.3 -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+                padding: 5px 7px;
+                border: 1px solid #c9d1d9;
+                border-radius: 4px;
+            }
+            .edwa-layer-search:focus {
+                outline: none;
+                border-color: #6e6e6e;
+            }
+            .edwa-layer-bulk-actions {
+                display: flex;
+                gap: 10px;
+                margin-top: 6px;
+            }
+            .edwa-layer-bulk-btn {
+                background: none;
+                border: none;
+                padding: 0;
+                font: 12px/1.3 -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+                color: #57606a;
+                cursor: pointer;
+                text-decoration: underline;
+                text-underline-offset: 2px;
+            }
+            .edwa-layer-bulk-btn:hover {
+                color: #24292f;
+            }
+            .leaflet-control-layers-expanded .leaflet-control-layers-list {
+                max-height: min(70vh, 520px);
+                overflow-y: auto;
+            }
+            label.edwa-layer-hidden {
+                display: none !important;
+            }
+        </style>
+        
+</body>
+<script>
+    
+    
+            var map_9b08441eac632560b2c524e09c2b41b2 = L.map(
+                "map_9b08441eac632560b2c524e09c2b41b2",
+                {
+                    center: [38.888789411519255, -120.55261066690838],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_9b08441eac632560b2c524e09c2b41b2);
+
+            
+
+        
+    
+            var tile_layer_97bdee46e5e76d265efe4a1293832723 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_97bdee46e5e76d265efe4a1293832723.addTo(map_9b08441eac632560b2c524e09c2b41b2);
+        
+    
+            map_9b08441eac632560b2c524e09c2b41b2.fitBounds(
+                [[38.40067118205051, -121.27443498672945], [39.37690764098801, -119.83078634708733]],
+                {}
+            );
+        
+    
+            var feature_group_09cfd013226b0969b2eb9903bc0ca0e9 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var feature_group_c0c72e63c48b416956308c3a8585b286 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            feature_group_c0c72e63c48b416956308c3a8585b286.addTo(map_9b08441eac632560b2c524e09c2b41b2);
+        
+    
+            var feature_group_d37ebbcc329e187a98ffd05b123141eb = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var feature_group_178d354befe1516f44cc2d992e464d3a = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var feature_group_6a6342037c9f503d9a69fb34c2337246 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var feature_group_3d55e64b537448745d47d1b45341764f = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var feature_group_dff1ed733048dc68e1dc0bda52e0cf32 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var feature_group_d788f8fba2a01f46a398d68fed22a754 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var feature_group_273b0efc9ab66c3b1b78b407d949203a = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var feature_group_f9d987a0d75ced2dd8363c226b61cc9e = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var feature_group_6f7454f754a03dc70000c3881b834f4e = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var feature_group_eb382e30fd00605c0746f7e042241f1a = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var feature_group_ee26a4408aa5c95ecf449e7a8e9745ff = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var feature_group_2fe5201f7f8847442e25fdf033eb8b29 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var feature_group_4777a208599f4458959d9da5ee07a835 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var layer_control_99171996df743f000a1ef5398265f476_layers = {
+                base_layers : {
+                },
+                overlays :  {
+                    "2024 Q4 \u2014 All recreation" : feature_group_09cfd013226b0969b2eb9903bc0ca0e9,
+                    "2024 Q4 \u2014 Trails" : feature_group_c0c72e63c48b416956308c3a8585b286,
+                    "2024 Q4 \u2014 OHV" : feature_group_d37ebbcc329e187a98ffd05b123141eb,
+                    "2024 Q4 \u2014 Golf" : feature_group_178d354befe1516f44cc2d992e464d3a,
+                    "2024 Q4 \u2014 Camping" : feature_group_6a6342037c9f503d9a69fb34c2337246,
+                    "2024 Q4 \u2014 Farm visits" : feature_group_3d55e64b537448745d47d1b45341764f,
+                    "2024 Q4 \u2014 Lakes" : feature_group_dff1ed733048dc68e1dc0bda52e0cf32,
+                    "2024 Q4 \u2014 Rivers \u0026 streams" : feature_group_d788f8fba2a01f46a398d68fed22a754,
+                    "2024 Q4 \u2014 Whitewater" : feature_group_273b0efc9ab66c3b1b78b407d949203a,
+                    "2024 Q4 \u2014 Local parks" : feature_group_f9d987a0d75ced2dd8363c226b61cc9e,
+                    "2024 Q4 \u2014 State parks" : feature_group_6f7454f754a03dc70000c3881b834f4e,
+                    "2024 Q4 \u2014 BLM land" : feature_group_eb382e30fd00605c0746f7e042241f1a,
+                    "2024 Q4 \u2014 USFS land" : feature_group_ee26a4408aa5c95ecf449e7a8e9745ff,
+                    "2024 Q4 \u2014 CDFW land" : feature_group_2fe5201f7f8847442e25fdf033eb8b29,
+                    "2024 Q4 \u2014 Private conservation" : feature_group_4777a208599f4458959d9da5ee07a835,
+                },
+            };
+            let layer_control_99171996df743f000a1ef5398265f476 = L.control.layers(
+                layer_control_99171996df743f000a1ef5398265f476_layers.base_layers,
+                layer_control_99171996df743f000a1ef5398265f476_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_9b08441eac632560b2c524e09c2b41b2);
+
+        
+    
+        (function() {
+            var mapRef = map_9b08441eac632560b2c524e09c2b41b2;
+            var layers = [{"id": "2024_q4_all_recreation", "groupVar": "feature_group_09cfd013226b0969b2eb9903bc0ca0e9", "geojsonUrl": "index_data/2024_q4_all_recreation.json", "vmin": 1.0, "vmax": 1234.0, "colors": ["#f2f0f7", "#cbc9e2", "#9e9ac8", "#6a51a3", "#3f007d"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_trails", "groupVar": "feature_group_c0c72e63c48b416956308c3a8585b286", "geojsonUrl": "index_data/2024_q4_trails.json", "vmin": 1.0, "vmax": 60.0, "colors": ["#fff5f0", "#fcbba1", "#fb6a4a", "#cb181d", "#67000d"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_ohv", "groupVar": "feature_group_d37ebbcc329e187a98ffd05b123141eb", "geojsonUrl": "index_data/2024_q4_ohv.json", "vmin": 1.0, "vmax": 2.0, "colors": ["#f7fcfd", "#9ecae1", "#3182bd", "#08519c", "#08306b"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_golf", "groupVar": "feature_group_178d354befe1516f44cc2d992e464d3a", "geojsonUrl": "index_data/2024_q4_golf.json", "vmin": 1.0, "vmax": 105.0, "colors": ["#f7fcf0", "#addd8e", "#41ab5d", "#006837"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_camping", "groupVar": "feature_group_6a6342037c9f503d9a69fb34c2337246", "geojsonUrl": "index_data/2024_q4_camping.json", "vmin": 1.0, "vmax": 321.0, "colors": ["#fff7ec", "#fdd49e", "#fdbb84", "#e34a33", "#7f0000"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_farm", "groupVar": "feature_group_3d55e64b537448745d47d1b45341764f", "geojsonUrl": "index_data/2024_q4_farm.json", "vmin": 1.0, "vmax": 65.0, "colors": ["#fff7f3", "#fde0dd", "#fa9fb5", "#c51b8a", "#7a0177"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_lakes", "groupVar": "feature_group_dff1ed733048dc68e1dc0bda52e0cf32", "geojsonUrl": "index_data/2024_q4_lakes.json", "vmin": 1.0, "vmax": 58.0, "colors": ["#f7fbff", "#c6dbef", "#6baed6", "#2171b5", "#08306b"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_rivers_and_streams", "groupVar": "feature_group_d788f8fba2a01f46a398d68fed22a754", "geojsonUrl": "index_data/2024_q4_rivers_and_streams.json", "vmin": 1.0, "vmax": 114.0, "colors": ["#f0f9e8", "#bae4bc", "#74c476", "#238b45", "#005a32"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_whitewater", "groupVar": "feature_group_273b0efc9ab66c3b1b78b407d949203a", "geojsonUrl": "index_data/2024_q4_whitewater.json", "vmin": 1.0, "vmax": 9.0, "colors": ["#edf8fb", "#b2e2e2", "#66c2a4", "#238b45", "#005824"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_local_parks", "groupVar": "feature_group_f9d987a0d75ced2dd8363c226b61cc9e", "geojsonUrl": "index_data/2024_q4_local_parks.json", "vmin": 1.0, "vmax": 1234.0, "colors": ["#f2f0f7", "#cbc9e2", "#9e9ac8", "#756bb1", "#54278f"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_state_parks", "groupVar": "feature_group_6f7454f754a03dc70000c3881b834f4e", "geojsonUrl": "index_data/2024_q4_state_parks.json", "vmin": 1.0, "vmax": 323.0, "colors": ["#fff5eb", "#fdd0a2", "#fd8d3c", "#d94801", "#7f2704"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_blm_land", "groupVar": "feature_group_eb382e30fd00605c0746f7e042241f1a", "geojsonUrl": "index_data/2024_q4_blm_land.json", "vmin": 1.0, "vmax": 16.0, "colors": ["#ffffe5", "#fff7bc", "#fec44f", "#d95f0e", "#993404"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_usfs_land", "groupVar": "feature_group_ee26a4408aa5c95ecf449e7a8e9745ff", "geojsonUrl": "index_data/2024_q4_usfs_land.json", "vmin": 1.0, "vmax": 81.0, "colors": ["#f7fcf5", "#bae4b3", "#78c679", "#31a354", "#006d2c"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_cdfw_land", "groupVar": "feature_group_2fe5201f7f8847442e25fdf033eb8b29", "geojsonUrl": "index_data/2024_q4_cdfw_land.json", "vmin": 1.0, "vmax": 4.0, "colors": ["#fef0d9", "#fdcc8a", "#fc8d59", "#d7301f", "#990000"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_private_conservation", "groupVar": "feature_group_4777a208599f4458959d9da5ee07a835", "geojsonUrl": "index_data/2024_q4_private_conservation.json", "vmin": 1.0, "vmax": 7.0, "colors": ["#edf8e9", "#bae4b3", "#74c476", "#31a354", "#006d2c"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}];
+            var loaded = {};
+            var geoLayers = {};
+            var STROKE = {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88};
+
+            function hexToRgb(hex) {
+                var h = hex.replace("#", "");
+                return [
+                    parseInt(h.substring(0, 2), 16),
+                    parseInt(h.substring(2, 4), 16),
+                    parseInt(h.substring(4, 6), 16),
+                ];
+            }
+            function mixHex(colors, t) {
+                t = Math.max(0, Math.min(1, t));
+                var idx = t * (colors.length - 1);
+                var lo = Math.floor(idx);
+                var hi = Math.min(colors.length - 1, lo + 1);
+                var frac = idx - lo;
+                var c0 = hexToRgb(colors[lo]);
+                var c1 = hexToRgb(colors[hi]);
+                return "#" + [0, 1, 2].map(function(i) {
+                    var v = Math.round(c0[i] + (c1[i] - c0[i]) * frac);
+                    var s = v.toString(16);
+                    return s.length === 1 ? "0" + s : s;
+                }).join("");
+            }
+            function styleFor(meta) {
+                return function(feature) {
+                    var value = Number(feature.properties[meta.valueField]);
+                    if (!isFinite(value)) value = 0;
+                    var t = meta.vmax > meta.vmin ? (value - meta.vmin) / (meta.vmax - meta.vmin) : 0;
+                    return {
+                        fillColor: mixHex(meta.colors, t),
+                        color: STROKE.color,
+                        weight: STROKE.weight,
+                        opacity: STROKE.opacity,
+                        fillOpacity: STROKE.fillOpacity,
+                    };
+                };
+            }
+            function tooltipFor(meta) {
+                return function(feature, layer) {
+                    var p = feature.properties || {};
+                    var lines = [];
+                    meta.tooltipFields.forEach(function(field, i) {
+                        var label = meta.tooltipAliases[i] || field;
+                        var val = p[field];
+                        if (val !== undefined && val !== null) {
+                            lines.push("<b>" + label + ":</b> " + val);
+                        }
+                    });
+                    if (lines.length) {
+                        layer.bindTooltip(lines.join("<br>"), {sticky: true});
+                    }
+                };
+            }
+            function loadLayer(meta) {
+                if (loaded[meta.id]) {
+                    return Promise.resolve();
+                }
+                var group = meta.groupLayer;
+                return fetch(meta.geojsonUrl).then(function(r) {
+                    if (!r.ok) throw new Error("Failed to load " + meta.geojsonUrl);
+                    return r.json();
+                }).then(function(data) {
+                    var gj = L.geoJSON(data, {
+                        style: styleFor(meta),
+                        onEachFeature: tooltipFor(meta),
+                    });
+                    geoLayers[meta.id] = gj;
+                    loaded[meta.id] = true;
+                    if (group && mapRef.hasLayer(group)) {
+                        gj.addTo(group);
+                    }
+                });
+            }
+            layers.forEach(function(meta) {
+                meta.groupLayer = window[meta.groupVar];
+            });
+            mapRef.on("overlayadd", function(e) {
+                var meta = layers.find(function(m) { return m.groupLayer === e.layer; });
+                if (!meta) return;
+                loadLayer(meta).catch(function(err) {
+                    console.error("H3 layer load failed:", meta.id, err);
+                });
+            });
+            mapRef.on("overlayremove", function(e) {
+                var meta = layers.find(function(m) { return m.groupLayer === e.layer; });
+                if (!meta) return;
+                var gj = geoLayers[meta.id];
+                if (gj && meta.groupLayer && meta.groupLayer.hasLayer(gj)) {
+                    meta.groupLayer.removeLayer(gj);
+                }
+            });
+            mapRef.whenReady(function() {
+                layers.forEach(function(meta) {
+                    if (meta.groupLayer && mapRef.hasLayer(meta.groupLayer)) {
+                        loadLayer(meta).catch(function(err) {
+                            console.error("H3 layer load failed:", meta.id, err);
+                        });
+                    }
+                });
+            });
+        })();
+        
+    
+        function edwaOverlayInputs(section) {
+            return Array.prototype.slice.call(
+                section.querySelectorAll("input.leaflet-control-layers-selector")
+            ).filter(function(input) {
+                return input.layerId !== undefined;
+            });
+        }
+        function edwaLayerLabel(input) {
+            var row = input.closest("label") || input.parentElement;
+            return row ? (row.textContent || "").trim() : "";
+        }
+        function edwaInstallLayerSearchFilter() {
+            var list = document.querySelector(".leaflet-control-layers-list");
+            var section = document.querySelector(".leaflet-control-layers-overlays");
+            if (!list || !section || document.getElementById("edwa-layer-search")) return;
+
+            var wrap = document.createElement("div");
+            wrap.className = "edwa-layer-search-wrap";
+            wrap.innerHTML = '<input type="search" id="edwa-layer-search" class="edwa-layer-search" '
+                + 'placeholder="Filter layers" autocomplete="off" />'
+                + '<div class="edwa-layer-bulk-actions">'
+                + '<button type="button" class="edwa-layer-bulk-btn" id="edwa-layer-select-all">Select all</button>'
+                + '<button type="button" class="edwa-layer-bulk-btn" id="edwa-layer-clear-all">Clear all</button>'
+                + '</div>';
+            list.insertBefore(wrap, section);
+
+            var search = document.getElementById("edwa-layer-search");
+            var selectAllBtn = document.getElementById("edwa-layer-select-all");
+            var clearAllBtn = document.getElementById("edwa-layer-clear-all");
+            var syncing = false;
+
+            function isVisibleInput(input) {
+                var row = input.closest("label");
+                return row && !row.classList.contains("edwa-layer-hidden");
+            }
+
+            function visibleInputs() {
+                return edwaOverlayInputs(section).filter(isVisibleInput);
+            }
+
+            function setInputsChecked(inputs, on) {
+                syncing = true;
+                inputs.forEach(function(input) {
+                    if (input.checked !== on) input.click();
+                });
+                syncing = false;
+            }
+
+            function applySearchFilter() {
+                var q = (search.value || "").trim().toLowerCase();
+                edwaOverlayInputs(section).forEach(function(input) {
+                    var row = input.closest("label");
+                    if (!row) return;
+                    var text = edwaLayerLabel(input).toLowerCase();
+                    if (!q || text.indexOf(q) !== -1) {
+                        row.classList.remove("edwa-layer-hidden");
+                    } else {
+                        row.classList.add("edwa-layer-hidden");
+                    }
+                });
+            }
+
+            search.addEventListener("input", applySearchFilter);
+
+            selectAllBtn.addEventListener("click", function(ev) {
+                ev.preventDefault();
+                setInputsChecked(visibleInputs(), true);
+            });
+
+            clearAllBtn.addEventListener("click", function(ev) {
+                ev.preventDefault();
+                setInputsChecked(edwaOverlayInputs(section).filter(function(i) { return i.checked; }), false);
+            });
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            edwaInstallLayerSearchFilter();
+            setTimeout(edwaInstallLayerSearchFilter, 300);
+            setTimeout(edwaInstallLayerSearchFilter, 800);
+        });
+        
+</script>
+</html>
