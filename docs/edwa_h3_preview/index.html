@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_9b08441eac632560b2c524e09c2b41b2 {
+                #map_066442efe2e21e46ebc77d0c22dcfa8f {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -54,7 +54,7 @@
 <body>
     
     
-            <div class="folium-map" id="map_9b08441eac632560b2c524e09c2b41b2" ></div>
+            <div class="folium-map" id="map_066442efe2e21e46ebc77d0c22dcfa8f" ></div>
         
     
         <style>
@@ -72,9 +72,42 @@
                 border: 1px solid #c9d1d9;
                 border-radius: 4px;
             }
-            .edwa-layer-search:focus {
-                outline: none;
-                border-color: #6e6e6e;
+            .edwa-basemap-toggle {
+                display: flex;
+                gap: 4px;
+                margin: 0 0 8px;
+            }
+            .edwa-layer-search {
+                margin-top: 4px;
+            }
+            .edwa-basemap-btn {
+                flex: 1;
+                font: 11px/1.3 -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+                padding: 5px 6px;
+                border: 1px solid #c9d1d9;
+                border-radius: 4px;
+                background: #f6f8fa;
+                color: #24292f;
+                cursor: pointer;
+            }
+            .edwa-basemap-btn.edwa-active {
+                background: #24292f;
+                color: #fff;
+                border-color: #24292f;
+            }
+            .edwa-panel-section-title {
+                display: block;
+                margin: 8px 0 4px;
+                font: 11px/1.35 -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+                font-weight: 600;
+                color: #57606a;
+                text-transform: uppercase;
+                letter-spacing: 0.03em;
+            }
+            .edwa-all-recreation-layers label {
+                display: block;
+                font-weight: 600;
+                margin: 2px 0;
             }
             .edwa-layer-bulk-actions {
                 display: flex;
@@ -89,10 +122,6 @@
                 color: #57606a;
                 cursor: pointer;
                 text-decoration: underline;
-                text-underline-offset: 2px;
-            }
-            .edwa-layer-bulk-btn:hover {
-                color: #24292f;
             }
             .leaflet-control-layers-expanded .leaflet-control-layers-list {
                 max-height: min(70vh, 520px);
@@ -107,8 +136,8 @@
 <script>
     
     
-            var map_9b08441eac632560b2c524e09c2b41b2 = L.map(
-                "map_9b08441eac632560b2c524e09c2b41b2",
+            var map_066442efe2e21e46ebc77d0c22dcfa8f = L.map(
+                "map_066442efe2e21e46ebc77d0c22dcfa8f",
                 {
                     center: [38.888789411519255, -120.55261066690838],
                     crs: L.CRS.EPSG3857,
@@ -120,14 +149,14 @@
 
                 }
             );
-            L.control.scale().addTo(map_9b08441eac632560b2c524e09c2b41b2);
+            L.control.scale().addTo(map_066442efe2e21e46ebc77d0c22dcfa8f);
 
             
 
         
     
-            var tile_layer_97bdee46e5e76d265efe4a1293832723 = L.tileLayer(
-                "https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png",
+            var tile_layer_2313101f94df7b28a4d94ae7fb75fe1f = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
   "maxZoom": 18,
@@ -143,147 +172,147 @@
             );
         
     
-            tile_layer_97bdee46e5e76d265efe4a1293832723.addTo(map_9b08441eac632560b2c524e09c2b41b2);
+            tile_layer_2313101f94df7b28a4d94ae7fb75fe1f.addTo(map_066442efe2e21e46ebc77d0c22dcfa8f);
         
     
-            map_9b08441eac632560b2c524e09c2b41b2.fitBounds(
+            map_066442efe2e21e46ebc77d0c22dcfa8f.fitBounds(
                 [[38.40067118205051, -121.27443498672945], [39.37690764098801, -119.83078634708733]],
                 {}
             );
         
     
-            var feature_group_09cfd013226b0969b2eb9903bc0ca0e9 = L.featureGroup(
+            var feature_group_09ced26d0c9ad054e614232a1d802a74 = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_c0c72e63c48b416956308c3a8585b286 = L.featureGroup(
+            feature_group_09ced26d0c9ad054e614232a1d802a74.addTo(map_066442efe2e21e46ebc77d0c22dcfa8f);
+        
+    
+            var feature_group_2831e2f30d917bea4045a6ea36a4530a = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_c0c72e63c48b416956308c3a8585b286.addTo(map_9b08441eac632560b2c524e09c2b41b2);
-        
-    
-            var feature_group_d37ebbcc329e187a98ffd05b123141eb = L.featureGroup(
+            var feature_group_a1204ad9a09556dd7e98f191c8819a03 = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_178d354befe1516f44cc2d992e464d3a = L.featureGroup(
+            var feature_group_061fd8ecdc6bcb0bb64bf230257a7e12 = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_6a6342037c9f503d9a69fb34c2337246 = L.featureGroup(
+            var feature_group_7bfd8a71e183cca778fe9bf02ff465d3 = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_3d55e64b537448745d47d1b45341764f = L.featureGroup(
+            var feature_group_27090c15fd164bd5b49eae9153343805 = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_dff1ed733048dc68e1dc0bda52e0cf32 = L.featureGroup(
+            var feature_group_52bbe7d5a43c92083fd9f659e28c9932 = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_d788f8fba2a01f46a398d68fed22a754 = L.featureGroup(
+            var feature_group_8e16f136103290e3b023f4b29dd43bd3 = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_273b0efc9ab66c3b1b78b407d949203a = L.featureGroup(
+            var feature_group_6ba62e90ac46307af8d25ef96540570e = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_f9d987a0d75ced2dd8363c226b61cc9e = L.featureGroup(
+            var feature_group_846bb9a6e715e0d2562ffa87c48a640b = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_6f7454f754a03dc70000c3881b834f4e = L.featureGroup(
+            var feature_group_265e2d895f922ae57eaa7fe15ba8d8f6 = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_eb382e30fd00605c0746f7e042241f1a = L.featureGroup(
+            var feature_group_10a98f519e8332d9b75ee9095e8a8373 = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_ee26a4408aa5c95ecf449e7a8e9745ff = L.featureGroup(
+            var feature_group_3897e86c4dd6ca74b6d72f6ba34e2889 = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_2fe5201f7f8847442e25fdf033eb8b29 = L.featureGroup(
+            var feature_group_3173f51a10123f1394348e020e919542 = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_4777a208599f4458959d9da5ee07a835 = L.featureGroup(
+            var feature_group_2b4baa72d09eb8b9e45fed7951985891 = L.featureGroup(
                 {
 }
             );
         
     
-            var layer_control_99171996df743f000a1ef5398265f476_layers = {
+            var layer_control_1176b7ee35d314643f61a336faa8dd21_layers = {
                 base_layers : {
                 },
                 overlays :  {
-                    "2024 Q4 \u2014 All recreation" : feature_group_09cfd013226b0969b2eb9903bc0ca0e9,
-                    "2024 Q4 \u2014 Trails" : feature_group_c0c72e63c48b416956308c3a8585b286,
-                    "2024 Q4 \u2014 OHV" : feature_group_d37ebbcc329e187a98ffd05b123141eb,
-                    "2024 Q4 \u2014 Golf" : feature_group_178d354befe1516f44cc2d992e464d3a,
-                    "2024 Q4 \u2014 Camping" : feature_group_6a6342037c9f503d9a69fb34c2337246,
-                    "2024 Q4 \u2014 Farm visits" : feature_group_3d55e64b537448745d47d1b45341764f,
-                    "2024 Q4 \u2014 Lakes" : feature_group_dff1ed733048dc68e1dc0bda52e0cf32,
-                    "2024 Q4 \u2014 Rivers \u0026 streams" : feature_group_d788f8fba2a01f46a398d68fed22a754,
-                    "2024 Q4 \u2014 Whitewater" : feature_group_273b0efc9ab66c3b1b78b407d949203a,
-                    "2024 Q4 \u2014 Local parks" : feature_group_f9d987a0d75ced2dd8363c226b61cc9e,
-                    "2024 Q4 \u2014 State parks" : feature_group_6f7454f754a03dc70000c3881b834f4e,
-                    "2024 Q4 \u2014 BLM land" : feature_group_eb382e30fd00605c0746f7e042241f1a,
-                    "2024 Q4 \u2014 USFS land" : feature_group_ee26a4408aa5c95ecf449e7a8e9745ff,
-                    "2024 Q4 \u2014 CDFW land" : feature_group_2fe5201f7f8847442e25fdf033eb8b29,
-                    "2024 Q4 \u2014 Private conservation" : feature_group_4777a208599f4458959d9da5ee07a835,
+                    "Fall 2024 \u2014 All recreation" : feature_group_09ced26d0c9ad054e614232a1d802a74,
+                    "Fall 2024 \u2014 Trails" : feature_group_2831e2f30d917bea4045a6ea36a4530a,
+                    "Fall 2024 \u2014 OHV" : feature_group_a1204ad9a09556dd7e98f191c8819a03,
+                    "Fall 2024 \u2014 Golf" : feature_group_061fd8ecdc6bcb0bb64bf230257a7e12,
+                    "Fall 2024 \u2014 Camping" : feature_group_7bfd8a71e183cca778fe9bf02ff465d3,
+                    "Fall 2024 \u2014 Farm visits" : feature_group_27090c15fd164bd5b49eae9153343805,
+                    "Fall 2024 \u2014 Lakes" : feature_group_52bbe7d5a43c92083fd9f659e28c9932,
+                    "Fall 2024 \u2014 Rivers \u0026 streams" : feature_group_8e16f136103290e3b023f4b29dd43bd3,
+                    "Fall 2024 \u2014 Whitewater" : feature_group_6ba62e90ac46307af8d25ef96540570e,
+                    "Fall 2024 \u2014 Local parks" : feature_group_846bb9a6e715e0d2562ffa87c48a640b,
+                    "Fall 2024 \u2014 State parks" : feature_group_265e2d895f922ae57eaa7fe15ba8d8f6,
+                    "Fall 2024 \u2014 BLM land" : feature_group_10a98f519e8332d9b75ee9095e8a8373,
+                    "Fall 2024 \u2014 USFS land" : feature_group_3897e86c4dd6ca74b6d72f6ba34e2889,
+                    "Fall 2024 \u2014 CDFW land" : feature_group_3173f51a10123f1394348e020e919542,
+                    "Fall 2024 \u2014 Private conservation" : feature_group_2b4baa72d09eb8b9e45fed7951985891,
                 },
             };
-            let layer_control_99171996df743f000a1ef5398265f476 = L.control.layers(
-                layer_control_99171996df743f000a1ef5398265f476_layers.base_layers,
-                layer_control_99171996df743f000a1ef5398265f476_layers.overlays,
+            let layer_control_1176b7ee35d314643f61a336faa8dd21 = L.control.layers(
+                layer_control_1176b7ee35d314643f61a336faa8dd21_layers.base_layers,
+                layer_control_1176b7ee35d314643f61a336faa8dd21_layers.overlays,
                 {
   "position": "topright",
   "collapsed": false,
   "autoZIndex": true,
 }
-            ).addTo(map_9b08441eac632560b2c524e09c2b41b2);
+            ).addTo(map_066442efe2e21e46ebc77d0c22dcfa8f);
 
         
     
         (function() {
-            var mapRef = map_9b08441eac632560b2c524e09c2b41b2;
-            var layers = [{"id": "2024_q4_all_recreation", "groupVar": "feature_group_09cfd013226b0969b2eb9903bc0ca0e9", "geojsonUrl": "index_data/2024_q4_all_recreation.json", "vmin": 1.0, "vmax": 1234.0, "colors": ["#f2f0f7", "#cbc9e2", "#9e9ac8", "#6a51a3", "#3f007d"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_trails", "groupVar": "feature_group_c0c72e63c48b416956308c3a8585b286", "geojsonUrl": "index_data/2024_q4_trails.json", "vmin": 1.0, "vmax": 60.0, "colors": ["#fff5f0", "#fcbba1", "#fb6a4a", "#cb181d", "#67000d"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_ohv", "groupVar": "feature_group_d37ebbcc329e187a98ffd05b123141eb", "geojsonUrl": "index_data/2024_q4_ohv.json", "vmin": 1.0, "vmax": 2.0, "colors": ["#f7fcfd", "#9ecae1", "#3182bd", "#08519c", "#08306b"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_golf", "groupVar": "feature_group_178d354befe1516f44cc2d992e464d3a", "geojsonUrl": "index_data/2024_q4_golf.json", "vmin": 1.0, "vmax": 105.0, "colors": ["#f7fcf0", "#addd8e", "#41ab5d", "#006837"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_camping", "groupVar": "feature_group_6a6342037c9f503d9a69fb34c2337246", "geojsonUrl": "index_data/2024_q4_camping.json", "vmin": 1.0, "vmax": 321.0, "colors": ["#fff7ec", "#fdd49e", "#fdbb84", "#e34a33", "#7f0000"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_farm", "groupVar": "feature_group_3d55e64b537448745d47d1b45341764f", "geojsonUrl": "index_data/2024_q4_farm.json", "vmin": 1.0, "vmax": 65.0, "colors": ["#fff7f3", "#fde0dd", "#fa9fb5", "#c51b8a", "#7a0177"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_lakes", "groupVar": "feature_group_dff1ed733048dc68e1dc0bda52e0cf32", "geojsonUrl": "index_data/2024_q4_lakes.json", "vmin": 1.0, "vmax": 58.0, "colors": ["#f7fbff", "#c6dbef", "#6baed6", "#2171b5", "#08306b"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_rivers_and_streams", "groupVar": "feature_group_d788f8fba2a01f46a398d68fed22a754", "geojsonUrl": "index_data/2024_q4_rivers_and_streams.json", "vmin": 1.0, "vmax": 114.0, "colors": ["#f0f9e8", "#bae4bc", "#74c476", "#238b45", "#005a32"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_whitewater", "groupVar": "feature_group_273b0efc9ab66c3b1b78b407d949203a", "geojsonUrl": "index_data/2024_q4_whitewater.json", "vmin": 1.0, "vmax": 9.0, "colors": ["#edf8fb", "#b2e2e2", "#66c2a4", "#238b45", "#005824"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_local_parks", "groupVar": "feature_group_f9d987a0d75ced2dd8363c226b61cc9e", "geojsonUrl": "index_data/2024_q4_local_parks.json", "vmin": 1.0, "vmax": 1234.0, "colors": ["#f2f0f7", "#cbc9e2", "#9e9ac8", "#756bb1", "#54278f"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_state_parks", "groupVar": "feature_group_6f7454f754a03dc70000c3881b834f4e", "geojsonUrl": "index_data/2024_q4_state_parks.json", "vmin": 1.0, "vmax": 323.0, "colors": ["#fff5eb", "#fdd0a2", "#fd8d3c", "#d94801", "#7f2704"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_blm_land", "groupVar": "feature_group_eb382e30fd00605c0746f7e042241f1a", "geojsonUrl": "index_data/2024_q4_blm_land.json", "vmin": 1.0, "vmax": 16.0, "colors": ["#ffffe5", "#fff7bc", "#fec44f", "#d95f0e", "#993404"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_usfs_land", "groupVar": "feature_group_ee26a4408aa5c95ecf449e7a8e9745ff", "geojsonUrl": "index_data/2024_q4_usfs_land.json", "vmin": 1.0, "vmax": 81.0, "colors": ["#f7fcf5", "#bae4b3", "#78c679", "#31a354", "#006d2c"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_cdfw_land", "groupVar": "feature_group_2fe5201f7f8847442e25fdf033eb8b29", "geojsonUrl": "index_data/2024_q4_cdfw_land.json", "vmin": 1.0, "vmax": 4.0, "colors": ["#fef0d9", "#fdcc8a", "#fc8d59", "#d7301f", "#990000"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}, {"id": "2024_q4_private_conservation", "groupVar": "feature_group_4777a208599f4458959d9da5ee07a835", "geojsonUrl": "index_data/2024_q4_private_conservation.json", "vmin": 1.0, "vmax": 7.0, "colors": ["#edf8e9", "#bae4b3", "#74c476", "#31a354", "#006d2c"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"]}];
+            var mapRef = map_066442efe2e21e46ebc77d0c22dcfa8f;
+            var layers = [{"id": "2024_fall_all_recreation", "groupVar": "feature_group_09ced26d0c9ad054e614232a1d802a74", "geojsonUrl": "h3_device_hours_map_data/2024_fall_all_recreation.json", "vmin": 1.0, "vmax": 1234.0, "colors": ["#1b0f1f", "#4a1942", "#8b2d62", "#c44e52", "#e8762f", "#f5b642", "#fce588", "#fff7bc"], "colorsHeat": ["#1b0f1f", "#4a1942", "#8b2d62", "#c44e52", "#e8762f", "#f5b642", "#fce588", "#fff7bc"], "colorsLight": ["#f2f0f7", "#cbc9e2", "#9e9ac8", "#6a51a3", "#3f007d"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"], "comprehensive": true, "strokeHeat": {"color": "#0d1117", "weight": 0.2, "opacity": 0.08, "fillOpacity": 0.86}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.55, "colorGammaLight": 1.0, "mapPane": "h3ComprehensivePane"}, {"id": "2024_fall_trails", "groupVar": "feature_group_2831e2f30d917bea4045a6ea36a4530a", "geojsonUrl": "h3_device_hours_map_data/2024_fall_trails.json", "vmin": 1.0, "vmax": 60.0, "colors": ["#1a0a00", "#7f2704", "#d94801", "#fd8d3c", "#fdd0a2", "#fff5eb"], "colorsHeat": ["#1a0a00", "#7f2704", "#d94801", "#fd8d3c", "#fdd0a2", "#fff5eb"], "colorsLight": ["#fff5f0", "#fcbba1", "#fb6a4a", "#cb181d", "#67000d"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"], "comprehensive": false, "strokeHeat": {"color": "#0d1117", "weight": 0.2, "opacity": 0.08, "fillOpacity": 0.86}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.55, "colorGammaLight": 1.0, "mapPane": "h3DetailPane"}, {"id": "2024_fall_ohv", "groupVar": "feature_group_a1204ad9a09556dd7e98f191c8819a03", "geojsonUrl": "h3_device_hours_map_data/2024_fall_ohv.json", "vmin": 1.0, "vmax": 2.0, "colors": ["#051525", "#08519c", "#3182bd", "#6baed6", "#c6dbef", "#eff3ff"], "colorsHeat": ["#051525", "#08519c", "#3182bd", "#6baed6", "#c6dbef", "#eff3ff"], "colorsLight": ["#f7fcfd", "#9ecae1", "#3182bd", "#08519c", "#08306b"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"], "comprehensive": false, "strokeHeat": {"color": "#0d1117", "weight": 0.2, "opacity": 0.08, "fillOpacity": 0.86}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.55, "colorGammaLight": 1.0, "mapPane": "h3DetailPane"}, {"id": "2024_fall_golf", "groupVar": "feature_group_061fd8ecdc6bcb0bb64bf230257a7e12", "geojsonUrl": "h3_device_hours_map_data/2024_fall_golf.json", "vmin": 1.0, "vmax": 105.0, "colors": ["#0a1f0a", "#006837", "#41ab5d", "#a1d99b", "#e5f5e0"], "colorsHeat": ["#0a1f0a", "#006837", "#41ab5d", "#a1d99b", "#e5f5e0"], "colorsLight": ["#f7fcf0", "#addd8e", "#41ab5d", "#006837"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"], "comprehensive": false, "strokeHeat": {"color": "#0d1117", "weight": 0.2, "opacity": 0.08, "fillOpacity": 0.86}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.55, "colorGammaLight": 1.0, "mapPane": "h3DetailPane"}, {"id": "2024_fall_camping", "groupVar": "feature_group_7bfd8a71e183cca778fe9bf02ff465d3", "geojsonUrl": "h3_device_hours_map_data/2024_fall_camping.json", "vmin": 1.0, "vmax": 321.0, "colors": ["#1a0500", "#7f0000", "#d7301f", "#fc8d59", "#fdd0a2", "#fff5eb"], "colorsHeat": ["#1a0500", "#7f0000", "#d7301f", "#fc8d59", "#fdd0a2", "#fff5eb"], "colorsLight": ["#fff7ec", "#fdd49e", "#fdbb84", "#e34a33", "#7f0000"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"], "comprehensive": false, "strokeHeat": {"color": "#0d1117", "weight": 0.2, "opacity": 0.08, "fillOpacity": 0.86}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.55, "colorGammaLight": 1.0, "mapPane": "h3DetailPane"}, {"id": "2024_fall_farm", "groupVar": "feature_group_27090c15fd164bd5b49eae9153343805", "geojsonUrl": "h3_device_hours_map_data/2024_fall_farm.json", "vmin": 1.0, "vmax": 65.0, "colors": ["#1a0010", "#7a0177", "#c51b8a", "#f768a1", "#fcc5c0"], "colorsHeat": ["#1a0010", "#7a0177", "#c51b8a", "#f768a1", "#fcc5c0"], "colorsLight": ["#fff7f3", "#fde0dd", "#fa9fb5", "#c51b8a", "#7a0177"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"], "comprehensive": false, "strokeHeat": {"color": "#0d1117", "weight": 0.2, "opacity": 0.08, "fillOpacity": 0.86}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.55, "colorGammaLight": 1.0, "mapPane": "h3DetailPane"}, {"id": "2024_fall_lakes", "groupVar": "feature_group_52bbe7d5a43c92083fd9f659e28c9932", "geojsonUrl": "h3_device_hours_map_data/2024_fall_lakes.json", "vmin": 1.0, "vmax": 58.0, "colors": ["#03045e", "#023e8a", "#0077b6", "#48cae4", "#caf0f8"], "colorsHeat": ["#03045e", "#023e8a", "#0077b6", "#48cae4", "#caf0f8"], "colorsLight": ["#f7fbff", "#c6dbef", "#6baed6", "#2171b5", "#08306b"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"], "comprehensive": false, "strokeHeat": {"color": "#0d1117", "weight": 0.2, "opacity": 0.08, "fillOpacity": 0.86}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.55, "colorGammaLight": 1.0, "mapPane": "h3DetailPane"}, {"id": "2024_fall_rivers_and_streams", "groupVar": "feature_group_8e16f136103290e3b023f4b29dd43bd3", "geojsonUrl": "h3_device_hours_map_data/2024_fall_rivers_and_streams.json", "vmin": 1.0, "vmax": 114.0, "colors": ["#002200", "#238b45", "#74c476", "#bae4bc", "#f7fcf5"], "colorsHeat": ["#002200", "#238b45", "#74c476", "#bae4bc", "#f7fcf5"], "colorsLight": ["#f0f9e8", "#bae4bc", "#74c476", "#238b45", "#005a32"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"], "comprehensive": false, "strokeHeat": {"color": "#0d1117", "weight": 0.2, "opacity": 0.08, "fillOpacity": 0.86}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.55, "colorGammaLight": 1.0, "mapPane": "h3DetailPane"}, {"id": "2024_fall_whitewater", "groupVar": "feature_group_6ba62e90ac46307af8d25ef96540570e", "geojsonUrl": "h3_device_hours_map_data/2024_fall_whitewater.json", "vmin": 1.0, "vmax": 9.0, "colors": ["#00291a", "#238b45", "#66c2a4", "#b2e2e2", "#edf8fb"], "colorsHeat": ["#00291a", "#238b45", "#66c2a4", "#b2e2e2", "#edf8fb"], "colorsLight": ["#edf8fb", "#b2e2e2", "#66c2a4", "#238b45", "#005824"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"], "comprehensive": false, "strokeHeat": {"color": "#0d1117", "weight": 0.2, "opacity": 0.08, "fillOpacity": 0.86}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.55, "colorGammaLight": 1.0, "mapPane": "h3DetailPane"}, {"id": "2024_fall_local_parks", "groupVar": "feature_group_846bb9a6e715e0d2562ffa87c48a640b", "geojsonUrl": "h3_device_hours_map_data/2024_fall_local_parks.json", "vmin": 1.0, "vmax": 1234.0, "colors": ["#1a0f2e", "#54278f", "#9e9ac8", "#dadaeb", "#fcfbfd"], "colorsHeat": ["#1a0f2e", "#54278f", "#9e9ac8", "#dadaeb", "#fcfbfd"], "colorsLight": ["#f2f0f7", "#cbc9e2", "#9e9ac8", "#756bb1", "#54278f"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"], "comprehensive": false, "strokeHeat": {"color": "#0d1117", "weight": 0.2, "opacity": 0.08, "fillOpacity": 0.86}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.55, "colorGammaLight": 1.0, "mapPane": "h3DetailPane"}, {"id": "2024_fall_state_parks", "groupVar": "feature_group_265e2d895f922ae57eaa7fe15ba8d8f6", "geojsonUrl": "h3_device_hours_map_data/2024_fall_state_parks.json", "vmin": 1.0, "vmax": 323.0, "colors": ["#1a0500", "#7f2704", "#d94801", "#fd8d3c", "#fee6ce"], "colorsHeat": ["#1a0500", "#7f2704", "#d94801", "#fd8d3c", "#fee6ce"], "colorsLight": ["#fff5eb", "#fdd0a2", "#fd8d3c", "#d94801", "#7f2704"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"], "comprehensive": false, "strokeHeat": {"color": "#0d1117", "weight": 0.2, "opacity": 0.08, "fillOpacity": 0.86}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.55, "colorGammaLight": 1.0, "mapPane": "h3DetailPane"}, {"id": "2024_fall_blm_land", "groupVar": "feature_group_10a98f519e8332d9b75ee9095e8a8373", "geojsonUrl": "h3_device_hours_map_data/2024_fall_blm_land.json", "vmin": 1.0, "vmax": 16.0, "colors": ["#1a1000", "#993404", "#d95f0e", "#fec44f", "#fff7bc"], "colorsHeat": ["#1a1000", "#993404", "#d95f0e", "#fec44f", "#fff7bc"], "colorsLight": ["#ffffe5", "#fff7bc", "#fec44f", "#d95f0e", "#993404"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"], "comprehensive": false, "strokeHeat": {"color": "#0d1117", "weight": 0.2, "opacity": 0.08, "fillOpacity": 0.86}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.55, "colorGammaLight": 1.0, "mapPane": "h3DetailPane"}, {"id": "2024_fall_usfs_land", "groupVar": "feature_group_3897e86c4dd6ca74b6d72f6ba34e2889", "geojsonUrl": "h3_device_hours_map_data/2024_fall_usfs_land.json", "vmin": 1.0, "vmax": 81.0, "colors": ["#0a1a0a", "#006d2c", "#31a354", "#a1d99b", "#f7fcf5"], "colorsHeat": ["#0a1a0a", "#006d2c", "#31a354", "#a1d99b", "#f7fcf5"], "colorsLight": ["#f7fcf5", "#bae4b3", "#78c679", "#31a354", "#006d2c"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"], "comprehensive": false, "strokeHeat": {"color": "#0d1117", "weight": 0.2, "opacity": 0.08, "fillOpacity": 0.86}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.55, "colorGammaLight": 1.0, "mapPane": "h3DetailPane"}, {"id": "2024_fall_cdfw_land", "groupVar": "feature_group_3173f51a10123f1394348e020e919542", "geojsonUrl": "h3_device_hours_map_data/2024_fall_cdfw_land.json", "vmin": 1.0, "vmax": 4.0, "colors": ["#1a0500", "#990000", "#d7301f", "#fc8d59", "#fee0d2"], "colorsHeat": ["#1a0500", "#990000", "#d7301f", "#fc8d59", "#fee0d2"], "colorsLight": ["#fef0d9", "#fdcc8a", "#fc8d59", "#d7301f", "#990000"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"], "comprehensive": false, "strokeHeat": {"color": "#0d1117", "weight": 0.2, "opacity": 0.08, "fillOpacity": 0.86}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.55, "colorGammaLight": 1.0, "mapPane": "h3DetailPane"}, {"id": "2024_fall_private_conservation", "groupVar": "feature_group_2b4baa72d09eb8b9e45fed7951985891", "geojsonUrl": "h3_device_hours_map_data/2024_fall_private_conservation.json", "vmin": 1.0, "vmax": 7.0, "colors": ["#0a1a0a", "#006d2c", "#41ab5d", "#c7e9c0", "#f7fcf5"], "colorsHeat": ["#0a1a0a", "#006d2c", "#41ab5d", "#c7e9c0", "#f7fcf5"], "colorsLight": ["#edf8e9", "#bae4b3", "#74c476", "#31a354", "#006d2c"], "valueField": "device_hours", "tooltipFields": ["h3", "device_hours"], "tooltipAliases": ["H3 cell", "Device count"], "comprehensive": false, "strokeHeat": {"color": "#0d1117", "weight": 0.2, "opacity": 0.08, "fillOpacity": 0.86}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.55, "colorGammaLight": 1.0, "mapPane": "h3DetailPane"}];
             var loaded = {};
             var geoLayers = {};
-            var STROKE = {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88};
+            var STROKE = {"color": "#0d1117", "weight": 0.2, "opacity": 0.08, "fillOpacity": 0.86};
 
             function hexToRgb(hex) {
                 var h = hex.replace("#", "");
@@ -307,19 +336,59 @@
                     return s.length === 1 ? "0" + s : s;
                 }).join("");
             }
+            function paletteFor(meta) {
+                var light = window.edwaH3ColorMode === "light";
+                if (light && meta.colorsLight) {
+                    return {
+                        colors: meta.colorsLight,
+                        gamma: meta.colorGammaLight != null ? meta.colorGammaLight : 1.0,
+                        stroke: meta.strokeLight || STROKE,
+                    };
+                }
+                return {
+                    colors: meta.colorsHeat || meta.colors,
+                    gamma: meta.colorGammaHeat != null ? meta.colorGammaHeat : 1.0,
+                    stroke: meta.strokeHeat || STROKE,
+                };
+            }
             function styleFor(meta) {
                 return function(feature) {
                     var value = Number(feature.properties[meta.valueField]);
                     if (!isFinite(value)) value = 0;
                     var t = meta.vmax > meta.vmin ? (value - meta.vmin) / (meta.vmax - meta.vmin) : 0;
+                    var pal = paletteFor(meta);
+                    var gamma = pal.gamma;
+                    if (gamma > 0 && gamma !== 1.0) {
+                        t = Math.pow(Math.max(0, Math.min(1, t)), gamma);
+                    }
+                    var stroke = pal.stroke;
                     return {
-                        fillColor: mixHex(meta.colors, t),
-                        color: STROKE.color,
-                        weight: STROKE.weight,
-                        opacity: STROKE.opacity,
-                        fillOpacity: STROKE.fillOpacity,
+                        fillColor: mixHex(pal.colors, t),
+                        color: stroke.color,
+                        weight: stroke.weight,
+                        opacity: stroke.opacity,
+                        fillOpacity: stroke.fillOpacity,
                     };
                 };
+            }
+            function restyleLoadedLayers() {
+                Object.keys(geoLayers).forEach(function(id) {
+                    var meta = layers.find(function(m) { return m.id === id; });
+                    var gj = geoLayers[id];
+                    if (!meta || !gj) return;
+                    gj.setStyle(styleFor(meta));
+                });
+            }
+            window.edwaH3RestyleAll = restyleLoadedLayers;
+            function ensureH3Panes() {
+                if (!mapRef.getPane("h3DetailPane")) {
+                    mapRef.createPane("h3DetailPane");
+                    mapRef.getPane("h3DetailPane").style.zIndex = 420;
+                }
+                if (!mapRef.getPane("h3ComprehensivePane")) {
+                    mapRef.createPane("h3ComprehensivePane");
+                    mapRef.getPane("h3ComprehensivePane").style.zIndex = 640;
+                }
             }
             function tooltipFor(meta) {
                 return function(feature, layer) {
@@ -346,10 +415,15 @@
                     if (!r.ok) throw new Error("Failed to load " + meta.geojsonUrl);
                     return r.json();
                 }).then(function(data) {
-                    var gj = L.geoJSON(data, {
+                    ensureH3Panes();
+                    var gjOpts = {
                         style: styleFor(meta),
                         onEachFeature: tooltipFor(meta),
-                    });
+                    };
+                    if (meta.mapPane) {
+                        gjOpts.pane = meta.mapPane;
+                    }
+                    var gj = L.geoJSON(data, gjOpts);
                     geoLayers[meta.id] = gj;
                     loaded[meta.id] = true;
                     if (group && mapRef.hasLayer(group)) {
@@ -376,6 +450,8 @@
                 }
             });
             mapRef.whenReady(function() {
+                window.edwaH3ColorMode = window.edwaH3ColorMode || "dark";
+                ensureH3Panes();
                 layers.forEach(function(meta) {
                     if (meta.groupLayer && mapRef.hasLayer(meta.groupLayer)) {
                         loadLayer(meta).catch(function(err) {
@@ -387,6 +463,20 @@
         })();
         
     
+        function edwaH3SetBasemap(mode) {
+            window.edwaH3ColorMode = mode;
+            var tile = window["tile_layer_2313101f94df7b28a4d94ae7fb75fe1f"];
+            if (tile && tile.setUrl) {
+                tile.setUrl(mode === "light" ? "https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png" : "https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png");
+            }
+            var darkBtn = document.getElementById("edwa-basemap-dark");
+            var lightBtn = document.getElementById("edwa-basemap-light");
+            if (darkBtn && lightBtn) {
+                darkBtn.classList.toggle("edwa-active", mode === "dark");
+                lightBtn.classList.toggle("edwa-active", mode === "light");
+            }
+            if (window.edwaH3RestyleAll) window.edwaH3RestyleAll();
+        }
         function edwaOverlayInputs(section) {
             return Array.prototype.slice.call(
                 section.querySelectorAll("input.leaflet-control-layers-selector")
@@ -398,14 +488,22 @@
             var row = input.closest("label") || input.parentElement;
             return row ? (row.textContent || "").trim() : "";
         }
-        function edwaInstallLayerSearchFilter() {
+        function edwaInstallH3LayerPanel() {
             var list = document.querySelector(".leaflet-control-layers-list");
             var section = document.querySelector(".leaflet-control-layers-overlays");
             if (!list || !section || document.getElementById("edwa-layer-search")) return;
 
             var wrap = document.createElement("div");
             wrap.className = "edwa-layer-search-wrap";
-            wrap.innerHTML = '<input type="search" id="edwa-layer-search" class="edwa-layer-search" '
+            wrap.innerHTML = ''
+                + '<div class="edwa-basemap-toggle">'
+                + '<button type="button" class="edwa-basemap-btn edwa-active" id="edwa-basemap-dark">Dark heatmap</button>'
+                + '<button type="button" class="edwa-basemap-btn" id="edwa-basemap-light">Light map</button>'
+                + '</div>'
+                + '<span class="edwa-panel-section-title">All recreation (deduplicated)</span>'
+                + '<div class="edwa-all-recreation-layers" id="edwa-all-recreation-layers"></div>'
+                + '<span class="edwa-panel-section-title">By activity / land</span>'
+                + '<input type="search" id="edwa-layer-search" class="edwa-layer-search" '
                 + 'placeholder="Filter layers" autocomplete="off" />'
                 + '<div class="edwa-layer-bulk-actions">'
                 + '<button type="button" class="edwa-layer-bulk-btn" id="edwa-layer-select-all">Select all</button>'
@@ -413,18 +511,43 @@
                 + '</div>';
             list.insertBefore(wrap, section);
 
+            var allRecHost = document.getElementById("edwa-all-recreation-layers");
+            Array.prototype.slice.call(section.querySelectorAll("label")).forEach(function(label) {
+                if (/all recreation/i.test((label.textContent || "").trim())) {
+                    allRecHost.appendChild(label);
+                }
+            });
+
+            window.edwaH3ColorMode = "dark";
+            document.getElementById("edwa-basemap-dark").addEventListener("click", function() {
+                edwaH3SetBasemap("dark");
+            });
+            document.getElementById("edwa-basemap-light").addEventListener("click", function() {
+                edwaH3SetBasemap("light");
+            });
+
             var search = document.getElementById("edwa-layer-search");
             var selectAllBtn = document.getElementById("edwa-layer-select-all");
             var clearAllBtn = document.getElementById("edwa-layer-clear-all");
             var syncing = false;
 
-            function isVisibleInput(input) {
-                var row = input.closest("label");
-                return row && !row.classList.contains("edwa-layer-hidden");
+            function activityInputs() {
+                return edwaOverlayInputs(section);
             }
 
-            function visibleInputs() {
-                return edwaOverlayInputs(section).filter(isVisibleInput);
+            function allRecreationInputs() {
+                return Array.prototype.slice.call(
+                    allRecHost.querySelectorAll("input.leaflet-control-layers-selector")
+                );
+            }
+
+            function allToggleInputs() {
+                return allRecreationInputs().concat(activityInputs());
+            }
+
+            function isVisibleActivityInput(input) {
+                var row = input.closest("label");
+                return row && !row.classList.contains("edwa-layer-hidden");
             }
 
             function setInputsChecked(inputs, on) {
@@ -437,7 +560,7 @@
 
             function applySearchFilter() {
                 var q = (search.value || "").trim().toLowerCase();
-                edwaOverlayInputs(section).forEach(function(input) {
+                activityInputs().forEach(function(input) {
                     var row = input.closest("label");
                     if (!row) return;
                     var text = edwaLayerLabel(input).toLowerCase();
@@ -450,21 +573,20 @@
             }
 
             search.addEventListener("input", applySearchFilter);
-
             selectAllBtn.addEventListener("click", function(ev) {
                 ev.preventDefault();
-                setInputsChecked(visibleInputs(), true);
+                var targets = activityInputs().filter(isVisibleActivityInput).concat(allRecreationInputs());
+                setInputsChecked(targets, true);
             });
-
             clearAllBtn.addEventListener("click", function(ev) {
                 ev.preventDefault();
-                setInputsChecked(edwaOverlayInputs(section).filter(function(i) { return i.checked; }), false);
+                setInputsChecked(allToggleInputs().filter(function(i) { return i.checked; }), false);
             });
         }
         document.addEventListener("DOMContentLoaded", function() {
-            edwaInstallLayerSearchFilter();
-            setTimeout(edwaInstallLayerSearchFilter, 300);
-            setTimeout(edwaInstallLayerSearchFilter, 800);
+            edwaInstallH3LayerPanel();
+            setTimeout(edwaInstallH3LayerPanel, 300);
+            setTimeout(edwaInstallH3LayerPanel, 800);
         });
         
 </script>
