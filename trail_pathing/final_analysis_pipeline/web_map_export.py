@@ -1276,7 +1276,7 @@ def add_layer_search_filter(
     *,
     search_placeholder: str = "Filter layers",
 ) -> None:
-    """Text filter for overlay entries in the layer control."""
+    """Bulk overlay actions for flat layer-control lists."""
     template = Template(
         """
         {% macro html(this, kwargs) %}
@@ -1287,22 +1287,10 @@ def add_layer_search_filter(
                 margin-bottom: 4px;
                 border-bottom: 1px solid #ddd;
             }
-            .edwa-layer-search {
-                width: 100%;
-                box-sizing: border-box;
-                font: 12px/1.3 -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-                padding: 5px 7px;
-                border: 1px solid #c9d1d9;
-                border-radius: 4px;
-            }
-            .edwa-layer-search:focus {
-                outline: none;
-                border-color: #6e6e6e;
-            }
             .edwa-layer-bulk-actions {
                 display: flex;
                 gap: 10px;
-                margin-top: 6px;
+                margin-top: 0;
             }
             .edwa-layer-bulk-btn {
                 background: none;
@@ -1327,9 +1315,6 @@ def add_layer_search_filter(
                 white-space: normal;
                 word-break: break-word;
             }
-            label.edwa-layer-hidden {
-                display: none !important;
-            }
         </style>
         {% endmacro %}
         {% macro script(this, kwargs) %}
@@ -1340,38 +1325,22 @@ def add_layer_search_filter(
                 return input.layerId !== undefined;
             });
         }
-        function edwaLayerLabel(input) {
-            var row = input.closest("label") || input.parentElement;
-            return row ? (row.textContent || "").trim() : "";
-        }
         function edwaInstallLayerSearchFilter() {
             var list = document.querySelector(".leaflet-control-layers-list");
             var section = document.querySelector(".leaflet-control-layers-overlays");
-            if (!list || !section || document.getElementById("edwa-layer-search")) return;
+            if (!list || !section || document.getElementById("edwa-layer-select-all")) return;
 
             var wrap = document.createElement("div");
             wrap.className = "edwa-layer-search-wrap";
-            wrap.innerHTML = '<input type="search" id="edwa-layer-search" class="edwa-layer-search" '
-                + 'placeholder="{{ this.search_placeholder }}" autocomplete="off" />'
-                + '<div class="edwa-layer-bulk-actions">'
+            wrap.innerHTML = '<div class="edwa-layer-bulk-actions">'
                 + '<button type="button" class="edwa-layer-bulk-btn" id="edwa-layer-select-all">Select all</button>'
                 + '<button type="button" class="edwa-layer-bulk-btn" id="edwa-layer-clear-all">Clear all</button>'
                 + '</div>';
             list.insertBefore(wrap, section);
 
-            var search = document.getElementById("edwa-layer-search");
             var selectAllBtn = document.getElementById("edwa-layer-select-all");
             var clearAllBtn = document.getElementById("edwa-layer-clear-all");
             var syncing = false;
-
-            function isVisibleInput(input) {
-                var row = input.closest("label");
-                return row && !row.classList.contains("edwa-layer-hidden");
-            }
-
-            function visibleInputs() {
-                return edwaOverlayInputs(section).filter(isVisibleInput);
-            }
 
             function setInputsChecked(inputs, on) {
                 syncing = true;
@@ -1381,25 +1350,9 @@ def add_layer_search_filter(
                 syncing = false;
             }
 
-            function applySearchFilter() {
-                var q = (search.value || "").trim().toLowerCase();
-                edwaOverlayInputs(section).forEach(function(input) {
-                    var row = input.closest("label");
-                    if (!row) return;
-                    var text = edwaLayerLabel(input).toLowerCase();
-                    if (!q || text.indexOf(q) !== -1) {
-                        row.classList.remove("edwa-layer-hidden");
-                    } else {
-                        row.classList.add("edwa-layer-hidden");
-                    }
-                });
-            }
-
-            search.addEventListener("input", applySearchFilter);
-
             selectAllBtn.addEventListener("click", function(ev) {
                 ev.preventDefault();
-                setInputsChecked(visibleInputs(), true);
+                setInputsChecked(edwaOverlayInputs(section), true);
             });
 
             clearAllBtn.addEventListener("click", function(ev) {
@@ -1432,7 +1385,7 @@ def add_featured_overlay_layer_panel(
     featured_title: str = "All recreation (deduplicated)",
     section_title: str = "By activity / land",
 ) -> None:
-    """Split flat overlay list into a featured top block plus searchable activity list."""
+    """Split flat overlay list into a featured top block plus bulk actions."""
     template = Template(
         """
         {% macro html(this, kwargs) %}
@@ -1458,14 +1411,6 @@ def add_featured_overlay_layer_panel(
                 margin: 2px 0;
                 white-space: normal;
                 word-break: break-word;
-            }
-            .edwa-layer-search {
-                width: 100%;
-                box-sizing: border-box;
-                font: 12px/1.3 -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-                padding: 5px 7px;
-                border: 1px solid #c9d1d9;
-                border-radius: 4px;
             }
             .edwa-layer-bulk-actions {
                 display: flex;
@@ -1518,9 +1463,6 @@ def add_featured_overlay_layer_panel(
                 white-space: normal;
                 word-break: break-word;
             }
-            label.edwa-layer-hidden {
-                display: none !important;
-            }
         </style>
         {% endmacro %}
         {% macro script(this, kwargs) %}
@@ -1558,14 +1500,10 @@ def add_featured_overlay_layer_panel(
                 return input.layerId !== undefined;
             });
         }
-        function edwaFeaturedLayerLabel(input) {
-            var row = input.closest("label") || input.parentElement;
-            return row ? (row.textContent || "").trim() : "";
-        }
         function edwaInstallFeaturedOverlayPanel() {
             var list = document.querySelector(".leaflet-control-layers-list");
             var section = document.querySelector(".leaflet-control-layers-overlays");
-            if (!list || !section || document.getElementById("edwa-layer-search")) return;
+            if (!list || !section || document.getElementById("edwa-layer-select-all")) return;
 
             var wrap = document.createElement("div");
             wrap.className = "edwa-layer-search-wrap";
@@ -1573,8 +1511,6 @@ def add_featured_overlay_layer_panel(
                 + '<span class="edwa-panel-section-title">{{ this.featured_title }}</span>'
                 + '<div class="edwa-featured-layers" id="edwa-featured-layers"></div>'
                 + '<span class="edwa-panel-section-title">{{ this.section_title }}</span>'
-                + '<input type="search" id="edwa-layer-search" class="edwa-layer-search" '
-                + 'placeholder="{{ this.search_placeholder }}" autocomplete="off" />'
                 + '<div class="edwa-layer-opacity">'
                 + '<div class="edwa-layer-opacity-header">'
                 + '<span class="edwa-layer-opacity-label">Layer transparency</span>'
@@ -1596,7 +1532,6 @@ def add_featured_overlay_layer_panel(
                 }
             });
 
-            var search = document.getElementById("edwa-layer-search");
             var opacitySlider = document.getElementById("edwa-layer-opacity");
             var opacityValue = document.getElementById("edwa-layer-opacity-value");
             var selectAllBtn = document.getElementById("edwa-layer-select-all");
@@ -1618,11 +1553,6 @@ def add_featured_overlay_layer_panel(
                 return featuredInputs().concat(activityInputs());
             }
 
-            function isVisibleActivityInput(input) {
-                var row = input.closest("label");
-                return row && !row.classList.contains("edwa-layer-hidden");
-            }
-
             function setInputsChecked(inputs, on) {
                 syncing = true;
                 inputs.forEach(function(input) {
@@ -1630,22 +1560,6 @@ def add_featured_overlay_layer_panel(
                 });
                 syncing = false;
             }
-
-            function applySearchFilter() {
-                var q = (search.value || "").trim().toLowerCase();
-                activityInputs().forEach(function(input) {
-                    var row = input.closest("label");
-                    if (!row) return;
-                    var text = edwaFeaturedLayerLabel(input).toLowerCase();
-                    if (!q || text.indexOf(q) !== -1) {
-                        row.classList.remove("edwa-layer-hidden");
-                    } else {
-                        row.classList.add("edwa-layer-hidden");
-                    }
-                });
-            }
-
-            search.addEventListener("input", applySearchFilter);
             function syncOpacity() {
                 var alpha = Number(opacitySlider.value || 100) / 100;
                 opacityValue.textContent = String(Math.round(alpha * 100)) + "%";
@@ -1655,7 +1569,7 @@ def add_featured_overlay_layer_panel(
             opacitySlider.addEventListener("change", syncOpacity);
             selectAllBtn.addEventListener("click", function(ev) {
                 ev.preventDefault();
-                var targets = activityInputs().filter(isVisibleActivityInput).concat(featuredInputs());
+                var targets = activityInputs().concat(featuredInputs());
                 setInputsChecked(targets, true);
             });
             clearAllBtn.addEventListener("click", function(ev) {
@@ -1691,7 +1605,7 @@ def add_h3_map_layer_controls(
     basemap_dark_url: str = CARTO_DARK_MATTER_LABELS_TILES,
     basemap_light_url: str = CARTO_VOYAGER_LABELS_TILES,
 ) -> None:
-    """H3 layer panel: search, basemap toggle, all_recreation block, then activity layers."""
+    """H3 layer panel: basemap toggle, all_recreation block, then activity layers."""
     template = Template(
         """
         {% macro html(this, kwargs) %}
@@ -1702,21 +1616,10 @@ def add_h3_map_layer_controls(
                 margin-bottom: 4px;
                 border-bottom: 1px solid #ddd;
             }
-            .edwa-layer-search {
-                width: 100%;
-                box-sizing: border-box;
-                font: 12px/1.3 -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-                padding: 5px 7px;
-                border: 1px solid #c9d1d9;
-                border-radius: 4px;
-            }
             .edwa-basemap-toggle {
                 display: flex;
                 gap: 4px;
                 margin: 0 0 8px;
-            }
-            .edwa-layer-search {
-                margin-top: 4px;
             }
             .edwa-basemap-btn {
                 flex: 1;
@@ -1794,9 +1697,6 @@ def add_h3_map_layer_controls(
                 white-space: normal;
                 word-break: break-word;
             }
-            label.edwa-layer-hidden {
-                display: none !important;
-            }
         </style>
         {% endmacro %}
         {% macro script(this, kwargs) %}
@@ -1825,14 +1725,10 @@ def add_h3_map_layer_controls(
                 return input.layerId !== undefined;
             });
         }
-        function edwaLayerLabel(input) {
-            var row = input.closest("label") || input.parentElement;
-            return row ? (row.textContent || "").trim() : "";
-        }
         function edwaInstallH3LayerPanel() {
             var list = document.querySelector(".leaflet-control-layers-list");
             var section = document.querySelector(".leaflet-control-layers-overlays");
-            if (!list || !section || document.getElementById("edwa-layer-search")) return;
+            if (!list || !section || document.getElementById("edwa-layer-select-all")) return;
 
             var wrap = document.createElement("div");
             wrap.className = "edwa-layer-search-wrap";
@@ -1844,8 +1740,6 @@ def add_h3_map_layer_controls(
                 + '<span class="edwa-panel-section-title">All recreation (deduplicated)</span>'
                 + '<div class="edwa-all-recreation-layers" id="edwa-all-recreation-layers"></div>'
                 + '<span class="edwa-panel-section-title">By activity / land</span>'
-                + '<input type="search" id="edwa-layer-search" class="edwa-layer-search" '
-                + 'placeholder="{{ this.search_placeholder }}" autocomplete="off" />'
                 + '<div class="edwa-layer-opacity">'
                 + '<div class="edwa-layer-opacity-header">'
                 + '<span class="edwa-layer-opacity-label">Layer transparency</span>'
@@ -1875,7 +1769,6 @@ def add_h3_map_layer_controls(
                 edwaH3SetBasemap("light");
             });
 
-            var search = document.getElementById("edwa-layer-search");
             var opacitySlider = document.getElementById("edwa-layer-opacity");
             var opacityValue = document.getElementById("edwa-layer-opacity-value");
             var selectAllBtn = document.getElementById("edwa-layer-select-all");
@@ -1896,11 +1789,6 @@ def add_h3_map_layer_controls(
                 return allRecreationInputs().concat(activityInputs());
             }
 
-            function isVisibleActivityInput(input) {
-                var row = input.closest("label");
-                return row && !row.classList.contains("edwa-layer-hidden");
-            }
-
             function setInputsChecked(inputs, on) {
                 syncing = true;
                 inputs.forEach(function(input) {
@@ -1908,22 +1796,6 @@ def add_h3_map_layer_controls(
                 });
                 syncing = false;
             }
-
-            function applySearchFilter() {
-                var q = (search.value || "").trim().toLowerCase();
-                activityInputs().forEach(function(input) {
-                    var row = input.closest("label");
-                    if (!row) return;
-                    var text = edwaLayerLabel(input).toLowerCase();
-                    if (!q || text.indexOf(q) !== -1) {
-                        row.classList.remove("edwa-layer-hidden");
-                    } else {
-                        row.classList.add("edwa-layer-hidden");
-                    }
-                });
-            }
-
-            search.addEventListener("input", applySearchFilter);
             function syncOpacity() {
                 var alpha = Number(opacitySlider.value || 100) / 100;
                 opacityValue.textContent = String(Math.round(alpha * 100)) + "%";
@@ -1933,7 +1805,7 @@ def add_h3_map_layer_controls(
             opacitySlider.addEventListener("change", syncOpacity);
             selectAllBtn.addEventListener("click", function(ev) {
                 ev.preventDefault();
-                var targets = activityInputs().filter(isVisibleActivityInput).concat(allRecreationInputs());
+                var targets = activityInputs().concat(allRecreationInputs());
                 setInputsChecked(targets, true);
             });
             clearAllBtn.addEventListener("click", function(ev) {
