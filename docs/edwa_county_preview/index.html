@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_0ef14150f34e40fd9548de4324c3ae54 {
+                #map_61de552ac1ae776aa33f72f0d1c3a5b8 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -262,7 +262,7 @@
 <body>
     
     
-            <div class="folium-map" id="map_0ef14150f34e40fd9548de4324c3ae54" ></div>
+            <div class="folium-map" id="map_61de552ac1ae776aa33f72f0d1c3a5b8" ></div>
         
     
         <style>
@@ -305,6 +305,7 @@
             .leaflet-control-layers-expanded .leaflet-control-layers-list {
                 max-height: min(70vh, 520px);
                 overflow-y: auto;
+                overflow-x: hidden;
             }
             label.edwa-layer-hidden {
                 display: none !important;
@@ -315,8 +316,8 @@
 <script>
     
     
-            var map_0ef14150f34e40fd9548de4324c3ae54 = L.map(
-                "map_0ef14150f34e40fd9548de4324c3ae54",
+            var map_61de552ac1ae776aa33f72f0d1c3a5b8 = L.map(
+                "map_61de552ac1ae776aa33f72f0d1c3a5b8",
                 {
                     center: [37.12787, -98.91789499999999],
                     crs: L.CRS.EPSG3857,
@@ -328,13 +329,13 @@
 
                 }
             );
-            L.control.scale().addTo(map_0ef14150f34e40fd9548de4324c3ae54);
+            L.control.scale().addTo(map_61de552ac1ae776aa33f72f0d1c3a5b8);
 
             
 
         
     
-            var tile_layer_4d57174063c8ee583cc381b68e8fe15c = L.tileLayer(
+            var tile_layer_c3fc249c7b683547a4c4991d37667386 = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -351,67 +352,67 @@
             );
         
     
-            tile_layer_4d57174063c8ee583cc381b68e8fe15c.addTo(map_0ef14150f34e40fd9548de4324c3ae54);
+            tile_layer_c3fc249c7b683547a4c4991d37667386.addTo(map_61de552ac1ae776aa33f72f0d1c3a5b8);
         
     
-            map_0ef14150f34e40fd9548de4324c3ae54.fitBounds(
+            map_61de552ac1ae776aa33f72f0d1c3a5b8.fitBounds(
                 [[25.5099052, -124.6210842], [48.745834800000004, -73.21470579999999]],
                 {}
             );
         
     
-            var feature_group_145e75c6cba1deb2fd43c8d8a6fedca6 = L.featureGroup(
+            var feature_group_e426a1fae63ada93a28843bf2e570a1c = L.featureGroup(
                 {
 }
             );
         
     
-        function geo_json_c68774bd3f72bb3d34066b0ce963ea6d_styler(feature) {
+        function geo_json_8ca0f437eff7c4a1e3e8cdc518900520_styler(feature) {
             switch(feature.id) {
                 default:
                     return {"color": "#4a5568", "fillColor": "#f7fcf5", "fillOpacity": 0.88, "opacity": 0.1, "weight": 0.35};
             }
         }
-        function geo_json_c68774bd3f72bb3d34066b0ce963ea6d_highlighter(feature) {
+        function geo_json_8ca0f437eff7c4a1e3e8cdc518900520_highlighter(feature) {
             switch(feature.id) {
                 default:
                     return {"color": "#1a202c", "fillOpacity": 0.92, "opacity": 0.35, "weight": 1.2};
             }
         }
 
-        function geo_json_c68774bd3f72bb3d34066b0ce963ea6d_onEachFeature(feature, layer) {
+        function geo_json_8ca0f437eff7c4a1e3e8cdc518900520_onEachFeature(feature, layer) {
 
             layer.on({
                 mouseout: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                            geo_json_c68774bd3f72bb3d34066b0ce963ea6d.resetStyle(e.target);
+                            geo_json_8ca0f437eff7c4a1e3e8cdc518900520.resetStyle(e.target);
                     }
                 },
                 mouseover: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                        const highlightStyle = geo_json_c68774bd3f72bb3d34066b0ce963ea6d_highlighter(e.target.feature)
+                        const highlightStyle = geo_json_8ca0f437eff7c4a1e3e8cdc518900520_highlighter(e.target.feature)
                         e.target.setStyle(highlightStyle);
                     }
                 },
             });
         };
-        var geo_json_c68774bd3f72bb3d34066b0ce963ea6d = L.geoJson(null, {
-                onEachFeature: geo_json_c68774bd3f72bb3d34066b0ce963ea6d_onEachFeature,
+        var geo_json_8ca0f437eff7c4a1e3e8cdc518900520 = L.geoJson(null, {
+                onEachFeature: geo_json_8ca0f437eff7c4a1e3e8cdc518900520_onEachFeature,
             
-                style: geo_json_c68774bd3f72bb3d34066b0ce963ea6d_styler,
+                style: geo_json_8ca0f437eff7c4a1e3e8cdc518900520_styler,
             ...{
 }
         });
 
-        function geo_json_c68774bd3f72bb3d34066b0ce963ea6d_add (data) {
-            geo_json_c68774bd3f72bb3d34066b0ce963ea6d
+        function geo_json_8ca0f437eff7c4a1e3e8cdc518900520_add (data) {
+            geo_json_8ca0f437eff7c4a1e3e8cdc518900520
                 .addData(data);
         }
-            geo_json_c68774bd3f72bb3d34066b0ce963ea6d_add({"features": [{"geometry": {"coordinates": [[[-120.14364, 39.06729], [-120.00246, 39.06749], [-120.00101, 38.99957], [-119.88764, 38.9183], [-119.87729, 38.87019], [-119.94793, 38.78164], [-120.11201, 38.70502], [-120.14008, 38.63837], [-120.2143, 38.62908], [-120.30172, 38.54911], [-120.60616, 38.50235], [-120.81355, 38.56219], [-121.02738, 38.50825], [-121.11905, 38.71786], [-121.13316, 38.70537], [-121.14159, 38.71194], [-121.04096, 38.91505], [-120.93857, 38.93556], [-120.93727, 38.96368], [-120.85986, 38.95165], [-120.81278, 38.9999], [-120.7464, 39.01035], [-120.56426, 38.91364], [-120.49273, 38.94335], [-120.43524, 39.0284], [-120.18443, 39.03101], [-120.14364, 39.06729]]], "type": "Polygon"}, "id": "0", "properties": {"GEOID": "06017", "NAMELSAD": "El Dorado County", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.96004, 37.71853], [-122.04547, 37.79813], [-122.18558, 37.82073], [-122.26403, 37.90378], [-122.37378, 37.88372], [-122.44158, 37.97392], [-122.34745, 38.07326], [-122.14858, 38.03172], [-121.86214, 38.06607], [-121.78314, 38.01854], [-121.69976, 38.04522], [-121.67306, 38.09352], [-121.58528, 38.09637], [-121.55753, 38.01662], [-121.57991, 38.00778], [-121.55641, 37.92364], [-121.57943, 37.86016], [-121.53805, 37.83776], [-121.96004, 37.71853]]], "type": "Polygon"}, "id": "1", "properties": {"GEOID": "06013", "NAMELSAD": "Contra Costa County", "unique_device_localdate_id_count": 1}, "type": "Feature"}], "type": "FeatureCollection"});
+            geo_json_8ca0f437eff7c4a1e3e8cdc518900520_add({"features": [{"geometry": {"coordinates": [[[-120.14364, 39.06729], [-120.00246, 39.06749], [-120.00101, 38.99957], [-119.88764, 38.9183], [-119.87729, 38.87019], [-119.94793, 38.78164], [-120.11201, 38.70502], [-120.14008, 38.63837], [-120.2143, 38.62908], [-120.30172, 38.54911], [-120.60616, 38.50235], [-120.81355, 38.56219], [-121.02738, 38.50825], [-121.11905, 38.71786], [-121.13316, 38.70537], [-121.14159, 38.71194], [-121.04096, 38.91505], [-120.93857, 38.93556], [-120.93727, 38.96368], [-120.85986, 38.95165], [-120.81278, 38.9999], [-120.7464, 39.01035], [-120.56426, 38.91364], [-120.49273, 38.94335], [-120.43524, 39.0284], [-120.18443, 39.03101], [-120.14364, 39.06729]]], "type": "Polygon"}, "id": "0", "properties": {"GEOID": "06017", "NAMELSAD": "El Dorado County", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.96004, 37.71853], [-122.04547, 37.79813], [-122.18558, 37.82073], [-122.26403, 37.90378], [-122.37378, 37.88372], [-122.44158, 37.97392], [-122.34745, 38.07326], [-122.14858, 38.03172], [-121.86214, 38.06607], [-121.78314, 38.01854], [-121.69976, 38.04522], [-121.67306, 38.09352], [-121.58528, 38.09637], [-121.55753, 38.01662], [-121.57991, 38.00778], [-121.55641, 37.92364], [-121.57943, 37.86016], [-121.53805, 37.83776], [-121.96004, 37.71853]]], "type": "Polygon"}, "id": "1", "properties": {"GEOID": "06013", "NAMELSAD": "Contra Costa County", "unique_device_localdate_id_count": 1}, "type": "Feature"}], "type": "FeatureCollection"});
 
         
     
-    geo_json_c68774bd3f72bb3d34066b0ce963ea6d.bindTooltip(
+    geo_json_8ca0f437eff7c4a1e3e8cdc518900520.bindTooltip(
     function(layer){
     let div = L.DomUtil.create('div');
     
@@ -446,16 +447,19 @@
 });
                      
     
-            geo_json_c68774bd3f72bb3d34066b0ce963ea6d.addTo(feature_group_145e75c6cba1deb2fd43c8d8a6fedca6);
+            geo_json_8ca0f437eff7c4a1e3e8cdc518900520.addTo(feature_group_e426a1fae63ada93a28843bf2e570a1c);
         
     
-            var feature_group_bd8c4730d2dbe8f40b95c41769448e49 = L.featureGroup(
+            feature_group_e426a1fae63ada93a28843bf2e570a1c.addTo(map_61de552ac1ae776aa33f72f0d1c3a5b8);
+        
+    
+            var feature_group_85ca0432f29938b53c8879f354f58ebd = L.featureGroup(
                 {
 }
             );
         
     
-        function geo_json_fe7063d2aa6a564dc36d71418cc26689_styler(feature) {
+        function geo_json_3bd3a0835f1e766a2baf28ee1ff96dc3_styler(feature) {
             switch(feature.id) {
                 case "0": case "1": case "2": case "3": case "6": case "8": case "9": 
                     return {"color": "#4a5568", "fillColor": "#fff5f0", "fillOpacity": 0.88, "opacity": 0.1, "weight": 0.35};
@@ -465,46 +469,46 @@
                     return {"color": "#4a5568", "fillColor": "#67000d", "fillOpacity": 0.88, "opacity": 0.1, "weight": 0.35};
             }
         }
-        function geo_json_fe7063d2aa6a564dc36d71418cc26689_highlighter(feature) {
+        function geo_json_3bd3a0835f1e766a2baf28ee1ff96dc3_highlighter(feature) {
             switch(feature.id) {
                 default:
                     return {"color": "#1a202c", "fillOpacity": 0.92, "opacity": 0.35, "weight": 1.2};
             }
         }
 
-        function geo_json_fe7063d2aa6a564dc36d71418cc26689_onEachFeature(feature, layer) {
+        function geo_json_3bd3a0835f1e766a2baf28ee1ff96dc3_onEachFeature(feature, layer) {
 
             layer.on({
                 mouseout: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                            geo_json_fe7063d2aa6a564dc36d71418cc26689.resetStyle(e.target);
+                            geo_json_3bd3a0835f1e766a2baf28ee1ff96dc3.resetStyle(e.target);
                     }
                 },
                 mouseover: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                        const highlightStyle = geo_json_fe7063d2aa6a564dc36d71418cc26689_highlighter(e.target.feature)
+                        const highlightStyle = geo_json_3bd3a0835f1e766a2baf28ee1ff96dc3_highlighter(e.target.feature)
                         e.target.setStyle(highlightStyle);
                     }
                 },
             });
         };
-        var geo_json_fe7063d2aa6a564dc36d71418cc26689 = L.geoJson(null, {
-                onEachFeature: geo_json_fe7063d2aa6a564dc36d71418cc26689_onEachFeature,
+        var geo_json_3bd3a0835f1e766a2baf28ee1ff96dc3 = L.geoJson(null, {
+                onEachFeature: geo_json_3bd3a0835f1e766a2baf28ee1ff96dc3_onEachFeature,
             
-                style: geo_json_fe7063d2aa6a564dc36d71418cc26689_styler,
+                style: geo_json_3bd3a0835f1e766a2baf28ee1ff96dc3_styler,
             ...{
 }
         });
 
-        function geo_json_fe7063d2aa6a564dc36d71418cc26689_add (data) {
-            geo_json_fe7063d2aa6a564dc36d71418cc26689
+        function geo_json_3bd3a0835f1e766a2baf28ee1ff96dc3_add (data) {
+            geo_json_3bd3a0835f1e766a2baf28ee1ff96dc3
                 .addData(data);
         }
-            geo_json_fe7063d2aa6a564dc36d71418cc26689_add({"features": [{"geometry": {"coordinates": [[[-121.47192, 37.48178], [-121.55666, 37.54273], [-121.55706, 37.81575], [-121.5341, 37.84946], [-121.57943, 37.86016], [-121.55641, 37.92364], [-121.57991, 38.00778], [-121.55753, 38.01662], [-121.58439, 38.03603], [-121.56404, 38.10142], [-121.58436, 38.1183], [-121.47572, 38.25809], [-121.34437, 38.22821], [-121.02708, 38.30025], [-120.92645, 38.07742], [-120.9206, 37.73833], [-120.99343, 37.76094], [-121.17845, 37.70553], [-121.47192, 37.48178]]], "type": "Polygon"}, "id": "0", "properties": {"NAMELSAD": "San Joaquin County", "origin_county_geoid": "06077", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.59856, 36.99863], [-120.59057, 36.95264], [-120.656, 36.9528], [-120.91873, 36.74038], [-121.14152, 36.83666], [-121.1843, 36.90897], [-121.23433, 36.92615], [-121.21173, 36.95738], [-121.24657, 36.98523], [-121.24865, 37.03368], [-121.2082, 37.06129], [-121.24548, 37.08915], [-121.2268, 37.13477], [-120.96381, 37.34614], [-120.98981, 37.39587], [-120.38767, 37.63336], [-120.17849, 37.26242], [-120.05205, 37.18311], [-120.28987, 37.15261], [-120.47669, 37.09639], [-120.59856, 36.99863]]], "type": "Polygon"}, "id": "1", "properties": {"NAMELSAD": "Merced County", "origin_county_geoid": "06047", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.59984, 38.77488], [-121.63113, 38.67901], [-121.50627, 38.58631], [-121.55904, 38.49959], [-121.50414, 38.46656], [-121.5326, 38.43146], [-121.521, 38.36122], [-121.59327, 38.31309], [-121.6937, 38.31373], [-121.71203, 38.53796], [-121.94107, 38.53326], [-122.01338, 38.48872], [-122.10413, 38.51336], [-122.28692, 38.83917], [-122.37155, 38.84465], [-122.42195, 38.90356], [-122.40403, 38.92529], [-121.83549, 38.92448], [-121.79151, 38.9054], [-121.80237, 38.86458], [-121.72957, 38.85843], [-121.72267, 38.80272], [-121.69067, 38.79563], [-121.67383, 38.74314], [-121.59984, 38.77488]]], "type": "Polygon"}, "id": "2", "properties": {"NAMELSAD": "Yolo County", "origin_county_geoid": "06113", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.61228, 37.81522], [-122.72431, 37.84768], [-122.90228, 37.97739], [-122.95322, 37.94109], [-123.06797, 37.95867], [-123.08513, 38.00843], [-123.01482, 38.14913], [-123.13452, 38.29626], [-122.90811, 38.32075], [-122.7399, 38.20702], [-122.57059, 38.18712], [-122.5019, 38.11242], [-122.34745, 38.07326], [-122.44158, 37.97392], [-122.41867, 37.85251], [-122.61228, 37.81522]]], "type": "Polygon"}, "id": "3", "properties": {"NAMELSAD": "Marin County", "origin_county_geoid": "06041", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.14364, 39.06729], [-120.00246, 39.06749], [-120.00101, 38.99957], [-119.88764, 38.9183], [-119.87729, 38.87019], [-119.94793, 38.78164], [-120.11201, 38.70502], [-120.14008, 38.63837], [-120.2143, 38.62908], [-120.30172, 38.54911], [-120.60616, 38.50235], [-120.81355, 38.56219], [-121.02738, 38.50825], [-121.11905, 38.71786], [-121.13316, 38.70537], [-121.14159, 38.71194], [-121.04096, 38.91505], [-120.93857, 38.93556], [-120.93727, 38.96368], [-120.85986, 38.95165], [-120.81278, 38.9999], [-120.7464, 39.01035], [-120.56426, 38.91364], [-120.49273, 38.94335], [-120.43524, 39.0284], [-120.18443, 39.03101], [-120.14364, 39.06729]]], "type": "Polygon"}, "id": "4", "properties": {"NAMELSAD": "El Dorado County", "origin_county_geoid": "06017", "unique_device_localdate_id_count": 17}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.00246, 39.06749], [-120.14364, 39.06729], [-120.24041, 39.02367], [-120.43524, 39.0284], [-120.49273, 38.94335], [-120.56426, 38.91364], [-120.68565, 38.98965], [-120.80939, 39.00083], [-120.85986, 38.95165], [-120.93621, 38.96393], [-120.93857, 38.93556], [-121.04041, 38.91565], [-121.13451, 38.71203], [-121.4844, 38.7346], [-121.46936, 38.92599], [-121.4144, 38.92621], [-121.41479, 38.99842], [-121.30704, 39.0529], [-121.22099, 39.01178], [-121.13798, 39.03791], [-121.04161, 39.01379], [-120.98915, 39.11153], [-120.69154, 39.3041], [-120.00632, 39.3165], [-120.00246, 39.06749]]], "type": "Polygon"}, "id": "5", "properties": {"NAMELSAD": "Placer County", "origin_county_geoid": "06061", "unique_device_localdate_id_count": 17}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-118.14781, 33.69408], [-118.31914, 33.65955], [-118.46696, 33.72552], [-118.48448, 33.80315], [-118.44725, 33.84876], [-118.55736, 33.98767], [-118.80983, 33.94691], [-118.95172, 33.99286], [-118.94097, 34.07483], [-118.78889, 34.16821], [-118.66815, 34.16819], [-118.66771, 34.24034], [-118.63249, 34.24039], [-118.89463, 34.81797], [-117.66746, 34.82253], [-117.64637, 34.28917], [-117.73013, 34.02137], [-117.78503, 34.00485], [-117.78307, 33.94626], [-117.9765, 33.94605], [-117.97659, 33.90281], [-118.02878, 33.87332], [-118.14781, 33.69408]]], [[[-118.62592, 33.52898], [-118.52938, 33.53118], [-118.35939, 33.46492], [-118.25771, 33.36413], [-118.24908, 33.28414], [-118.32799, 33.24808], [-118.48669, 33.2769], [-118.6682, 33.48594], [-118.62592, 33.52898]]], [[[-118.63264, 33.08454], [-118.5421, 33.07379], [-118.29725, 32.84509], [-118.29584, 32.79826], [-118.40832, 32.75191], [-118.46471, 32.76018], [-118.55319, 32.8288], [-118.6782, 33.03973], [-118.63264, 33.08454]]]], "type": "MultiPolygon"}, "id": "6", "properties": {"NAMELSAD": "Los Angeles County", "origin_county_geoid": "06037", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.50639, 38.22459], [-121.58407, 38.12023], [-121.56718, 38.09732], [-121.67306, 38.09352], [-121.69976, 38.04522], [-121.77748, 38.01892], [-121.86246, 38.06603], [-121.71089, 38.08649], [-121.68559, 38.15971], [-121.6121, 38.20007], [-121.58478, 38.33082], [-121.521, 38.36122], [-121.5326, 38.43146], [-121.50414, 38.46656], [-121.55904, 38.49959], [-121.52413, 38.5205], [-121.5074, 38.592], [-121.63019, 38.67744], [-121.60289, 38.73584], [-121.11905, 38.71786], [-121.02742, 38.50814], [-121.02708, 38.30025], [-121.34437, 38.22821], [-121.43991, 38.25553], [-121.50639, 38.22459]]], "type": "Polygon"}, "id": "7", "properties": {"NAMELSAD": "Sacramento County", "origin_county_geoid": "06067", "unique_device_localdate_id_count": 25}, "type": "Feature"}, {"geometry": {"coordinates": [[[-119.6585, 39.33154], [-119.7153, 39.24428], [-119.88079, 39.16551], [-120.0043, 39.1656], [-119.99923, 41.99494], [-119.32418, 41.99392], [-119.30417, 41.30768], [-119.30571, 41.23454], [-119.33107, 41.23512], [-119.30918, 40.87761], [-119.3393, 39.99861], [-119.22509, 39.99937], [-119.17064, 39.68045], [-119.3706, 39.58688], [-119.54732, 39.56208], [-119.62325, 39.51104], [-119.69564, 39.52002], [-119.69609, 39.44746], [-119.65507, 39.44748], [-119.68534, 39.37669], [-119.6585, 39.33154]]], "type": "Polygon"}, "id": "8", "properties": {"NAMELSAD": "Washoe County", "origin_county_geoid": "32031", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.60807, 38.398], [-120.42321, 38.47332], [-120.07248, 38.50987], [-120.07257, 38.44708], [-120.01995, 38.43352], [-120.17647, 38.37378], [-120.46375, 38.01039], [-120.53481, 37.99117], [-120.51344, 37.95644], [-120.54235, 37.92045], [-120.65327, 37.83186], [-120.93885, 38.08832], [-120.9955, 38.2254], [-120.8933, 38.22139], [-120.80774, 38.28872], [-120.63179, 38.34603], [-120.60807, 38.398]]], "type": "Polygon"}, "id": "9", "properties": {"NAMELSAD": "Calaveras County", "origin_county_geoid": "06009", "unique_device_localdate_id_count": 1}, "type": "Feature"}], "type": "FeatureCollection"});
+            geo_json_3bd3a0835f1e766a2baf28ee1ff96dc3_add({"features": [{"geometry": {"coordinates": [[[-121.47192, 37.48178], [-121.55666, 37.54273], [-121.55706, 37.81575], [-121.5341, 37.84946], [-121.57943, 37.86016], [-121.55641, 37.92364], [-121.57991, 38.00778], [-121.55753, 38.01662], [-121.58439, 38.03603], [-121.56404, 38.10142], [-121.58436, 38.1183], [-121.47572, 38.25809], [-121.34437, 38.22821], [-121.02708, 38.30025], [-120.92645, 38.07742], [-120.9206, 37.73833], [-120.99343, 37.76094], [-121.17845, 37.70553], [-121.47192, 37.48178]]], "type": "Polygon"}, "id": "0", "properties": {"NAMELSAD": "San Joaquin County", "origin_county_geoid": "06077", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.59856, 36.99863], [-120.59057, 36.95264], [-120.656, 36.9528], [-120.91873, 36.74038], [-121.14152, 36.83666], [-121.1843, 36.90897], [-121.23433, 36.92615], [-121.21173, 36.95738], [-121.24657, 36.98523], [-121.24865, 37.03368], [-121.2082, 37.06129], [-121.24548, 37.08915], [-121.2268, 37.13477], [-120.96381, 37.34614], [-120.98981, 37.39587], [-120.38767, 37.63336], [-120.17849, 37.26242], [-120.05205, 37.18311], [-120.28987, 37.15261], [-120.47669, 37.09639], [-120.59856, 36.99863]]], "type": "Polygon"}, "id": "1", "properties": {"NAMELSAD": "Merced County", "origin_county_geoid": "06047", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.59984, 38.77488], [-121.63113, 38.67901], [-121.50627, 38.58631], [-121.55904, 38.49959], [-121.50414, 38.46656], [-121.5326, 38.43146], [-121.521, 38.36122], [-121.59327, 38.31309], [-121.6937, 38.31373], [-121.71203, 38.53796], [-121.94107, 38.53326], [-122.01338, 38.48872], [-122.10413, 38.51336], [-122.28692, 38.83917], [-122.37155, 38.84465], [-122.42195, 38.90356], [-122.40403, 38.92529], [-121.83549, 38.92448], [-121.79151, 38.9054], [-121.80237, 38.86458], [-121.72957, 38.85843], [-121.72267, 38.80272], [-121.69067, 38.79563], [-121.67383, 38.74314], [-121.59984, 38.77488]]], "type": "Polygon"}, "id": "2", "properties": {"NAMELSAD": "Yolo County", "origin_county_geoid": "06113", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.61228, 37.81522], [-122.72431, 37.84768], [-122.90228, 37.97739], [-122.95322, 37.94109], [-123.06797, 37.95867], [-123.08513, 38.00843], [-123.01482, 38.14913], [-123.13452, 38.29626], [-122.90811, 38.32075], [-122.7399, 38.20702], [-122.57059, 38.18712], [-122.5019, 38.11242], [-122.34745, 38.07326], [-122.44158, 37.97392], [-122.41867, 37.85251], [-122.61228, 37.81522]]], "type": "Polygon"}, "id": "3", "properties": {"NAMELSAD": "Marin County", "origin_county_geoid": "06041", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.14364, 39.06729], [-120.00246, 39.06749], [-120.00101, 38.99957], [-119.88764, 38.9183], [-119.87729, 38.87019], [-119.94793, 38.78164], [-120.11201, 38.70502], [-120.14008, 38.63837], [-120.2143, 38.62908], [-120.30172, 38.54911], [-120.60616, 38.50235], [-120.81355, 38.56219], [-121.02738, 38.50825], [-121.11905, 38.71786], [-121.13316, 38.70537], [-121.14159, 38.71194], [-121.04096, 38.91505], [-120.93857, 38.93556], [-120.93727, 38.96368], [-120.85986, 38.95165], [-120.81278, 38.9999], [-120.7464, 39.01035], [-120.56426, 38.91364], [-120.49273, 38.94335], [-120.43524, 39.0284], [-120.18443, 39.03101], [-120.14364, 39.06729]]], "type": "Polygon"}, "id": "4", "properties": {"NAMELSAD": "El Dorado County", "origin_county_geoid": "06017", "unique_device_localdate_id_count": 17}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.00246, 39.06749], [-120.14364, 39.06729], [-120.24041, 39.02367], [-120.43524, 39.0284], [-120.49273, 38.94335], [-120.56426, 38.91364], [-120.68565, 38.98965], [-120.80939, 39.00083], [-120.85986, 38.95165], [-120.93621, 38.96393], [-120.93857, 38.93556], [-121.04041, 38.91565], [-121.13451, 38.71203], [-121.4844, 38.7346], [-121.46936, 38.92599], [-121.4144, 38.92621], [-121.41479, 38.99842], [-121.30704, 39.0529], [-121.22099, 39.01178], [-121.13798, 39.03791], [-121.04161, 39.01379], [-120.98915, 39.11153], [-120.69154, 39.3041], [-120.00632, 39.3165], [-120.00246, 39.06749]]], "type": "Polygon"}, "id": "5", "properties": {"NAMELSAD": "Placer County", "origin_county_geoid": "06061", "unique_device_localdate_id_count": 17}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-118.14781, 33.69408], [-118.31914, 33.65955], [-118.46696, 33.72552], [-118.48448, 33.80315], [-118.44725, 33.84876], [-118.55736, 33.98767], [-118.80983, 33.94691], [-118.95172, 33.99286], [-118.94097, 34.07483], [-118.78889, 34.16821], [-118.66815, 34.16819], [-118.66771, 34.24034], [-118.63249, 34.24039], [-118.89463, 34.81797], [-117.66746, 34.82253], [-117.64637, 34.28917], [-117.73013, 34.02137], [-117.78503, 34.00485], [-117.78307, 33.94626], [-117.9765, 33.94605], [-117.97659, 33.90281], [-118.02878, 33.87332], [-118.14781, 33.69408]]], [[[-118.62592, 33.52898], [-118.52938, 33.53118], [-118.35939, 33.46492], [-118.25771, 33.36413], [-118.24908, 33.28414], [-118.32799, 33.24808], [-118.48669, 33.2769], [-118.6682, 33.48594], [-118.62592, 33.52898]]], [[[-118.63264, 33.08454], [-118.5421, 33.07379], [-118.29725, 32.84509], [-118.29584, 32.79826], [-118.40832, 32.75191], [-118.46471, 32.76018], [-118.55319, 32.8288], [-118.6782, 33.03973], [-118.63264, 33.08454]]]], "type": "MultiPolygon"}, "id": "6", "properties": {"NAMELSAD": "Los Angeles County", "origin_county_geoid": "06037", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.50639, 38.22459], [-121.58407, 38.12023], [-121.56718, 38.09732], [-121.67306, 38.09352], [-121.69976, 38.04522], [-121.77748, 38.01892], [-121.86246, 38.06603], [-121.71089, 38.08649], [-121.68559, 38.15971], [-121.6121, 38.20007], [-121.58478, 38.33082], [-121.521, 38.36122], [-121.5326, 38.43146], [-121.50414, 38.46656], [-121.55904, 38.49959], [-121.52413, 38.5205], [-121.5074, 38.592], [-121.63019, 38.67744], [-121.60289, 38.73584], [-121.11905, 38.71786], [-121.02742, 38.50814], [-121.02708, 38.30025], [-121.34437, 38.22821], [-121.43991, 38.25553], [-121.50639, 38.22459]]], "type": "Polygon"}, "id": "7", "properties": {"NAMELSAD": "Sacramento County", "origin_county_geoid": "06067", "unique_device_localdate_id_count": 25}, "type": "Feature"}, {"geometry": {"coordinates": [[[-119.6585, 39.33154], [-119.7153, 39.24428], [-119.88079, 39.16551], [-120.0043, 39.1656], [-119.99923, 41.99494], [-119.32418, 41.99392], [-119.30417, 41.30768], [-119.30571, 41.23454], [-119.33107, 41.23512], [-119.30918, 40.87761], [-119.3393, 39.99861], [-119.22509, 39.99937], [-119.17064, 39.68045], [-119.3706, 39.58688], [-119.54732, 39.56208], [-119.62325, 39.51104], [-119.69564, 39.52002], [-119.69609, 39.44746], [-119.65507, 39.44748], [-119.68534, 39.37669], [-119.6585, 39.33154]]], "type": "Polygon"}, "id": "8", "properties": {"NAMELSAD": "Washoe County", "origin_county_geoid": "32031", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.60807, 38.398], [-120.42321, 38.47332], [-120.07248, 38.50987], [-120.07257, 38.44708], [-120.01995, 38.43352], [-120.17647, 38.37378], [-120.46375, 38.01039], [-120.53481, 37.99117], [-120.51344, 37.95644], [-120.54235, 37.92045], [-120.65327, 37.83186], [-120.93885, 38.08832], [-120.9955, 38.2254], [-120.8933, 38.22139], [-120.80774, 38.28872], [-120.63179, 38.34603], [-120.60807, 38.398]]], "type": "Polygon"}, "id": "9", "properties": {"NAMELSAD": "Calaveras County", "origin_county_geoid": "06009", "unique_device_localdate_id_count": 1}, "type": "Feature"}], "type": "FeatureCollection"});
 
         
     
-    geo_json_fe7063d2aa6a564dc36d71418cc26689.bindTooltip(
+    geo_json_3bd3a0835f1e766a2baf28ee1ff96dc3.bindTooltip(
     function(layer){
     let div = L.DomUtil.create('div');
     
@@ -539,19 +543,19 @@
 });
                      
     
-            geo_json_fe7063d2aa6a564dc36d71418cc26689.addTo(feature_group_bd8c4730d2dbe8f40b95c41769448e49);
+            geo_json_3bd3a0835f1e766a2baf28ee1ff96dc3.addTo(feature_group_85ca0432f29938b53c8879f354f58ebd);
         
     
-            feature_group_bd8c4730d2dbe8f40b95c41769448e49.addTo(map_0ef14150f34e40fd9548de4324c3ae54);
+            feature_group_85ca0432f29938b53c8879f354f58ebd.addTo(map_61de552ac1ae776aa33f72f0d1c3a5b8);
         
     
-            var feature_group_ff9e31c6bda81d2423b411e4066c0743 = L.featureGroup(
+            var feature_group_69983c237726101be58be2a47f2d165a = L.featureGroup(
                 {
 }
             );
         
     
-        function geo_json_2d3d4dd118af760d664c8cd9fb3dfb4e_styler(feature) {
+        function geo_json_597f14f5497656b36fc12d0ddd27733b_styler(feature) {
             switch(feature.id) {
                 case "0": 
                     return {"color": "#4a5568", "fillColor": "#006837", "fillOpacity": 0.88, "opacity": 0.1, "weight": 0.35};
@@ -561,46 +565,46 @@
                     return {"color": "#4a5568", "fillColor": "#97d384", "fillOpacity": 0.88, "opacity": 0.1, "weight": 0.35};
             }
         }
-        function geo_json_2d3d4dd118af760d664c8cd9fb3dfb4e_highlighter(feature) {
+        function geo_json_597f14f5497656b36fc12d0ddd27733b_highlighter(feature) {
             switch(feature.id) {
                 default:
                     return {"color": "#1a202c", "fillOpacity": 0.92, "opacity": 0.35, "weight": 1.2};
             }
         }
 
-        function geo_json_2d3d4dd118af760d664c8cd9fb3dfb4e_onEachFeature(feature, layer) {
+        function geo_json_597f14f5497656b36fc12d0ddd27733b_onEachFeature(feature, layer) {
 
             layer.on({
                 mouseout: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                            geo_json_2d3d4dd118af760d664c8cd9fb3dfb4e.resetStyle(e.target);
+                            geo_json_597f14f5497656b36fc12d0ddd27733b.resetStyle(e.target);
                     }
                 },
                 mouseover: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                        const highlightStyle = geo_json_2d3d4dd118af760d664c8cd9fb3dfb4e_highlighter(e.target.feature)
+                        const highlightStyle = geo_json_597f14f5497656b36fc12d0ddd27733b_highlighter(e.target.feature)
                         e.target.setStyle(highlightStyle);
                     }
                 },
             });
         };
-        var geo_json_2d3d4dd118af760d664c8cd9fb3dfb4e = L.geoJson(null, {
-                onEachFeature: geo_json_2d3d4dd118af760d664c8cd9fb3dfb4e_onEachFeature,
+        var geo_json_597f14f5497656b36fc12d0ddd27733b = L.geoJson(null, {
+                onEachFeature: geo_json_597f14f5497656b36fc12d0ddd27733b_onEachFeature,
             
-                style: geo_json_2d3d4dd118af760d664c8cd9fb3dfb4e_styler,
+                style: geo_json_597f14f5497656b36fc12d0ddd27733b_styler,
             ...{
 }
         });
 
-        function geo_json_2d3d4dd118af760d664c8cd9fb3dfb4e_add (data) {
-            geo_json_2d3d4dd118af760d664c8cd9fb3dfb4e
+        function geo_json_597f14f5497656b36fc12d0ddd27733b_add (data) {
+            geo_json_597f14f5497656b36fc12d0ddd27733b
                 .addData(data);
         }
-            geo_json_2d3d4dd118af760d664c8cd9fb3dfb4e_add({"features": [{"geometry": {"coordinates": [[[-120.14364, 39.06729], [-120.00246, 39.06749], [-120.00101, 38.99957], [-119.88764, 38.9183], [-119.87729, 38.87019], [-119.94793, 38.78164], [-120.11201, 38.70502], [-120.14008, 38.63837], [-120.2143, 38.62908], [-120.30172, 38.54911], [-120.60616, 38.50235], [-120.81355, 38.56219], [-121.02738, 38.50825], [-121.11905, 38.71786], [-121.13316, 38.70537], [-121.14159, 38.71194], [-121.04096, 38.91505], [-120.93857, 38.93556], [-120.93727, 38.96368], [-120.85986, 38.95165], [-120.81278, 38.9999], [-120.7464, 39.01035], [-120.56426, 38.91364], [-120.49273, 38.94335], [-120.43524, 39.0284], [-120.18443, 39.03101], [-120.14364, 39.06729]]], "type": "Polygon"}, "id": "0", "properties": {"NAMELSAD": "El Dorado County", "origin_county_geoid": "06017", "unique_device_localdate_id_count": 6}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.00246, 39.06749], [-120.14364, 39.06729], [-120.24041, 39.02367], [-120.43524, 39.0284], [-120.49273, 38.94335], [-120.56426, 38.91364], [-120.68565, 38.98965], [-120.80939, 39.00083], [-120.85986, 38.95165], [-120.93621, 38.96393], [-120.93857, 38.93556], [-121.04041, 38.91565], [-121.13451, 38.71203], [-121.4844, 38.7346], [-121.46936, 38.92599], [-121.4144, 38.92621], [-121.41479, 38.99842], [-121.30704, 39.0529], [-121.22099, 39.01178], [-121.13798, 39.03791], [-121.04161, 39.01379], [-120.98915, 39.11153], [-120.69154, 39.3041], [-120.00632, 39.3165], [-120.00246, 39.06749]]], "type": "Polygon"}, "id": "1", "properties": {"NAMELSAD": "Placer County", "origin_county_geoid": "06061", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.50639, 38.22459], [-121.58407, 38.12023], [-121.56718, 38.09732], [-121.67306, 38.09352], [-121.69976, 38.04522], [-121.77748, 38.01892], [-121.86246, 38.06603], [-121.71089, 38.08649], [-121.68559, 38.15971], [-121.6121, 38.20007], [-121.58478, 38.33082], [-121.521, 38.36122], [-121.5326, 38.43146], [-121.50414, 38.46656], [-121.55904, 38.49959], [-121.52413, 38.5205], [-121.5074, 38.592], [-121.63019, 38.67744], [-121.60289, 38.73584], [-121.11905, 38.71786], [-121.02742, 38.50814], [-121.02708, 38.30025], [-121.34437, 38.22821], [-121.43991, 38.25553], [-121.50639, 38.22459]]], "type": "Polygon"}, "id": "2", "properties": {"NAMELSAD": "Sacramento County", "origin_county_geoid": "06067", "unique_device_localdate_id_count": 3}, "type": "Feature"}], "type": "FeatureCollection"});
+            geo_json_597f14f5497656b36fc12d0ddd27733b_add({"features": [{"geometry": {"coordinates": [[[-120.14364, 39.06729], [-120.00246, 39.06749], [-120.00101, 38.99957], [-119.88764, 38.9183], [-119.87729, 38.87019], [-119.94793, 38.78164], [-120.11201, 38.70502], [-120.14008, 38.63837], [-120.2143, 38.62908], [-120.30172, 38.54911], [-120.60616, 38.50235], [-120.81355, 38.56219], [-121.02738, 38.50825], [-121.11905, 38.71786], [-121.13316, 38.70537], [-121.14159, 38.71194], [-121.04096, 38.91505], [-120.93857, 38.93556], [-120.93727, 38.96368], [-120.85986, 38.95165], [-120.81278, 38.9999], [-120.7464, 39.01035], [-120.56426, 38.91364], [-120.49273, 38.94335], [-120.43524, 39.0284], [-120.18443, 39.03101], [-120.14364, 39.06729]]], "type": "Polygon"}, "id": "0", "properties": {"NAMELSAD": "El Dorado County", "origin_county_geoid": "06017", "unique_device_localdate_id_count": 6}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.00246, 39.06749], [-120.14364, 39.06729], [-120.24041, 39.02367], [-120.43524, 39.0284], [-120.49273, 38.94335], [-120.56426, 38.91364], [-120.68565, 38.98965], [-120.80939, 39.00083], [-120.85986, 38.95165], [-120.93621, 38.96393], [-120.93857, 38.93556], [-121.04041, 38.91565], [-121.13451, 38.71203], [-121.4844, 38.7346], [-121.46936, 38.92599], [-121.4144, 38.92621], [-121.41479, 38.99842], [-121.30704, 39.0529], [-121.22099, 39.01178], [-121.13798, 39.03791], [-121.04161, 39.01379], [-120.98915, 39.11153], [-120.69154, 39.3041], [-120.00632, 39.3165], [-120.00246, 39.06749]]], "type": "Polygon"}, "id": "1", "properties": {"NAMELSAD": "Placer County", "origin_county_geoid": "06061", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.50639, 38.22459], [-121.58407, 38.12023], [-121.56718, 38.09732], [-121.67306, 38.09352], [-121.69976, 38.04522], [-121.77748, 38.01892], [-121.86246, 38.06603], [-121.71089, 38.08649], [-121.68559, 38.15971], [-121.6121, 38.20007], [-121.58478, 38.33082], [-121.521, 38.36122], [-121.5326, 38.43146], [-121.50414, 38.46656], [-121.55904, 38.49959], [-121.52413, 38.5205], [-121.5074, 38.592], [-121.63019, 38.67744], [-121.60289, 38.73584], [-121.11905, 38.71786], [-121.02742, 38.50814], [-121.02708, 38.30025], [-121.34437, 38.22821], [-121.43991, 38.25553], [-121.50639, 38.22459]]], "type": "Polygon"}, "id": "2", "properties": {"NAMELSAD": "Sacramento County", "origin_county_geoid": "06067", "unique_device_localdate_id_count": 3}, "type": "Feature"}], "type": "FeatureCollection"});
 
         
     
-    geo_json_2d3d4dd118af760d664c8cd9fb3dfb4e.bindTooltip(
+    geo_json_597f14f5497656b36fc12d0ddd27733b.bindTooltip(
     function(layer){
     let div = L.DomUtil.create('div');
     
@@ -635,16 +639,19 @@
 });
                      
     
-            geo_json_2d3d4dd118af760d664c8cd9fb3dfb4e.addTo(feature_group_ff9e31c6bda81d2423b411e4066c0743);
+            geo_json_597f14f5497656b36fc12d0ddd27733b.addTo(feature_group_69983c237726101be58be2a47f2d165a);
         
     
-            var feature_group_27b819afe01e9f6717f925919356707a = L.featureGroup(
+            feature_group_69983c237726101be58be2a47f2d165a.addTo(map_61de552ac1ae776aa33f72f0d1c3a5b8);
+        
+    
+            var feature_group_b8bc2b863ef237c1a05ca41c579e7c9c = L.featureGroup(
                 {
 }
             );
         
     
-        function geo_json_40b65cb3c95f5257d7eda223057a4040_styler(feature) {
+        function geo_json_1e3e4c8494092e00bd6f6ac28b187dd6_styler(feature) {
             switch(feature.id) {
                 case "0": 
                     return {"color": "#4a5568", "fillColor": "#7f0000", "fillOpacity": 0.88, "opacity": 0.1, "weight": 0.35};
@@ -656,46 +663,46 @@
                     return {"color": "#4a5568", "fillColor": "#eb6f4e", "fillOpacity": 0.88, "opacity": 0.1, "weight": 0.35};
             }
         }
-        function geo_json_40b65cb3c95f5257d7eda223057a4040_highlighter(feature) {
+        function geo_json_1e3e4c8494092e00bd6f6ac28b187dd6_highlighter(feature) {
             switch(feature.id) {
                 default:
                     return {"color": "#1a202c", "fillOpacity": 0.92, "opacity": 0.35, "weight": 1.2};
             }
         }
 
-        function geo_json_40b65cb3c95f5257d7eda223057a4040_onEachFeature(feature, layer) {
+        function geo_json_1e3e4c8494092e00bd6f6ac28b187dd6_onEachFeature(feature, layer) {
 
             layer.on({
                 mouseout: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                            geo_json_40b65cb3c95f5257d7eda223057a4040.resetStyle(e.target);
+                            geo_json_1e3e4c8494092e00bd6f6ac28b187dd6.resetStyle(e.target);
                     }
                 },
                 mouseover: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                        const highlightStyle = geo_json_40b65cb3c95f5257d7eda223057a4040_highlighter(e.target.feature)
+                        const highlightStyle = geo_json_1e3e4c8494092e00bd6f6ac28b187dd6_highlighter(e.target.feature)
                         e.target.setStyle(highlightStyle);
                     }
                 },
             });
         };
-        var geo_json_40b65cb3c95f5257d7eda223057a4040 = L.geoJson(null, {
-                onEachFeature: geo_json_40b65cb3c95f5257d7eda223057a4040_onEachFeature,
+        var geo_json_1e3e4c8494092e00bd6f6ac28b187dd6 = L.geoJson(null, {
+                onEachFeature: geo_json_1e3e4c8494092e00bd6f6ac28b187dd6_onEachFeature,
             
-                style: geo_json_40b65cb3c95f5257d7eda223057a4040_styler,
+                style: geo_json_1e3e4c8494092e00bd6f6ac28b187dd6_styler,
             ...{
 }
         });
 
-        function geo_json_40b65cb3c95f5257d7eda223057a4040_add (data) {
-            geo_json_40b65cb3c95f5257d7eda223057a4040
+        function geo_json_1e3e4c8494092e00bd6f6ac28b187dd6_add (data) {
+            geo_json_1e3e4c8494092e00bd6f6ac28b187dd6
                 .addData(data);
         }
-            geo_json_40b65cb3c95f5257d7eda223057a4040_add({"features": [{"geometry": {"coordinates": [[[-120.59856, 36.99863], [-120.59057, 36.95264], [-120.656, 36.9528], [-120.91873, 36.74038], [-121.14152, 36.83666], [-121.1843, 36.90897], [-121.23433, 36.92615], [-121.21173, 36.95738], [-121.24657, 36.98523], [-121.24865, 37.03368], [-121.2082, 37.06129], [-121.24548, 37.08915], [-121.2268, 37.13477], [-120.96381, 37.34614], [-120.98981, 37.39587], [-120.38767, 37.63336], [-120.17849, 37.26242], [-120.05205, 37.18311], [-120.28987, 37.15261], [-120.47669, 37.09639], [-120.59856, 36.99863]]], "type": "Polygon"}, "id": "0", "properties": {"NAMELSAD": "Merced County", "origin_county_geoid": "06047", "unique_device_localdate_id_count": 4}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.00166, 48.29601], [-120.90743, 48.16318], [-120.95557, 48.15198], [-120.9471, 48.11333], [-121.01594, 48.0748], [-121.15336, 48.04053], [-121.11772, 47.9988], [-121.18062, 47.89798], [-121.15351, 47.84531], [-121.07052, 47.82801], [-121.11918, 47.77993], [-122.43809, 47.77781], [-122.32846, 47.96376], [-122.34638, 48.07258], [-122.41673, 48.16408], [-122.39311, 48.23794], [-122.4586, 48.2977], [-121.00166, 48.29601]]], "type": "Polygon"}, "id": "1", "properties": {"NAMELSAD": "Snohomish County", "origin_county_geoid": "53061", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.59984, 38.77488], [-121.63113, 38.67901], [-121.50627, 38.58631], [-121.55904, 38.49959], [-121.50414, 38.46656], [-121.5326, 38.43146], [-121.521, 38.36122], [-121.59327, 38.31309], [-121.6937, 38.31373], [-121.71203, 38.53796], [-121.94107, 38.53326], [-122.01338, 38.48872], [-122.10413, 38.51336], [-122.28692, 38.83917], [-122.37155, 38.84465], [-122.42195, 38.90356], [-122.40403, 38.92529], [-121.83549, 38.92448], [-121.79151, 38.9054], [-121.80237, 38.86458], [-121.72957, 38.85843], [-121.72267, 38.80272], [-121.69067, 38.79563], [-121.67383, 38.74314], [-121.59984, 38.77488]]], "type": "Polygon"}, "id": "2", "properties": {"NAMELSAD": "Yolo County", "origin_county_geoid": "06113", "unique_device_localdate_id_count": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.14364, 39.06729], [-120.00246, 39.06749], [-120.00101, 38.99957], [-119.88764, 38.9183], [-119.87729, 38.87019], [-119.94793, 38.78164], [-120.11201, 38.70502], [-120.14008, 38.63837], [-120.2143, 38.62908], [-120.30172, 38.54911], [-120.60616, 38.50235], [-120.81355, 38.56219], [-121.02738, 38.50825], [-121.11905, 38.71786], [-121.13316, 38.70537], [-121.14159, 38.71194], [-121.04096, 38.91505], [-120.93857, 38.93556], [-120.93727, 38.96368], [-120.85986, 38.95165], [-120.81278, 38.9999], [-120.7464, 39.01035], [-120.56426, 38.91364], [-120.49273, 38.94335], [-120.43524, 39.0284], [-120.18443, 39.03101], [-120.14364, 39.06729]]], "type": "Polygon"}, "id": "3", "properties": {"NAMELSAD": "El Dorado County", "origin_county_geoid": "06017", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.00246, 39.06749], [-120.14364, 39.06729], [-120.24041, 39.02367], [-120.43524, 39.0284], [-120.49273, 38.94335], [-120.56426, 38.91364], [-120.68565, 38.98965], [-120.80939, 39.00083], [-120.85986, 38.95165], [-120.93621, 38.96393], [-120.93857, 38.93556], [-121.04041, 38.91565], [-121.13451, 38.71203], [-121.4844, 38.7346], [-121.46936, 38.92599], [-121.4144, 38.92621], [-121.41479, 38.99842], [-121.30704, 39.0529], [-121.22099, 39.01178], [-121.13798, 39.03791], [-121.04161, 39.01379], [-120.98915, 39.11153], [-120.69154, 39.3041], [-120.00632, 39.3165], [-120.00246, 39.06749]]], "type": "Polygon"}, "id": "4", "properties": {"NAMELSAD": "Placer County", "origin_county_geoid": "06061", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-118.14781, 33.69408], [-118.31914, 33.65955], [-118.46696, 33.72552], [-118.48448, 33.80315], [-118.44725, 33.84876], [-118.55736, 33.98767], [-118.80983, 33.94691], [-118.95172, 33.99286], [-118.94097, 34.07483], [-118.78889, 34.16821], [-118.66815, 34.16819], [-118.66771, 34.24034], [-118.63249, 34.24039], [-118.89463, 34.81797], [-117.66746, 34.82253], [-117.64637, 34.28917], [-117.73013, 34.02137], [-117.78503, 34.00485], [-117.78307, 33.94626], [-117.9765, 33.94605], [-117.97659, 33.90281], [-118.02878, 33.87332], [-118.14781, 33.69408]]], [[[-118.62592, 33.52898], [-118.52938, 33.53118], [-118.35939, 33.46492], [-118.25771, 33.36413], [-118.24908, 33.28414], [-118.32799, 33.24808], [-118.48669, 33.2769], [-118.6682, 33.48594], [-118.62592, 33.52898]]], [[[-118.63264, 33.08454], [-118.5421, 33.07379], [-118.29725, 32.84509], [-118.29584, 32.79826], [-118.40832, 32.75191], [-118.46471, 32.76018], [-118.55319, 32.8288], [-118.6782, 33.03973], [-118.63264, 33.08454]]]], "type": "MultiPolygon"}, "id": "5", "properties": {"NAMELSAD": "Los Angeles County", "origin_county_geoid": "06037", "unique_device_localdate_id_count": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[-111.98196, 40.41417], [-112.03576, 40.46421], [-112.11199, 40.43892], [-112.16586, 40.46245], [-112.19916, 40.69911], [-112.26022, 40.76909], [-112.00657, 40.92185], [-111.95867, 40.92182], [-111.94629, 40.82179], [-111.66993, 40.85359], [-111.59367, 40.70207], [-111.60453, 40.66657], [-111.55319, 40.60964], [-111.67569, 40.53287], [-111.98196, 40.41417]]], "type": "Polygon"}, "id": "6", "properties": {"NAMELSAD": "Salt Lake County", "origin_county_geoid": "49035", "unique_device_localdate_id_count": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.50639, 38.22459], [-121.58407, 38.12023], [-121.56718, 38.09732], [-121.67306, 38.09352], [-121.69976, 38.04522], [-121.77748, 38.01892], [-121.86246, 38.06603], [-121.71089, 38.08649], [-121.68559, 38.15971], [-121.6121, 38.20007], [-121.58478, 38.33082], [-121.521, 38.36122], [-121.5326, 38.43146], [-121.50414, 38.46656], [-121.55904, 38.49959], [-121.52413, 38.5205], [-121.5074, 38.592], [-121.63019, 38.67744], [-121.60289, 38.73584], [-121.11905, 38.71786], [-121.02742, 38.50814], [-121.02708, 38.30025], [-121.34437, 38.22821], [-121.43991, 38.25553], [-121.50639, 38.22459]]], "type": "Polygon"}, "id": "7", "properties": {"NAMELSAD": "Sacramento County", "origin_county_geoid": "06067", "unique_device_localdate_id_count": 1}, "type": "Feature"}], "type": "FeatureCollection"});
+            geo_json_1e3e4c8494092e00bd6f6ac28b187dd6_add({"features": [{"geometry": {"coordinates": [[[-120.59856, 36.99863], [-120.59057, 36.95264], [-120.656, 36.9528], [-120.91873, 36.74038], [-121.14152, 36.83666], [-121.1843, 36.90897], [-121.23433, 36.92615], [-121.21173, 36.95738], [-121.24657, 36.98523], [-121.24865, 37.03368], [-121.2082, 37.06129], [-121.24548, 37.08915], [-121.2268, 37.13477], [-120.96381, 37.34614], [-120.98981, 37.39587], [-120.38767, 37.63336], [-120.17849, 37.26242], [-120.05205, 37.18311], [-120.28987, 37.15261], [-120.47669, 37.09639], [-120.59856, 36.99863]]], "type": "Polygon"}, "id": "0", "properties": {"NAMELSAD": "Merced County", "origin_county_geoid": "06047", "unique_device_localdate_id_count": 4}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.00166, 48.29601], [-120.90743, 48.16318], [-120.95557, 48.15198], [-120.9471, 48.11333], [-121.01594, 48.0748], [-121.15336, 48.04053], [-121.11772, 47.9988], [-121.18062, 47.89798], [-121.15351, 47.84531], [-121.07052, 47.82801], [-121.11918, 47.77993], [-122.43809, 47.77781], [-122.32846, 47.96376], [-122.34638, 48.07258], [-122.41673, 48.16408], [-122.39311, 48.23794], [-122.4586, 48.2977], [-121.00166, 48.29601]]], "type": "Polygon"}, "id": "1", "properties": {"NAMELSAD": "Snohomish County", "origin_county_geoid": "53061", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.59984, 38.77488], [-121.63113, 38.67901], [-121.50627, 38.58631], [-121.55904, 38.49959], [-121.50414, 38.46656], [-121.5326, 38.43146], [-121.521, 38.36122], [-121.59327, 38.31309], [-121.6937, 38.31373], [-121.71203, 38.53796], [-121.94107, 38.53326], [-122.01338, 38.48872], [-122.10413, 38.51336], [-122.28692, 38.83917], [-122.37155, 38.84465], [-122.42195, 38.90356], [-122.40403, 38.92529], [-121.83549, 38.92448], [-121.79151, 38.9054], [-121.80237, 38.86458], [-121.72957, 38.85843], [-121.72267, 38.80272], [-121.69067, 38.79563], [-121.67383, 38.74314], [-121.59984, 38.77488]]], "type": "Polygon"}, "id": "2", "properties": {"NAMELSAD": "Yolo County", "origin_county_geoid": "06113", "unique_device_localdate_id_count": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.14364, 39.06729], [-120.00246, 39.06749], [-120.00101, 38.99957], [-119.88764, 38.9183], [-119.87729, 38.87019], [-119.94793, 38.78164], [-120.11201, 38.70502], [-120.14008, 38.63837], [-120.2143, 38.62908], [-120.30172, 38.54911], [-120.60616, 38.50235], [-120.81355, 38.56219], [-121.02738, 38.50825], [-121.11905, 38.71786], [-121.13316, 38.70537], [-121.14159, 38.71194], [-121.04096, 38.91505], [-120.93857, 38.93556], [-120.93727, 38.96368], [-120.85986, 38.95165], [-120.81278, 38.9999], [-120.7464, 39.01035], [-120.56426, 38.91364], [-120.49273, 38.94335], [-120.43524, 39.0284], [-120.18443, 39.03101], [-120.14364, 39.06729]]], "type": "Polygon"}, "id": "3", "properties": {"NAMELSAD": "El Dorado County", "origin_county_geoid": "06017", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.00246, 39.06749], [-120.14364, 39.06729], [-120.24041, 39.02367], [-120.43524, 39.0284], [-120.49273, 38.94335], [-120.56426, 38.91364], [-120.68565, 38.98965], [-120.80939, 39.00083], [-120.85986, 38.95165], [-120.93621, 38.96393], [-120.93857, 38.93556], [-121.04041, 38.91565], [-121.13451, 38.71203], [-121.4844, 38.7346], [-121.46936, 38.92599], [-121.4144, 38.92621], [-121.41479, 38.99842], [-121.30704, 39.0529], [-121.22099, 39.01178], [-121.13798, 39.03791], [-121.04161, 39.01379], [-120.98915, 39.11153], [-120.69154, 39.3041], [-120.00632, 39.3165], [-120.00246, 39.06749]]], "type": "Polygon"}, "id": "4", "properties": {"NAMELSAD": "Placer County", "origin_county_geoid": "06061", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-118.14781, 33.69408], [-118.31914, 33.65955], [-118.46696, 33.72552], [-118.48448, 33.80315], [-118.44725, 33.84876], [-118.55736, 33.98767], [-118.80983, 33.94691], [-118.95172, 33.99286], [-118.94097, 34.07483], [-118.78889, 34.16821], [-118.66815, 34.16819], [-118.66771, 34.24034], [-118.63249, 34.24039], [-118.89463, 34.81797], [-117.66746, 34.82253], [-117.64637, 34.28917], [-117.73013, 34.02137], [-117.78503, 34.00485], [-117.78307, 33.94626], [-117.9765, 33.94605], [-117.97659, 33.90281], [-118.02878, 33.87332], [-118.14781, 33.69408]]], [[[-118.62592, 33.52898], [-118.52938, 33.53118], [-118.35939, 33.46492], [-118.25771, 33.36413], [-118.24908, 33.28414], [-118.32799, 33.24808], [-118.48669, 33.2769], [-118.6682, 33.48594], [-118.62592, 33.52898]]], [[[-118.63264, 33.08454], [-118.5421, 33.07379], [-118.29725, 32.84509], [-118.29584, 32.79826], [-118.40832, 32.75191], [-118.46471, 32.76018], [-118.55319, 32.8288], [-118.6782, 33.03973], [-118.63264, 33.08454]]]], "type": "MultiPolygon"}, "id": "5", "properties": {"NAMELSAD": "Los Angeles County", "origin_county_geoid": "06037", "unique_device_localdate_id_count": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[-111.98196, 40.41417], [-112.03576, 40.46421], [-112.11199, 40.43892], [-112.16586, 40.46245], [-112.19916, 40.69911], [-112.26022, 40.76909], [-112.00657, 40.92185], [-111.95867, 40.92182], [-111.94629, 40.82179], [-111.66993, 40.85359], [-111.59367, 40.70207], [-111.60453, 40.66657], [-111.55319, 40.60964], [-111.67569, 40.53287], [-111.98196, 40.41417]]], "type": "Polygon"}, "id": "6", "properties": {"NAMELSAD": "Salt Lake County", "origin_county_geoid": "49035", "unique_device_localdate_id_count": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.50639, 38.22459], [-121.58407, 38.12023], [-121.56718, 38.09732], [-121.67306, 38.09352], [-121.69976, 38.04522], [-121.77748, 38.01892], [-121.86246, 38.06603], [-121.71089, 38.08649], [-121.68559, 38.15971], [-121.6121, 38.20007], [-121.58478, 38.33082], [-121.521, 38.36122], [-121.5326, 38.43146], [-121.50414, 38.46656], [-121.55904, 38.49959], [-121.52413, 38.5205], [-121.5074, 38.592], [-121.63019, 38.67744], [-121.60289, 38.73584], [-121.11905, 38.71786], [-121.02742, 38.50814], [-121.02708, 38.30025], [-121.34437, 38.22821], [-121.43991, 38.25553], [-121.50639, 38.22459]]], "type": "Polygon"}, "id": "7", "properties": {"NAMELSAD": "Sacramento County", "origin_county_geoid": "06067", "unique_device_localdate_id_count": 1}, "type": "Feature"}], "type": "FeatureCollection"});
 
         
     
-    geo_json_40b65cb3c95f5257d7eda223057a4040.bindTooltip(
+    geo_json_1e3e4c8494092e00bd6f6ac28b187dd6.bindTooltip(
     function(layer){
     let div = L.DomUtil.create('div');
     
@@ -730,16 +737,19 @@
 });
                      
     
-            geo_json_40b65cb3c95f5257d7eda223057a4040.addTo(feature_group_27b819afe01e9f6717f925919356707a);
+            geo_json_1e3e4c8494092e00bd6f6ac28b187dd6.addTo(feature_group_b8bc2b863ef237c1a05ca41c579e7c9c);
         
     
-            var feature_group_3dfbf386828b1cefd9e474ca47a1c007 = L.featureGroup(
+            feature_group_b8bc2b863ef237c1a05ca41c579e7c9c.addTo(map_61de552ac1ae776aa33f72f0d1c3a5b8);
+        
+    
+            var feature_group_cc8e5ce858deb8e723f6f38724ce4ea6 = L.featureGroup(
                 {
 }
             );
         
     
-        function geo_json_d4806e0f7db11ba430cb0caf4a1e47d1_styler(feature) {
+        function geo_json_f1b12e89456459e7a72698dcfbc8ebf9_styler(feature) {
             switch(feature.id) {
                 case "0": case "1": case "3": case "4": 
                     return {"color": "#4a5568", "fillColor": "#fff7f3", "fillOpacity": 0.88, "opacity": 0.1, "weight": 0.35};
@@ -747,46 +757,46 @@
                     return {"color": "#4a5568", "fillColor": "#7a0177", "fillOpacity": 0.88, "opacity": 0.1, "weight": 0.35};
             }
         }
-        function geo_json_d4806e0f7db11ba430cb0caf4a1e47d1_highlighter(feature) {
+        function geo_json_f1b12e89456459e7a72698dcfbc8ebf9_highlighter(feature) {
             switch(feature.id) {
                 default:
                     return {"color": "#1a202c", "fillOpacity": 0.92, "opacity": 0.35, "weight": 1.2};
             }
         }
 
-        function geo_json_d4806e0f7db11ba430cb0caf4a1e47d1_onEachFeature(feature, layer) {
+        function geo_json_f1b12e89456459e7a72698dcfbc8ebf9_onEachFeature(feature, layer) {
 
             layer.on({
                 mouseout: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                            geo_json_d4806e0f7db11ba430cb0caf4a1e47d1.resetStyle(e.target);
+                            geo_json_f1b12e89456459e7a72698dcfbc8ebf9.resetStyle(e.target);
                     }
                 },
                 mouseover: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                        const highlightStyle = geo_json_d4806e0f7db11ba430cb0caf4a1e47d1_highlighter(e.target.feature)
+                        const highlightStyle = geo_json_f1b12e89456459e7a72698dcfbc8ebf9_highlighter(e.target.feature)
                         e.target.setStyle(highlightStyle);
                     }
                 },
             });
         };
-        var geo_json_d4806e0f7db11ba430cb0caf4a1e47d1 = L.geoJson(null, {
-                onEachFeature: geo_json_d4806e0f7db11ba430cb0caf4a1e47d1_onEachFeature,
+        var geo_json_f1b12e89456459e7a72698dcfbc8ebf9 = L.geoJson(null, {
+                onEachFeature: geo_json_f1b12e89456459e7a72698dcfbc8ebf9_onEachFeature,
             
-                style: geo_json_d4806e0f7db11ba430cb0caf4a1e47d1_styler,
+                style: geo_json_f1b12e89456459e7a72698dcfbc8ebf9_styler,
             ...{
 }
         });
 
-        function geo_json_d4806e0f7db11ba430cb0caf4a1e47d1_add (data) {
-            geo_json_d4806e0f7db11ba430cb0caf4a1e47d1
+        function geo_json_f1b12e89456459e7a72698dcfbc8ebf9_add (data) {
+            geo_json_f1b12e89456459e7a72698dcfbc8ebf9
                 .addData(data);
         }
-            geo_json_d4806e0f7db11ba430cb0caf4a1e47d1_add({"features": [{"geometry": {"coordinates": [[[-120.81355, 38.56219], [-120.60616, 38.50235], [-120.31714, 38.54511], [-120.2143, 38.62908], [-120.14008, 38.63837], [-120.11201, 38.70502], [-120.07239, 38.70277], [-120.07248, 38.50987], [-120.49536, 38.44961], [-120.60874, 38.39754], [-120.63178, 38.33995], [-120.80774, 38.28872], [-120.89379, 38.22128], [-120.9955, 38.2254], [-121.02708, 38.30025], [-121.02771, 38.50011], [-120.81355, 38.56219]]], "type": "Polygon"}, "id": "0", "properties": {"NAMELSAD": "Amador County", "origin_county_geoid": "06005", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.59984, 38.77488], [-121.63113, 38.67901], [-121.50627, 38.58631], [-121.55904, 38.49959], [-121.50414, 38.46656], [-121.5326, 38.43146], [-121.521, 38.36122], [-121.59327, 38.31309], [-121.6937, 38.31373], [-121.71203, 38.53796], [-121.94107, 38.53326], [-122.01338, 38.48872], [-122.10413, 38.51336], [-122.28692, 38.83917], [-122.37155, 38.84465], [-122.42195, 38.90356], [-122.40403, 38.92529], [-121.83549, 38.92448], [-121.79151, 38.9054], [-121.80237, 38.86458], [-121.72957, 38.85843], [-121.72267, 38.80272], [-121.69067, 38.79563], [-121.67383, 38.74314], [-121.59984, 38.77488]]], "type": "Polygon"}, "id": "1", "properties": {"NAMELSAD": "Yolo County", "origin_county_geoid": "06113", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.14364, 39.06729], [-120.00246, 39.06749], [-120.00101, 38.99957], [-119.88764, 38.9183], [-119.87729, 38.87019], [-119.94793, 38.78164], [-120.11201, 38.70502], [-120.14008, 38.63837], [-120.2143, 38.62908], [-120.30172, 38.54911], [-120.60616, 38.50235], [-120.81355, 38.56219], [-121.02738, 38.50825], [-121.11905, 38.71786], [-121.13316, 38.70537], [-121.14159, 38.71194], [-121.04096, 38.91505], [-120.93857, 38.93556], [-120.93727, 38.96368], [-120.85986, 38.95165], [-120.81278, 38.9999], [-120.7464, 39.01035], [-120.56426, 38.91364], [-120.49273, 38.94335], [-120.43524, 39.0284], [-120.18443, 39.03101], [-120.14364, 39.06729]]], "type": "Polygon"}, "id": "2", "properties": {"NAMELSAD": "El Dorado County", "origin_county_geoid": "06017", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.00246, 39.06749], [-120.14364, 39.06729], [-120.24041, 39.02367], [-120.43524, 39.0284], [-120.49273, 38.94335], [-120.56426, 38.91364], [-120.68565, 38.98965], [-120.80939, 39.00083], [-120.85986, 38.95165], [-120.93621, 38.96393], [-120.93857, 38.93556], [-121.04041, 38.91565], [-121.13451, 38.71203], [-121.4844, 38.7346], [-121.46936, 38.92599], [-121.4144, 38.92621], [-121.41479, 38.99842], [-121.30704, 39.0529], [-121.22099, 39.01178], [-121.13798, 39.03791], [-121.04161, 39.01379], [-120.98915, 39.11153], [-120.69154, 39.3041], [-120.00632, 39.3165], [-120.00246, 39.06749]]], "type": "Polygon"}, "id": "3", "properties": {"NAMELSAD": "Placer County", "origin_county_geoid": "06061", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.50639, 38.22459], [-121.58407, 38.12023], [-121.56718, 38.09732], [-121.67306, 38.09352], [-121.69976, 38.04522], [-121.77748, 38.01892], [-121.86246, 38.06603], [-121.71089, 38.08649], [-121.68559, 38.15971], [-121.6121, 38.20007], [-121.58478, 38.33082], [-121.521, 38.36122], [-121.5326, 38.43146], [-121.50414, 38.46656], [-121.55904, 38.49959], [-121.52413, 38.5205], [-121.5074, 38.592], [-121.63019, 38.67744], [-121.60289, 38.73584], [-121.11905, 38.71786], [-121.02742, 38.50814], [-121.02708, 38.30025], [-121.34437, 38.22821], [-121.43991, 38.25553], [-121.50639, 38.22459]]], "type": "Polygon"}, "id": "4", "properties": {"NAMELSAD": "Sacramento County", "origin_county_geoid": "06067", "unique_device_localdate_id_count": 1}, "type": "Feature"}], "type": "FeatureCollection"});
+            geo_json_f1b12e89456459e7a72698dcfbc8ebf9_add({"features": [{"geometry": {"coordinates": [[[-120.81355, 38.56219], [-120.60616, 38.50235], [-120.31714, 38.54511], [-120.2143, 38.62908], [-120.14008, 38.63837], [-120.11201, 38.70502], [-120.07239, 38.70277], [-120.07248, 38.50987], [-120.49536, 38.44961], [-120.60874, 38.39754], [-120.63178, 38.33995], [-120.80774, 38.28872], [-120.89379, 38.22128], [-120.9955, 38.2254], [-121.02708, 38.30025], [-121.02771, 38.50011], [-120.81355, 38.56219]]], "type": "Polygon"}, "id": "0", "properties": {"NAMELSAD": "Amador County", "origin_county_geoid": "06005", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.59984, 38.77488], [-121.63113, 38.67901], [-121.50627, 38.58631], [-121.55904, 38.49959], [-121.50414, 38.46656], [-121.5326, 38.43146], [-121.521, 38.36122], [-121.59327, 38.31309], [-121.6937, 38.31373], [-121.71203, 38.53796], [-121.94107, 38.53326], [-122.01338, 38.48872], [-122.10413, 38.51336], [-122.28692, 38.83917], [-122.37155, 38.84465], [-122.42195, 38.90356], [-122.40403, 38.92529], [-121.83549, 38.92448], [-121.79151, 38.9054], [-121.80237, 38.86458], [-121.72957, 38.85843], [-121.72267, 38.80272], [-121.69067, 38.79563], [-121.67383, 38.74314], [-121.59984, 38.77488]]], "type": "Polygon"}, "id": "1", "properties": {"NAMELSAD": "Yolo County", "origin_county_geoid": "06113", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.14364, 39.06729], [-120.00246, 39.06749], [-120.00101, 38.99957], [-119.88764, 38.9183], [-119.87729, 38.87019], [-119.94793, 38.78164], [-120.11201, 38.70502], [-120.14008, 38.63837], [-120.2143, 38.62908], [-120.30172, 38.54911], [-120.60616, 38.50235], [-120.81355, 38.56219], [-121.02738, 38.50825], [-121.11905, 38.71786], [-121.13316, 38.70537], [-121.14159, 38.71194], [-121.04096, 38.91505], [-120.93857, 38.93556], [-120.93727, 38.96368], [-120.85986, 38.95165], [-120.81278, 38.9999], [-120.7464, 39.01035], [-120.56426, 38.91364], [-120.49273, 38.94335], [-120.43524, 39.0284], [-120.18443, 39.03101], [-120.14364, 39.06729]]], "type": "Polygon"}, "id": "2", "properties": {"NAMELSAD": "El Dorado County", "origin_county_geoid": "06017", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.00246, 39.06749], [-120.14364, 39.06729], [-120.24041, 39.02367], [-120.43524, 39.0284], [-120.49273, 38.94335], [-120.56426, 38.91364], [-120.68565, 38.98965], [-120.80939, 39.00083], [-120.85986, 38.95165], [-120.93621, 38.96393], [-120.93857, 38.93556], [-121.04041, 38.91565], [-121.13451, 38.71203], [-121.4844, 38.7346], [-121.46936, 38.92599], [-121.4144, 38.92621], [-121.41479, 38.99842], [-121.30704, 39.0529], [-121.22099, 39.01178], [-121.13798, 39.03791], [-121.04161, 39.01379], [-120.98915, 39.11153], [-120.69154, 39.3041], [-120.00632, 39.3165], [-120.00246, 39.06749]]], "type": "Polygon"}, "id": "3", "properties": {"NAMELSAD": "Placer County", "origin_county_geoid": "06061", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.50639, 38.22459], [-121.58407, 38.12023], [-121.56718, 38.09732], [-121.67306, 38.09352], [-121.69976, 38.04522], [-121.77748, 38.01892], [-121.86246, 38.06603], [-121.71089, 38.08649], [-121.68559, 38.15971], [-121.6121, 38.20007], [-121.58478, 38.33082], [-121.521, 38.36122], [-121.5326, 38.43146], [-121.50414, 38.46656], [-121.55904, 38.49959], [-121.52413, 38.5205], [-121.5074, 38.592], [-121.63019, 38.67744], [-121.60289, 38.73584], [-121.11905, 38.71786], [-121.02742, 38.50814], [-121.02708, 38.30025], [-121.34437, 38.22821], [-121.43991, 38.25553], [-121.50639, 38.22459]]], "type": "Polygon"}, "id": "4", "properties": {"NAMELSAD": "Sacramento County", "origin_county_geoid": "06067", "unique_device_localdate_id_count": 1}, "type": "Feature"}], "type": "FeatureCollection"});
 
         
     
-    geo_json_d4806e0f7db11ba430cb0caf4a1e47d1.bindTooltip(
+    geo_json_f1b12e89456459e7a72698dcfbc8ebf9.bindTooltip(
     function(layer){
     let div = L.DomUtil.create('div');
     
@@ -821,16 +831,19 @@
 });
                      
     
-            geo_json_d4806e0f7db11ba430cb0caf4a1e47d1.addTo(feature_group_3dfbf386828b1cefd9e474ca47a1c007);
+            geo_json_f1b12e89456459e7a72698dcfbc8ebf9.addTo(feature_group_cc8e5ce858deb8e723f6f38724ce4ea6);
         
     
-            var feature_group_1de60a484e7c53bd0ef9c6b588be3a91 = L.featureGroup(
+            feature_group_cc8e5ce858deb8e723f6f38724ce4ea6.addTo(map_61de552ac1ae776aa33f72f0d1c3a5b8);
+        
+    
+            var feature_group_212c466d69ea7f82c88b7a8afd5c6931 = L.featureGroup(
                 {
 }
             );
         
     
-        function geo_json_d4aca97ae3ec1df5c8658effa7176246_styler(feature) {
+        function geo_json_a8997bf858a94b94322acafd72ee273c_styler(feature) {
             switch(feature.id) {
                 case "0": case "1": case "5": 
                     return {"color": "#4a5568", "fillColor": "#f7fbff", "fillOpacity": 0.88, "opacity": 0.1, "weight": 0.35};
@@ -842,46 +855,46 @@
                     return {"color": "#4a5568", "fillColor": "#82b9dc", "fillOpacity": 0.88, "opacity": 0.1, "weight": 0.35};
             }
         }
-        function geo_json_d4aca97ae3ec1df5c8658effa7176246_highlighter(feature) {
+        function geo_json_a8997bf858a94b94322acafd72ee273c_highlighter(feature) {
             switch(feature.id) {
                 default:
                     return {"color": "#1a202c", "fillOpacity": 0.92, "opacity": 0.35, "weight": 1.2};
             }
         }
 
-        function geo_json_d4aca97ae3ec1df5c8658effa7176246_onEachFeature(feature, layer) {
+        function geo_json_a8997bf858a94b94322acafd72ee273c_onEachFeature(feature, layer) {
 
             layer.on({
                 mouseout: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                            geo_json_d4aca97ae3ec1df5c8658effa7176246.resetStyle(e.target);
+                            geo_json_a8997bf858a94b94322acafd72ee273c.resetStyle(e.target);
                     }
                 },
                 mouseover: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                        const highlightStyle = geo_json_d4aca97ae3ec1df5c8658effa7176246_highlighter(e.target.feature)
+                        const highlightStyle = geo_json_a8997bf858a94b94322acafd72ee273c_highlighter(e.target.feature)
                         e.target.setStyle(highlightStyle);
                     }
                 },
             });
         };
-        var geo_json_d4aca97ae3ec1df5c8658effa7176246 = L.geoJson(null, {
-                onEachFeature: geo_json_d4aca97ae3ec1df5c8658effa7176246_onEachFeature,
+        var geo_json_a8997bf858a94b94322acafd72ee273c = L.geoJson(null, {
+                onEachFeature: geo_json_a8997bf858a94b94322acafd72ee273c_onEachFeature,
             
-                style: geo_json_d4aca97ae3ec1df5c8658effa7176246_styler,
+                style: geo_json_a8997bf858a94b94322acafd72ee273c_styler,
             ...{
 }
         });
 
-        function geo_json_d4aca97ae3ec1df5c8658effa7176246_add (data) {
-            geo_json_d4aca97ae3ec1df5c8658effa7176246
+        function geo_json_a8997bf858a94b94322acafd72ee273c_add (data) {
+            geo_json_a8997bf858a94b94322acafd72ee273c
                 .addData(data);
         }
-            geo_json_d4aca97ae3ec1df5c8658effa7176246_add({"features": [{"geometry": {"coordinates": [[[-120.81355, 38.56219], [-120.60616, 38.50235], [-120.31714, 38.54511], [-120.2143, 38.62908], [-120.14008, 38.63837], [-120.11201, 38.70502], [-120.07239, 38.70277], [-120.07248, 38.50987], [-120.49536, 38.44961], [-120.60874, 38.39754], [-120.63178, 38.33995], [-120.80774, 38.28872], [-120.89379, 38.22128], [-120.9955, 38.2254], [-121.02708, 38.30025], [-121.02771, 38.50011], [-120.81355, 38.56219]]], "type": "Polygon"}, "id": "0", "properties": {"NAMELSAD": "Amador County", "origin_county_geoid": "06005", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.59984, 38.77488], [-121.63113, 38.67901], [-121.50627, 38.58631], [-121.55904, 38.49959], [-121.50414, 38.46656], [-121.5326, 38.43146], [-121.521, 38.36122], [-121.59327, 38.31309], [-121.6937, 38.31373], [-121.71203, 38.53796], [-121.94107, 38.53326], [-122.01338, 38.48872], [-122.10413, 38.51336], [-122.28692, 38.83917], [-122.37155, 38.84465], [-122.42195, 38.90356], [-122.40403, 38.92529], [-121.83549, 38.92448], [-121.79151, 38.9054], [-121.80237, 38.86458], [-121.72957, 38.85843], [-121.72267, 38.80272], [-121.69067, 38.79563], [-121.67383, 38.74314], [-121.59984, 38.77488]]], "type": "Polygon"}, "id": "1", "properties": {"NAMELSAD": "Yolo County", "origin_county_geoid": "06113", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.14364, 39.06729], [-120.00246, 39.06749], [-120.00101, 38.99957], [-119.88764, 38.9183], [-119.87729, 38.87019], [-119.94793, 38.78164], [-120.11201, 38.70502], [-120.14008, 38.63837], [-120.2143, 38.62908], [-120.30172, 38.54911], [-120.60616, 38.50235], [-120.81355, 38.56219], [-121.02738, 38.50825], [-121.11905, 38.71786], [-121.13316, 38.70537], [-121.14159, 38.71194], [-121.04096, 38.91505], [-120.93857, 38.93556], [-120.93727, 38.96368], [-120.85986, 38.95165], [-120.81278, 38.9999], [-120.7464, 39.01035], [-120.56426, 38.91364], [-120.49273, 38.94335], [-120.43524, 39.0284], [-120.18443, 39.03101], [-120.14364, 39.06729]]], "type": "Polygon"}, "id": "2", "properties": {"NAMELSAD": "El Dorado County", "origin_county_geoid": "06017", "unique_device_localdate_id_count": 12}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.00246, 39.06749], [-120.14364, 39.06729], [-120.24041, 39.02367], [-120.43524, 39.0284], [-120.49273, 38.94335], [-120.56426, 38.91364], [-120.68565, 38.98965], [-120.80939, 39.00083], [-120.85986, 38.95165], [-120.93621, 38.96393], [-120.93857, 38.93556], [-121.04041, 38.91565], [-121.13451, 38.71203], [-121.4844, 38.7346], [-121.46936, 38.92599], [-121.4144, 38.92621], [-121.41479, 38.99842], [-121.30704, 39.0529], [-121.22099, 39.01178], [-121.13798, 39.03791], [-121.04161, 39.01379], [-120.98915, 39.11153], [-120.69154, 39.3041], [-120.00632, 39.3165], [-120.00246, 39.06749]]], "type": "Polygon"}, "id": "3", "properties": {"NAMELSAD": "Placer County", "origin_county_geoid": "06061", "unique_device_localdate_id_count": 24}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.50639, 38.22459], [-121.58407, 38.12023], [-121.56718, 38.09732], [-121.67306, 38.09352], [-121.69976, 38.04522], [-121.77748, 38.01892], [-121.86246, 38.06603], [-121.71089, 38.08649], [-121.68559, 38.15971], [-121.6121, 38.20007], [-121.58478, 38.33082], [-121.521, 38.36122], [-121.5326, 38.43146], [-121.50414, 38.46656], [-121.55904, 38.49959], [-121.52413, 38.5205], [-121.5074, 38.592], [-121.63019, 38.67744], [-121.60289, 38.73584], [-121.11905, 38.71786], [-121.02742, 38.50814], [-121.02708, 38.30025], [-121.34437, 38.22821], [-121.43991, 38.25553], [-121.50639, 38.22459]]], "type": "Polygon"}, "id": "4", "properties": {"NAMELSAD": "Sacramento County", "origin_county_geoid": "06067", "unique_device_localdate_id_count": 11}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.0764, 36.9102], [-122.25108, 36.98583], [-122.3139, 37.05476], [-122.28938, 37.11347], [-122.31768, 37.18695], [-122.15277, 37.21544], [-122.15228, 37.28605], [-121.99109, 37.14427], [-121.82418, 37.08776], [-121.72658, 37.02189], [-121.7387, 36.98999], [-121.58115, 36.91925], [-121.64455, 36.89387], [-121.72645, 36.91427], [-121.81003, 36.85079], [-122.05188, 36.8196], [-122.0764, 36.9102]]], "type": "Polygon"}, "id": "5", "properties": {"NAMELSAD": "Santa Cruz County", "origin_county_geoid": "06087", "unique_device_localdate_id_count": 1}, "type": "Feature"}], "type": "FeatureCollection"});
+            geo_json_a8997bf858a94b94322acafd72ee273c_add({"features": [{"geometry": {"coordinates": [[[-120.81355, 38.56219], [-120.60616, 38.50235], [-120.31714, 38.54511], [-120.2143, 38.62908], [-120.14008, 38.63837], [-120.11201, 38.70502], [-120.07239, 38.70277], [-120.07248, 38.50987], [-120.49536, 38.44961], [-120.60874, 38.39754], [-120.63178, 38.33995], [-120.80774, 38.28872], [-120.89379, 38.22128], [-120.9955, 38.2254], [-121.02708, 38.30025], [-121.02771, 38.50011], [-120.81355, 38.56219]]], "type": "Polygon"}, "id": "0", "properties": {"NAMELSAD": "Amador County", "origin_county_geoid": "06005", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.59984, 38.77488], [-121.63113, 38.67901], [-121.50627, 38.58631], [-121.55904, 38.49959], [-121.50414, 38.46656], [-121.5326, 38.43146], [-121.521, 38.36122], [-121.59327, 38.31309], [-121.6937, 38.31373], [-121.71203, 38.53796], [-121.94107, 38.53326], [-122.01338, 38.48872], [-122.10413, 38.51336], [-122.28692, 38.83917], [-122.37155, 38.84465], [-122.42195, 38.90356], [-122.40403, 38.92529], [-121.83549, 38.92448], [-121.79151, 38.9054], [-121.80237, 38.86458], [-121.72957, 38.85843], [-121.72267, 38.80272], [-121.69067, 38.79563], [-121.67383, 38.74314], [-121.59984, 38.77488]]], "type": "Polygon"}, "id": "1", "properties": {"NAMELSAD": "Yolo County", "origin_county_geoid": "06113", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.14364, 39.06729], [-120.00246, 39.06749], [-120.00101, 38.99957], [-119.88764, 38.9183], [-119.87729, 38.87019], [-119.94793, 38.78164], [-120.11201, 38.70502], [-120.14008, 38.63837], [-120.2143, 38.62908], [-120.30172, 38.54911], [-120.60616, 38.50235], [-120.81355, 38.56219], [-121.02738, 38.50825], [-121.11905, 38.71786], [-121.13316, 38.70537], [-121.14159, 38.71194], [-121.04096, 38.91505], [-120.93857, 38.93556], [-120.93727, 38.96368], [-120.85986, 38.95165], [-120.81278, 38.9999], [-120.7464, 39.01035], [-120.56426, 38.91364], [-120.49273, 38.94335], [-120.43524, 39.0284], [-120.18443, 39.03101], [-120.14364, 39.06729]]], "type": "Polygon"}, "id": "2", "properties": {"NAMELSAD": "El Dorado County", "origin_county_geoid": "06017", "unique_device_localdate_id_count": 12}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.00246, 39.06749], [-120.14364, 39.06729], [-120.24041, 39.02367], [-120.43524, 39.0284], [-120.49273, 38.94335], [-120.56426, 38.91364], [-120.68565, 38.98965], [-120.80939, 39.00083], [-120.85986, 38.95165], [-120.93621, 38.96393], [-120.93857, 38.93556], [-121.04041, 38.91565], [-121.13451, 38.71203], [-121.4844, 38.7346], [-121.46936, 38.92599], [-121.4144, 38.92621], [-121.41479, 38.99842], [-121.30704, 39.0529], [-121.22099, 39.01178], [-121.13798, 39.03791], [-121.04161, 39.01379], [-120.98915, 39.11153], [-120.69154, 39.3041], [-120.00632, 39.3165], [-120.00246, 39.06749]]], "type": "Polygon"}, "id": "3", "properties": {"NAMELSAD": "Placer County", "origin_county_geoid": "06061", "unique_device_localdate_id_count": 24}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.50639, 38.22459], [-121.58407, 38.12023], [-121.56718, 38.09732], [-121.67306, 38.09352], [-121.69976, 38.04522], [-121.77748, 38.01892], [-121.86246, 38.06603], [-121.71089, 38.08649], [-121.68559, 38.15971], [-121.6121, 38.20007], [-121.58478, 38.33082], [-121.521, 38.36122], [-121.5326, 38.43146], [-121.50414, 38.46656], [-121.55904, 38.49959], [-121.52413, 38.5205], [-121.5074, 38.592], [-121.63019, 38.67744], [-121.60289, 38.73584], [-121.11905, 38.71786], [-121.02742, 38.50814], [-121.02708, 38.30025], [-121.34437, 38.22821], [-121.43991, 38.25553], [-121.50639, 38.22459]]], "type": "Polygon"}, "id": "4", "properties": {"NAMELSAD": "Sacramento County", "origin_county_geoid": "06067", "unique_device_localdate_id_count": 11}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.0764, 36.9102], [-122.25108, 36.98583], [-122.3139, 37.05476], [-122.28938, 37.11347], [-122.31768, 37.18695], [-122.15277, 37.21544], [-122.15228, 37.28605], [-121.99109, 37.14427], [-121.82418, 37.08776], [-121.72658, 37.02189], [-121.7387, 36.98999], [-121.58115, 36.91925], [-121.64455, 36.89387], [-121.72645, 36.91427], [-121.81003, 36.85079], [-122.05188, 36.8196], [-122.0764, 36.9102]]], "type": "Polygon"}, "id": "5", "properties": {"NAMELSAD": "Santa Cruz County", "origin_county_geoid": "06087", "unique_device_localdate_id_count": 1}, "type": "Feature"}], "type": "FeatureCollection"});
 
         
     
-    geo_json_d4aca97ae3ec1df5c8658effa7176246.bindTooltip(
+    geo_json_a8997bf858a94b94322acafd72ee273c.bindTooltip(
     function(layer){
     let div = L.DomUtil.create('div');
     
@@ -916,16 +929,19 @@
 });
                      
     
-            geo_json_d4aca97ae3ec1df5c8658effa7176246.addTo(feature_group_1de60a484e7c53bd0ef9c6b588be3a91);
+            geo_json_a8997bf858a94b94322acafd72ee273c.addTo(feature_group_212c466d69ea7f82c88b7a8afd5c6931);
         
     
-            var feature_group_cf93aa8a8d414cbec6c91b54862945b9 = L.featureGroup(
+            feature_group_212c466d69ea7f82c88b7a8afd5c6931.addTo(map_61de552ac1ae776aa33f72f0d1c3a5b8);
+        
+    
+            var feature_group_dfa48e5e1c44e5ed6229a9bc8a2b2160 = L.featureGroup(
                 {
 }
             );
         
     
-        function geo_json_0076a6f815a29ae49c328461698e4cdf_styler(feature) {
+        function geo_json_d84d3b98914659c4dec8fdd885da8966_styler(feature) {
             switch(feature.id) {
                 case "0": case "2": 
                     return {"color": "#4a5568", "fillColor": "#f0f9e8", "fillOpacity": 0.88, "opacity": 0.1, "weight": 0.35};
@@ -933,46 +949,46 @@
                     return {"color": "#4a5568", "fillColor": "#005a32", "fillOpacity": 0.88, "opacity": 0.1, "weight": 0.35};
             }
         }
-        function geo_json_0076a6f815a29ae49c328461698e4cdf_highlighter(feature) {
+        function geo_json_d84d3b98914659c4dec8fdd885da8966_highlighter(feature) {
             switch(feature.id) {
                 default:
                     return {"color": "#1a202c", "fillOpacity": 0.92, "opacity": 0.35, "weight": 1.2};
             }
         }
 
-        function geo_json_0076a6f815a29ae49c328461698e4cdf_onEachFeature(feature, layer) {
+        function geo_json_d84d3b98914659c4dec8fdd885da8966_onEachFeature(feature, layer) {
 
             layer.on({
                 mouseout: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                            geo_json_0076a6f815a29ae49c328461698e4cdf.resetStyle(e.target);
+                            geo_json_d84d3b98914659c4dec8fdd885da8966.resetStyle(e.target);
                     }
                 },
                 mouseover: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                        const highlightStyle = geo_json_0076a6f815a29ae49c328461698e4cdf_highlighter(e.target.feature)
+                        const highlightStyle = geo_json_d84d3b98914659c4dec8fdd885da8966_highlighter(e.target.feature)
                         e.target.setStyle(highlightStyle);
                     }
                 },
             });
         };
-        var geo_json_0076a6f815a29ae49c328461698e4cdf = L.geoJson(null, {
-                onEachFeature: geo_json_0076a6f815a29ae49c328461698e4cdf_onEachFeature,
+        var geo_json_d84d3b98914659c4dec8fdd885da8966 = L.geoJson(null, {
+                onEachFeature: geo_json_d84d3b98914659c4dec8fdd885da8966_onEachFeature,
             
-                style: geo_json_0076a6f815a29ae49c328461698e4cdf_styler,
+                style: geo_json_d84d3b98914659c4dec8fdd885da8966_styler,
             ...{
 }
         });
 
-        function geo_json_0076a6f815a29ae49c328461698e4cdf_add (data) {
-            geo_json_0076a6f815a29ae49c328461698e4cdf
+        function geo_json_d84d3b98914659c4dec8fdd885da8966_add (data) {
+            geo_json_d84d3b98914659c4dec8fdd885da8966
                 .addData(data);
         }
-            geo_json_0076a6f815a29ae49c328461698e4cdf_add({"features": [{"geometry": {"coordinates": [[[-121.47192, 37.48178], [-121.55666, 37.54273], [-121.55706, 37.81575], [-121.5341, 37.84946], [-121.57943, 37.86016], [-121.55641, 37.92364], [-121.57991, 38.00778], [-121.55753, 38.01662], [-121.58439, 38.03603], [-121.56404, 38.10142], [-121.58436, 38.1183], [-121.47572, 38.25809], [-121.34437, 38.22821], [-121.02708, 38.30025], [-120.92645, 38.07742], [-120.9206, 37.73833], [-120.99343, 37.76094], [-121.17845, 37.70553], [-121.47192, 37.48178]]], "type": "Polygon"}, "id": "0", "properties": {"NAMELSAD": "San Joaquin County", "origin_county_geoid": "06077", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.14364, 39.06729], [-120.00246, 39.06749], [-120.00101, 38.99957], [-119.88764, 38.9183], [-119.87729, 38.87019], [-119.94793, 38.78164], [-120.11201, 38.70502], [-120.14008, 38.63837], [-120.2143, 38.62908], [-120.30172, 38.54911], [-120.60616, 38.50235], [-120.81355, 38.56219], [-121.02738, 38.50825], [-121.11905, 38.71786], [-121.13316, 38.70537], [-121.14159, 38.71194], [-121.04096, 38.91505], [-120.93857, 38.93556], [-120.93727, 38.96368], [-120.85986, 38.95165], [-120.81278, 38.9999], [-120.7464, 39.01035], [-120.56426, 38.91364], [-120.49273, 38.94335], [-120.43524, 39.0284], [-120.18443, 39.03101], [-120.14364, 39.06729]]], "type": "Polygon"}, "id": "1", "properties": {"NAMELSAD": "El Dorado County", "origin_county_geoid": "06017", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.00246, 39.06749], [-120.14364, 39.06729], [-120.24041, 39.02367], [-120.43524, 39.0284], [-120.49273, 38.94335], [-120.56426, 38.91364], [-120.68565, 38.98965], [-120.80939, 39.00083], [-120.85986, 38.95165], [-120.93621, 38.96393], [-120.93857, 38.93556], [-121.04041, 38.91565], [-121.13451, 38.71203], [-121.4844, 38.7346], [-121.46936, 38.92599], [-121.4144, 38.92621], [-121.41479, 38.99842], [-121.30704, 39.0529], [-121.22099, 39.01178], [-121.13798, 39.03791], [-121.04161, 39.01379], [-120.98915, 39.11153], [-120.69154, 39.3041], [-120.00632, 39.3165], [-120.00246, 39.06749]]], "type": "Polygon"}, "id": "2", "properties": {"NAMELSAD": "Placer County", "origin_county_geoid": "06061", "unique_device_localdate_id_count": 1}, "type": "Feature"}], "type": "FeatureCollection"});
+            geo_json_d84d3b98914659c4dec8fdd885da8966_add({"features": [{"geometry": {"coordinates": [[[-121.47192, 37.48178], [-121.55666, 37.54273], [-121.55706, 37.81575], [-121.5341, 37.84946], [-121.57943, 37.86016], [-121.55641, 37.92364], [-121.57991, 38.00778], [-121.55753, 38.01662], [-121.58439, 38.03603], [-121.56404, 38.10142], [-121.58436, 38.1183], [-121.47572, 38.25809], [-121.34437, 38.22821], [-121.02708, 38.30025], [-120.92645, 38.07742], [-120.9206, 37.73833], [-120.99343, 37.76094], [-121.17845, 37.70553], [-121.47192, 37.48178]]], "type": "Polygon"}, "id": "0", "properties": {"NAMELSAD": "San Joaquin County", "origin_county_geoid": "06077", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.14364, 39.06729], [-120.00246, 39.06749], [-120.00101, 38.99957], [-119.88764, 38.9183], [-119.87729, 38.87019], [-119.94793, 38.78164], [-120.11201, 38.70502], [-120.14008, 38.63837], [-120.2143, 38.62908], [-120.30172, 38.54911], [-120.60616, 38.50235], [-120.81355, 38.56219], [-121.02738, 38.50825], [-121.11905, 38.71786], [-121.13316, 38.70537], [-121.14159, 38.71194], [-121.04096, 38.91505], [-120.93857, 38.93556], [-120.93727, 38.96368], [-120.85986, 38.95165], [-120.81278, 38.9999], [-120.7464, 39.01035], [-120.56426, 38.91364], [-120.49273, 38.94335], [-120.43524, 39.0284], [-120.18443, 39.03101], [-120.14364, 39.06729]]], "type": "Polygon"}, "id": "1", "properties": {"NAMELSAD": "El Dorado County", "origin_county_geoid": "06017", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.00246, 39.06749], [-120.14364, 39.06729], [-120.24041, 39.02367], [-120.43524, 39.0284], [-120.49273, 38.94335], [-120.56426, 38.91364], [-120.68565, 38.98965], [-120.80939, 39.00083], [-120.85986, 38.95165], [-120.93621, 38.96393], [-120.93857, 38.93556], [-121.04041, 38.91565], [-121.13451, 38.71203], [-121.4844, 38.7346], [-121.46936, 38.92599], [-121.4144, 38.92621], [-121.41479, 38.99842], [-121.30704, 39.0529], [-121.22099, 39.01178], [-121.13798, 39.03791], [-121.04161, 39.01379], [-120.98915, 39.11153], [-120.69154, 39.3041], [-120.00632, 39.3165], [-120.00246, 39.06749]]], "type": "Polygon"}, "id": "2", "properties": {"NAMELSAD": "Placer County", "origin_county_geoid": "06061", "unique_device_localdate_id_count": 1}, "type": "Feature"}], "type": "FeatureCollection"});
 
         
     
-    geo_json_0076a6f815a29ae49c328461698e4cdf.bindTooltip(
+    geo_json_d84d3b98914659c4dec8fdd885da8966.bindTooltip(
     function(layer){
     let div = L.DomUtil.create('div');
     
@@ -1007,61 +1023,64 @@
 });
                      
     
-            geo_json_0076a6f815a29ae49c328461698e4cdf.addTo(feature_group_cf93aa8a8d414cbec6c91b54862945b9);
+            geo_json_d84d3b98914659c4dec8fdd885da8966.addTo(feature_group_dfa48e5e1c44e5ed6229a9bc8a2b2160);
         
     
-            var feature_group_7760daafb09075c6c9cacee10c34c7a3 = L.featureGroup(
+            feature_group_dfa48e5e1c44e5ed6229a9bc8a2b2160.addTo(map_61de552ac1ae776aa33f72f0d1c3a5b8);
+        
+    
+            var feature_group_f47b2ac764d665c7cd62c87a69b3e3f0 = L.featureGroup(
                 {
 }
             );
         
     
-        function geo_json_2f1926e993ce0e7e234c087d71433eeb_styler(feature) {
+        function geo_json_585ff2185fc10375bad8b30339f18c61_styler(feature) {
             switch(feature.id) {
                 default:
                     return {"color": "#4a5568", "fillColor": "#edf8fb", "fillOpacity": 0.88, "opacity": 0.1, "weight": 0.35};
             }
         }
-        function geo_json_2f1926e993ce0e7e234c087d71433eeb_highlighter(feature) {
+        function geo_json_585ff2185fc10375bad8b30339f18c61_highlighter(feature) {
             switch(feature.id) {
                 default:
                     return {"color": "#1a202c", "fillOpacity": 0.92, "opacity": 0.35, "weight": 1.2};
             }
         }
 
-        function geo_json_2f1926e993ce0e7e234c087d71433eeb_onEachFeature(feature, layer) {
+        function geo_json_585ff2185fc10375bad8b30339f18c61_onEachFeature(feature, layer) {
 
             layer.on({
                 mouseout: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                            geo_json_2f1926e993ce0e7e234c087d71433eeb.resetStyle(e.target);
+                            geo_json_585ff2185fc10375bad8b30339f18c61.resetStyle(e.target);
                     }
                 },
                 mouseover: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                        const highlightStyle = geo_json_2f1926e993ce0e7e234c087d71433eeb_highlighter(e.target.feature)
+                        const highlightStyle = geo_json_585ff2185fc10375bad8b30339f18c61_highlighter(e.target.feature)
                         e.target.setStyle(highlightStyle);
                     }
                 },
             });
         };
-        var geo_json_2f1926e993ce0e7e234c087d71433eeb = L.geoJson(null, {
-                onEachFeature: geo_json_2f1926e993ce0e7e234c087d71433eeb_onEachFeature,
+        var geo_json_585ff2185fc10375bad8b30339f18c61 = L.geoJson(null, {
+                onEachFeature: geo_json_585ff2185fc10375bad8b30339f18c61_onEachFeature,
             
-                style: geo_json_2f1926e993ce0e7e234c087d71433eeb_styler,
+                style: geo_json_585ff2185fc10375bad8b30339f18c61_styler,
             ...{
 }
         });
 
-        function geo_json_2f1926e993ce0e7e234c087d71433eeb_add (data) {
-            geo_json_2f1926e993ce0e7e234c087d71433eeb
+        function geo_json_585ff2185fc10375bad8b30339f18c61_add (data) {
+            geo_json_585ff2185fc10375bad8b30339f18c61
                 .addData(data);
         }
-            geo_json_2f1926e993ce0e7e234c087d71433eeb_add({"features": [{"geometry": {"coordinates": [[[-121.50639, 38.22459], [-121.58407, 38.12023], [-121.56718, 38.09732], [-121.67306, 38.09352], [-121.69976, 38.04522], [-121.77748, 38.01892], [-121.86246, 38.06603], [-121.71089, 38.08649], [-121.68559, 38.15971], [-121.6121, 38.20007], [-121.58478, 38.33082], [-121.521, 38.36122], [-121.5326, 38.43146], [-121.50414, 38.46656], [-121.55904, 38.49959], [-121.52413, 38.5205], [-121.5074, 38.592], [-121.63019, 38.67744], [-121.60289, 38.73584], [-121.11905, 38.71786], [-121.02742, 38.50814], [-121.02708, 38.30025], [-121.34437, 38.22821], [-121.43991, 38.25553], [-121.50639, 38.22459]]], "type": "Polygon"}, "id": "0", "properties": {"GEOID": "06067", "NAMELSAD": "Sacramento County", "unique_device_localdate_id_count": 1}, "type": "Feature"}], "type": "FeatureCollection"});
+            geo_json_585ff2185fc10375bad8b30339f18c61_add({"features": [{"geometry": {"coordinates": [[[-121.50639, 38.22459], [-121.58407, 38.12023], [-121.56718, 38.09732], [-121.67306, 38.09352], [-121.69976, 38.04522], [-121.77748, 38.01892], [-121.86246, 38.06603], [-121.71089, 38.08649], [-121.68559, 38.15971], [-121.6121, 38.20007], [-121.58478, 38.33082], [-121.521, 38.36122], [-121.5326, 38.43146], [-121.50414, 38.46656], [-121.55904, 38.49959], [-121.52413, 38.5205], [-121.5074, 38.592], [-121.63019, 38.67744], [-121.60289, 38.73584], [-121.11905, 38.71786], [-121.02742, 38.50814], [-121.02708, 38.30025], [-121.34437, 38.22821], [-121.43991, 38.25553], [-121.50639, 38.22459]]], "type": "Polygon"}, "id": "0", "properties": {"GEOID": "06067", "NAMELSAD": "Sacramento County", "unique_device_localdate_id_count": 1}, "type": "Feature"}], "type": "FeatureCollection"});
 
         
     
-    geo_json_2f1926e993ce0e7e234c087d71433eeb.bindTooltip(
+    geo_json_585ff2185fc10375bad8b30339f18c61.bindTooltip(
     function(layer){
     let div = L.DomUtil.create('div');
     
@@ -1096,16 +1115,19 @@
 });
                      
     
-            geo_json_2f1926e993ce0e7e234c087d71433eeb.addTo(feature_group_7760daafb09075c6c9cacee10c34c7a3);
+            geo_json_585ff2185fc10375bad8b30339f18c61.addTo(feature_group_f47b2ac764d665c7cd62c87a69b3e3f0);
         
     
-            var feature_group_5f7baf665dfb3ea7a88ecd10fdb734e3 = L.featureGroup(
+            feature_group_f47b2ac764d665c7cd62c87a69b3e3f0.addTo(map_61de552ac1ae776aa33f72f0d1c3a5b8);
+        
+    
+            var feature_group_22ec881e0e2c7ac49bf25785616e7f4b = L.featureGroup(
                 {
 }
             );
         
     
-        function geo_json_10529cfd85db14070c62cd6095be0c4e_styler(feature) {
+        function geo_json_997c4fb06f0dc71d98a6b79853b823f9_styler(feature) {
             switch(feature.id) {
                 case "0": case "7": 
                     return {"color": "#4a5568", "fillColor": "#eae8f2", "fillOpacity": 0.88, "opacity": 0.1, "weight": 0.35};
@@ -1121,46 +1143,46 @@
                     return {"color": "#4a5568", "fillColor": "#54278f", "fillOpacity": 0.88, "opacity": 0.1, "weight": 0.35};
             }
         }
-        function geo_json_10529cfd85db14070c62cd6095be0c4e_highlighter(feature) {
+        function geo_json_997c4fb06f0dc71d98a6b79853b823f9_highlighter(feature) {
             switch(feature.id) {
                 default:
                     return {"color": "#1a202c", "fillOpacity": 0.92, "opacity": 0.35, "weight": 1.2};
             }
         }
 
-        function geo_json_10529cfd85db14070c62cd6095be0c4e_onEachFeature(feature, layer) {
+        function geo_json_997c4fb06f0dc71d98a6b79853b823f9_onEachFeature(feature, layer) {
 
             layer.on({
                 mouseout: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                            geo_json_10529cfd85db14070c62cd6095be0c4e.resetStyle(e.target);
+                            geo_json_997c4fb06f0dc71d98a6b79853b823f9.resetStyle(e.target);
                     }
                 },
                 mouseover: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                        const highlightStyle = geo_json_10529cfd85db14070c62cd6095be0c4e_highlighter(e.target.feature)
+                        const highlightStyle = geo_json_997c4fb06f0dc71d98a6b79853b823f9_highlighter(e.target.feature)
                         e.target.setStyle(highlightStyle);
                     }
                 },
             });
         };
-        var geo_json_10529cfd85db14070c62cd6095be0c4e = L.geoJson(null, {
-                onEachFeature: geo_json_10529cfd85db14070c62cd6095be0c4e_onEachFeature,
+        var geo_json_997c4fb06f0dc71d98a6b79853b823f9 = L.geoJson(null, {
+                onEachFeature: geo_json_997c4fb06f0dc71d98a6b79853b823f9_onEachFeature,
             
-                style: geo_json_10529cfd85db14070c62cd6095be0c4e_styler,
+                style: geo_json_997c4fb06f0dc71d98a6b79853b823f9_styler,
             ...{
 }
         });
 
-        function geo_json_10529cfd85db14070c62cd6095be0c4e_add (data) {
-            geo_json_10529cfd85db14070c62cd6095be0c4e
+        function geo_json_997c4fb06f0dc71d98a6b79853b823f9_add (data) {
+            geo_json_997c4fb06f0dc71d98a6b79853b823f9
                 .addData(data);
         }
-            geo_json_10529cfd85db14070c62cd6095be0c4e_add({"features": [{"geometry": {"coordinates": [[[-120.81355, 38.56219], [-120.60616, 38.50235], [-120.31714, 38.54511], [-120.2143, 38.62908], [-120.14008, 38.63837], [-120.11201, 38.70502], [-120.07239, 38.70277], [-120.07248, 38.50987], [-120.49536, 38.44961], [-120.60874, 38.39754], [-120.63178, 38.33995], [-120.80774, 38.28872], [-120.89379, 38.22128], [-120.9955, 38.2254], [-121.02708, 38.30025], [-121.02771, 38.50011], [-120.81355, 38.56219]]], "type": "Polygon"}, "id": "0", "properties": {"NAMELSAD": "Amador County", "origin_county_geoid": "06005", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-114.05035, 36.84314], [-114.04394, 36.19335], [-114.12086, 36.11085], [-114.14699, 36.02606], [-114.24386, 36.01527], [-114.40562, 36.14698], [-114.44504, 36.12535], [-114.63047, 36.14222], [-114.75451, 36.08617], [-114.7221, 36.02895], [-114.74054, 35.97554], [-114.66164, 35.87123], [-114.70586, 35.85051], [-114.71203, 35.80553], [-114.68951, 35.65143], [-114.65353, 35.60967], [-114.67864, 35.49763], [-114.60461, 35.35524], [-114.56926, 35.18342], [-114.57826, 35.12881], [-114.64676, 35.10188], [-114.60291, 35.06859], [-114.63349, 35.00186], [-115.84599, 35.96371], [-115.84576, 36.17076], [-115.89575, 36.17223], [-115.89692, 36.84208], [-114.05035, 36.84314]]], "type": "Polygon"}, "id": "1", "properties": {"NAMELSAD": "Clark County", "origin_county_geoid": "32003", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-80.68002, 25.95686], [-80.68004, 25.97875], [-80.87293, 25.97943], [-80.88129, 26.33381], [-80.29699, 26.33436], [-80.29705, 26.35555], [-80.01528, 26.32096], [-80.06289, 25.97681], [-80.68002, 25.95686]]], "type": "Polygon"}, "id": "2", "properties": {"NAMELSAD": "Broward County", "origin_county_geoid": "12011", "unique_device_localdate_id_count": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.26403, 37.90378], [-122.18558, 37.82073], [-122.04547, 37.79813], [-121.96004, 37.71853], [-121.557, 37.81649], [-121.55666, 37.54273], [-121.4712, 37.48283], [-122.05193, 37.45925], [-122.28178, 37.70823], [-122.37312, 37.88388], [-122.26403, 37.90378]]], "type": "Polygon"}, "id": "3", "properties": {"NAMELSAD": "Alameda County", "origin_county_geoid": "06001", "unique_device_localdate_id_count": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.14364, 39.06729], [-120.00246, 39.06749], [-120.00101, 38.99957], [-119.88764, 38.9183], [-119.87729, 38.87019], [-119.94793, 38.78164], [-120.11201, 38.70502], [-120.14008, 38.63837], [-120.2143, 38.62908], [-120.30172, 38.54911], [-120.60616, 38.50235], [-120.81355, 38.56219], [-121.02738, 38.50825], [-121.11905, 38.71786], [-121.13316, 38.70537], [-121.14159, 38.71194], [-121.04096, 38.91505], [-120.93857, 38.93556], [-120.93727, 38.96368], [-120.85986, 38.95165], [-120.81278, 38.9999], [-120.7464, 39.01035], [-120.56426, 38.91364], [-120.49273, 38.94335], [-120.43524, 39.0284], [-120.18443, 39.03101], [-120.14364, 39.06729]]], "type": "Polygon"}, "id": "4", "properties": {"NAMELSAD": "El Dorado County", "origin_county_geoid": "06017", "unique_device_localdate_id_count": 40}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.00246, 39.06749], [-120.14364, 39.06729], [-120.24041, 39.02367], [-120.43524, 39.0284], [-120.49273, 38.94335], [-120.56426, 38.91364], [-120.68565, 38.98965], [-120.80939, 39.00083], [-120.85986, 38.95165], [-120.93621, 38.96393], [-120.93857, 38.93556], [-121.04041, 38.91565], [-121.13451, 38.71203], [-121.4844, 38.7346], [-121.46936, 38.92599], [-121.4144, 38.92621], [-121.41479, 38.99842], [-121.30704, 39.0529], [-121.22099, 39.01178], [-121.13798, 39.03791], [-121.04161, 39.01379], [-120.98915, 39.11153], [-120.69154, 39.3041], [-120.00632, 39.3165], [-120.00246, 39.06749]]], "type": "Polygon"}, "id": "5", "properties": {"NAMELSAD": "Placer County", "origin_county_geoid": "06061", "unique_device_localdate_id_count": 8}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.08349, 33.20456], [-112.19161, 33.2647], [-112.20317, 33.3105], [-112.20362, 32.50672], [-113.33389, 32.50519], [-113.33375, 34.00004], [-112.74395, 33.9999], [-112.27617, 33.88247], [-112.23505, 33.91641], [-112.24035, 33.95664], [-112.1613, 34.01746], [-112.16476, 34.04817], [-111.44508, 34.00118], [-111.45174, 33.92099], [-111.4052, 33.91944], [-111.37232, 33.82392], [-111.38681, 33.75004], [-111.22369, 33.60286], [-111.15335, 33.67761], [-111.03991, 33.4661], [-111.58063, 33.4658], [-111.58263, 33.20541], [-112.08349, 33.20456]]], "type": "Polygon"}, "id": "6", "properties": {"NAMELSAD": "Maricopa County", "origin_county_geoid": "04013", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.96004, 37.71853], [-122.04547, 37.79813], [-122.18558, 37.82073], [-122.26403, 37.90378], [-122.37378, 37.88372], [-122.44158, 37.97392], [-122.34745, 38.07326], [-122.14858, 38.03172], [-121.86214, 38.06607], [-121.78314, 38.01854], [-121.69976, 38.04522], [-121.67306, 38.09352], [-121.58528, 38.09637], [-121.55753, 38.01662], [-121.57991, 38.00778], [-121.55641, 37.92364], [-121.57943, 37.86016], [-121.53805, 37.83776], [-121.96004, 37.71853]]], "type": "Polygon"}, "id": "7", "properties": {"NAMELSAD": "Contra Costa County", "origin_county_geoid": "06013", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-97.03101, 32.98969], [-96.51701, 32.98286], [-96.52312, 32.54521], [-97.03859, 32.55441], [-97.03101, 32.98969]]], "type": "Polygon"}, "id": "8", "properties": {"NAMELSAD": "Dallas County", "origin_county_geoid": "48113", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.50639, 38.22459], [-121.58407, 38.12023], [-121.56718, 38.09732], [-121.67306, 38.09352], [-121.69976, 38.04522], [-121.77748, 38.01892], [-121.86246, 38.06603], [-121.71089, 38.08649], [-121.68559, 38.15971], [-121.6121, 38.20007], [-121.58478, 38.33082], [-121.521, 38.36122], [-121.5326, 38.43146], [-121.50414, 38.46656], [-121.55904, 38.49959], [-121.52413, 38.5205], [-121.5074, 38.592], [-121.63019, 38.67744], [-121.60289, 38.73584], [-121.11905, 38.71786], [-121.02742, 38.50814], [-121.02708, 38.30025], [-121.34437, 38.22821], [-121.43991, 38.25553], [-121.50639, 38.22459]]], "type": "Polygon"}, "id": "9", "properties": {"NAMELSAD": "Sacramento County", "origin_county_geoid": "06067", "unique_device_localdate_id_count": 41}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.65503, 39.52684], [-120.57782, 39.52327], [-120.50544, 39.44612], [-120.00377, 39.44506], [-120.00632, 39.3165], [-120.67143, 39.31037], [-120.98915, 39.11153], [-121.04161, 39.01379], [-121.27953, 39.03462], [-121.26613, 39.27272], [-121.21838, 39.28418], [-121.12748, 39.38024], [-120.8, 39.43767], [-120.65503, 39.52684]]], "type": "Polygon"}, "id": "10", "properties": {"NAMELSAD": "Nevada County", "origin_county_geoid": "06057", "unique_device_localdate_id_count": 1}, "type": "Feature"}], "type": "FeatureCollection"});
+            geo_json_997c4fb06f0dc71d98a6b79853b823f9_add({"features": [{"geometry": {"coordinates": [[[-120.81355, 38.56219], [-120.60616, 38.50235], [-120.31714, 38.54511], [-120.2143, 38.62908], [-120.14008, 38.63837], [-120.11201, 38.70502], [-120.07239, 38.70277], [-120.07248, 38.50987], [-120.49536, 38.44961], [-120.60874, 38.39754], [-120.63178, 38.33995], [-120.80774, 38.28872], [-120.89379, 38.22128], [-120.9955, 38.2254], [-121.02708, 38.30025], [-121.02771, 38.50011], [-120.81355, 38.56219]]], "type": "Polygon"}, "id": "0", "properties": {"NAMELSAD": "Amador County", "origin_county_geoid": "06005", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-114.05035, 36.84314], [-114.04394, 36.19335], [-114.12086, 36.11085], [-114.14699, 36.02606], [-114.24386, 36.01527], [-114.40562, 36.14698], [-114.44504, 36.12535], [-114.63047, 36.14222], [-114.75451, 36.08617], [-114.7221, 36.02895], [-114.74054, 35.97554], [-114.66164, 35.87123], [-114.70586, 35.85051], [-114.71203, 35.80553], [-114.68951, 35.65143], [-114.65353, 35.60967], [-114.67864, 35.49763], [-114.60461, 35.35524], [-114.56926, 35.18342], [-114.57826, 35.12881], [-114.64676, 35.10188], [-114.60291, 35.06859], [-114.63349, 35.00186], [-115.84599, 35.96371], [-115.84576, 36.17076], [-115.89575, 36.17223], [-115.89692, 36.84208], [-114.05035, 36.84314]]], "type": "Polygon"}, "id": "1", "properties": {"NAMELSAD": "Clark County", "origin_county_geoid": "32003", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-80.68002, 25.95686], [-80.68004, 25.97875], [-80.87293, 25.97943], [-80.88129, 26.33381], [-80.29699, 26.33436], [-80.29705, 26.35555], [-80.01528, 26.32096], [-80.06289, 25.97681], [-80.68002, 25.95686]]], "type": "Polygon"}, "id": "2", "properties": {"NAMELSAD": "Broward County", "origin_county_geoid": "12011", "unique_device_localdate_id_count": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.26403, 37.90378], [-122.18558, 37.82073], [-122.04547, 37.79813], [-121.96004, 37.71853], [-121.557, 37.81649], [-121.55666, 37.54273], [-121.4712, 37.48283], [-122.05193, 37.45925], [-122.28178, 37.70823], [-122.37312, 37.88388], [-122.26403, 37.90378]]], "type": "Polygon"}, "id": "3", "properties": {"NAMELSAD": "Alameda County", "origin_county_geoid": "06001", "unique_device_localdate_id_count": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.14364, 39.06729], [-120.00246, 39.06749], [-120.00101, 38.99957], [-119.88764, 38.9183], [-119.87729, 38.87019], [-119.94793, 38.78164], [-120.11201, 38.70502], [-120.14008, 38.63837], [-120.2143, 38.62908], [-120.30172, 38.54911], [-120.60616, 38.50235], [-120.81355, 38.56219], [-121.02738, 38.50825], [-121.11905, 38.71786], [-121.13316, 38.70537], [-121.14159, 38.71194], [-121.04096, 38.91505], [-120.93857, 38.93556], [-120.93727, 38.96368], [-120.85986, 38.95165], [-120.81278, 38.9999], [-120.7464, 39.01035], [-120.56426, 38.91364], [-120.49273, 38.94335], [-120.43524, 39.0284], [-120.18443, 39.03101], [-120.14364, 39.06729]]], "type": "Polygon"}, "id": "4", "properties": {"NAMELSAD": "El Dorado County", "origin_county_geoid": "06017", "unique_device_localdate_id_count": 40}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.00246, 39.06749], [-120.14364, 39.06729], [-120.24041, 39.02367], [-120.43524, 39.0284], [-120.49273, 38.94335], [-120.56426, 38.91364], [-120.68565, 38.98965], [-120.80939, 39.00083], [-120.85986, 38.95165], [-120.93621, 38.96393], [-120.93857, 38.93556], [-121.04041, 38.91565], [-121.13451, 38.71203], [-121.4844, 38.7346], [-121.46936, 38.92599], [-121.4144, 38.92621], [-121.41479, 38.99842], [-121.30704, 39.0529], [-121.22099, 39.01178], [-121.13798, 39.03791], [-121.04161, 39.01379], [-120.98915, 39.11153], [-120.69154, 39.3041], [-120.00632, 39.3165], [-120.00246, 39.06749]]], "type": "Polygon"}, "id": "5", "properties": {"NAMELSAD": "Placer County", "origin_county_geoid": "06061", "unique_device_localdate_id_count": 8}, "type": "Feature"}, {"geometry": {"coordinates": [[[-112.08349, 33.20456], [-112.19161, 33.2647], [-112.20317, 33.3105], [-112.20362, 32.50672], [-113.33389, 32.50519], [-113.33375, 34.00004], [-112.74395, 33.9999], [-112.27617, 33.88247], [-112.23505, 33.91641], [-112.24035, 33.95664], [-112.1613, 34.01746], [-112.16476, 34.04817], [-111.44508, 34.00118], [-111.45174, 33.92099], [-111.4052, 33.91944], [-111.37232, 33.82392], [-111.38681, 33.75004], [-111.22369, 33.60286], [-111.15335, 33.67761], [-111.03991, 33.4661], [-111.58063, 33.4658], [-111.58263, 33.20541], [-112.08349, 33.20456]]], "type": "Polygon"}, "id": "6", "properties": {"NAMELSAD": "Maricopa County", "origin_county_geoid": "04013", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.96004, 37.71853], [-122.04547, 37.79813], [-122.18558, 37.82073], [-122.26403, 37.90378], [-122.37378, 37.88372], [-122.44158, 37.97392], [-122.34745, 38.07326], [-122.14858, 38.03172], [-121.86214, 38.06607], [-121.78314, 38.01854], [-121.69976, 38.04522], [-121.67306, 38.09352], [-121.58528, 38.09637], [-121.55753, 38.01662], [-121.57991, 38.00778], [-121.55641, 37.92364], [-121.57943, 37.86016], [-121.53805, 37.83776], [-121.96004, 37.71853]]], "type": "Polygon"}, "id": "7", "properties": {"NAMELSAD": "Contra Costa County", "origin_county_geoid": "06013", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-97.03101, 32.98969], [-96.51701, 32.98286], [-96.52312, 32.54521], [-97.03859, 32.55441], [-97.03101, 32.98969]]], "type": "Polygon"}, "id": "8", "properties": {"NAMELSAD": "Dallas County", "origin_county_geoid": "48113", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.50639, 38.22459], [-121.58407, 38.12023], [-121.56718, 38.09732], [-121.67306, 38.09352], [-121.69976, 38.04522], [-121.77748, 38.01892], [-121.86246, 38.06603], [-121.71089, 38.08649], [-121.68559, 38.15971], [-121.6121, 38.20007], [-121.58478, 38.33082], [-121.521, 38.36122], [-121.5326, 38.43146], [-121.50414, 38.46656], [-121.55904, 38.49959], [-121.52413, 38.5205], [-121.5074, 38.592], [-121.63019, 38.67744], [-121.60289, 38.73584], [-121.11905, 38.71786], [-121.02742, 38.50814], [-121.02708, 38.30025], [-121.34437, 38.22821], [-121.43991, 38.25553], [-121.50639, 38.22459]]], "type": "Polygon"}, "id": "9", "properties": {"NAMELSAD": "Sacramento County", "origin_county_geoid": "06067", "unique_device_localdate_id_count": 41}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.65503, 39.52684], [-120.57782, 39.52327], [-120.50544, 39.44612], [-120.00377, 39.44506], [-120.00632, 39.3165], [-120.67143, 39.31037], [-120.98915, 39.11153], [-121.04161, 39.01379], [-121.27953, 39.03462], [-121.26613, 39.27272], [-121.21838, 39.28418], [-121.12748, 39.38024], [-120.8, 39.43767], [-120.65503, 39.52684]]], "type": "Polygon"}, "id": "10", "properties": {"NAMELSAD": "Nevada County", "origin_county_geoid": "06057", "unique_device_localdate_id_count": 1}, "type": "Feature"}], "type": "FeatureCollection"});
 
         
     
-    geo_json_10529cfd85db14070c62cd6095be0c4e.bindTooltip(
+    geo_json_997c4fb06f0dc71d98a6b79853b823f9.bindTooltip(
     function(layer){
     let div = L.DomUtil.create('div');
     
@@ -1195,16 +1217,19 @@
 });
                      
     
-            geo_json_10529cfd85db14070c62cd6095be0c4e.addTo(feature_group_5f7baf665dfb3ea7a88ecd10fdb734e3);
+            geo_json_997c4fb06f0dc71d98a6b79853b823f9.addTo(feature_group_22ec881e0e2c7ac49bf25785616e7f4b);
         
     
-            var feature_group_9a06d9a2e6f592180a6d61f8f1c65dfb = L.featureGroup(
+            feature_group_22ec881e0e2c7ac49bf25785616e7f4b.addTo(map_61de552ac1ae776aa33f72f0d1c3a5b8);
+        
+    
+            var feature_group_3908f18e3c421fd5400d8598be237954 = L.featureGroup(
                 {
 }
             );
         
     
-        function geo_json_4acead8f764b0eabf17c7e74f65d4ec6_styler(feature) {
+        function geo_json_c66e1d89176afcca92c3ab390ad1437d_styler(feature) {
             switch(feature.id) {
                 case "0": case "2": case "3": case "17": case "19": 
                     return {"color": "#4a5568", "fillColor": "#fef1e4", "fillOpacity": 0.88, "opacity": 0.1, "weight": 0.35};
@@ -1220,46 +1245,46 @@
                     return {"color": "#4a5568", "fillColor": "#7f2704", "fillOpacity": 0.88, "opacity": 0.1, "weight": 0.35};
             }
         }
-        function geo_json_4acead8f764b0eabf17c7e74f65d4ec6_highlighter(feature) {
+        function geo_json_c66e1d89176afcca92c3ab390ad1437d_highlighter(feature) {
             switch(feature.id) {
                 default:
                     return {"color": "#1a202c", "fillOpacity": 0.92, "opacity": 0.35, "weight": 1.2};
             }
         }
 
-        function geo_json_4acead8f764b0eabf17c7e74f65d4ec6_onEachFeature(feature, layer) {
+        function geo_json_c66e1d89176afcca92c3ab390ad1437d_onEachFeature(feature, layer) {
 
             layer.on({
                 mouseout: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                            geo_json_4acead8f764b0eabf17c7e74f65d4ec6.resetStyle(e.target);
+                            geo_json_c66e1d89176afcca92c3ab390ad1437d.resetStyle(e.target);
                     }
                 },
                 mouseover: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                        const highlightStyle = geo_json_4acead8f764b0eabf17c7e74f65d4ec6_highlighter(e.target.feature)
+                        const highlightStyle = geo_json_c66e1d89176afcca92c3ab390ad1437d_highlighter(e.target.feature)
                         e.target.setStyle(highlightStyle);
                     }
                 },
             });
         };
-        var geo_json_4acead8f764b0eabf17c7e74f65d4ec6 = L.geoJson(null, {
-                onEachFeature: geo_json_4acead8f764b0eabf17c7e74f65d4ec6_onEachFeature,
+        var geo_json_c66e1d89176afcca92c3ab390ad1437d = L.geoJson(null, {
+                onEachFeature: geo_json_c66e1d89176afcca92c3ab390ad1437d_onEachFeature,
             
-                style: geo_json_4acead8f764b0eabf17c7e74f65d4ec6_styler,
+                style: geo_json_c66e1d89176afcca92c3ab390ad1437d_styler,
             ...{
 }
         });
 
-        function geo_json_4acead8f764b0eabf17c7e74f65d4ec6_add (data) {
-            geo_json_4acead8f764b0eabf17c7e74f65d4ec6
+        function geo_json_c66e1d89176afcca92c3ab390ad1437d_add (data) {
+            geo_json_c66e1d89176afcca92c3ab390ad1437d
                 .addData(data);
         }
-            geo_json_4acead8f764b0eabf17c7e74f65d4ec6_add({"features": [{"geometry": {"coordinates": [[[-121.47192, 37.48178], [-121.55666, 37.54273], [-121.55706, 37.81575], [-121.5341, 37.84946], [-121.57943, 37.86016], [-121.55641, 37.92364], [-121.57991, 38.00778], [-121.55753, 38.01662], [-121.58439, 38.03603], [-121.56404, 38.10142], [-121.58436, 38.1183], [-121.47572, 38.25809], [-121.34437, 38.22821], [-121.02708, 38.30025], [-120.92645, 38.07742], [-120.9206, 37.73833], [-120.99343, 37.76094], [-121.17845, 37.70553], [-121.47192, 37.48178]]], "type": "Polygon"}, "id": "0", "properties": {"NAMELSAD": "San Joaquin County", "origin_county_geoid": "06077", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-118.05904, 33.8462], [-117.97659, 33.90281], [-117.9765, 33.94605], [-117.78307, 33.94626], [-117.53645, 33.75767], [-117.534, 33.71035], [-117.41299, 33.65904], [-117.51021, 33.534], [-117.5095, 33.47027], [-117.57851, 33.45381], [-117.61108, 33.33399], [-118.14781, 33.69408], [-118.05904, 33.8462]]], "type": "Polygon"}, "id": "1", "properties": {"NAMELSAD": "Orange County", "origin_county_geoid": "06059", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.59856, 36.99863], [-120.59057, 36.95264], [-120.656, 36.9528], [-120.91873, 36.74038], [-121.14152, 36.83666], [-121.1843, 36.90897], [-121.23433, 36.92615], [-121.21173, 36.95738], [-121.24657, 36.98523], [-121.24865, 37.03368], [-121.2082, 37.06129], [-121.24548, 37.08915], [-121.2268, 37.13477], [-120.96381, 37.34614], [-120.98981, 37.39587], [-120.38767, 37.63336], [-120.17849, 37.26242], [-120.05205, 37.18311], [-120.28987, 37.15261], [-120.47669, 37.09639], [-120.59856, 36.99863]]], "type": "Polygon"}, "id": "2", "properties": {"NAMELSAD": "Merced County", "origin_county_geoid": "06047", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.81355, 38.56219], [-120.60616, 38.50235], [-120.31714, 38.54511], [-120.2143, 38.62908], [-120.14008, 38.63837], [-120.11201, 38.70502], [-120.07239, 38.70277], [-120.07248, 38.50987], [-120.49536, 38.44961], [-120.60874, 38.39754], [-120.63178, 38.33995], [-120.80774, 38.28872], [-120.89379, 38.22128], [-120.9955, 38.2254], [-121.02708, 38.30025], [-121.02771, 38.50011], [-120.81355, 38.56219]]], "type": "Polygon"}, "id": "3", "properties": {"NAMELSAD": "Amador County", "origin_county_geoid": "06005", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.59984, 38.77488], [-121.63113, 38.67901], [-121.50627, 38.58631], [-121.55904, 38.49959], [-121.50414, 38.46656], [-121.5326, 38.43146], [-121.521, 38.36122], [-121.59327, 38.31309], [-121.6937, 38.31373], [-121.71203, 38.53796], [-121.94107, 38.53326], [-122.01338, 38.48872], [-122.10413, 38.51336], [-122.28692, 38.83917], [-122.37155, 38.84465], [-122.42195, 38.90356], [-122.40403, 38.92529], [-121.83549, 38.92448], [-121.79151, 38.9054], [-121.80237, 38.86458], [-121.72957, 38.85843], [-121.72267, 38.80272], [-121.69067, 38.79563], [-121.67383, 38.74314], [-121.59984, 38.77488]]], "type": "Polygon"}, "id": "4", "properties": {"NAMELSAD": "Yolo County", "origin_county_geoid": "06113", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.26403, 37.90378], [-122.18558, 37.82073], [-122.04547, 37.79813], [-121.96004, 37.71853], [-121.557, 37.81649], [-121.55666, 37.54273], [-121.4712, 37.48283], [-122.05193, 37.45925], [-122.28178, 37.70823], [-122.37312, 37.88388], [-122.26403, 37.90378]]], "type": "Polygon"}, "id": "5", "properties": {"NAMELSAD": "Alameda County", "origin_county_geoid": "06001", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.14364, 39.06729], [-120.00246, 39.06749], [-120.00101, 38.99957], [-119.88764, 38.9183], [-119.87729, 38.87019], [-119.94793, 38.78164], [-120.11201, 38.70502], [-120.14008, 38.63837], [-120.2143, 38.62908], [-120.30172, 38.54911], [-120.60616, 38.50235], [-120.81355, 38.56219], [-121.02738, 38.50825], [-121.11905, 38.71786], [-121.13316, 38.70537], [-121.14159, 38.71194], [-121.04096, 38.91505], [-120.93857, 38.93556], [-120.93727, 38.96368], [-120.85986, 38.95165], [-120.81278, 38.9999], [-120.7464, 39.01035], [-120.56426, 38.91364], [-120.49273, 38.94335], [-120.43524, 39.0284], [-120.18443, 39.03101], [-120.14364, 39.06729]]], "type": "Polygon"}, "id": "6", "properties": {"NAMELSAD": "El Dorado County", "origin_county_geoid": "06017", "unique_device_localdate_id_count": 55}, "type": "Feature"}, {"geometry": {"coordinates": [[[-79.29339, 40.04035], [-79.34177, 40.04317], [-79.46152, 40.1441], [-79.59302, 40.08205], [-79.74606, 40.12846], [-79.88665, 40.13022], [-79.90315, 40.16018], [-79.85058, 40.17473], [-79.87143, 40.19739], [-79.78259, 40.22763], [-79.80743, 40.23689], [-79.77108, 40.37542], [-79.70478, 40.42632], [-79.70162, 40.52545], [-79.76509, 40.54924], [-79.77115, 40.58625], [-79.66835, 40.68005], [-79.55077, 40.6041], [-79.55977, 40.56259], [-79.45328, 40.53322], [-79.45377, 40.48425], [-79.39225, 40.4548], [-79.36206, 40.47868], [-79.3579, 40.45234], [-79.30157, 40.46144], [-79.27286, 40.41841], [-79.15579, 40.41177], [-79.12163, 40.37058], [-79.05888, 40.38032], [-79.02931, 40.41925], [-78.98708, 40.41099], [-78.99817, 40.35617], [-79.17257, 40.12554], [-79.29339, 40.04035]]], "type": "Polygon"}, "id": "7", "properties": {"NAMELSAD": "Westmoreland County", "origin_county_geoid": "42129", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.00246, 39.06749], [-120.14364, 39.06729], [-120.24041, 39.02367], [-120.43524, 39.0284], [-120.49273, 38.94335], [-120.56426, 38.91364], [-120.68565, 38.98965], [-120.80939, 39.00083], [-120.85986, 38.95165], [-120.93621, 38.96393], [-120.93857, 38.93556], [-121.04041, 38.91565], [-121.13451, 38.71203], [-121.4844, 38.7346], [-121.46936, 38.92599], [-121.4144, 38.92621], [-121.41479, 38.99842], [-121.30704, 39.0529], [-121.22099, 39.01178], [-121.13798, 39.03791], [-121.04161, 39.01379], [-120.98915, 39.11153], [-120.69154, 39.3041], [-120.00632, 39.3165], [-120.00246, 39.06749]]], "type": "Polygon"}, "id": "8", "properties": {"NAMELSAD": "Placer County", "origin_county_geoid": "06061", "unique_device_localdate_id_count": 94}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-118.14781, 33.69408], [-118.31914, 33.65955], [-118.46696, 33.72552], [-118.48448, 33.80315], [-118.44725, 33.84876], [-118.55736, 33.98767], [-118.80983, 33.94691], [-118.95172, 33.99286], [-118.94097, 34.07483], [-118.78889, 34.16821], [-118.66815, 34.16819], [-118.66771, 34.24034], [-118.63249, 34.24039], [-118.89463, 34.81797], [-117.66746, 34.82253], [-117.64637, 34.28917], [-117.73013, 34.02137], [-117.78503, 34.00485], [-117.78307, 33.94626], [-117.9765, 33.94605], [-117.97659, 33.90281], [-118.02878, 33.87332], [-118.14781, 33.69408]]], [[[-118.62592, 33.52898], [-118.52938, 33.53118], [-118.35939, 33.46492], [-118.25771, 33.36413], [-118.24908, 33.28414], [-118.32799, 33.24808], [-118.48669, 33.2769], [-118.6682, 33.48594], [-118.62592, 33.52898]]], [[[-118.63264, 33.08454], [-118.5421, 33.07379], [-118.29725, 32.84509], [-118.29584, 32.79826], [-118.40832, 32.75191], [-118.46471, 32.76018], [-118.55319, 32.8288], [-118.6782, 33.03973], [-118.63264, 33.08454]]]], "type": "MultiPolygon"}, "id": "9", "properties": {"NAMELSAD": "Los Angeles County", "origin_county_geoid": "06037", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.96004, 37.71853], [-122.04547, 37.79813], [-122.18558, 37.82073], [-122.26403, 37.90378], [-122.37378, 37.88372], [-122.44158, 37.97392], [-122.34745, 38.07326], [-122.14858, 38.03172], [-121.86214, 38.06607], [-121.78314, 38.01854], [-121.69976, 38.04522], [-121.67306, 38.09352], [-121.58528, 38.09637], [-121.55753, 38.01662], [-121.57991, 38.00778], [-121.55641, 37.92364], [-121.57943, 37.86016], [-121.53805, 37.83776], [-121.96004, 37.71853]]], "type": "Polygon"}, "id": "10", "properties": {"NAMELSAD": "Contra Costa County", "origin_county_geoid": "06013", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.57542, 38.91835], [-121.54331, 38.9724], [-121.41478, 38.99645], [-121.4144, 38.92621], [-121.46936, 38.92599], [-121.4844, 38.7346], [-121.60289, 38.73584], [-121.59321, 38.76432], [-121.62455, 38.78537], [-121.67383, 38.74314], [-121.72957, 38.85843], [-121.81481, 38.87658], [-121.79111, 38.90454], [-121.84057, 38.95482], [-121.79543, 38.99639], [-121.93795, 39.133], [-121.91721, 39.14728], [-121.94551, 39.17984], [-121.94131, 39.26236], [-121.90827, 39.30388], [-121.63015, 39.30567], [-121.58592, 39.09084], [-121.61025, 39.05691], [-121.57542, 38.91835]]], "type": "Polygon"}, "id": "11", "properties": {"NAMELSAD": "Sutter County", "origin_county_geoid": "06101", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-86.16534, 33.63019], [-86.20545, 33.6838], [-86.18374, 33.69949], [-86.15904, 33.67191], [-86.05067, 33.67459], [-85.99493, 33.58648], [-85.79456, 33.58557], [-85.79685, 33.54185], [-85.90491, 33.49865], [-85.92376, 33.39621], [-85.97652, 33.38187], [-85.98029, 33.29419], [-86.1182, 33.29632], [-86.12057, 33.19451], [-86.17283, 33.19568], [-86.17437, 33.10439], [-86.49103, 33.10294], [-86.45993, 33.12512], [-86.49334, 33.19704], [-86.46202, 33.20002], [-86.43353, 33.28262], [-86.3576, 33.29555], [-86.36811, 33.34167], [-86.34111, 33.3546], [-86.37783, 33.39231], [-86.2809, 33.5108], [-86.23533, 33.49453], [-86.19049, 33.54373], [-86.22102, 33.58792], [-86.16534, 33.63019]]], "type": "Polygon"}, "id": "12", "properties": {"NAMELSAD": "Talladega County", "origin_county_geoid": "01121", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.50639, 38.22459], [-121.58407, 38.12023], [-121.56718, 38.09732], [-121.67306, 38.09352], [-121.69976, 38.04522], [-121.77748, 38.01892], [-121.86246, 38.06603], [-121.71089, 38.08649], [-121.68559, 38.15971], [-121.6121, 38.20007], [-121.58478, 38.33082], [-121.521, 38.36122], [-121.5326, 38.43146], [-121.50414, 38.46656], [-121.55904, 38.49959], [-121.52413, 38.5205], [-121.5074, 38.592], [-121.63019, 38.67744], [-121.60289, 38.73584], [-121.11905, 38.71786], [-121.02742, 38.50814], [-121.02708, 38.30025], [-121.34437, 38.22821], [-121.43991, 38.25553], [-121.50639, 38.22459]]], "type": "Polygon"}, "id": "13", "properties": {"NAMELSAD": "Sacramento County", "origin_county_geoid": "06067", "unique_device_localdate_id_count": 83}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.65503, 39.52684], [-120.57782, 39.52327], [-120.50544, 39.44612], [-120.00377, 39.44506], [-120.00632, 39.3165], [-120.67143, 39.31037], [-120.98915, 39.11153], [-121.04161, 39.01379], [-121.27953, 39.03462], [-121.26613, 39.27272], [-121.21838, 39.28418], [-121.12748, 39.38024], [-120.8, 39.43767], [-120.65503, 39.52684]]], "type": "Polygon"}, "id": "14", "properties": {"NAMELSAD": "Nevada County", "origin_county_geoid": "06057", "unique_device_localdate_id_count": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.47983, 38.45127], [-122.49791, 38.42457], [-122.39629, 38.30909], [-122.34956, 38.19397], [-122.36756, 38.15879], [-122.40751, 38.15781], [-122.34745, 38.07326], [-122.5019, 38.11242], [-122.57059, 38.18712], [-122.7399, 38.20702], [-122.90811, 38.32075], [-123.13452, 38.29626], [-123.13431, 38.34579], [-123.22022, 38.44195], [-123.36093, 38.5102], [-123.51058, 38.68089], [-123.6325, 38.75812], [-123.36824, 38.77707], [-123.36839, 38.80664], [-123.13625, 38.80914], [-123.13664, 38.83945], [-123.081, 38.85244], [-122.81765, 38.84984], [-122.74818, 38.80383], [-122.69545, 38.71309], [-122.63705, 38.69373], [-122.63507, 38.58301], [-122.47983, 38.45127]]], "type": "Polygon"}, "id": "15", "properties": {"NAMELSAD": "Sonoma County", "origin_county_geoid": "06097", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.15893, 38.03325], [-122.34745, 38.07326], [-122.40697, 38.15565], [-122.19538, 38.15502], [-122.20607, 38.31578], [-122.06161, 38.32613], [-122.12614, 38.42746], [-122.10413, 38.51336], [-122.01338, 38.48872], [-121.94107, 38.53326], [-121.71203, 38.53796], [-121.69389, 38.31417], [-121.59327, 38.31309], [-121.60244, 38.22041], [-121.68559, 38.15971], [-121.71213, 38.08552], [-122.15893, 38.03325]]], "type": "Polygon"}, "id": "16", "properties": {"NAMELSAD": "Solano County", "origin_county_geoid": "06095", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.98981, 37.39587], [-120.96381, 37.34614], [-121.2268, 37.13477], [-121.28111, 37.1836], [-121.36094, 37.18432], [-121.39902, 37.15013], [-121.45575, 37.24944], [-121.45805, 37.28414], [-121.40575, 37.31099], [-121.40908, 37.38067], [-121.45665, 37.39554], [-121.48677, 37.47565], [-121.11005, 37.74213], [-120.99343, 37.76094], [-120.92067, 37.73821], [-120.92645, 38.07742], [-120.38733, 37.6335], [-120.98981, 37.39587]]], "type": "Polygon"}, "id": "17", "properties": {"NAMELSAD": "Stanislaus County", "origin_county_geoid": "06099", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.60807, 38.398], [-120.42321, 38.47332], [-120.07248, 38.50987], [-120.07257, 38.44708], [-120.01995, 38.43352], [-120.17647, 38.37378], [-120.46375, 38.01039], [-120.53481, 37.99117], [-120.51344, 37.95644], [-120.54235, 37.92045], [-120.65327, 37.83186], [-120.93885, 38.08832], [-120.9955, 38.2254], [-120.8933, 38.22139], [-120.80774, 38.28872], [-120.63179, 38.34603], [-120.60807, 38.398]]], "type": "Polygon"}, "id": "18", "properties": {"NAMELSAD": "Calaveras County", "origin_county_geoid": "06009", "unique_device_localdate_id_count": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.0764, 36.9102], [-122.25108, 36.98583], [-122.3139, 37.05476], [-122.28938, 37.11347], [-122.31768, 37.18695], [-122.15277, 37.21544], [-122.15228, 37.28605], [-121.99109, 37.14427], [-121.82418, 37.08776], [-121.72658, 37.02189], [-121.7387, 36.98999], [-121.58115, 36.91925], [-121.64455, 36.89387], [-121.72645, 36.91427], [-121.81003, 36.85079], [-122.05188, 36.8196], [-122.0764, 36.9102]]], "type": "Polygon"}, "id": "19", "properties": {"NAMELSAD": "Santa Cruz County", "origin_county_geoid": "06087", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-80.952, 28.6042], [-80.93939, 28.53512], [-80.87524, 28.48949], [-80.90127, 28.43354], [-80.86291, 28.34749], [-81.65727, 28.3471], [-81.64651, 28.78587], [-81.41457, 28.78556], [-81.45952, 28.71326], [-81.45973, 28.6402], [-80.952, 28.6042]]], "type": "Polygon"}, "id": "20", "properties": {"NAMELSAD": "Orange County", "origin_county_geoid": "12095", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.18218, 37.43948], [-122.08147, 37.47784], [-121.92504, 37.45419], [-121.86527, 37.48464], [-121.47295, 37.48233], [-121.45665, 37.39554], [-121.40908, 37.38067], [-121.40575, 37.31099], [-121.45805, 37.28414], [-121.45575, 37.24944], [-121.39902, 37.15013], [-121.35956, 37.18445], [-121.23663, 37.15667], [-121.21734, 37.12304], [-121.24548, 37.08915], [-121.2082, 37.06129], [-121.24865, 37.03368], [-121.24657, 36.98523], [-121.21541, 36.96125], [-121.48895, 36.98315], [-121.57573, 36.893], [-121.59035, 36.92615], [-121.7387, 36.98999], [-121.71876, 37.00756], [-121.75548, 37.04903], [-122.02617, 37.16685], [-122.19306, 37.31828], [-122.18218, 37.43948]]], "type": "Polygon"}, "id": "21", "properties": {"NAMELSAD": "Santa Clara County", "origin_county_geoid": "06085", "unique_device_localdate_id_count": 1}, "type": "Feature"}], "type": "FeatureCollection"});
+            geo_json_c66e1d89176afcca92c3ab390ad1437d_add({"features": [{"geometry": {"coordinates": [[[-121.47192, 37.48178], [-121.55666, 37.54273], [-121.55706, 37.81575], [-121.5341, 37.84946], [-121.57943, 37.86016], [-121.55641, 37.92364], [-121.57991, 38.00778], [-121.55753, 38.01662], [-121.58439, 38.03603], [-121.56404, 38.10142], [-121.58436, 38.1183], [-121.47572, 38.25809], [-121.34437, 38.22821], [-121.02708, 38.30025], [-120.92645, 38.07742], [-120.9206, 37.73833], [-120.99343, 37.76094], [-121.17845, 37.70553], [-121.47192, 37.48178]]], "type": "Polygon"}, "id": "0", "properties": {"NAMELSAD": "San Joaquin County", "origin_county_geoid": "06077", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-118.05904, 33.8462], [-117.97659, 33.90281], [-117.9765, 33.94605], [-117.78307, 33.94626], [-117.53645, 33.75767], [-117.534, 33.71035], [-117.41299, 33.65904], [-117.51021, 33.534], [-117.5095, 33.47027], [-117.57851, 33.45381], [-117.61108, 33.33399], [-118.14781, 33.69408], [-118.05904, 33.8462]]], "type": "Polygon"}, "id": "1", "properties": {"NAMELSAD": "Orange County", "origin_county_geoid": "06059", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.59856, 36.99863], [-120.59057, 36.95264], [-120.656, 36.9528], [-120.91873, 36.74038], [-121.14152, 36.83666], [-121.1843, 36.90897], [-121.23433, 36.92615], [-121.21173, 36.95738], [-121.24657, 36.98523], [-121.24865, 37.03368], [-121.2082, 37.06129], [-121.24548, 37.08915], [-121.2268, 37.13477], [-120.96381, 37.34614], [-120.98981, 37.39587], [-120.38767, 37.63336], [-120.17849, 37.26242], [-120.05205, 37.18311], [-120.28987, 37.15261], [-120.47669, 37.09639], [-120.59856, 36.99863]]], "type": "Polygon"}, "id": "2", "properties": {"NAMELSAD": "Merced County", "origin_county_geoid": "06047", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.81355, 38.56219], [-120.60616, 38.50235], [-120.31714, 38.54511], [-120.2143, 38.62908], [-120.14008, 38.63837], [-120.11201, 38.70502], [-120.07239, 38.70277], [-120.07248, 38.50987], [-120.49536, 38.44961], [-120.60874, 38.39754], [-120.63178, 38.33995], [-120.80774, 38.28872], [-120.89379, 38.22128], [-120.9955, 38.2254], [-121.02708, 38.30025], [-121.02771, 38.50011], [-120.81355, 38.56219]]], "type": "Polygon"}, "id": "3", "properties": {"NAMELSAD": "Amador County", "origin_county_geoid": "06005", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.59984, 38.77488], [-121.63113, 38.67901], [-121.50627, 38.58631], [-121.55904, 38.49959], [-121.50414, 38.46656], [-121.5326, 38.43146], [-121.521, 38.36122], [-121.59327, 38.31309], [-121.6937, 38.31373], [-121.71203, 38.53796], [-121.94107, 38.53326], [-122.01338, 38.48872], [-122.10413, 38.51336], [-122.28692, 38.83917], [-122.37155, 38.84465], [-122.42195, 38.90356], [-122.40403, 38.92529], [-121.83549, 38.92448], [-121.79151, 38.9054], [-121.80237, 38.86458], [-121.72957, 38.85843], [-121.72267, 38.80272], [-121.69067, 38.79563], [-121.67383, 38.74314], [-121.59984, 38.77488]]], "type": "Polygon"}, "id": "4", "properties": {"NAMELSAD": "Yolo County", "origin_county_geoid": "06113", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.26403, 37.90378], [-122.18558, 37.82073], [-122.04547, 37.79813], [-121.96004, 37.71853], [-121.557, 37.81649], [-121.55666, 37.54273], [-121.4712, 37.48283], [-122.05193, 37.45925], [-122.28178, 37.70823], [-122.37312, 37.88388], [-122.26403, 37.90378]]], "type": "Polygon"}, "id": "5", "properties": {"NAMELSAD": "Alameda County", "origin_county_geoid": "06001", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.14364, 39.06729], [-120.00246, 39.06749], [-120.00101, 38.99957], [-119.88764, 38.9183], [-119.87729, 38.87019], [-119.94793, 38.78164], [-120.11201, 38.70502], [-120.14008, 38.63837], [-120.2143, 38.62908], [-120.30172, 38.54911], [-120.60616, 38.50235], [-120.81355, 38.56219], [-121.02738, 38.50825], [-121.11905, 38.71786], [-121.13316, 38.70537], [-121.14159, 38.71194], [-121.04096, 38.91505], [-120.93857, 38.93556], [-120.93727, 38.96368], [-120.85986, 38.95165], [-120.81278, 38.9999], [-120.7464, 39.01035], [-120.56426, 38.91364], [-120.49273, 38.94335], [-120.43524, 39.0284], [-120.18443, 39.03101], [-120.14364, 39.06729]]], "type": "Polygon"}, "id": "6", "properties": {"NAMELSAD": "El Dorado County", "origin_county_geoid": "06017", "unique_device_localdate_id_count": 55}, "type": "Feature"}, {"geometry": {"coordinates": [[[-79.29339, 40.04035], [-79.34177, 40.04317], [-79.46152, 40.1441], [-79.59302, 40.08205], [-79.74606, 40.12846], [-79.88665, 40.13022], [-79.90315, 40.16018], [-79.85058, 40.17473], [-79.87143, 40.19739], [-79.78259, 40.22763], [-79.80743, 40.23689], [-79.77108, 40.37542], [-79.70478, 40.42632], [-79.70162, 40.52545], [-79.76509, 40.54924], [-79.77115, 40.58625], [-79.66835, 40.68005], [-79.55077, 40.6041], [-79.55977, 40.56259], [-79.45328, 40.53322], [-79.45377, 40.48425], [-79.39225, 40.4548], [-79.36206, 40.47868], [-79.3579, 40.45234], [-79.30157, 40.46144], [-79.27286, 40.41841], [-79.15579, 40.41177], [-79.12163, 40.37058], [-79.05888, 40.38032], [-79.02931, 40.41925], [-78.98708, 40.41099], [-78.99817, 40.35617], [-79.17257, 40.12554], [-79.29339, 40.04035]]], "type": "Polygon"}, "id": "7", "properties": {"NAMELSAD": "Westmoreland County", "origin_county_geoid": "42129", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.00246, 39.06749], [-120.14364, 39.06729], [-120.24041, 39.02367], [-120.43524, 39.0284], [-120.49273, 38.94335], [-120.56426, 38.91364], [-120.68565, 38.98965], [-120.80939, 39.00083], [-120.85986, 38.95165], [-120.93621, 38.96393], [-120.93857, 38.93556], [-121.04041, 38.91565], [-121.13451, 38.71203], [-121.4844, 38.7346], [-121.46936, 38.92599], [-121.4144, 38.92621], [-121.41479, 38.99842], [-121.30704, 39.0529], [-121.22099, 39.01178], [-121.13798, 39.03791], [-121.04161, 39.01379], [-120.98915, 39.11153], [-120.69154, 39.3041], [-120.00632, 39.3165], [-120.00246, 39.06749]]], "type": "Polygon"}, "id": "8", "properties": {"NAMELSAD": "Placer County", "origin_county_geoid": "06061", "unique_device_localdate_id_count": 94}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-118.14781, 33.69408], [-118.31914, 33.65955], [-118.46696, 33.72552], [-118.48448, 33.80315], [-118.44725, 33.84876], [-118.55736, 33.98767], [-118.80983, 33.94691], [-118.95172, 33.99286], [-118.94097, 34.07483], [-118.78889, 34.16821], [-118.66815, 34.16819], [-118.66771, 34.24034], [-118.63249, 34.24039], [-118.89463, 34.81797], [-117.66746, 34.82253], [-117.64637, 34.28917], [-117.73013, 34.02137], [-117.78503, 34.00485], [-117.78307, 33.94626], [-117.9765, 33.94605], [-117.97659, 33.90281], [-118.02878, 33.87332], [-118.14781, 33.69408]]], [[[-118.62592, 33.52898], [-118.52938, 33.53118], [-118.35939, 33.46492], [-118.25771, 33.36413], [-118.24908, 33.28414], [-118.32799, 33.24808], [-118.48669, 33.2769], [-118.6682, 33.48594], [-118.62592, 33.52898]]], [[[-118.63264, 33.08454], [-118.5421, 33.07379], [-118.29725, 32.84509], [-118.29584, 32.79826], [-118.40832, 32.75191], [-118.46471, 32.76018], [-118.55319, 32.8288], [-118.6782, 33.03973], [-118.63264, 33.08454]]]], "type": "MultiPolygon"}, "id": "9", "properties": {"NAMELSAD": "Los Angeles County", "origin_county_geoid": "06037", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.96004, 37.71853], [-122.04547, 37.79813], [-122.18558, 37.82073], [-122.26403, 37.90378], [-122.37378, 37.88372], [-122.44158, 37.97392], [-122.34745, 38.07326], [-122.14858, 38.03172], [-121.86214, 38.06607], [-121.78314, 38.01854], [-121.69976, 38.04522], [-121.67306, 38.09352], [-121.58528, 38.09637], [-121.55753, 38.01662], [-121.57991, 38.00778], [-121.55641, 37.92364], [-121.57943, 37.86016], [-121.53805, 37.83776], [-121.96004, 37.71853]]], "type": "Polygon"}, "id": "10", "properties": {"NAMELSAD": "Contra Costa County", "origin_county_geoid": "06013", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.57542, 38.91835], [-121.54331, 38.9724], [-121.41478, 38.99645], [-121.4144, 38.92621], [-121.46936, 38.92599], [-121.4844, 38.7346], [-121.60289, 38.73584], [-121.59321, 38.76432], [-121.62455, 38.78537], [-121.67383, 38.74314], [-121.72957, 38.85843], [-121.81481, 38.87658], [-121.79111, 38.90454], [-121.84057, 38.95482], [-121.79543, 38.99639], [-121.93795, 39.133], [-121.91721, 39.14728], [-121.94551, 39.17984], [-121.94131, 39.26236], [-121.90827, 39.30388], [-121.63015, 39.30567], [-121.58592, 39.09084], [-121.61025, 39.05691], [-121.57542, 38.91835]]], "type": "Polygon"}, "id": "11", "properties": {"NAMELSAD": "Sutter County", "origin_county_geoid": "06101", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-86.16534, 33.63019], [-86.20545, 33.6838], [-86.18374, 33.69949], [-86.15904, 33.67191], [-86.05067, 33.67459], [-85.99493, 33.58648], [-85.79456, 33.58557], [-85.79685, 33.54185], [-85.90491, 33.49865], [-85.92376, 33.39621], [-85.97652, 33.38187], [-85.98029, 33.29419], [-86.1182, 33.29632], [-86.12057, 33.19451], [-86.17283, 33.19568], [-86.17437, 33.10439], [-86.49103, 33.10294], [-86.45993, 33.12512], [-86.49334, 33.19704], [-86.46202, 33.20002], [-86.43353, 33.28262], [-86.3576, 33.29555], [-86.36811, 33.34167], [-86.34111, 33.3546], [-86.37783, 33.39231], [-86.2809, 33.5108], [-86.23533, 33.49453], [-86.19049, 33.54373], [-86.22102, 33.58792], [-86.16534, 33.63019]]], "type": "Polygon"}, "id": "12", "properties": {"NAMELSAD": "Talladega County", "origin_county_geoid": "01121", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.50639, 38.22459], [-121.58407, 38.12023], [-121.56718, 38.09732], [-121.67306, 38.09352], [-121.69976, 38.04522], [-121.77748, 38.01892], [-121.86246, 38.06603], [-121.71089, 38.08649], [-121.68559, 38.15971], [-121.6121, 38.20007], [-121.58478, 38.33082], [-121.521, 38.36122], [-121.5326, 38.43146], [-121.50414, 38.46656], [-121.55904, 38.49959], [-121.52413, 38.5205], [-121.5074, 38.592], [-121.63019, 38.67744], [-121.60289, 38.73584], [-121.11905, 38.71786], [-121.02742, 38.50814], [-121.02708, 38.30025], [-121.34437, 38.22821], [-121.43991, 38.25553], [-121.50639, 38.22459]]], "type": "Polygon"}, "id": "13", "properties": {"NAMELSAD": "Sacramento County", "origin_county_geoid": "06067", "unique_device_localdate_id_count": 83}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.65503, 39.52684], [-120.57782, 39.52327], [-120.50544, 39.44612], [-120.00377, 39.44506], [-120.00632, 39.3165], [-120.67143, 39.31037], [-120.98915, 39.11153], [-121.04161, 39.01379], [-121.27953, 39.03462], [-121.26613, 39.27272], [-121.21838, 39.28418], [-121.12748, 39.38024], [-120.8, 39.43767], [-120.65503, 39.52684]]], "type": "Polygon"}, "id": "14", "properties": {"NAMELSAD": "Nevada County", "origin_county_geoid": "06057", "unique_device_localdate_id_count": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.47983, 38.45127], [-122.49791, 38.42457], [-122.39629, 38.30909], [-122.34956, 38.19397], [-122.36756, 38.15879], [-122.40751, 38.15781], [-122.34745, 38.07326], [-122.5019, 38.11242], [-122.57059, 38.18712], [-122.7399, 38.20702], [-122.90811, 38.32075], [-123.13452, 38.29626], [-123.13431, 38.34579], [-123.22022, 38.44195], [-123.36093, 38.5102], [-123.51058, 38.68089], [-123.6325, 38.75812], [-123.36824, 38.77707], [-123.36839, 38.80664], [-123.13625, 38.80914], [-123.13664, 38.83945], [-123.081, 38.85244], [-122.81765, 38.84984], [-122.74818, 38.80383], [-122.69545, 38.71309], [-122.63705, 38.69373], [-122.63507, 38.58301], [-122.47983, 38.45127]]], "type": "Polygon"}, "id": "15", "properties": {"NAMELSAD": "Sonoma County", "origin_county_geoid": "06097", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.15893, 38.03325], [-122.34745, 38.07326], [-122.40697, 38.15565], [-122.19538, 38.15502], [-122.20607, 38.31578], [-122.06161, 38.32613], [-122.12614, 38.42746], [-122.10413, 38.51336], [-122.01338, 38.48872], [-121.94107, 38.53326], [-121.71203, 38.53796], [-121.69389, 38.31417], [-121.59327, 38.31309], [-121.60244, 38.22041], [-121.68559, 38.15971], [-121.71213, 38.08552], [-122.15893, 38.03325]]], "type": "Polygon"}, "id": "16", "properties": {"NAMELSAD": "Solano County", "origin_county_geoid": "06095", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.98981, 37.39587], [-120.96381, 37.34614], [-121.2268, 37.13477], [-121.28111, 37.1836], [-121.36094, 37.18432], [-121.39902, 37.15013], [-121.45575, 37.24944], [-121.45805, 37.28414], [-121.40575, 37.31099], [-121.40908, 37.38067], [-121.45665, 37.39554], [-121.48677, 37.47565], [-121.11005, 37.74213], [-120.99343, 37.76094], [-120.92067, 37.73821], [-120.92645, 38.07742], [-120.38733, 37.6335], [-120.98981, 37.39587]]], "type": "Polygon"}, "id": "17", "properties": {"NAMELSAD": "Stanislaus County", "origin_county_geoid": "06099", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.60807, 38.398], [-120.42321, 38.47332], [-120.07248, 38.50987], [-120.07257, 38.44708], [-120.01995, 38.43352], [-120.17647, 38.37378], [-120.46375, 38.01039], [-120.53481, 37.99117], [-120.51344, 37.95644], [-120.54235, 37.92045], [-120.65327, 37.83186], [-120.93885, 38.08832], [-120.9955, 38.2254], [-120.8933, 38.22139], [-120.80774, 38.28872], [-120.63179, 38.34603], [-120.60807, 38.398]]], "type": "Polygon"}, "id": "18", "properties": {"NAMELSAD": "Calaveras County", "origin_county_geoid": "06009", "unique_device_localdate_id_count": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.0764, 36.9102], [-122.25108, 36.98583], [-122.3139, 37.05476], [-122.28938, 37.11347], [-122.31768, 37.18695], [-122.15277, 37.21544], [-122.15228, 37.28605], [-121.99109, 37.14427], [-121.82418, 37.08776], [-121.72658, 37.02189], [-121.7387, 36.98999], [-121.58115, 36.91925], [-121.64455, 36.89387], [-121.72645, 36.91427], [-121.81003, 36.85079], [-122.05188, 36.8196], [-122.0764, 36.9102]]], "type": "Polygon"}, "id": "19", "properties": {"NAMELSAD": "Santa Cruz County", "origin_county_geoid": "06087", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-80.952, 28.6042], [-80.93939, 28.53512], [-80.87524, 28.48949], [-80.90127, 28.43354], [-80.86291, 28.34749], [-81.65727, 28.3471], [-81.64651, 28.78587], [-81.41457, 28.78556], [-81.45952, 28.71326], [-81.45973, 28.6402], [-80.952, 28.6042]]], "type": "Polygon"}, "id": "20", "properties": {"NAMELSAD": "Orange County", "origin_county_geoid": "12095", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.18218, 37.43948], [-122.08147, 37.47784], [-121.92504, 37.45419], [-121.86527, 37.48464], [-121.47295, 37.48233], [-121.45665, 37.39554], [-121.40908, 37.38067], [-121.40575, 37.31099], [-121.45805, 37.28414], [-121.45575, 37.24944], [-121.39902, 37.15013], [-121.35956, 37.18445], [-121.23663, 37.15667], [-121.21734, 37.12304], [-121.24548, 37.08915], [-121.2082, 37.06129], [-121.24865, 37.03368], [-121.24657, 36.98523], [-121.21541, 36.96125], [-121.48895, 36.98315], [-121.57573, 36.893], [-121.59035, 36.92615], [-121.7387, 36.98999], [-121.71876, 37.00756], [-121.75548, 37.04903], [-122.02617, 37.16685], [-122.19306, 37.31828], [-122.18218, 37.43948]]], "type": "Polygon"}, "id": "21", "properties": {"NAMELSAD": "Santa Clara County", "origin_county_geoid": "06085", "unique_device_localdate_id_count": 1}, "type": "Feature"}], "type": "FeatureCollection"});
 
         
     
-    geo_json_4acead8f764b0eabf17c7e74f65d4ec6.bindTooltip(
+    geo_json_c66e1d89176afcca92c3ab390ad1437d.bindTooltip(
     function(layer){
     let div = L.DomUtil.create('div');
     
@@ -1294,16 +1319,19 @@
 });
                      
     
-            geo_json_4acead8f764b0eabf17c7e74f65d4ec6.addTo(feature_group_9a06d9a2e6f592180a6d61f8f1c65dfb);
+            geo_json_c66e1d89176afcca92c3ab390ad1437d.addTo(feature_group_3908f18e3c421fd5400d8598be237954);
         
     
-            var feature_group_ef033825f2ab18ae4eb6d1bdf426e6c6 = L.featureGroup(
+            feature_group_3908f18e3c421fd5400d8598be237954.addTo(map_61de552ac1ae776aa33f72f0d1c3a5b8);
+        
+    
+            var feature_group_e3efed5104777e7a2402798d97a44cf1 = L.featureGroup(
                 {
 }
             );
         
     
-        function geo_json_2014489bfc6e6638f38eb22fbed554c9_styler(feature) {
+        function geo_json_4216e8a29f0445a97f1d95a23db855a9_styler(feature) {
             switch(feature.id) {
                 case "0": case "2": 
                     return {"color": "#4a5568", "fillColor": "#ffffe5", "fillOpacity": 0.88, "opacity": 0.1, "weight": 0.35};
@@ -1311,46 +1339,46 @@
                     return {"color": "#4a5568", "fillColor": "#993404", "fillOpacity": 0.88, "opacity": 0.1, "weight": 0.35};
             }
         }
-        function geo_json_2014489bfc6e6638f38eb22fbed554c9_highlighter(feature) {
+        function geo_json_4216e8a29f0445a97f1d95a23db855a9_highlighter(feature) {
             switch(feature.id) {
                 default:
                     return {"color": "#1a202c", "fillOpacity": 0.92, "opacity": 0.35, "weight": 1.2};
             }
         }
 
-        function geo_json_2014489bfc6e6638f38eb22fbed554c9_onEachFeature(feature, layer) {
+        function geo_json_4216e8a29f0445a97f1d95a23db855a9_onEachFeature(feature, layer) {
 
             layer.on({
                 mouseout: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                            geo_json_2014489bfc6e6638f38eb22fbed554c9.resetStyle(e.target);
+                            geo_json_4216e8a29f0445a97f1d95a23db855a9.resetStyle(e.target);
                     }
                 },
                 mouseover: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                        const highlightStyle = geo_json_2014489bfc6e6638f38eb22fbed554c9_highlighter(e.target.feature)
+                        const highlightStyle = geo_json_4216e8a29f0445a97f1d95a23db855a9_highlighter(e.target.feature)
                         e.target.setStyle(highlightStyle);
                     }
                 },
             });
         };
-        var geo_json_2014489bfc6e6638f38eb22fbed554c9 = L.geoJson(null, {
-                onEachFeature: geo_json_2014489bfc6e6638f38eb22fbed554c9_onEachFeature,
+        var geo_json_4216e8a29f0445a97f1d95a23db855a9 = L.geoJson(null, {
+                onEachFeature: geo_json_4216e8a29f0445a97f1d95a23db855a9_onEachFeature,
             
-                style: geo_json_2014489bfc6e6638f38eb22fbed554c9_styler,
+                style: geo_json_4216e8a29f0445a97f1d95a23db855a9_styler,
             ...{
 }
         });
 
-        function geo_json_2014489bfc6e6638f38eb22fbed554c9_add (data) {
-            geo_json_2014489bfc6e6638f38eb22fbed554c9
+        function geo_json_4216e8a29f0445a97f1d95a23db855a9_add (data) {
+            geo_json_4216e8a29f0445a97f1d95a23db855a9
                 .addData(data);
         }
-            geo_json_2014489bfc6e6638f38eb22fbed554c9_add({"features": [{"geometry": {"coordinates": [[[-121.47192, 37.48178], [-121.55666, 37.54273], [-121.55706, 37.81575], [-121.5341, 37.84946], [-121.57943, 37.86016], [-121.55641, 37.92364], [-121.57991, 38.00778], [-121.55753, 38.01662], [-121.58439, 38.03603], [-121.56404, 38.10142], [-121.58436, 38.1183], [-121.47572, 38.25809], [-121.34437, 38.22821], [-121.02708, 38.30025], [-120.92645, 38.07742], [-120.9206, 37.73833], [-120.99343, 37.76094], [-121.17845, 37.70553], [-121.47192, 37.48178]]], "type": "Polygon"}, "id": "0", "properties": {"NAMELSAD": "San Joaquin County", "origin_county_geoid": "06077", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.14364, 39.06729], [-120.00246, 39.06749], [-120.00101, 38.99957], [-119.88764, 38.9183], [-119.87729, 38.87019], [-119.94793, 38.78164], [-120.11201, 38.70502], [-120.14008, 38.63837], [-120.2143, 38.62908], [-120.30172, 38.54911], [-120.60616, 38.50235], [-120.81355, 38.56219], [-121.02738, 38.50825], [-121.11905, 38.71786], [-121.13316, 38.70537], [-121.14159, 38.71194], [-121.04096, 38.91505], [-120.93857, 38.93556], [-120.93727, 38.96368], [-120.85986, 38.95165], [-120.81278, 38.9999], [-120.7464, 39.01035], [-120.56426, 38.91364], [-120.49273, 38.94335], [-120.43524, 39.0284], [-120.18443, 39.03101], [-120.14364, 39.06729]]], "type": "Polygon"}, "id": "1", "properties": {"NAMELSAD": "El Dorado County", "origin_county_geoid": "06017", "unique_device_localdate_id_count": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.50639, 38.22459], [-121.58407, 38.12023], [-121.56718, 38.09732], [-121.67306, 38.09352], [-121.69976, 38.04522], [-121.77748, 38.01892], [-121.86246, 38.06603], [-121.71089, 38.08649], [-121.68559, 38.15971], [-121.6121, 38.20007], [-121.58478, 38.33082], [-121.521, 38.36122], [-121.5326, 38.43146], [-121.50414, 38.46656], [-121.55904, 38.49959], [-121.52413, 38.5205], [-121.5074, 38.592], [-121.63019, 38.67744], [-121.60289, 38.73584], [-121.11905, 38.71786], [-121.02742, 38.50814], [-121.02708, 38.30025], [-121.34437, 38.22821], [-121.43991, 38.25553], [-121.50639, 38.22459]]], "type": "Polygon"}, "id": "2", "properties": {"NAMELSAD": "Sacramento County", "origin_county_geoid": "06067", "unique_device_localdate_id_count": 1}, "type": "Feature"}], "type": "FeatureCollection"});
+            geo_json_4216e8a29f0445a97f1d95a23db855a9_add({"features": [{"geometry": {"coordinates": [[[-121.47192, 37.48178], [-121.55666, 37.54273], [-121.55706, 37.81575], [-121.5341, 37.84946], [-121.57943, 37.86016], [-121.55641, 37.92364], [-121.57991, 38.00778], [-121.55753, 38.01662], [-121.58439, 38.03603], [-121.56404, 38.10142], [-121.58436, 38.1183], [-121.47572, 38.25809], [-121.34437, 38.22821], [-121.02708, 38.30025], [-120.92645, 38.07742], [-120.9206, 37.73833], [-120.99343, 37.76094], [-121.17845, 37.70553], [-121.47192, 37.48178]]], "type": "Polygon"}, "id": "0", "properties": {"NAMELSAD": "San Joaquin County", "origin_county_geoid": "06077", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.14364, 39.06729], [-120.00246, 39.06749], [-120.00101, 38.99957], [-119.88764, 38.9183], [-119.87729, 38.87019], [-119.94793, 38.78164], [-120.11201, 38.70502], [-120.14008, 38.63837], [-120.2143, 38.62908], [-120.30172, 38.54911], [-120.60616, 38.50235], [-120.81355, 38.56219], [-121.02738, 38.50825], [-121.11905, 38.71786], [-121.13316, 38.70537], [-121.14159, 38.71194], [-121.04096, 38.91505], [-120.93857, 38.93556], [-120.93727, 38.96368], [-120.85986, 38.95165], [-120.81278, 38.9999], [-120.7464, 39.01035], [-120.56426, 38.91364], [-120.49273, 38.94335], [-120.43524, 39.0284], [-120.18443, 39.03101], [-120.14364, 39.06729]]], "type": "Polygon"}, "id": "1", "properties": {"NAMELSAD": "El Dorado County", "origin_county_geoid": "06017", "unique_device_localdate_id_count": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.50639, 38.22459], [-121.58407, 38.12023], [-121.56718, 38.09732], [-121.67306, 38.09352], [-121.69976, 38.04522], [-121.77748, 38.01892], [-121.86246, 38.06603], [-121.71089, 38.08649], [-121.68559, 38.15971], [-121.6121, 38.20007], [-121.58478, 38.33082], [-121.521, 38.36122], [-121.5326, 38.43146], [-121.50414, 38.46656], [-121.55904, 38.49959], [-121.52413, 38.5205], [-121.5074, 38.592], [-121.63019, 38.67744], [-121.60289, 38.73584], [-121.11905, 38.71786], [-121.02742, 38.50814], [-121.02708, 38.30025], [-121.34437, 38.22821], [-121.43991, 38.25553], [-121.50639, 38.22459]]], "type": "Polygon"}, "id": "2", "properties": {"NAMELSAD": "Sacramento County", "origin_county_geoid": "06067", "unique_device_localdate_id_count": 1}, "type": "Feature"}], "type": "FeatureCollection"});
 
         
     
-    geo_json_2014489bfc6e6638f38eb22fbed554c9.bindTooltip(
+    geo_json_4216e8a29f0445a97f1d95a23db855a9.bindTooltip(
     function(layer){
     let div = L.DomUtil.create('div');
     
@@ -1385,16 +1413,19 @@
 });
                      
     
-            geo_json_2014489bfc6e6638f38eb22fbed554c9.addTo(feature_group_ef033825f2ab18ae4eb6d1bdf426e6c6);
+            geo_json_4216e8a29f0445a97f1d95a23db855a9.addTo(feature_group_e3efed5104777e7a2402798d97a44cf1);
         
     
-            var feature_group_9fd7396a60c0233b249f1f07db7379ad = L.featureGroup(
+            feature_group_e3efed5104777e7a2402798d97a44cf1.addTo(map_61de552ac1ae776aa33f72f0d1c3a5b8);
+        
+    
+            var feature_group_5ff1c92d49da6612c51b999c0b894a7b = L.featureGroup(
                 {
 }
             );
         
     
-        function geo_json_01b29d1ee011ab308402d9592950c21a_styler(feature) {
+        function geo_json_9b8b98083a0c807c19674ec635a3b6fa_styler(feature) {
             switch(feature.id) {
                 case "0": case "1": case "2": case "4": case "14": 
                     return {"color": "#4a5568", "fillColor": "#f7fcf5", "fillOpacity": 0.88, "opacity": 0.1, "weight": 0.35};
@@ -1410,46 +1441,46 @@
                     return {"color": "#4a5568", "fillColor": "#78c679", "fillOpacity": 0.88, "opacity": 0.1, "weight": 0.35};
             }
         }
-        function geo_json_01b29d1ee011ab308402d9592950c21a_highlighter(feature) {
+        function geo_json_9b8b98083a0c807c19674ec635a3b6fa_highlighter(feature) {
             switch(feature.id) {
                 default:
                     return {"color": "#1a202c", "fillOpacity": 0.92, "opacity": 0.35, "weight": 1.2};
             }
         }
 
-        function geo_json_01b29d1ee011ab308402d9592950c21a_onEachFeature(feature, layer) {
+        function geo_json_9b8b98083a0c807c19674ec635a3b6fa_onEachFeature(feature, layer) {
 
             layer.on({
                 mouseout: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                            geo_json_01b29d1ee011ab308402d9592950c21a.resetStyle(e.target);
+                            geo_json_9b8b98083a0c807c19674ec635a3b6fa.resetStyle(e.target);
                     }
                 },
                 mouseover: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                        const highlightStyle = geo_json_01b29d1ee011ab308402d9592950c21a_highlighter(e.target.feature)
+                        const highlightStyle = geo_json_9b8b98083a0c807c19674ec635a3b6fa_highlighter(e.target.feature)
                         e.target.setStyle(highlightStyle);
                     }
                 },
             });
         };
-        var geo_json_01b29d1ee011ab308402d9592950c21a = L.geoJson(null, {
-                onEachFeature: geo_json_01b29d1ee011ab308402d9592950c21a_onEachFeature,
+        var geo_json_9b8b98083a0c807c19674ec635a3b6fa = L.geoJson(null, {
+                onEachFeature: geo_json_9b8b98083a0c807c19674ec635a3b6fa_onEachFeature,
             
-                style: geo_json_01b29d1ee011ab308402d9592950c21a_styler,
+                style: geo_json_9b8b98083a0c807c19674ec635a3b6fa_styler,
             ...{
 }
         });
 
-        function geo_json_01b29d1ee011ab308402d9592950c21a_add (data) {
-            geo_json_01b29d1ee011ab308402d9592950c21a
+        function geo_json_9b8b98083a0c807c19674ec635a3b6fa_add (data) {
+            geo_json_9b8b98083a0c807c19674ec635a3b6fa
                 .addData(data);
         }
-            geo_json_01b29d1ee011ab308402d9592950c21a_add({"features": [{"geometry": {"coordinates": [[[-118.05904, 33.8462], [-117.97659, 33.90281], [-117.9765, 33.94605], [-117.78307, 33.94626], [-117.53645, 33.75767], [-117.534, 33.71035], [-117.41299, 33.65904], [-117.51021, 33.534], [-117.5095, 33.47027], [-117.57851, 33.45381], [-117.61108, 33.33399], [-118.14781, 33.69408], [-118.05904, 33.8462]]], "type": "Polygon"}, "id": "0", "properties": {"NAMELSAD": "Orange County", "origin_county_geoid": "06059", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.59856, 36.99863], [-120.59057, 36.95264], [-120.656, 36.9528], [-120.91873, 36.74038], [-121.14152, 36.83666], [-121.1843, 36.90897], [-121.23433, 36.92615], [-121.21173, 36.95738], [-121.24657, 36.98523], [-121.24865, 37.03368], [-121.2082, 37.06129], [-121.24548, 37.08915], [-121.2268, 37.13477], [-120.96381, 37.34614], [-120.98981, 37.39587], [-120.38767, 37.63336], [-120.17849, 37.26242], [-120.05205, 37.18311], [-120.28987, 37.15261], [-120.47669, 37.09639], [-120.59856, 36.99863]]], "type": "Polygon"}, "id": "1", "properties": {"NAMELSAD": "Merced County", "origin_county_geoid": "06047", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-104.90379, 39.62683], [-104.9029, 39.62418], [-104.90403, 39.62412], [-104.90379, 39.62683]]], [[[-105.05341, 39.6315], [-105.02542, 39.62856], [-105.0157, 39.67868], [-104.91341, 39.62408], [-104.88526, 39.62413], [-104.8473, 39.6571], [-104.90351, 39.66762], [-104.88931, 39.6838], [-104.90354, 39.69853], [-104.86596, 39.69656], [-104.88465, 39.74016], [-103.70655, 39.73989], [-103.70707, 39.56629], [-105.05417, 39.56771], [-105.05341, 39.6315]]], [[[-104.89879, 39.6857], [-104.89878, 39.6834], [-104.90115, 39.68481], [-104.89879, 39.6857]]], [[[-104.9082, 39.68207], [-104.9082, 39.67988], [-104.91104, 39.67989], [-104.9082, 39.68207]]], [[[-104.92905, 39.70195], [-104.9283, 39.70127], [-104.92931, 39.70127], [-104.92905, 39.70195]]], [[[-104.91756, 39.67298], [-104.91299, 39.65621], [-104.92102, 39.66034], [-104.91756, 39.67298]]], [[[-104.92965, 39.67238], [-104.9272, 39.66897], [-104.93162, 39.66747], [-104.92965, 39.67238]]], [[[-104.93165, 39.7111], [-104.93414, 39.70132], [-104.92878, 39.70022], [-104.92818, 39.69663], [-104.94062, 39.6954], [-104.93165, 39.7111]], [[-104.93408, 39.69844], [-104.93165, 39.6984], [-104.93171, 39.70021], [-104.93408, 39.69844]]]], "type": "MultiPolygon"}, "id": "2", "properties": {"NAMELSAD": "Arapahoe County", "origin_county_geoid": "08005", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.59984, 38.77488], [-121.63113, 38.67901], [-121.50627, 38.58631], [-121.55904, 38.49959], [-121.50414, 38.46656], [-121.5326, 38.43146], [-121.521, 38.36122], [-121.59327, 38.31309], [-121.6937, 38.31373], [-121.71203, 38.53796], [-121.94107, 38.53326], [-122.01338, 38.48872], [-122.10413, 38.51336], [-122.28692, 38.83917], [-122.37155, 38.84465], [-122.42195, 38.90356], [-122.40403, 38.92529], [-121.83549, 38.92448], [-121.79151, 38.9054], [-121.80237, 38.86458], [-121.72957, 38.85843], [-121.72267, 38.80272], [-121.69067, 38.79563], [-121.67383, 38.74314], [-121.59984, 38.77488]]], "type": "Polygon"}, "id": "3", "properties": {"NAMELSAD": "Yolo County", "origin_county_geoid": "06113", "unique_device_localdate_id_count": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.61228, 37.81522], [-122.72431, 37.84768], [-122.90228, 37.97739], [-122.95322, 37.94109], [-123.06797, 37.95867], [-123.08513, 38.00843], [-123.01482, 38.14913], [-123.13452, 38.29626], [-122.90811, 38.32075], [-122.7399, 38.20702], [-122.57059, 38.18712], [-122.5019, 38.11242], [-122.34745, 38.07326], [-122.44158, 37.97392], [-122.41867, 37.85251], [-122.61228, 37.81522]]], "type": "Polygon"}, "id": "4", "properties": {"NAMELSAD": "Marin County", "origin_county_geoid": "06041", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.26403, 37.90378], [-122.18558, 37.82073], [-122.04547, 37.79813], [-121.96004, 37.71853], [-121.557, 37.81649], [-121.55666, 37.54273], [-121.4712, 37.48283], [-122.05193, 37.45925], [-122.28178, 37.70823], [-122.37312, 37.88388], [-122.26403, 37.90378]]], "type": "Polygon"}, "id": "5", "properties": {"NAMELSAD": "Alameda County", "origin_county_geoid": "06001", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.14364, 39.06729], [-120.00246, 39.06749], [-120.00101, 38.99957], [-119.88764, 38.9183], [-119.87729, 38.87019], [-119.94793, 38.78164], [-120.11201, 38.70502], [-120.14008, 38.63837], [-120.2143, 38.62908], [-120.30172, 38.54911], [-120.60616, 38.50235], [-120.81355, 38.56219], [-121.02738, 38.50825], [-121.11905, 38.71786], [-121.13316, 38.70537], [-121.14159, 38.71194], [-121.04096, 38.91505], [-120.93857, 38.93556], [-120.93727, 38.96368], [-120.85986, 38.95165], [-120.81278, 38.9999], [-120.7464, 39.01035], [-120.56426, 38.91364], [-120.49273, 38.94335], [-120.43524, 39.0284], [-120.18443, 39.03101], [-120.14364, 39.06729]]], "type": "Polygon"}, "id": "6", "properties": {"NAMELSAD": "El Dorado County", "origin_county_geoid": "06017", "unique_device_localdate_id_count": 8}, "type": "Feature"}, {"geometry": {"coordinates": [[[-74.46608, 40.5991], [-74.20329, 40.59304], [-74.25028, 40.5423], [-74.25884, 40.49887], [-74.22271, 40.4513], [-74.24789, 40.4066], [-74.46102, 40.25112], [-74.63101, 40.34011], [-74.58499, 40.41818], [-74.45986, 40.49105], [-74.52669, 40.55949], [-74.46608, 40.5991]]], "type": "Polygon"}, "id": "7", "properties": {"NAMELSAD": "Middlesex County", "origin_county_geoid": "34023", "unique_device_localdate_id_count": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.57519, 37.70672], [-122.28178, 37.70823], [-122.08147, 37.47784], [-122.19053, 37.43129], [-122.20247, 37.36027], [-122.1527, 37.28864], [-122.15277, 37.21544], [-122.31768, 37.18695], [-122.28938, 37.11347], [-122.3139, 37.05476], [-122.37609, 37.06565], [-122.46412, 37.17785], [-122.46701, 37.34989], [-122.50989, 37.44155], [-122.57096, 37.48447], [-122.57519, 37.70672]]], "type": "Polygon"}, "id": "8", "properties": {"NAMELSAD": "San Mateo County", "origin_county_geoid": "06081", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.00246, 39.06749], [-120.14364, 39.06729], [-120.24041, 39.02367], [-120.43524, 39.0284], [-120.49273, 38.94335], [-120.56426, 38.91364], [-120.68565, 38.98965], [-120.80939, 39.00083], [-120.85986, 38.95165], [-120.93621, 38.96393], [-120.93857, 38.93556], [-121.04041, 38.91565], [-121.13451, 38.71203], [-121.4844, 38.7346], [-121.46936, 38.92599], [-121.4144, 38.92621], [-121.41479, 38.99842], [-121.30704, 39.0529], [-121.22099, 39.01178], [-121.13798, 39.03791], [-121.04161, 39.01379], [-120.98915, 39.11153], [-120.69154, 39.3041], [-120.00632, 39.3165], [-120.00246, 39.06749]]], "type": "Polygon"}, "id": "9", "properties": {"NAMELSAD": "Placer County", "origin_county_geoid": "06061", "unique_device_localdate_id_count": 5}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.96004, 37.71853], [-122.04547, 37.79813], [-122.18558, 37.82073], [-122.26403, 37.90378], [-122.37378, 37.88372], [-122.44158, 37.97392], [-122.34745, 38.07326], [-122.14858, 38.03172], [-121.86214, 38.06607], [-121.78314, 38.01854], [-121.69976, 38.04522], [-121.67306, 38.09352], [-121.58528, 38.09637], [-121.55753, 38.01662], [-121.57991, 38.00778], [-121.55641, 37.92364], [-121.57943, 37.86016], [-121.53805, 37.83776], [-121.96004, 37.71853]]], "type": "Polygon"}, "id": "10", "properties": {"NAMELSAD": "Contra Costa County", "origin_county_geoid": "06013", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.50639, 38.22459], [-121.58407, 38.12023], [-121.56718, 38.09732], [-121.67306, 38.09352], [-121.69976, 38.04522], [-121.77748, 38.01892], [-121.86246, 38.06603], [-121.71089, 38.08649], [-121.68559, 38.15971], [-121.6121, 38.20007], [-121.58478, 38.33082], [-121.521, 38.36122], [-121.5326, 38.43146], [-121.50414, 38.46656], [-121.55904, 38.49959], [-121.52413, 38.5205], [-121.5074, 38.592], [-121.63019, 38.67744], [-121.60289, 38.73584], [-121.11905, 38.71786], [-121.02742, 38.50814], [-121.02708, 38.30025], [-121.34437, 38.22821], [-121.43991, 38.25553], [-121.50639, 38.22459]]], "type": "Polygon"}, "id": "11", "properties": {"NAMELSAD": "Sacramento County", "origin_county_geoid": "06067", "unique_device_localdate_id_count": 9}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.47983, 38.45127], [-122.49791, 38.42457], [-122.39629, 38.30909], [-122.34956, 38.19397], [-122.36756, 38.15879], [-122.40751, 38.15781], [-122.34745, 38.07326], [-122.5019, 38.11242], [-122.57059, 38.18712], [-122.7399, 38.20702], [-122.90811, 38.32075], [-123.13452, 38.29626], [-123.13431, 38.34579], [-123.22022, 38.44195], [-123.36093, 38.5102], [-123.51058, 38.68089], [-123.6325, 38.75812], [-123.36824, 38.77707], [-123.36839, 38.80664], [-123.13625, 38.80914], [-123.13664, 38.83945], [-123.081, 38.85244], [-122.81765, 38.84984], [-122.74818, 38.80383], [-122.69545, 38.71309], [-122.63705, 38.69373], [-122.63507, 38.58301], [-122.47983, 38.45127]]], "type": "Polygon"}, "id": "12", "properties": {"NAMELSAD": "Sonoma County", "origin_county_geoid": "06097", "unique_device_localdate_id_count": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[-119.6585, 39.33154], [-119.7153, 39.24428], [-119.88079, 39.16551], [-120.0043, 39.1656], [-119.99923, 41.99494], [-119.32418, 41.99392], [-119.30417, 41.30768], [-119.30571, 41.23454], [-119.33107, 41.23512], [-119.30918, 40.87761], [-119.3393, 39.99861], [-119.22509, 39.99937], [-119.17064, 39.68045], [-119.3706, 39.58688], [-119.54732, 39.56208], [-119.62325, 39.51104], [-119.69564, 39.52002], [-119.69609, 39.44746], [-119.65507, 39.44748], [-119.68534, 39.37669], [-119.6585, 39.33154]]], "type": "Polygon"}, "id": "13", "properties": {"NAMELSAD": "Washoe County", "origin_county_geoid": "32031", "unique_device_localdate_id_count": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.98981, 37.39587], [-120.96381, 37.34614], [-121.2268, 37.13477], [-121.28111, 37.1836], [-121.36094, 37.18432], [-121.39902, 37.15013], [-121.45575, 37.24944], [-121.45805, 37.28414], [-121.40575, 37.31099], [-121.40908, 37.38067], [-121.45665, 37.39554], [-121.48677, 37.47565], [-121.11005, 37.74213], [-120.99343, 37.76094], [-120.92067, 37.73821], [-120.92645, 38.07742], [-120.38733, 37.6335], [-120.98981, 37.39587]]], "type": "Polygon"}, "id": "14", "properties": {"NAMELSAD": "Stanislaus County", "origin_county_geoid": "06099", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.18218, 37.43948], [-122.08147, 37.47784], [-121.92504, 37.45419], [-121.86527, 37.48464], [-121.47295, 37.48233], [-121.45665, 37.39554], [-121.40908, 37.38067], [-121.40575, 37.31099], [-121.45805, 37.28414], [-121.45575, 37.24944], [-121.39902, 37.15013], [-121.35956, 37.18445], [-121.23663, 37.15667], [-121.21734, 37.12304], [-121.24548, 37.08915], [-121.2082, 37.06129], [-121.24865, 37.03368], [-121.24657, 36.98523], [-121.21541, 36.96125], [-121.48895, 36.98315], [-121.57573, 36.893], [-121.59035, 36.92615], [-121.7387, 36.98999], [-121.71876, 37.00756], [-121.75548, 37.04903], [-122.02617, 37.16685], [-122.19306, 37.31828], [-122.18218, 37.43948]]], "type": "Polygon"}, "id": "15", "properties": {"NAMELSAD": "Santa Clara County", "origin_county_geoid": "06085", "unique_device_localdate_id_count": 2}, "type": "Feature"}], "type": "FeatureCollection"});
+            geo_json_9b8b98083a0c807c19674ec635a3b6fa_add({"features": [{"geometry": {"coordinates": [[[-118.05904, 33.8462], [-117.97659, 33.90281], [-117.9765, 33.94605], [-117.78307, 33.94626], [-117.53645, 33.75767], [-117.534, 33.71035], [-117.41299, 33.65904], [-117.51021, 33.534], [-117.5095, 33.47027], [-117.57851, 33.45381], [-117.61108, 33.33399], [-118.14781, 33.69408], [-118.05904, 33.8462]]], "type": "Polygon"}, "id": "0", "properties": {"NAMELSAD": "Orange County", "origin_county_geoid": "06059", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.59856, 36.99863], [-120.59057, 36.95264], [-120.656, 36.9528], [-120.91873, 36.74038], [-121.14152, 36.83666], [-121.1843, 36.90897], [-121.23433, 36.92615], [-121.21173, 36.95738], [-121.24657, 36.98523], [-121.24865, 37.03368], [-121.2082, 37.06129], [-121.24548, 37.08915], [-121.2268, 37.13477], [-120.96381, 37.34614], [-120.98981, 37.39587], [-120.38767, 37.63336], [-120.17849, 37.26242], [-120.05205, 37.18311], [-120.28987, 37.15261], [-120.47669, 37.09639], [-120.59856, 36.99863]]], "type": "Polygon"}, "id": "1", "properties": {"NAMELSAD": "Merced County", "origin_county_geoid": "06047", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-104.90379, 39.62683], [-104.9029, 39.62418], [-104.90403, 39.62412], [-104.90379, 39.62683]]], [[[-105.05341, 39.6315], [-105.02542, 39.62856], [-105.0157, 39.67868], [-104.91341, 39.62408], [-104.88526, 39.62413], [-104.8473, 39.6571], [-104.90351, 39.66762], [-104.88931, 39.6838], [-104.90354, 39.69853], [-104.86596, 39.69656], [-104.88465, 39.74016], [-103.70655, 39.73989], [-103.70707, 39.56629], [-105.05417, 39.56771], [-105.05341, 39.6315]]], [[[-104.89879, 39.6857], [-104.89878, 39.6834], [-104.90115, 39.68481], [-104.89879, 39.6857]]], [[[-104.9082, 39.68207], [-104.9082, 39.67988], [-104.91104, 39.67989], [-104.9082, 39.68207]]], [[[-104.92905, 39.70195], [-104.9283, 39.70127], [-104.92931, 39.70127], [-104.92905, 39.70195]]], [[[-104.91756, 39.67298], [-104.91299, 39.65621], [-104.92102, 39.66034], [-104.91756, 39.67298]]], [[[-104.92965, 39.67238], [-104.9272, 39.66897], [-104.93162, 39.66747], [-104.92965, 39.67238]]], [[[-104.93165, 39.7111], [-104.93414, 39.70132], [-104.92878, 39.70022], [-104.92818, 39.69663], [-104.94062, 39.6954], [-104.93165, 39.7111]], [[-104.93408, 39.69844], [-104.93165, 39.6984], [-104.93171, 39.70021], [-104.93408, 39.69844]]]], "type": "MultiPolygon"}, "id": "2", "properties": {"NAMELSAD": "Arapahoe County", "origin_county_geoid": "08005", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.59984, 38.77488], [-121.63113, 38.67901], [-121.50627, 38.58631], [-121.55904, 38.49959], [-121.50414, 38.46656], [-121.5326, 38.43146], [-121.521, 38.36122], [-121.59327, 38.31309], [-121.6937, 38.31373], [-121.71203, 38.53796], [-121.94107, 38.53326], [-122.01338, 38.48872], [-122.10413, 38.51336], [-122.28692, 38.83917], [-122.37155, 38.84465], [-122.42195, 38.90356], [-122.40403, 38.92529], [-121.83549, 38.92448], [-121.79151, 38.9054], [-121.80237, 38.86458], [-121.72957, 38.85843], [-121.72267, 38.80272], [-121.69067, 38.79563], [-121.67383, 38.74314], [-121.59984, 38.77488]]], "type": "Polygon"}, "id": "3", "properties": {"NAMELSAD": "Yolo County", "origin_county_geoid": "06113", "unique_device_localdate_id_count": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.61228, 37.81522], [-122.72431, 37.84768], [-122.90228, 37.97739], [-122.95322, 37.94109], [-123.06797, 37.95867], [-123.08513, 38.00843], [-123.01482, 38.14913], [-123.13452, 38.29626], [-122.90811, 38.32075], [-122.7399, 38.20702], [-122.57059, 38.18712], [-122.5019, 38.11242], [-122.34745, 38.07326], [-122.44158, 37.97392], [-122.41867, 37.85251], [-122.61228, 37.81522]]], "type": "Polygon"}, "id": "4", "properties": {"NAMELSAD": "Marin County", "origin_county_geoid": "06041", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.26403, 37.90378], [-122.18558, 37.82073], [-122.04547, 37.79813], [-121.96004, 37.71853], [-121.557, 37.81649], [-121.55666, 37.54273], [-121.4712, 37.48283], [-122.05193, 37.45925], [-122.28178, 37.70823], [-122.37312, 37.88388], [-122.26403, 37.90378]]], "type": "Polygon"}, "id": "5", "properties": {"NAMELSAD": "Alameda County", "origin_county_geoid": "06001", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.14364, 39.06729], [-120.00246, 39.06749], [-120.00101, 38.99957], [-119.88764, 38.9183], [-119.87729, 38.87019], [-119.94793, 38.78164], [-120.11201, 38.70502], [-120.14008, 38.63837], [-120.2143, 38.62908], [-120.30172, 38.54911], [-120.60616, 38.50235], [-120.81355, 38.56219], [-121.02738, 38.50825], [-121.11905, 38.71786], [-121.13316, 38.70537], [-121.14159, 38.71194], [-121.04096, 38.91505], [-120.93857, 38.93556], [-120.93727, 38.96368], [-120.85986, 38.95165], [-120.81278, 38.9999], [-120.7464, 39.01035], [-120.56426, 38.91364], [-120.49273, 38.94335], [-120.43524, 39.0284], [-120.18443, 39.03101], [-120.14364, 39.06729]]], "type": "Polygon"}, "id": "6", "properties": {"NAMELSAD": "El Dorado County", "origin_county_geoid": "06017", "unique_device_localdate_id_count": 8}, "type": "Feature"}, {"geometry": {"coordinates": [[[-74.46608, 40.5991], [-74.20329, 40.59304], [-74.25028, 40.5423], [-74.25884, 40.49887], [-74.22271, 40.4513], [-74.24789, 40.4066], [-74.46102, 40.25112], [-74.63101, 40.34011], [-74.58499, 40.41818], [-74.45986, 40.49105], [-74.52669, 40.55949], [-74.46608, 40.5991]]], "type": "Polygon"}, "id": "7", "properties": {"NAMELSAD": "Middlesex County", "origin_county_geoid": "34023", "unique_device_localdate_id_count": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.57519, 37.70672], [-122.28178, 37.70823], [-122.08147, 37.47784], [-122.19053, 37.43129], [-122.20247, 37.36027], [-122.1527, 37.28864], [-122.15277, 37.21544], [-122.31768, 37.18695], [-122.28938, 37.11347], [-122.3139, 37.05476], [-122.37609, 37.06565], [-122.46412, 37.17785], [-122.46701, 37.34989], [-122.50989, 37.44155], [-122.57096, 37.48447], [-122.57519, 37.70672]]], "type": "Polygon"}, "id": "8", "properties": {"NAMELSAD": "San Mateo County", "origin_county_geoid": "06081", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.00246, 39.06749], [-120.14364, 39.06729], [-120.24041, 39.02367], [-120.43524, 39.0284], [-120.49273, 38.94335], [-120.56426, 38.91364], [-120.68565, 38.98965], [-120.80939, 39.00083], [-120.85986, 38.95165], [-120.93621, 38.96393], [-120.93857, 38.93556], [-121.04041, 38.91565], [-121.13451, 38.71203], [-121.4844, 38.7346], [-121.46936, 38.92599], [-121.4144, 38.92621], [-121.41479, 38.99842], [-121.30704, 39.0529], [-121.22099, 39.01178], [-121.13798, 39.03791], [-121.04161, 39.01379], [-120.98915, 39.11153], [-120.69154, 39.3041], [-120.00632, 39.3165], [-120.00246, 39.06749]]], "type": "Polygon"}, "id": "9", "properties": {"NAMELSAD": "Placer County", "origin_county_geoid": "06061", "unique_device_localdate_id_count": 5}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.96004, 37.71853], [-122.04547, 37.79813], [-122.18558, 37.82073], [-122.26403, 37.90378], [-122.37378, 37.88372], [-122.44158, 37.97392], [-122.34745, 38.07326], [-122.14858, 38.03172], [-121.86214, 38.06607], [-121.78314, 38.01854], [-121.69976, 38.04522], [-121.67306, 38.09352], [-121.58528, 38.09637], [-121.55753, 38.01662], [-121.57991, 38.00778], [-121.55641, 37.92364], [-121.57943, 37.86016], [-121.53805, 37.83776], [-121.96004, 37.71853]]], "type": "Polygon"}, "id": "10", "properties": {"NAMELSAD": "Contra Costa County", "origin_county_geoid": "06013", "unique_device_localdate_id_count": 3}, "type": "Feature"}, {"geometry": {"coordinates": [[[-121.50639, 38.22459], [-121.58407, 38.12023], [-121.56718, 38.09732], [-121.67306, 38.09352], [-121.69976, 38.04522], [-121.77748, 38.01892], [-121.86246, 38.06603], [-121.71089, 38.08649], [-121.68559, 38.15971], [-121.6121, 38.20007], [-121.58478, 38.33082], [-121.521, 38.36122], [-121.5326, 38.43146], [-121.50414, 38.46656], [-121.55904, 38.49959], [-121.52413, 38.5205], [-121.5074, 38.592], [-121.63019, 38.67744], [-121.60289, 38.73584], [-121.11905, 38.71786], [-121.02742, 38.50814], [-121.02708, 38.30025], [-121.34437, 38.22821], [-121.43991, 38.25553], [-121.50639, 38.22459]]], "type": "Polygon"}, "id": "11", "properties": {"NAMELSAD": "Sacramento County", "origin_county_geoid": "06067", "unique_device_localdate_id_count": 9}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.47983, 38.45127], [-122.49791, 38.42457], [-122.39629, 38.30909], [-122.34956, 38.19397], [-122.36756, 38.15879], [-122.40751, 38.15781], [-122.34745, 38.07326], [-122.5019, 38.11242], [-122.57059, 38.18712], [-122.7399, 38.20702], [-122.90811, 38.32075], [-123.13452, 38.29626], [-123.13431, 38.34579], [-123.22022, 38.44195], [-123.36093, 38.5102], [-123.51058, 38.68089], [-123.6325, 38.75812], [-123.36824, 38.77707], [-123.36839, 38.80664], [-123.13625, 38.80914], [-123.13664, 38.83945], [-123.081, 38.85244], [-122.81765, 38.84984], [-122.74818, 38.80383], [-122.69545, 38.71309], [-122.63705, 38.69373], [-122.63507, 38.58301], [-122.47983, 38.45127]]], "type": "Polygon"}, "id": "12", "properties": {"NAMELSAD": "Sonoma County", "origin_county_geoid": "06097", "unique_device_localdate_id_count": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[-119.6585, 39.33154], [-119.7153, 39.24428], [-119.88079, 39.16551], [-120.0043, 39.1656], [-119.99923, 41.99494], [-119.32418, 41.99392], [-119.30417, 41.30768], [-119.30571, 41.23454], [-119.33107, 41.23512], [-119.30918, 40.87761], [-119.3393, 39.99861], [-119.22509, 39.99937], [-119.17064, 39.68045], [-119.3706, 39.58688], [-119.54732, 39.56208], [-119.62325, 39.51104], [-119.69564, 39.52002], [-119.69609, 39.44746], [-119.65507, 39.44748], [-119.68534, 39.37669], [-119.6585, 39.33154]]], "type": "Polygon"}, "id": "13", "properties": {"NAMELSAD": "Washoe County", "origin_county_geoid": "32031", "unique_device_localdate_id_count": 2}, "type": "Feature"}, {"geometry": {"coordinates": [[[-120.98981, 37.39587], [-120.96381, 37.34614], [-121.2268, 37.13477], [-121.28111, 37.1836], [-121.36094, 37.18432], [-121.39902, 37.15013], [-121.45575, 37.24944], [-121.45805, 37.28414], [-121.40575, 37.31099], [-121.40908, 37.38067], [-121.45665, 37.39554], [-121.48677, 37.47565], [-121.11005, 37.74213], [-120.99343, 37.76094], [-120.92067, 37.73821], [-120.92645, 38.07742], [-120.38733, 37.6335], [-120.98981, 37.39587]]], "type": "Polygon"}, "id": "14", "properties": {"NAMELSAD": "Stanislaus County", "origin_county_geoid": "06099", "unique_device_localdate_id_count": 1}, "type": "Feature"}, {"geometry": {"coordinates": [[[-122.18218, 37.43948], [-122.08147, 37.47784], [-121.92504, 37.45419], [-121.86527, 37.48464], [-121.47295, 37.48233], [-121.45665, 37.39554], [-121.40908, 37.38067], [-121.40575, 37.31099], [-121.45805, 37.28414], [-121.45575, 37.24944], [-121.39902, 37.15013], [-121.35956, 37.18445], [-121.23663, 37.15667], [-121.21734, 37.12304], [-121.24548, 37.08915], [-121.2082, 37.06129], [-121.24865, 37.03368], [-121.24657, 36.98523], [-121.21541, 36.96125], [-121.48895, 36.98315], [-121.57573, 36.893], [-121.59035, 36.92615], [-121.7387, 36.98999], [-121.71876, 37.00756], [-121.75548, 37.04903], [-122.02617, 37.16685], [-122.19306, 37.31828], [-122.18218, 37.43948]]], "type": "Polygon"}, "id": "15", "properties": {"NAMELSAD": "Santa Clara County", "origin_county_geoid": "06085", "unique_device_localdate_id_count": 2}, "type": "Feature"}], "type": "FeatureCollection"});
 
         
     
-    geo_json_01b29d1ee011ab308402d9592950c21a.bindTooltip(
+    geo_json_9b8b98083a0c807c19674ec635a3b6fa.bindTooltip(
     function(layer){
     let div = L.DomUtil.create('div');
     
@@ -1484,61 +1515,64 @@
 });
                      
     
-            geo_json_01b29d1ee011ab308402d9592950c21a.addTo(feature_group_9fd7396a60c0233b249f1f07db7379ad);
+            geo_json_9b8b98083a0c807c19674ec635a3b6fa.addTo(feature_group_5ff1c92d49da6612c51b999c0b894a7b);
         
     
-            var feature_group_f9209e0f79dbd7b9e7090d62e42a1ec8 = L.featureGroup(
+            feature_group_5ff1c92d49da6612c51b999c0b894a7b.addTo(map_61de552ac1ae776aa33f72f0d1c3a5b8);
+        
+    
+            var feature_group_bdb510206e5b318b515006225999134c = L.featureGroup(
                 {
 }
             );
         
     
-        function geo_json_1666926d71733ab06ae21d20c259cc91_styler(feature) {
+        function geo_json_8f136f18c631d69cdcbcc8b0b5065794_styler(feature) {
             switch(feature.id) {
                 default:
                     return {"color": "#4a5568", "fillColor": "#edf8e9", "fillOpacity": 0.88, "opacity": 0.1, "weight": 0.35};
             }
         }
-        function geo_json_1666926d71733ab06ae21d20c259cc91_highlighter(feature) {
+        function geo_json_8f136f18c631d69cdcbcc8b0b5065794_highlighter(feature) {
             switch(feature.id) {
                 default:
                     return {"color": "#1a202c", "fillOpacity": 0.92, "opacity": 0.35, "weight": 1.2};
             }
         }
 
-        function geo_json_1666926d71733ab06ae21d20c259cc91_onEachFeature(feature, layer) {
+        function geo_json_8f136f18c631d69cdcbcc8b0b5065794_onEachFeature(feature, layer) {
 
             layer.on({
                 mouseout: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                            geo_json_1666926d71733ab06ae21d20c259cc91.resetStyle(e.target);
+                            geo_json_8f136f18c631d69cdcbcc8b0b5065794.resetStyle(e.target);
                     }
                 },
                 mouseover: function(e) {
                     if(typeof e.target.setStyle === "function"){
-                        const highlightStyle = geo_json_1666926d71733ab06ae21d20c259cc91_highlighter(e.target.feature)
+                        const highlightStyle = geo_json_8f136f18c631d69cdcbcc8b0b5065794_highlighter(e.target.feature)
                         e.target.setStyle(highlightStyle);
                     }
                 },
             });
         };
-        var geo_json_1666926d71733ab06ae21d20c259cc91 = L.geoJson(null, {
-                onEachFeature: geo_json_1666926d71733ab06ae21d20c259cc91_onEachFeature,
+        var geo_json_8f136f18c631d69cdcbcc8b0b5065794 = L.geoJson(null, {
+                onEachFeature: geo_json_8f136f18c631d69cdcbcc8b0b5065794_onEachFeature,
             
-                style: geo_json_1666926d71733ab06ae21d20c259cc91_styler,
+                style: geo_json_8f136f18c631d69cdcbcc8b0b5065794_styler,
             ...{
 }
         });
 
-        function geo_json_1666926d71733ab06ae21d20c259cc91_add (data) {
-            geo_json_1666926d71733ab06ae21d20c259cc91
+        function geo_json_8f136f18c631d69cdcbcc8b0b5065794_add (data) {
+            geo_json_8f136f18c631d69cdcbcc8b0b5065794
                 .addData(data);
         }
-            geo_json_1666926d71733ab06ae21d20c259cc91_add({"features": [{"geometry": {"coordinates": [[[-120.98981, 37.39587], [-120.96381, 37.34614], [-121.2268, 37.13477], [-121.28111, 37.1836], [-121.36094, 37.18432], [-121.39902, 37.15013], [-121.45575, 37.24944], [-121.45805, 37.28414], [-121.40575, 37.31099], [-121.40908, 37.38067], [-121.45665, 37.39554], [-121.48677, 37.47565], [-121.11005, 37.74213], [-120.99343, 37.76094], [-120.92067, 37.73821], [-120.92645, 38.07742], [-120.38733, 37.6335], [-120.98981, 37.39587]]], "type": "Polygon"}, "id": "0", "properties": {"GEOID": "06099", "NAMELSAD": "Stanislaus County", "unique_device_localdate_id_count": 1}, "type": "Feature"}], "type": "FeatureCollection"});
+            geo_json_8f136f18c631d69cdcbcc8b0b5065794_add({"features": [{"geometry": {"coordinates": [[[-120.98981, 37.39587], [-120.96381, 37.34614], [-121.2268, 37.13477], [-121.28111, 37.1836], [-121.36094, 37.18432], [-121.39902, 37.15013], [-121.45575, 37.24944], [-121.45805, 37.28414], [-121.40575, 37.31099], [-121.40908, 37.38067], [-121.45665, 37.39554], [-121.48677, 37.47565], [-121.11005, 37.74213], [-120.99343, 37.76094], [-120.92067, 37.73821], [-120.92645, 38.07742], [-120.38733, 37.6335], [-120.98981, 37.39587]]], "type": "Polygon"}, "id": "0", "properties": {"GEOID": "06099", "NAMELSAD": "Stanislaus County", "unique_device_localdate_id_count": 1}, "type": "Feature"}], "type": "FeatureCollection"});
 
         
     
-    geo_json_1666926d71733ab06ae21d20c259cc91.bindTooltip(
+    geo_json_8f136f18c631d69cdcbcc8b0b5065794.bindTooltip(
     function(layer){
     let div = L.DomUtil.create('div');
     
@@ -1573,37 +1607,40 @@
 });
                      
     
-            geo_json_1666926d71733ab06ae21d20c259cc91.addTo(feature_group_f9209e0f79dbd7b9e7090d62e42a1ec8);
+            geo_json_8f136f18c631d69cdcbcc8b0b5065794.addTo(feature_group_bdb510206e5b318b515006225999134c);
         
     
-            var layer_control_b01c313f3b5c43cda05810744af0ad8f_layers = {
+            feature_group_bdb510206e5b318b515006225999134c.addTo(map_61de552ac1ae776aa33f72f0d1c3a5b8);
+        
+    
+            var layer_control_48dfa1576ac6404548cd33dd9feab178_layers = {
                 base_layers : {
                 },
                 overlays :  {
-                    "Ski" : feature_group_145e75c6cba1deb2fd43c8d8a6fedca6,
-                    "Trails" : feature_group_bd8c4730d2dbe8f40b95c41769448e49,
-                    "Golf" : feature_group_ff9e31c6bda81d2423b411e4066c0743,
-                    "Camping" : feature_group_27b819afe01e9f6717f925919356707a,
-                    "Farm visits" : feature_group_3dfbf386828b1cefd9e474ca47a1c007,
-                    "Lakes" : feature_group_1de60a484e7c53bd0ef9c6b588be3a91,
-                    "Rivers \u0026 streams" : feature_group_cf93aa8a8d414cbec6c91b54862945b9,
-                    "Whitewater" : feature_group_7760daafb09075c6c9cacee10c34c7a3,
-                    "Local parks" : feature_group_5f7baf665dfb3ea7a88ecd10fdb734e3,
-                    "State parks" : feature_group_9a06d9a2e6f592180a6d61f8f1c65dfb,
-                    "BLM land" : feature_group_ef033825f2ab18ae4eb6d1bdf426e6c6,
-                    "USFS land" : feature_group_9fd7396a60c0233b249f1f07db7379ad,
-                    "Private conservation" : feature_group_f9209e0f79dbd7b9e7090d62e42a1ec8,
+                    "Ski" : feature_group_e426a1fae63ada93a28843bf2e570a1c,
+                    "Trails" : feature_group_85ca0432f29938b53c8879f354f58ebd,
+                    "Golf" : feature_group_69983c237726101be58be2a47f2d165a,
+                    "Camping" : feature_group_b8bc2b863ef237c1a05ca41c579e7c9c,
+                    "Farm visits" : feature_group_cc8e5ce858deb8e723f6f38724ce4ea6,
+                    "Lakes" : feature_group_212c466d69ea7f82c88b7a8afd5c6931,
+                    "Rivers \u0026 streams" : feature_group_dfa48e5e1c44e5ed6229a9bc8a2b2160,
+                    "Whitewater" : feature_group_f47b2ac764d665c7cd62c87a69b3e3f0,
+                    "Local parks" : feature_group_22ec881e0e2c7ac49bf25785616e7f4b,
+                    "State parks" : feature_group_3908f18e3c421fd5400d8598be237954,
+                    "BLM land" : feature_group_e3efed5104777e7a2402798d97a44cf1,
+                    "USFS land" : feature_group_5ff1c92d49da6612c51b999c0b894a7b,
+                    "Private conservation" : feature_group_bdb510206e5b318b515006225999134c,
                 },
             };
-            let layer_control_b01c313f3b5c43cda05810744af0ad8f = L.control.layers(
-                layer_control_b01c313f3b5c43cda05810744af0ad8f_layers.base_layers,
-                layer_control_b01c313f3b5c43cda05810744af0ad8f_layers.overlays,
+            let layer_control_48dfa1576ac6404548cd33dd9feab178 = L.control.layers(
+                layer_control_48dfa1576ac6404548cd33dd9feab178_layers.base_layers,
+                layer_control_48dfa1576ac6404548cd33dd9feab178_layers.overlays,
                 {
   "position": "topright",
   "collapsed": false,
   "autoZIndex": true,
 }
-            ).addTo(map_0ef14150f34e40fd9548de4324c3ae54);
+            ).addTo(map_61de552ac1ae776aa33f72f0d1c3a5b8);
 
         
     
