@@ -786,7 +786,7 @@ def write_docs_landing_page() -> Path:
   </style>
 </head>
 <body>
-  <h1>Upper American River Watershed — recreation maps</h1>
+  <h1>Upper American River Watershed recreation maps</h1>
   <ul>
     <li><a href="edwa_h3_preview/index.html">H3 visitation (device-hours)</a></li>
     <li><a href="edwa_county_preview/index.html">Visitor county of origin</a></li>

@@ -3,6 +3,13 @@
 <head>
     
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+            <style>
+                .leaflet-container .leaflet-interactive:focus {
+                    outline: none;
+                }
+            </style>
+            
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -17,7 +24,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_6cacc83f91cb528c924064d5e623fb18 {
+                #map_74b833894cb877ce8c27bc74132ea716 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -54,7 +61,7 @@
 <body>
     
     
-            <div class="folium-map" id="map_6cacc83f91cb528c924064d5e623fb18" ></div>
+            <div class="folium-map" id="map_74b833894cb877ce8c27bc74132ea716" ></div>
         
     
         <style>
@@ -108,8 +115,8 @@
 <script>
     
     
-            var map_6cacc83f91cb528c924064d5e623fb18 = L.map(
-                "map_6cacc83f91cb528c924064d5e623fb18",
+            var map_74b833894cb877ce8c27bc74132ea716 = L.map(
+                "map_74b833894cb877ce8c27bc74132ea716",
                 {
                     center: [38.88455377837287, -120.50970786879247],
                     crs: L.CRS.EPSG3857,
@@ -121,13 +128,13 @@
 
                 }
             );
-            L.control.scale().addTo(map_6cacc83f91cb528c924064d5e623fb18);
+            L.control.scale().addTo(map_74b833894cb877ce8c27bc74132ea716);
 
             
 
         
     
-            var tile_layer_e4e35cb1dd9561605e23331423831166 = L.tileLayer(
+            var tile_layer_dd90e5a1da27fdf10ee8543a5a7acccc = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -144,186 +151,186 @@
             );
         
     
-            tile_layer_e4e35cb1dd9561605e23331423831166.addTo(map_6cacc83f91cb528c924064d5e623fb18);
+            tile_layer_dd90e5a1da27fdf10ee8543a5a7acccc.addTo(map_74b833894cb877ce8c27bc74132ea716);
         
     
-            map_6cacc83f91cb528c924064d5e623fb18.fitBounds(
+            map_74b833894cb877ce8c27bc74132ea716.fitBounds(
                 [[38.407304653969966, -121.25080443618047], [39.36180290277577, -119.76861130140448]],
                 {}
             );
         
     
-            var feature_group_753d1f1b71011d42021fa1a4713e2d97 = L.featureGroup(
+            var feature_group_389ba53241ccb33de5e624ca5931a084 = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_753d1f1b71011d42021fa1a4713e2d97.addTo(map_6cacc83f91cb528c924064d5e623fb18);
+            feature_group_389ba53241ccb33de5e624ca5931a084.addTo(map_74b833894cb877ce8c27bc74132ea716);
         
     
-            var feature_group_fc1c86820646b2bb656dec9e9b33c1b7 = L.featureGroup(
+            var feature_group_3764f600970661cd8297af452e2ac1f3 = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_fc1c86820646b2bb656dec9e9b33c1b7.addTo(map_6cacc83f91cb528c924064d5e623fb18);
+            feature_group_3764f600970661cd8297af452e2ac1f3.addTo(map_74b833894cb877ce8c27bc74132ea716);
         
     
-            var feature_group_8c7df0ce1756d32d72c437d9b23f044d = L.featureGroup(
+            var feature_group_7d6035faceaa2e0b24d671a15a3fc5be = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_8c7df0ce1756d32d72c437d9b23f044d.addTo(map_6cacc83f91cb528c924064d5e623fb18);
+            feature_group_7d6035faceaa2e0b24d671a15a3fc5be.addTo(map_74b833894cb877ce8c27bc74132ea716);
         
     
-            var feature_group_cc7dafbfb10e78ac10d1c60f4b352433 = L.featureGroup(
+            var feature_group_f1ed7344fee0a75f04e466aff50cc782 = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_cc7dafbfb10e78ac10d1c60f4b352433.addTo(map_6cacc83f91cb528c924064d5e623fb18);
+            feature_group_f1ed7344fee0a75f04e466aff50cc782.addTo(map_74b833894cb877ce8c27bc74132ea716);
         
     
-            var feature_group_52a9f8063d53f782c5293cf9c8767c9c = L.featureGroup(
+            var feature_group_943ef2c8fbe1ad3436f03c71b8d983e4 = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_52a9f8063d53f782c5293cf9c8767c9c.addTo(map_6cacc83f91cb528c924064d5e623fb18);
+            feature_group_943ef2c8fbe1ad3436f03c71b8d983e4.addTo(map_74b833894cb877ce8c27bc74132ea716);
         
     
-            var feature_group_b80112fcdf396b9c173e7cbce00e31be = L.featureGroup(
+            var feature_group_96821291ed6a56e97b3e3f726356f3c0 = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_b80112fcdf396b9c173e7cbce00e31be.addTo(map_6cacc83f91cb528c924064d5e623fb18);
+            feature_group_96821291ed6a56e97b3e3f726356f3c0.addTo(map_74b833894cb877ce8c27bc74132ea716);
         
     
-            var feature_group_9623be32fb12ff033a69e880728fc376 = L.featureGroup(
+            var feature_group_7d504e2b98894f95db4750152abfd44b = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_9623be32fb12ff033a69e880728fc376.addTo(map_6cacc83f91cb528c924064d5e623fb18);
+            feature_group_7d504e2b98894f95db4750152abfd44b.addTo(map_74b833894cb877ce8c27bc74132ea716);
         
     
-            var feature_group_11aa30cb9946893a9fee614e8da35c3a = L.featureGroup(
+            var feature_group_8c064af7950d1a3d8d89698a88219f2f = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_11aa30cb9946893a9fee614e8da35c3a.addTo(map_6cacc83f91cb528c924064d5e623fb18);
+            feature_group_8c064af7950d1a3d8d89698a88219f2f.addTo(map_74b833894cb877ce8c27bc74132ea716);
         
     
-            var feature_group_62c4747471ef61aa3308223152356388 = L.featureGroup(
+            var feature_group_b2c0b0b5e9fbd16769143d4b4a18f2f0 = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_62c4747471ef61aa3308223152356388.addTo(map_6cacc83f91cb528c924064d5e623fb18);
+            feature_group_b2c0b0b5e9fbd16769143d4b4a18f2f0.addTo(map_74b833894cb877ce8c27bc74132ea716);
         
     
-            var feature_group_9c79ca3393b8aa9d29fe36744f0c6e7e = L.featureGroup(
+            var feature_group_a8772465c3be0cb23a5e4a00ba441b1f = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_9c79ca3393b8aa9d29fe36744f0c6e7e.addTo(map_6cacc83f91cb528c924064d5e623fb18);
+            feature_group_a8772465c3be0cb23a5e4a00ba441b1f.addTo(map_74b833894cb877ce8c27bc74132ea716);
         
     
-            var feature_group_5ebf4e98499ca1fcddde52afe738faf0 = L.featureGroup(
+            var feature_group_1190b36646aa0ce3fabf8dbbb172f3e6 = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_5ebf4e98499ca1fcddde52afe738faf0.addTo(map_6cacc83f91cb528c924064d5e623fb18);
+            feature_group_1190b36646aa0ce3fabf8dbbb172f3e6.addTo(map_74b833894cb877ce8c27bc74132ea716);
         
     
-            var feature_group_e40e590d608841cd1337167bb5a1bfa4 = L.featureGroup(
+            var feature_group_d0358d54e086876ef861610ebcd1e92e = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_e40e590d608841cd1337167bb5a1bfa4.addTo(map_6cacc83f91cb528c924064d5e623fb18);
+            feature_group_d0358d54e086876ef861610ebcd1e92e.addTo(map_74b833894cb877ce8c27bc74132ea716);
         
     
-            var feature_group_b6c06d979ad3749112af5471187cea90 = L.featureGroup(
+            var feature_group_ecf629525457a9dbd0155764f77eb341 = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_b6c06d979ad3749112af5471187cea90.addTo(map_6cacc83f91cb528c924064d5e623fb18);
+            feature_group_ecf629525457a9dbd0155764f77eb341.addTo(map_74b833894cb877ce8c27bc74132ea716);
         
     
-            var feature_group_bccfbf8c7e1f83ec5c6b69282110f653 = L.featureGroup(
+            var feature_group_36a06e4176a3d8d3899ced0d692c5329 = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_bccfbf8c7e1f83ec5c6b69282110f653.addTo(map_6cacc83f91cb528c924064d5e623fb18);
+            feature_group_36a06e4176a3d8d3899ced0d692c5329.addTo(map_74b833894cb877ce8c27bc74132ea716);
         
     
-            var feature_group_b3f90924c09fb8d925c074f5e5e21bee = L.featureGroup(
+            var feature_group_18f3b6ce9002fa0d08073c7bb1434319 = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_b3f90924c09fb8d925c074f5e5e21bee.addTo(map_6cacc83f91cb528c924064d5e623fb18);
+            feature_group_18f3b6ce9002fa0d08073c7bb1434319.addTo(map_74b833894cb877ce8c27bc74132ea716);
         
     
-            var layer_control_bfc77bf6f8d00d7f42ca8986337c8c99_layers = {
+            var layer_control_461f8d5ab6f1a42418a9fc3ab08534df_layers = {
                 base_layers : {
                 },
                 overlays :  {
-                    "Trails" : feature_group_753d1f1b71011d42021fa1a4713e2d97,
-                    "Camping" : feature_group_fc1c86820646b2bb656dec9e9b33c1b7,
-                    "OHV" : feature_group_8c7df0ce1756d32d72c437d9b23f044d,
-                    "Golf" : feature_group_cc7dafbfb10e78ac10d1c60f4b352433,
-                    "Whitewater" : feature_group_52a9f8063d53f782c5293cf9c8767c9c,
-                    "Ski" : feature_group_b80112fcdf396b9c173e7cbce00e31be,
-                    "Lakes" : feature_group_9623be32fb12ff033a69e880728fc376,
-                    "Farm visits" : feature_group_11aa30cb9946893a9fee614e8da35c3a,
-                    "Local parks" : feature_group_62c4747471ef61aa3308223152356388,
-                    "State parks" : feature_group_9c79ca3393b8aa9d29fe36744f0c6e7e,
-                    "BLM land" : feature_group_5ebf4e98499ca1fcddde52afe738faf0,
-                    "USFS land" : feature_group_e40e590d608841cd1337167bb5a1bfa4,
-                    "CDFW land" : feature_group_b6c06d979ad3749112af5471187cea90,
-                    "Private conservation" : feature_group_bccfbf8c7e1f83ec5c6b69282110f653,
-                    "Rivers \u0026 streams" : feature_group_b3f90924c09fb8d925c074f5e5e21bee,
+                    "Trails" : feature_group_389ba53241ccb33de5e624ca5931a084,
+                    "Camping" : feature_group_3764f600970661cd8297af452e2ac1f3,
+                    "OHV" : feature_group_7d6035faceaa2e0b24d671a15a3fc5be,
+                    "Golf" : feature_group_f1ed7344fee0a75f04e466aff50cc782,
+                    "Whitewater" : feature_group_943ef2c8fbe1ad3436f03c71b8d983e4,
+                    "Ski" : feature_group_96821291ed6a56e97b3e3f726356f3c0,
+                    "Lakes" : feature_group_7d504e2b98894f95db4750152abfd44b,
+                    "Farm visits" : feature_group_8c064af7950d1a3d8d89698a88219f2f,
+                    "Local parks" : feature_group_b2c0b0b5e9fbd16769143d4b4a18f2f0,
+                    "State parks" : feature_group_a8772465c3be0cb23a5e4a00ba441b1f,
+                    "BLM land" : feature_group_1190b36646aa0ce3fabf8dbbb172f3e6,
+                    "USFS land" : feature_group_d0358d54e086876ef861610ebcd1e92e,
+                    "CDFW land" : feature_group_ecf629525457a9dbd0155764f77eb341,
+                    "Private conservation" : feature_group_36a06e4176a3d8d3899ced0d692c5329,
+                    "Rivers \u0026 streams" : feature_group_18f3b6ce9002fa0d08073c7bb1434319,
                 },
             };
-            let layer_control_bfc77bf6f8d00d7f42ca8986337c8c99 = L.control.layers(
-                layer_control_bfc77bf6f8d00d7f42ca8986337c8c99_layers.base_layers,
-                layer_control_bfc77bf6f8d00d7f42ca8986337c8c99_layers.overlays,
+            let layer_control_461f8d5ab6f1a42418a9fc3ab08534df = L.control.layers(
+                layer_control_461f8d5ab6f1a42418a9fc3ab08534df_layers.base_layers,
+                layer_control_461f8d5ab6f1a42418a9fc3ab08534df_layers.overlays,
                 {
   "position": "topright",
   "collapsed": false,
   "autoZIndex": true,
 }
-            ).addTo(map_6cacc83f91cb528c924064d5e623fb18);
+            ).addTo(map_74b833894cb877ce8c27bc74132ea716);
 
         
     
         (function() {
-            var mapRef = map_6cacc83f91cb528c924064d5e623fb18;
-            var layers = [{"id": "lands_trails", "groupVar": "feature_group_753d1f1b71011d42021fa1a4713e2d97", "geojsonUrl": "recreation_lands_map_data/lands_trails.json", "style": {"fillColor": "#fb6a4a", "color": "#67000d", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "map_label", "trail_class", "source_fid"], "tooltipAliases": ["Name", "Label", "Trail class", "Source ID"]}, {"id": "lands_camping", "groupVar": "feature_group_fc1c86820646b2bb656dec9e9b33c1b7", "geojsonUrl": "recreation_lands_map_data/lands_camping.json", "style": {"fillColor": "#fdbb84", "color": "#7f0000", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "source_fid"], "tooltipAliases": ["Name", "Source ID"]}, {"id": "lands_ohv", "groupVar": "feature_group_8c7df0ce1756d32d72c437d9b23f044d", "geojsonUrl": "recreation_lands_map_data/lands_ohv.json", "style": {"fillColor": "#3182bd", "color": "#08306b", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "source_fid"], "tooltipAliases": ["Name", "Source ID"]}, {"id": "lands_golf", "groupVar": "feature_group_cc7dafbfb10e78ac10d1c60f4b352433", "geojsonUrl": "recreation_lands_map_data/lands_golf.json", "style": {"fillColor": "#41ab5d", "color": "#006837", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "source_fid"], "tooltipAliases": ["Name", "Source ID"]}, {"id": "lands_whitewater", "groupVar": "feature_group_52a9f8063d53f782c5293cf9c8767c9c", "geojsonUrl": "recreation_lands_map_data/lands_whitewater.json", "style": {"fillColor": "#66c2a4", "color": "#005824", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "source_fid"], "tooltipAliases": ["Name", "Source ID"]}, {"id": "lands_ski", "groupVar": "feature_group_b80112fcdf396b9c173e7cbce00e31be", "geojsonUrl": "recreation_lands_map_data/lands_ski.json", "style": {"fillColor": "#74c476", "color": "#00441b", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "source_fid"], "tooltipAliases": ["Name", "Source ID"]}, {"id": "lands_lakes", "groupVar": "feature_group_9623be32fb12ff033a69e880728fc376", "geojsonUrl": "recreation_lands_map_data/lands_lakes.json", "style": {"fillColor": "#6baed6", "color": "#08306b", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["lake_name", "lake_name_gnis", "county", "source_fid"], "tooltipAliases": ["Lake", "GNIS name", "County", "Source ID"]}, {"id": "lands_farm", "groupVar": "feature_group_11aa30cb9946893a9fee614e8da35c3a", "geojsonUrl": "recreation_lands_map_data/lands_farm.json", "style": {"fillColor": "#fa9fb5", "color": "#7a0177", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["farm_name", "source_fid"], "tooltipAliases": ["Farm", "Source ID"]}, {"id": "lands_local_parks", "groupVar": "feature_group_62c4747471ef61aa3308223152356388", "geojsonUrl": "recreation_lands_map_data/lands_local_parks.json", "style": {"fillColor": "#9e9ac8", "color": "#54278f", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "manager_agency", "county", "source_fid"], "tooltipAliases": ["Name", "Manager", "County", "Source ID"]}, {"id": "lands_state_parks", "groupVar": "feature_group_9c79ca3393b8aa9d29fe36744f0c6e7e", "geojsonUrl": "recreation_lands_map_data/lands_state_parks.json", "style": {"fillColor": "#fd8d3c", "color": "#7f2704", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "source_fid"], "tooltipAliases": ["Name", "Source ID"]}, {"id": "lands_blm_land", "groupVar": "feature_group_5ebf4e98499ca1fcddde52afe738faf0", "geojsonUrl": "recreation_lands_map_data/lands_blm_land.json", "style": {"fillColor": "#fec44f", "color": "#993404", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "source_fid"], "tooltipAliases": ["Name", "Source ID"]}, {"id": "lands_usfs_land", "groupVar": "feature_group_e40e590d608841cd1337167bb5a1bfa4", "geojsonUrl": "recreation_lands_map_data/lands_usfs_land.json", "style": {"fillColor": "#78c679", "color": "#006d2c", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "source_fid"], "tooltipAliases": ["Name", "Source ID"]}, {"id": "lands_cdfw_land", "groupVar": "feature_group_b6c06d979ad3749112af5471187cea90", "geojsonUrl": "recreation_lands_map_data/lands_cdfw_land.json", "style": {"fillColor": "#fc8d59", "color": "#990000", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "source_fid"], "tooltipAliases": ["Name", "Source ID"]}, {"id": "lands_private_conservation", "groupVar": "feature_group_bccfbf8c7e1f83ec5c6b69282110f653", "geojsonUrl": "recreation_lands_map_data/lands_private_conservation.json", "style": {"fillColor": "#74c476", "color": "#006d2c", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "manager_agency", "county", "source_fid"], "tooltipAliases": ["Name", "Manager", "County", "Source ID"]}, {"id": "lands_rivers_and_streams", "groupVar": "feature_group_b3f90924c09fb8d925c074f5e5e21bee", "geojsonUrl": "recreation_lands_map_data/lands_rivers_and_streams.json", "style": {"fillColor": "#74c476", "color": "#005a32", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "source_fid"], "tooltipAliases": ["Name", "Source ID"]}];
+            var mapRef = map_74b833894cb877ce8c27bc74132ea716;
+            var layers = [{"id": "lands_trails", "groupVar": "feature_group_389ba53241ccb33de5e624ca5931a084", "geojsonUrl": "recreation_lands_map_data/lands_trails.json", "style": {"fillColor": "#fb6a4a", "color": "#67000d", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "map_label", "trail_class", "source_fid"], "tooltipAliases": ["Name", "Label", "Trail class", "Source ID"]}, {"id": "lands_camping", "groupVar": "feature_group_3764f600970661cd8297af452e2ac1f3", "geojsonUrl": "recreation_lands_map_data/lands_camping.json", "style": {"fillColor": "#fdbb84", "color": "#7f0000", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "source_fid"], "tooltipAliases": ["Name", "Source ID"]}, {"id": "lands_ohv", "groupVar": "feature_group_7d6035faceaa2e0b24d671a15a3fc5be", "geojsonUrl": "recreation_lands_map_data/lands_ohv.json", "style": {"fillColor": "#3182bd", "color": "#08306b", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "source_fid"], "tooltipAliases": ["Name", "Source ID"]}, {"id": "lands_golf", "groupVar": "feature_group_f1ed7344fee0a75f04e466aff50cc782", "geojsonUrl": "recreation_lands_map_data/lands_golf.json", "style": {"fillColor": "#41ab5d", "color": "#006837", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "source_fid"], "tooltipAliases": ["Name", "Source ID"]}, {"id": "lands_whitewater", "groupVar": "feature_group_943ef2c8fbe1ad3436f03c71b8d983e4", "geojsonUrl": "recreation_lands_map_data/lands_whitewater.json", "style": {"fillColor": "#66c2a4", "color": "#005824", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "source_fid"], "tooltipAliases": ["Name", "Source ID"]}, {"id": "lands_ski", "groupVar": "feature_group_96821291ed6a56e97b3e3f726356f3c0", "geojsonUrl": "recreation_lands_map_data/lands_ski.json", "style": {"fillColor": "#74c476", "color": "#00441b", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "source_fid"], "tooltipAliases": ["Name", "Source ID"]}, {"id": "lands_lakes", "groupVar": "feature_group_7d504e2b98894f95db4750152abfd44b", "geojsonUrl": "recreation_lands_map_data/lands_lakes.json", "style": {"fillColor": "#6baed6", "color": "#08306b", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["lake_name", "lake_name_gnis", "county", "source_fid"], "tooltipAliases": ["Lake", "GNIS name", "County", "Source ID"]}, {"id": "lands_farm", "groupVar": "feature_group_8c064af7950d1a3d8d89698a88219f2f", "geojsonUrl": "recreation_lands_map_data/lands_farm.json", "style": {"fillColor": "#fa9fb5", "color": "#7a0177", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["farm_name", "source_fid"], "tooltipAliases": ["Farm", "Source ID"]}, {"id": "lands_local_parks", "groupVar": "feature_group_b2c0b0b5e9fbd16769143d4b4a18f2f0", "geojsonUrl": "recreation_lands_map_data/lands_local_parks.json", "style": {"fillColor": "#9e9ac8", "color": "#54278f", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "manager_agency", "county", "source_fid"], "tooltipAliases": ["Name", "Manager", "County", "Source ID"]}, {"id": "lands_state_parks", "groupVar": "feature_group_a8772465c3be0cb23a5e4a00ba441b1f", "geojsonUrl": "recreation_lands_map_data/lands_state_parks.json", "style": {"fillColor": "#fd8d3c", "color": "#7f2704", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "source_fid"], "tooltipAliases": ["Name", "Source ID"]}, {"id": "lands_blm_land", "groupVar": "feature_group_1190b36646aa0ce3fabf8dbbb172f3e6", "geojsonUrl": "recreation_lands_map_data/lands_blm_land.json", "style": {"fillColor": "#fec44f", "color": "#993404", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "source_fid"], "tooltipAliases": ["Name", "Source ID"]}, {"id": "lands_usfs_land", "groupVar": "feature_group_d0358d54e086876ef861610ebcd1e92e", "geojsonUrl": "recreation_lands_map_data/lands_usfs_land.json", "style": {"fillColor": "#78c679", "color": "#006d2c", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "source_fid"], "tooltipAliases": ["Name", "Source ID"]}, {"id": "lands_cdfw_land", "groupVar": "feature_group_ecf629525457a9dbd0155764f77eb341", "geojsonUrl": "recreation_lands_map_data/lands_cdfw_land.json", "style": {"fillColor": "#fc8d59", "color": "#990000", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "source_fid"], "tooltipAliases": ["Name", "Source ID"]}, {"id": "lands_private_conservation", "groupVar": "feature_group_36a06e4176a3d8d3899ced0d692c5329", "geojsonUrl": "recreation_lands_map_data/lands_private_conservation.json", "style": {"fillColor": "#74c476", "color": "#006d2c", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "manager_agency", "county", "source_fid"], "tooltipAliases": ["Name", "Manager", "County", "Source ID"]}, {"id": "lands_rivers_and_streams", "groupVar": "feature_group_18f3b6ce9002fa0d08073c7bb1434319", "geojsonUrl": "recreation_lands_map_data/lands_rivers_and_streams.json", "style": {"fillColor": "#74c476", "color": "#005a32", "weight": 1.0, "opacity": 0.85, "fillOpacity": 0.35}, "tooltipFields": ["name", "source_fid"], "tooltipAliases": ["Name", "Source ID"]}];
             var loaded = {};
             var geoLayers = {};
 

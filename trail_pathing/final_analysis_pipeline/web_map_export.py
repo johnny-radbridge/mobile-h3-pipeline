@@ -284,7 +284,41 @@ def load_study_county_layers(gpkg_path: Path) -> dict[str, gpd.GeoDataFrame]:
         gdf = read_gpkg_layer(gpkg_path, layer_name)
         if not gdf.empty:
             layers[activity] = gdf
+    if layers and ALL_RECREATION_ACTIVITY_KEY not in layers:
+        aggregate = aggregate_county_layers(layers)
+        if aggregate is not None and not aggregate.empty:
+            layers[ALL_RECREATION_ACTIVITY_KEY] = aggregate
     return layers
+
+
+def aggregate_county_layers(
+    activity_layers: dict[str, gpd.GeoDataFrame],
+    *,
+    value_field: str = "unique_device_localdate_id_count",
+) -> gpd.GeoDataFrame | None:
+    """Build an ``All recreation`` county layer by summing counts across activity layers."""
+    frames: list[gpd.GeoDataFrame] = []
+    for gdf in activity_layers.values():
+        if gdf.empty or value_field not in gdf.columns:
+            continue
+        geoid_col = "GEOID" if "GEOID" in gdf.columns else "origin_county_geoid"
+        county_name_col = "NAMELSAD" if "NAMELSAD" in gdf.columns else None
+        keep = [geoid_col, value_field, "geometry"]
+        if county_name_col:
+            keep.insert(1, county_name_col)
+        frames.append(gdf[keep].copy())
+    if not frames:
+        return None
+
+    combined = gpd.GeoDataFrame(pd.concat(frames, ignore_index=True), crs=frames[0].crs)
+    geoid_col = "GEOID" if "GEOID" in combined.columns else "origin_county_geoid"
+    group_cols = [geoid_col]
+    if "NAMELSAD" in combined.columns:
+        group_cols.append("NAMELSAD")
+    totals = combined.groupby(group_cols, as_index=False)[value_field].sum()
+    geom = combined.drop_duplicates(subset=[geoid_col])[[geoid_col, "geometry"]]
+    out = totals.merge(geom, on=geoid_col, how="left")
+    return gpd.GeoDataFrame(out, geometry="geometry", crs=combined.crs)
 
 
 def recreation_lands_activity_key(layer_suffix: str) -> str:
@@ -708,6 +742,17 @@ def make_base_map(
         control=False,
     )
     tile.add_to(m)
+    m.get_root().header.add_child(
+        folium.Element(
+            """
+            <style>
+                .leaflet-container .leaflet-interactive:focus {
+                    outline: none;
+                }
+            </style>
+            """
+        )
+    )
     if initial_zoom is None:
         fit_kwargs: dict[str, Any] = {}
         if fit_bounds_max_zoom is not None:

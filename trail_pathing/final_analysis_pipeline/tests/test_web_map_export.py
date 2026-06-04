@@ -1,10 +1,12 @@
 """Tests for H3 web map export helpers."""
 
 from export_web_maps import h3_layer_visible
+import geopandas as gpd
 
 from h3_device_hours_core import period_to_display_label, recreation_season_period
 from web_map_export import (
     ALL_RECREATION_ACTIVITY_KEY,
+    aggregate_county_layers,
     aggregate_h3_device_hours_across_gpkgs,
     h3_colors_for_activity,
     is_comprehensive_h3_activity,
@@ -13,6 +15,7 @@ from web_map_export import (
     value_range_for_heatmap,
 )
 from web_map_export import DEFAULT_H3_GPKG_PREFIX, DEFAULT_H3_SEASONS_DIR, discover_seasonal_gpkgs
+from shapely.geometry import Polygon
 
 
 def test_partition_h3_export_layers() -> None:
@@ -85,3 +88,40 @@ def test_h3_layer_visible_supports_all_layers_sentinel() -> None:
         "__all__",
         show_on_load=True,
     )
+
+
+def test_aggregate_county_layers_builds_all_recreation() -> None:
+    county_a = Polygon([(-121.0, 38.0), (-120.9, 38.0), (-120.9, 38.1), (-121.0, 38.1)])
+    county_b = Polygon([(-120.8, 38.0), (-120.7, 38.0), (-120.7, 38.1), (-120.8, 38.1)])
+    trails = gpd.GeoDataFrame(
+        {
+            "origin_county_geoid": ["001", "003"],
+            "NAMELSAD": ["Alpha County", "Beta County"],
+            "unique_device_localdate_id_count": [5, 3],
+            "geometry": [county_a, county_b],
+        },
+        geometry="geometry",
+        crs=4326,
+    )
+    parks = gpd.GeoDataFrame(
+        {
+            "origin_county_geoid": ["001", "003"],
+            "NAMELSAD": ["Alpha County", "Beta County"],
+            "unique_device_localdate_id_count": [2, 7],
+            "geometry": [county_a, county_b],
+        },
+        geometry="geometry",
+        crs=4326,
+    )
+
+    aggregate = aggregate_county_layers({"trails": trails, "state_parks": parks})
+
+    assert aggregate is not None
+    totals = dict(
+        zip(
+            aggregate["origin_county_geoid"],
+            aggregate["unique_device_localdate_id_count"],
+            strict=False,
+        )
+    )
+    assert totals == {"001": 7, "003": 10}
