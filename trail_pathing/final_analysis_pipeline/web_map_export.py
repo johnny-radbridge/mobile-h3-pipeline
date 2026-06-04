@@ -1273,6 +1273,11 @@ def add_layer_search_filter(
                 overflow-y: auto;
                 overflow-x: hidden;
             }
+            .leaflet-control-layers label {
+                display: block;
+                white-space: normal;
+                word-break: break-word;
+            }
             label.edwa-layer-hidden {
                 display: none !important;
             }
@@ -1370,6 +1375,195 @@ def add_layer_search_filter(
 add_layer_search_and_exclusive_select = add_layer_search_filter
 
 
+def add_featured_overlay_layer_panel(
+    m: folium.Map,
+    *,
+    search_placeholder: str = "Filter layers",
+    featured_matcher: str = r"all recreation",
+    featured_title: str = "All recreation (deduplicated)",
+    section_title: str = "By activity / land",
+) -> None:
+    """Split flat overlay list into a featured top block plus searchable activity list."""
+    template = Template(
+        """
+        {% macro html(this, kwargs) %}
+        <style>
+            .edwa-layer-search-wrap {
+                display: block;
+                padding: 6px 8px 8px;
+                margin-bottom: 4px;
+                border-bottom: 1px solid #ddd;
+            }
+            .edwa-panel-section-title {
+                display: block;
+                margin: 8px 0 4px;
+                font: 11px/1.35 -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+                font-weight: 600;
+                color: #57606a;
+                text-transform: uppercase;
+                letter-spacing: 0.03em;
+            }
+            .edwa-featured-layers label {
+                display: block;
+                font-weight: 600;
+                margin: 2px 0;
+                white-space: normal;
+                word-break: break-word;
+            }
+            .edwa-layer-search {
+                width: 100%;
+                box-sizing: border-box;
+                font: 12px/1.3 -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+                padding: 5px 7px;
+                border: 1px solid #c9d1d9;
+                border-radius: 4px;
+            }
+            .edwa-layer-bulk-actions {
+                display: flex;
+                gap: 10px;
+                margin-top: 6px;
+            }
+            .edwa-layer-bulk-btn {
+                background: none;
+                border: none;
+                padding: 0;
+                font: 12px/1.3 -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+                color: #57606a;
+                cursor: pointer;
+                text-decoration: underline;
+                text-underline-offset: 2px;
+            }
+            .edwa-layer-bulk-btn:hover {
+                color: #24292f;
+            }
+            .leaflet-control-layers-expanded .leaflet-control-layers-list {
+                max-height: min(70vh, 520px);
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+            .leaflet-control-layers label {
+                display: block;
+                white-space: normal;
+                word-break: break-word;
+            }
+            label.edwa-layer-hidden {
+                display: none !important;
+            }
+        </style>
+        {% endmacro %}
+        {% macro script(this, kwargs) %}
+        function edwaFeaturedOverlayInputs(section) {
+            return Array.prototype.slice.call(
+                section.querySelectorAll("input.leaflet-control-layers-selector")
+            ).filter(function(input) {
+                return input.layerId !== undefined;
+            });
+        }
+        function edwaFeaturedLayerLabel(input) {
+            var row = input.closest("label") || input.parentElement;
+            return row ? (row.textContent || "").trim() : "";
+        }
+        function edwaInstallFeaturedOverlayPanel() {
+            var list = document.querySelector(".leaflet-control-layers-list");
+            var section = document.querySelector(".leaflet-control-layers-overlays");
+            if (!list || !section || document.getElementById("edwa-layer-search")) return;
+
+            var wrap = document.createElement("div");
+            wrap.className = "edwa-layer-search-wrap";
+            wrap.innerHTML = ''
+                + '<span class="edwa-panel-section-title">{{ this.featured_title }}</span>'
+                + '<div class="edwa-featured-layers" id="edwa-featured-layers"></div>'
+                + '<span class="edwa-panel-section-title">{{ this.section_title }}</span>'
+                + '<input type="search" id="edwa-layer-search" class="edwa-layer-search" '
+                + 'placeholder="{{ this.search_placeholder }}" autocomplete="off" />'
+                + '<div class="edwa-layer-bulk-actions">'
+                + '<button type="button" class="edwa-layer-bulk-btn" id="edwa-layer-select-all">Select all</button>'
+                + '<button type="button" class="edwa-layer-bulk-btn" id="edwa-layer-clear-all">Clear all</button>'
+                + '</div>';
+            list.insertBefore(wrap, section);
+
+            var featuredHost = document.getElementById("edwa-featured-layers");
+            var featuredPattern = new RegExp({{ this.featured_matcher | tojson }}, "i");
+            Array.prototype.slice.call(section.querySelectorAll("label")).forEach(function(label) {
+                if (featuredPattern.test((label.textContent || "").trim())) {
+                    featuredHost.appendChild(label);
+                }
+            });
+
+            var search = document.getElementById("edwa-layer-search");
+            var selectAllBtn = document.getElementById("edwa-layer-select-all");
+            var clearAllBtn = document.getElementById("edwa-layer-clear-all");
+            var syncing = false;
+
+            function activityInputs() {
+                return edwaFeaturedOverlayInputs(section);
+            }
+
+            function featuredInputs() {
+                return Array.prototype.slice.call(
+                    featuredHost.querySelectorAll("input.leaflet-control-layers-selector")
+                );
+            }
+
+            function allInputs() {
+                return featuredInputs().concat(activityInputs());
+            }
+
+            function isVisibleActivityInput(input) {
+                var row = input.closest("label");
+                return row && !row.classList.contains("edwa-layer-hidden");
+            }
+
+            function setInputsChecked(inputs, on) {
+                syncing = true;
+                inputs.forEach(function(input) {
+                    if (input.checked !== on) input.click();
+                });
+                syncing = false;
+            }
+
+            function applySearchFilter() {
+                var q = (search.value || "").trim().toLowerCase();
+                activityInputs().forEach(function(input) {
+                    var row = input.closest("label");
+                    if (!row) return;
+                    var text = edwaFeaturedLayerLabel(input).toLowerCase();
+                    if (!q || text.indexOf(q) !== -1) {
+                        row.classList.remove("edwa-layer-hidden");
+                    } else {
+                        row.classList.add("edwa-layer-hidden");
+                    }
+                });
+            }
+
+            search.addEventListener("input", applySearchFilter);
+            selectAllBtn.addEventListener("click", function(ev) {
+                ev.preventDefault();
+                var targets = activityInputs().filter(isVisibleActivityInput).concat(featuredInputs());
+                setInputsChecked(targets, true);
+            });
+            clearAllBtn.addEventListener("click", function(ev) {
+                ev.preventDefault();
+                setInputsChecked(allInputs().filter(function(i) { return i.checked; }), false);
+            });
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            edwaInstallFeaturedOverlayPanel();
+            setTimeout(edwaInstallFeaturedOverlayPanel, 300);
+            setTimeout(edwaInstallFeaturedOverlayPanel, 800);
+        });
+        {% endmacro %}
+        """
+    )
+    panel = MacroElement()
+    panel._template = template
+    panel.search_placeholder = search_placeholder
+    panel.featured_matcher = featured_matcher
+    panel.featured_title = featured_title
+    panel.section_title = section_title
+    m.get_root().add_child(panel)
+
+
 def add_h3_map_layer_controls(
     m: folium.Map,
     *,
@@ -1452,6 +1646,12 @@ def add_h3_map_layer_controls(
             .leaflet-control-layers-expanded .leaflet-control-layers-list {
                 max-height: min(70vh, 520px);
                 overflow-y: auto;
+                overflow-x: hidden;
+            }
+            .leaflet-control-layers label {
+                display: block;
+                white-space: normal;
+                word-break: break-word;
             }
             label.edwa-layer-hidden {
                 display: none !important;

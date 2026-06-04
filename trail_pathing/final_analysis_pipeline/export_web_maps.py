@@ -81,6 +81,7 @@ from web_map_export import (
     RECREATION_LANDS_LAYER_PREFIX,
     add_choropleth_layer,
     add_h3_map_layer_controls,
+    add_featured_overlay_layer_panel,
     add_layer_search_filter,
     is_comprehensive_h3_activity,
     partition_h3_export_layers,
@@ -202,7 +203,15 @@ def build_county_origin_map(
         )
 
     LayerControl(collapsed=False).add_to(m)
-    add_layer_search_filter(m, search_placeholder="Filter activities")
+    if ALL_RECREATION_ACTIVITY_KEY in layer_names:
+        add_featured_overlay_layer_panel(
+            m,
+            search_placeholder="Filter activities",
+            featured_title="All recreation (deduplicated)",
+            section_title="By activity / land",
+        )
+    else:
+        add_layer_search_filter(m, search_placeholder="Filter activities")
     return save_map(m, output_html)
 
 
