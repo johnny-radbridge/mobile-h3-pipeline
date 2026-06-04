@@ -24,7 +24,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_6eccb700b2847c02b54c762e4197392d {
+                #map_d572a2f6d8679071af69dba81f1bbb4c {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -61,7 +61,7 @@
 <body>
     
     
-            <div class="folium-map" id="map_6eccb700b2847c02b54c762e4197392d" ></div>
+            <div class="folium-map" id="map_d572a2f6d8679071af69dba81f1bbb4c" ></div>
         
     
         <style>
@@ -130,6 +130,29 @@
                 cursor: pointer;
                 text-decoration: underline;
             }
+            .edwa-layer-opacity {
+                margin-top: 8px;
+            }
+            .edwa-layer-opacity-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 10px;
+                margin-bottom: 4px;
+            }
+            .edwa-layer-opacity-label,
+            .edwa-layer-opacity-value {
+                font: 12px/1.3 -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+                color: #57606a;
+            }
+            .edwa-layer-opacity-value {
+                min-width: 3ch;
+                text-align: right;
+            }
+            .edwa-layer-opacity-slider {
+                width: 100%;
+                margin: 0;
+            }
             .leaflet-control-layers-expanded .leaflet-control-layers-list {
                 max-height: min(70vh, 520px);
                 overflow-y: auto;
@@ -149,8 +172,8 @@
 <script>
     
     
-            var map_6eccb700b2847c02b54c762e4197392d = L.map(
-                "map_6eccb700b2847c02b54c762e4197392d",
+            var map_d572a2f6d8679071af69dba81f1bbb4c = L.map(
+                "map_d572a2f6d8679071af69dba81f1bbb4c",
                 {
                     center: [38.716858, -120.674171],
                     crs: L.CRS.EPSG3857,
@@ -162,13 +185,13 @@
 
                 }
             );
-            L.control.scale().addTo(map_6eccb700b2847c02b54c762e4197392d);
+            L.control.scale().addTo(map_d572a2f6d8679071af69dba81f1bbb4c);
 
             
 
         
     
-            var tile_layer_ce8e7ec45bd92967eeb942b94fa0d2c6 = L.tileLayer(
+            var tile_layer_d805a9782eb928cfc80b339bfea4d552 = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -185,190 +208,190 @@
             );
         
     
-            tile_layer_ce8e7ec45bd92967eeb942b94fa0d2c6.addTo(map_6eccb700b2847c02b54c762e4197392d);
+            tile_layer_d805a9782eb928cfc80b339bfea4d552.addTo(map_d572a2f6d8679071af69dba81f1bbb4c);
         
     
-            var feature_group_fd91b3dea68309445bf2411fa2fa55bd = L.featureGroup(
+            var feature_group_ff81f4933c348ac2fd03a800518d8652 = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_fd91b3dea68309445bf2411fa2fa55bd.addTo(map_6eccb700b2847c02b54c762e4197392d);
+            feature_group_ff81f4933c348ac2fd03a800518d8652.addTo(map_d572a2f6d8679071af69dba81f1bbb4c);
         
     
-            var feature_group_5af10096d8956627a7dad2deff6ce835 = L.featureGroup(
+            var feature_group_1e0428d557908d655a1d81860c75adf5 = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_5af10096d8956627a7dad2deff6ce835.addTo(map_6eccb700b2847c02b54c762e4197392d);
+            feature_group_1e0428d557908d655a1d81860c75adf5.addTo(map_d572a2f6d8679071af69dba81f1bbb4c);
         
     
-            var feature_group_8f3ce0aefe192fae59aca67817816c36 = L.featureGroup(
+            var feature_group_b085ff31957dfd29e51d82e48e1e3bb9 = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_8f3ce0aefe192fae59aca67817816c36.addTo(map_6eccb700b2847c02b54c762e4197392d);
+            feature_group_b085ff31957dfd29e51d82e48e1e3bb9.addTo(map_d572a2f6d8679071af69dba81f1bbb4c);
         
     
-            var feature_group_50a6a0b4eb687a3fe6587a39ff04840f = L.featureGroup(
+            var feature_group_5ccb2ad2c1c827dcb1293963b51f3cdb = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_50a6a0b4eb687a3fe6587a39ff04840f.addTo(map_6eccb700b2847c02b54c762e4197392d);
+            feature_group_5ccb2ad2c1c827dcb1293963b51f3cdb.addTo(map_d572a2f6d8679071af69dba81f1bbb4c);
         
     
-            var feature_group_3d85029609eeb77e105c3c6972e2743e = L.featureGroup(
+            var feature_group_aa6f99b02a6304e5cc1df9f3347cf17d = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_3d85029609eeb77e105c3c6972e2743e.addTo(map_6eccb700b2847c02b54c762e4197392d);
+            feature_group_aa6f99b02a6304e5cc1df9f3347cf17d.addTo(map_d572a2f6d8679071af69dba81f1bbb4c);
         
     
-            var feature_group_29e119a382fb33dbcc05c27d12543954 = L.featureGroup(
+            var feature_group_d12f6ad6dd437bf2537a506aca995c2c = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_29e119a382fb33dbcc05c27d12543954.addTo(map_6eccb700b2847c02b54c762e4197392d);
+            feature_group_d12f6ad6dd437bf2537a506aca995c2c.addTo(map_d572a2f6d8679071af69dba81f1bbb4c);
         
     
-            var feature_group_39ff6147f5d7dd966eaebfa06d010145 = L.featureGroup(
+            var feature_group_f97435802d3e25726996dcac77643622 = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_39ff6147f5d7dd966eaebfa06d010145.addTo(map_6eccb700b2847c02b54c762e4197392d);
+            feature_group_f97435802d3e25726996dcac77643622.addTo(map_d572a2f6d8679071af69dba81f1bbb4c);
         
     
-            var feature_group_e6216ab44264856ac3e46a1adba6f974 = L.featureGroup(
+            var feature_group_8a6cf7ea148b22c7637ef130816c1d00 = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_e6216ab44264856ac3e46a1adba6f974.addTo(map_6eccb700b2847c02b54c762e4197392d);
+            feature_group_8a6cf7ea148b22c7637ef130816c1d00.addTo(map_d572a2f6d8679071af69dba81f1bbb4c);
         
     
-            var feature_group_415fb07594a2acbaa121ee88c3ea703a = L.featureGroup(
+            var feature_group_f06d5e791b364fd492fae7700f1922fd = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_415fb07594a2acbaa121ee88c3ea703a.addTo(map_6eccb700b2847c02b54c762e4197392d);
+            feature_group_f06d5e791b364fd492fae7700f1922fd.addTo(map_d572a2f6d8679071af69dba81f1bbb4c);
         
     
-            var feature_group_508e35e31254bd07e8e73a37b2febbd6 = L.featureGroup(
+            var feature_group_31c9b7772400d1bca4cfadafd60c3267 = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_508e35e31254bd07e8e73a37b2febbd6.addTo(map_6eccb700b2847c02b54c762e4197392d);
+            feature_group_31c9b7772400d1bca4cfadafd60c3267.addTo(map_d572a2f6d8679071af69dba81f1bbb4c);
         
     
-            var feature_group_fae7b3f6e22a9b8899449b1935cb814b = L.featureGroup(
+            var feature_group_e9c390ebd573aec7822af09cf67c4d7f = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_fae7b3f6e22a9b8899449b1935cb814b.addTo(map_6eccb700b2847c02b54c762e4197392d);
+            feature_group_e9c390ebd573aec7822af09cf67c4d7f.addTo(map_d572a2f6d8679071af69dba81f1bbb4c);
         
     
-            var feature_group_d66b68995c6d5316418adba81dbb9bb2 = L.featureGroup(
+            var feature_group_65f1d68703be12808930f289b345532d = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_d66b68995c6d5316418adba81dbb9bb2.addTo(map_6eccb700b2847c02b54c762e4197392d);
+            feature_group_65f1d68703be12808930f289b345532d.addTo(map_d572a2f6d8679071af69dba81f1bbb4c);
         
     
-            var feature_group_c6e4d2c4ab33159c0b33da77118e9b0b = L.featureGroup(
+            var feature_group_a20645cd17a09c13605bf9175d1cabb7 = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_c6e4d2c4ab33159c0b33da77118e9b0b.addTo(map_6eccb700b2847c02b54c762e4197392d);
+            feature_group_a20645cd17a09c13605bf9175d1cabb7.addTo(map_d572a2f6d8679071af69dba81f1bbb4c);
         
     
-            var feature_group_624d5a28f213c8007c1bbd9d495a880a = L.featureGroup(
+            var feature_group_ec9f7c598b8a8f57c2cb0ed9fce9f031 = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_624d5a28f213c8007c1bbd9d495a880a.addTo(map_6eccb700b2847c02b54c762e4197392d);
+            feature_group_ec9f7c598b8a8f57c2cb0ed9fce9f031.addTo(map_d572a2f6d8679071af69dba81f1bbb4c);
         
     
-            var feature_group_0208c054c8f131081e9508f2734c2177 = L.featureGroup(
+            var feature_group_ec4e93a5856868a9d5d409b179413d89 = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_0208c054c8f131081e9508f2734c2177.addTo(map_6eccb700b2847c02b54c762e4197392d);
+            feature_group_ec4e93a5856868a9d5d409b179413d89.addTo(map_d572a2f6d8679071af69dba81f1bbb4c);
         
     
-            var feature_group_e2704e2b87cceced5ac76ea8e4d21303 = L.featureGroup(
+            var feature_group_4f4e8d774f193674a81160198182d73d = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_e2704e2b87cceced5ac76ea8e4d21303.addTo(map_6eccb700b2847c02b54c762e4197392d);
+            feature_group_4f4e8d774f193674a81160198182d73d.addTo(map_d572a2f6d8679071af69dba81f1bbb4c);
         
     
-            var layer_control_fe40973d861e58cb0165615a6ccf398e_layers = {
+            var layer_control_18e90af9b76899fe51ec6f7a94dc5f60_layers = {
                 base_layers : {
                 },
                 overlays :  {
-                    "All recreation" : feature_group_fd91b3dea68309445bf2411fa2fa55bd,
-                    "Ski" : feature_group_5af10096d8956627a7dad2deff6ce835,
-                    "Trails" : feature_group_8f3ce0aefe192fae59aca67817816c36,
-                    "OHV" : feature_group_50a6a0b4eb687a3fe6587a39ff04840f,
-                    "Golf" : feature_group_3d85029609eeb77e105c3c6972e2743e,
-                    "Camping" : feature_group_29e119a382fb33dbcc05c27d12543954,
-                    "Farm visits" : feature_group_39ff6147f5d7dd966eaebfa06d010145,
-                    "Lakes" : feature_group_e6216ab44264856ac3e46a1adba6f974,
-                    "Rivers \u0026 streams" : feature_group_415fb07594a2acbaa121ee88c3ea703a,
-                    "Whitewater" : feature_group_508e35e31254bd07e8e73a37b2febbd6,
-                    "Local parks" : feature_group_fae7b3f6e22a9b8899449b1935cb814b,
-                    "State parks" : feature_group_d66b68995c6d5316418adba81dbb9bb2,
-                    "BLM land" : feature_group_c6e4d2c4ab33159c0b33da77118e9b0b,
-                    "USFS land" : feature_group_624d5a28f213c8007c1bbd9d495a880a,
-                    "CDFW land" : feature_group_0208c054c8f131081e9508f2734c2177,
-                    "Private conservation" : feature_group_e2704e2b87cceced5ac76ea8e4d21303,
+                    "All recreation" : feature_group_ff81f4933c348ac2fd03a800518d8652,
+                    "Ski" : feature_group_1e0428d557908d655a1d81860c75adf5,
+                    "Trails" : feature_group_b085ff31957dfd29e51d82e48e1e3bb9,
+                    "OHV" : feature_group_5ccb2ad2c1c827dcb1293963b51f3cdb,
+                    "Golf" : feature_group_aa6f99b02a6304e5cc1df9f3347cf17d,
+                    "Camping" : feature_group_d12f6ad6dd437bf2537a506aca995c2c,
+                    "Farm visits" : feature_group_f97435802d3e25726996dcac77643622,
+                    "Lakes" : feature_group_8a6cf7ea148b22c7637ef130816c1d00,
+                    "Rivers \u0026 streams" : feature_group_f06d5e791b364fd492fae7700f1922fd,
+                    "Whitewater" : feature_group_31c9b7772400d1bca4cfadafd60c3267,
+                    "Local parks" : feature_group_e9c390ebd573aec7822af09cf67c4d7f,
+                    "State parks" : feature_group_65f1d68703be12808930f289b345532d,
+                    "BLM land" : feature_group_a20645cd17a09c13605bf9175d1cabb7,
+                    "USFS land" : feature_group_ec9f7c598b8a8f57c2cb0ed9fce9f031,
+                    "CDFW land" : feature_group_ec4e93a5856868a9d5d409b179413d89,
+                    "Private conservation" : feature_group_4f4e8d774f193674a81160198182d73d,
                 },
             };
-            let layer_control_fe40973d861e58cb0165615a6ccf398e = L.control.layers(
-                layer_control_fe40973d861e58cb0165615a6ccf398e_layers.base_layers,
-                layer_control_fe40973d861e58cb0165615a6ccf398e_layers.overlays,
+            let layer_control_18e90af9b76899fe51ec6f7a94dc5f60 = L.control.layers(
+                layer_control_18e90af9b76899fe51ec6f7a94dc5f60_layers.base_layers,
+                layer_control_18e90af9b76899fe51ec6f7a94dc5f60_layers.overlays,
                 {
   "position": "topright",
   "collapsed": false,
   "autoZIndex": true,
 }
-            ).addTo(map_6eccb700b2847c02b54c762e4197392d);
+            ).addTo(map_d572a2f6d8679071af69dba81f1bbb4c);
 
         
     
         (function() {
-            var mapRef = map_6eccb700b2847c02b54c762e4197392d;
-            var layers = [{"id": "all_all_recreation", "groupVar": "feature_group_fd91b3dea68309445bf2411fa2fa55bd", "geojsonUrl": "h3_device_hours_map_data/all_all_recreation.json", "vmin": 1.0, "vmax": 34.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": true, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3ComprehensivePane"}, {"id": "all_ski", "groupVar": "feature_group_5af10096d8956627a7dad2deff6ce835", "geojsonUrl": "h3_device_hours_map_data/all_ski.json", "vmin": 1.0, "vmax": 13.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_trails", "groupVar": "feature_group_8f3ce0aefe192fae59aca67817816c36", "geojsonUrl": "h3_device_hours_map_data/all_trails.json", "vmin": 1.0, "vmax": 11.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_ohv", "groupVar": "feature_group_50a6a0b4eb687a3fe6587a39ff04840f", "geojsonUrl": "h3_device_hours_map_data/all_ohv.json", "vmin": 1.0, "vmax": 2.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_golf", "groupVar": "feature_group_3d85029609eeb77e105c3c6972e2743e", "geojsonUrl": "h3_device_hours_map_data/all_golf.json", "vmin": 1.0, "vmax": 39.920000000000016, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_camping", "groupVar": "feature_group_29e119a382fb33dbcc05c27d12543954", "geojsonUrl": "h3_device_hours_map_data/all_camping.json", "vmin": 1.0, "vmax": 72.79999999999995, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_farm", "groupVar": "feature_group_39ff6147f5d7dd966eaebfa06d010145", "geojsonUrl": "h3_device_hours_map_data/all_farm.json", "vmin": 1.0, "vmax": 21.680000000000007, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_lakes", "groupVar": "feature_group_e6216ab44264856ac3e46a1adba6f974", "geojsonUrl": "h3_device_hours_map_data/all_lakes.json", "vmin": 1.0, "vmax": 34.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_rivers_and_streams", "groupVar": "feature_group_415fb07594a2acbaa121ee88c3ea703a", "geojsonUrl": "h3_device_hours_map_data/all_rivers_and_streams.json", "vmin": 1.0, "vmax": 8.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_whitewater", "groupVar": "feature_group_508e35e31254bd07e8e73a37b2febbd6", "geojsonUrl": "h3_device_hours_map_data/all_whitewater.json", "vmin": 1.0, "vmax": 4.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_local_parks", "groupVar": "feature_group_fae7b3f6e22a9b8899449b1935cb814b", "geojsonUrl": "h3_device_hours_map_data/all_local_parks.json", "vmin": 1.0, "vmax": 50.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_state_parks", "groupVar": "feature_group_d66b68995c6d5316418adba81dbb9bb2", "geojsonUrl": "h3_device_hours_map_data/all_state_parks.json", "vmin": 1.0, "vmax": 67.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_blm_land", "groupVar": "feature_group_c6e4d2c4ab33159c0b33da77118e9b0b", "geojsonUrl": "h3_device_hours_map_data/all_blm_land.json", "vmin": 1.0, "vmax": 7.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_usfs_land", "groupVar": "feature_group_624d5a28f213c8007c1bbd9d495a880a", "geojsonUrl": "h3_device_hours_map_data/all_usfs_land.json", "vmin": 1.0, "vmax": 9.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_cdfw_land", "groupVar": "feature_group_0208c054c8f131081e9508f2734c2177", "geojsonUrl": "h3_device_hours_map_data/all_cdfw_land.json", "vmin": 1.0, "vmax": 4.040000000000001, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_private_conservation", "groupVar": "feature_group_e2704e2b87cceced5ac76ea8e4d21303", "geojsonUrl": "h3_device_hours_map_data/all_private_conservation.json", "vmin": 1.0, "vmax": 4.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}];
+            var mapRef = map_d572a2f6d8679071af69dba81f1bbb4c;
+            var layers = [{"id": "all_all_recreation", "groupVar": "feature_group_ff81f4933c348ac2fd03a800518d8652", "geojsonUrl": "h3_device_hours_map_data/all_all_recreation.json", "vmin": 1.0, "vmax": 34.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": true, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3ComprehensivePane"}, {"id": "all_ski", "groupVar": "feature_group_1e0428d557908d655a1d81860c75adf5", "geojsonUrl": "h3_device_hours_map_data/all_ski.json", "vmin": 1.0, "vmax": 13.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_trails", "groupVar": "feature_group_b085ff31957dfd29e51d82e48e1e3bb9", "geojsonUrl": "h3_device_hours_map_data/all_trails.json", "vmin": 1.0, "vmax": 11.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_ohv", "groupVar": "feature_group_5ccb2ad2c1c827dcb1293963b51f3cdb", "geojsonUrl": "h3_device_hours_map_data/all_ohv.json", "vmin": 1.0, "vmax": 2.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_golf", "groupVar": "feature_group_aa6f99b02a6304e5cc1df9f3347cf17d", "geojsonUrl": "h3_device_hours_map_data/all_golf.json", "vmin": 1.0, "vmax": 39.920000000000016, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_camping", "groupVar": "feature_group_d12f6ad6dd437bf2537a506aca995c2c", "geojsonUrl": "h3_device_hours_map_data/all_camping.json", "vmin": 1.0, "vmax": 72.79999999999995, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_farm", "groupVar": "feature_group_f97435802d3e25726996dcac77643622", "geojsonUrl": "h3_device_hours_map_data/all_farm.json", "vmin": 1.0, "vmax": 21.680000000000007, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_lakes", "groupVar": "feature_group_8a6cf7ea148b22c7637ef130816c1d00", "geojsonUrl": "h3_device_hours_map_data/all_lakes.json", "vmin": 1.0, "vmax": 34.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_rivers_and_streams", "groupVar": "feature_group_f06d5e791b364fd492fae7700f1922fd", "geojsonUrl": "h3_device_hours_map_data/all_rivers_and_streams.json", "vmin": 1.0, "vmax": 8.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_whitewater", "groupVar": "feature_group_31c9b7772400d1bca4cfadafd60c3267", "geojsonUrl": "h3_device_hours_map_data/all_whitewater.json", "vmin": 1.0, "vmax": 4.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_local_parks", "groupVar": "feature_group_e9c390ebd573aec7822af09cf67c4d7f", "geojsonUrl": "h3_device_hours_map_data/all_local_parks.json", "vmin": 1.0, "vmax": 50.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_state_parks", "groupVar": "feature_group_65f1d68703be12808930f289b345532d", "geojsonUrl": "h3_device_hours_map_data/all_state_parks.json", "vmin": 1.0, "vmax": 67.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_blm_land", "groupVar": "feature_group_a20645cd17a09c13605bf9175d1cabb7", "geojsonUrl": "h3_device_hours_map_data/all_blm_land.json", "vmin": 1.0, "vmax": 7.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_usfs_land", "groupVar": "feature_group_ec9f7c598b8a8f57c2cb0ed9fce9f031", "geojsonUrl": "h3_device_hours_map_data/all_usfs_land.json", "vmin": 1.0, "vmax": 9.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_cdfw_land", "groupVar": "feature_group_ec4e93a5856868a9d5d409b179413d89", "geojsonUrl": "h3_device_hours_map_data/all_cdfw_land.json", "vmin": 1.0, "vmax": 4.040000000000001, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_private_conservation", "groupVar": "feature_group_4f4e8d774f193674a81160198182d73d", "geojsonUrl": "h3_device_hours_map_data/all_private_conservation.json", "vmin": 1.0, "vmax": 4.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}];
             var loaded = {};
             var geoLayers = {};
             var STROKE = {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92};
@@ -451,6 +474,7 @@
                     var t = normalizedT(meta, value);
                     var pal = paletteFor(meta);
                     var gamma = pal.gamma;
+                    var alpha = window.edwaH3OverlayOpacity != null ? Number(window.edwaH3OverlayOpacity) : 1;
                     if (gamma > 0 && gamma !== 1.0) {
                         t = Math.pow(Math.max(0, Math.min(1, t)), gamma);
                     }
@@ -459,8 +483,8 @@
                         fillColor: mixHex(pal.colors, t),
                         color: stroke.color,
                         weight: stroke.weight,
-                        opacity: stroke.opacity,
-                        fillOpacity: stroke.fillOpacity,
+                        opacity: stroke.opacity * alpha,
+                        fillOpacity: stroke.fillOpacity * alpha,
                     };
                 };
             }
@@ -578,7 +602,7 @@
     
         function edwaH3SetBasemap(mode) {
             window.edwaH3ColorMode = mode;
-            var tile = window["tile_layer_ce8e7ec45bd92967eeb942b94fa0d2c6"];
+            var tile = window["tile_layer_d805a9782eb928cfc80b339bfea4d552"];
             if (tile && tile.setUrl) {
                 tile.setUrl(mode === "light" ? "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png" : "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png");
             }
@@ -588,6 +612,10 @@
                 darkBtn.classList.toggle("edwa-active", mode === "dark");
                 lightBtn.classList.toggle("edwa-active", mode === "light");
             }
+            if (window.edwaH3RestyleAll) window.edwaH3RestyleAll();
+        }
+        function edwaH3SetOpacity(alpha) {
+            window.edwaH3OverlayOpacity = alpha;
             if (window.edwaH3RestyleAll) window.edwaH3RestyleAll();
         }
         function edwaOverlayInputs(section) {
@@ -618,6 +646,13 @@
                 + '<span class="edwa-panel-section-title">By activity / land</span>'
                 + '<input type="search" id="edwa-layer-search" class="edwa-layer-search" '
                 + 'placeholder="Filter layers" autocomplete="off" />'
+                + '<div class="edwa-layer-opacity">'
+                + '<div class="edwa-layer-opacity-header">'
+                + '<span class="edwa-layer-opacity-label">Layer transparency</span>'
+                + '<span class="edwa-layer-opacity-value" id="edwa-layer-opacity-value">100%</span>'
+                + '</div>'
+                + '<input type="range" id="edwa-layer-opacity" class="edwa-layer-opacity-slider" min="0" max="100" value="100" />'
+                + '</div>'
                 + '<div class="edwa-layer-bulk-actions">'
                 + '<button type="button" class="edwa-layer-bulk-btn" id="edwa-layer-select-all">Select all</button>'
                 + '<button type="button" class="edwa-layer-bulk-btn" id="edwa-layer-clear-all">Clear all</button>'
@@ -641,6 +676,8 @@
             });
 
             var search = document.getElementById("edwa-layer-search");
+            var opacitySlider = document.getElementById("edwa-layer-opacity");
+            var opacityValue = document.getElementById("edwa-layer-opacity-value");
             var selectAllBtn = document.getElementById("edwa-layer-select-all");
             var clearAllBtn = document.getElementById("edwa-layer-clear-all");
             var syncing = false;
@@ -687,6 +724,13 @@
             }
 
             search.addEventListener("input", applySearchFilter);
+            function syncOpacity() {
+                var alpha = Number(opacitySlider.value || 100) / 100;
+                opacityValue.textContent = String(Math.round(alpha * 100)) + "%";
+                edwaH3SetOpacity(alpha);
+            }
+            opacitySlider.addEventListener("input", syncOpacity);
+            opacitySlider.addEventListener("change", syncOpacity);
             selectAllBtn.addEventListener("click", function(ev) {
                 ev.preventDefault();
                 var targets = activityInputs().filter(isVisibleActivityInput).concat(allRecreationInputs());
@@ -696,6 +740,7 @@
                 ev.preventDefault();
                 setInputsChecked(allToggleInputs().filter(function(i) { return i.checked; }), false);
             });
+            syncOpacity();
         }
         document.addEventListener("DOMContentLoaded", function() {
             edwaInstallH3LayerPanel();
