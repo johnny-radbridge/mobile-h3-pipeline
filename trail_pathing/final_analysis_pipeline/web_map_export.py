@@ -1741,8 +1741,8 @@ def add_h3_map_layer_controls(
             wrap.className = "edwa-layer-search-wrap";
             wrap.innerHTML = ''
                 + '<div class="edwa-basemap-toggle">'
-                + '<button type="button" class="edwa-basemap-btn edwa-active" id="edwa-basemap-dark">Dark heatmap</button>'
-                + '<button type="button" class="edwa-basemap-btn" id="edwa-basemap-light">Light map</button>'
+                + '<button type="button" class="edwa-basemap-btn" id="edwa-basemap-dark">Dark heatmap</button>'
+                + '<button type="button" class="edwa-basemap-btn edwa-active" id="edwa-basemap-light">Light map</button>'
                 + '</div>'
                 + '<span class="edwa-panel-section-title">All recreation (deduplicated)</span>'
                 + '<div class="edwa-all-recreation-layers" id="edwa-all-recreation-layers"></div>'
@@ -1762,7 +1762,8 @@ def add_h3_map_layer_controls(
                 }
             });
 
-            window.edwaH3ColorMode = "dark";
+            window.edwaH3ColorMode = "light";
+            edwaH3SetBasemap("light");
             document.getElementById("edwa-basemap-dark").addEventListener("click", function() {
                 edwaH3SetBasemap("dark");
             });
