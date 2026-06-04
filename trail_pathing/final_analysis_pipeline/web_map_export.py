@@ -66,10 +66,7 @@ REFERENCE_BOUNDARY_HIGHLIGHT_STYLE: dict[str, Any] = {
     "opacity": 1.0,
 }
 
-H3_TOOLTIP_FIELDS: tuple[tuple[str, str], ...] = (
-    ("h3", "H3 cell"),
-    ("device_hours", "Device count"),
-)
+H3_TOOLTIP_FIELDS: tuple[tuple[str, str], ...] = (("included_activities", "Included activities"),)
 # Back-compat alias
 H3_COMPOSITION_TOOLTIP_FIELDS = H3_TOOLTIP_FIELDS
 
@@ -272,6 +269,43 @@ def load_study_h3_layers(
             continue
         layers[activity] = gdf
     return layers
+
+
+def annotate_h3_included_activities(
+    activity: str,
+    gdf: gpd.GeoDataFrame,
+    activity_layers: dict[str, gpd.GeoDataFrame],
+    *,
+    h3_field: str = "h3",
+    value_field: str = "device_hours",
+) -> gpd.GeoDataFrame:
+    """Add ``included_activities`` text for H3 tooltips."""
+    out = gdf.copy()
+    if out.empty or h3_field not in out.columns:
+        return out
+
+    if activity != ALL_RECREATION_ACTIVITY_KEY:
+        out["included_activities"] = activity_label(activity)
+        return out
+
+    contributors: dict[str, list[str]] = {}
+    for other_activity, other_gdf in activity_layers.items():
+        if other_activity == ALL_RECREATION_ACTIVITY_KEY:
+            continue
+        if other_gdf.empty or h3_field not in other_gdf.columns:
+            continue
+        active = other_gdf
+        if value_field in active.columns:
+            active = active[active[value_field].fillna(0).astype(float) > 0]
+        label = activity_label(other_activity)
+        for h3_cell in active[h3_field].dropna().astype(str).unique().tolist():
+            contributors.setdefault(h3_cell, []).append(label)
+
+    out[h3_field] = out[h3_field].astype(str)
+    out["included_activities"] = out[h3_field].map(
+        lambda h3_cell: ", ".join(contributors.get(h3_cell, [])) or activity_label(activity)
+    )
+    return out
 
 
 def load_study_county_layers(gpkg_path: Path) -> dict[str, gpd.GeoDataFrame]:
@@ -786,7 +820,7 @@ def add_choropleth_layer(
     if gdf.empty:
         return None
 
-    keep_columns = [field for field, _ in tooltip_fields]
+    keep_columns = list(dict.fromkeys([value_field, *[field for field, _ in tooltip_fields]]))
     gdf = slim_gdf_for_web(
         gdf,
         keep_columns=keep_columns,
@@ -2038,7 +2072,7 @@ def register_h3_lazy_layer(
     if gdf.empty:
         return None
 
-    keep_columns = [field for field, _ in tooltip_fields]
+    keep_columns = list(dict.fromkeys([value_field, *[field for field, _ in tooltip_fields]]))
     export_gdf = slim_gdf_for_web(gdf, keep_columns=keep_columns)
     values = export_gdf[value_field].astype(float).tolist()
     if heatmap:

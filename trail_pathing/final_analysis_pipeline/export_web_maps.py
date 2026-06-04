@@ -67,6 +67,7 @@ from web_map_export import (
     load_study_county_layers,
     load_study_h3_layers,
     load_study_recreation_lands_layers,
+    annotate_h3_included_activities,
     recreation_lands_activity_key,
     register_recreation_lands_lazy_layer,
     period_key_from_gpkg_path,
@@ -337,6 +338,13 @@ def build_h3_device_hours_map(
             else f"{season} — {activity_label_text}"
         )
         layer_id = slugify_h3_layer_id(period_key, activity)
+        source_layers = combined if aggregate_periods and combined is not None else {activity: gdf}
+        gdf = annotate_h3_included_activities(
+            activity,
+            gdf,
+            source_layers,
+            value_field=H3_VALUE_FIELD,
+        )
         tooltip_fields = [
             field for field in H3_TOOLTIP_FIELDS if field[0] in gdf.columns
         ]

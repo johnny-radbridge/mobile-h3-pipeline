@@ -8,6 +8,7 @@ from web_map_export import (
     ALL_RECREATION_ACTIVITY_KEY,
     aggregate_county_layers,
     aggregate_h3_device_hours_across_gpkgs,
+    annotate_h3_included_activities,
     h3_colors_for_activity,
     is_comprehensive_h3_activity,
     partition_h3_export_layers,
@@ -125,3 +126,40 @@ def test_aggregate_county_layers_builds_all_recreation() -> None:
         )
     )
     assert totals == {"001": 7, "003": 10}
+
+
+def test_annotate_h3_included_activities_lists_contributors() -> None:
+    all_rec = gpd.GeoDataFrame(
+        {
+            "h3": ["a", "b"],
+            "device_hours": [10, 4],
+            "geometry": [county_a := Polygon([(-121.0, 38.0), (-120.9, 38.0), (-120.9, 38.1), (-121.0, 38.1)]),
+                         county_b := Polygon([(-120.8, 38.0), (-120.7, 38.0), (-120.7, 38.1), (-120.8, 38.1)])],
+        },
+        geometry="geometry",
+        crs=4326,
+    )
+    ski = gpd.GeoDataFrame(
+        {"h3": ["a"], "device_hours": [2], "geometry": [county_a]},
+        geometry="geometry",
+        crs=4326,
+    )
+    trails = gpd.GeoDataFrame(
+        {"h3": ["a", "b"], "device_hours": [3, 1], "geometry": [county_a, county_b]},
+        geometry="geometry",
+        crs=4326,
+    )
+
+    annotated = annotate_h3_included_activities(
+        ALL_RECREATION_ACTIVITY_KEY,
+        all_rec,
+        {
+            ALL_RECREATION_ACTIVITY_KEY: all_rec,
+            "ski": ski,
+            "trails": trails,
+        },
+    )
+
+    included = dict(zip(annotated["h3"], annotated["included_activities"], strict=False))
+    assert included["a"] == "Ski, Trails"
+    assert included["b"] == "Trails"
