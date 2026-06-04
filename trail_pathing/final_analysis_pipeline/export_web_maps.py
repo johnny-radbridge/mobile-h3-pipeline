@@ -108,6 +108,7 @@ DEFAULT_UARW_STUDY_COUNTY_HTML = DEFAULT_UARW_STUDY_GPKG.with_name("origin_count
 DEFAULT_UARW_STUDY_RECREATION_HTML = DEFAULT_UARW_STUDY_GPKG.with_name("recreation_lands_map.html")
 # Fixed zoom for H3 heatmap (~3 mi on Leaflet scale bar at study-area latitude).
 H3_MAP_INITIAL_ZOOM = 12
+H3_MAP_INITIAL_CENTER = (38.716858, -120.674171)
 H3_AGGREGATE_PERIOD_KEY = "all"
 COUNTY_MAP_INITIAL_CENTER = (38.785402, -120.564308)
 COUNTY_MAP_INITIAL_ZOOM = 8
@@ -302,6 +303,7 @@ def build_h3_device_hours_map(
             basemap_tiles=basemap_tiles,
             return_tile_layer=True,
             initial_zoom=initial_zoom,
+            initial_center=H3_MAP_INITIAL_CENTER,
             prefer_canvas=True,
         )
     else:
@@ -311,6 +313,8 @@ def build_h3_device_hours_map(
             show_county_boundaries=show_county_boundaries,
             boundaries_geojson=boundary_path,
             basemap_tiles=basemap_tiles,
+            initial_zoom=initial_zoom,
+            initial_center=H3_MAP_INITIAL_CENTER,
         )
         tile_var = ""
 
