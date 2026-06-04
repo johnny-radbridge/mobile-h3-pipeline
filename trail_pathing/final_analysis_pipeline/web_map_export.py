@@ -755,12 +755,16 @@ def make_base_map(
     return_tile_layer: bool = False,
     fit_bounds_max_zoom: int | None = None,
     initial_zoom: int | None = None,
+    initial_center: tuple[float, float] | None = None,
     prefer_canvas: bool = False,
 ) -> folium.Map | tuple[folium.Map, str]:
     if show_reference_overlays is not None:
         show_county_boundaries = show_reference_overlays
-    center_lat = (bounds[0][0] + bounds[1][0]) / 2
-    center_lon = (bounds[0][1] + bounds[1][1]) / 2
+    if initial_center is not None:
+        center_lat, center_lon = initial_center
+    else:
+        center_lat = (bounds[0][0] + bounds[1][0]) / 2
+        center_lon = (bounds[0][1] + bounds[1][1]) / 2
     m = folium.Map(
         location=[center_lat, center_lon],
         tiles=None,

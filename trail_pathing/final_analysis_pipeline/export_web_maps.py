@@ -109,6 +109,8 @@ DEFAULT_UARW_STUDY_RECREATION_HTML = DEFAULT_UARW_STUDY_GPKG.with_name("recreati
 # Fixed zoom for H3 heatmap (~3 mi on Leaflet scale bar at study-area latitude).
 H3_MAP_INITIAL_ZOOM = 12
 H3_AGGREGATE_PERIOD_KEY = "all"
+COUNTY_MAP_INITIAL_CENTER = (38.785402, -120.564308)
+COUNTY_MAP_INITIAL_ZOOM = 8
 
 COUNTY_VALUE_FIELD = "unique_device_localdate_id_count"
 H3_VALUE_FIELD = "device_hours"
@@ -177,7 +179,13 @@ def build_county_origin_map(
 
     layer_names = sort_activity_layers(activity_layers.keys())
     bounds = bounds_with_padding(list(activity_layers.values()), padding_ratio=0.02)
-    m = make_base_map(bounds, show_info_panel=False, show_county_boundaries=False)
+    m = make_base_map(
+        bounds,
+        show_info_panel=False,
+        show_county_boundaries=False,
+        initial_center=COUNTY_MAP_INITIAL_CENTER,
+        initial_zoom=COUNTY_MAP_INITIAL_ZOOM,
+    )
 
     if default_activity is None:
         if "state_parks" in layer_names:
