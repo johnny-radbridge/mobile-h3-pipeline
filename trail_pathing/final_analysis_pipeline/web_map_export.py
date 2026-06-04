@@ -1430,29 +1430,6 @@ def add_featured_overlay_layer_panel(
             .edwa-layer-bulk-btn:hover {
                 color: #24292f;
             }
-            .edwa-layer-opacity {
-                margin-top: 8px;
-            }
-            .edwa-layer-opacity-header {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                gap: 10px;
-                margin-bottom: 4px;
-            }
-            .edwa-layer-opacity-label,
-            .edwa-layer-opacity-value {
-                font: 12px/1.3 -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-                color: #57606a;
-            }
-            .edwa-layer-opacity-value {
-                min-width: 3ch;
-                text-align: right;
-            }
-            .edwa-layer-opacity-slider {
-                width: 100%;
-                margin: 0;
-            }
             .leaflet-control-layers-expanded .leaflet-control-layers-list {
                 max-height: min(70vh, 520px);
                 overflow-y: auto;
@@ -1466,33 +1443,6 @@ def add_featured_overlay_layer_panel(
         </style>
         {% endmacro %}
         {% macro script(this, kwargs) %}
-        function edwaApplyOpacityToLayer(layer, alpha) {
-            if (!layer) return;
-            if (layer.eachLayer && typeof layer.eachLayer === "function") {
-                layer.eachLayer(function(child) {
-                    edwaApplyOpacityToLayer(child, alpha);
-                });
-            }
-            if (!layer.setStyle || !layer.options) return;
-            if (layer.options._edwaBaseOpacity === undefined) {
-                layer.options._edwaBaseOpacity =
-                    layer.options.opacity !== undefined ? Number(layer.options.opacity) : 1;
-            }
-            if (layer.options._edwaBaseFillOpacity === undefined) {
-                layer.options._edwaBaseFillOpacity =
-                    layer.options.fillOpacity !== undefined ? Number(layer.options.fillOpacity) : 0.6;
-            }
-            layer.setStyle({
-                opacity: layer.options._edwaBaseOpacity * alpha,
-                fillOpacity: layer.options._edwaBaseFillOpacity * alpha,
-            });
-        }
-        function edwaSetMapOverlayOpacity(mapRef, alpha) {
-            if (!mapRef || !mapRef.eachLayer) return;
-            mapRef.eachLayer(function(layer) {
-                edwaApplyOpacityToLayer(layer, alpha);
-            });
-        }
         function edwaFeaturedOverlayInputs(section) {
             return Array.prototype.slice.call(
                 section.querySelectorAll("input.leaflet-control-layers-selector")
@@ -1511,13 +1461,6 @@ def add_featured_overlay_layer_panel(
                 + '<span class="edwa-panel-section-title">{{ this.featured_title }}</span>'
                 + '<div class="edwa-featured-layers" id="edwa-featured-layers"></div>'
                 + '<span class="edwa-panel-section-title">{{ this.section_title }}</span>'
-                + '<div class="edwa-layer-opacity">'
-                + '<div class="edwa-layer-opacity-header">'
-                + '<span class="edwa-layer-opacity-label">Layer transparency</span>'
-                + '<span class="edwa-layer-opacity-value" id="edwa-layer-opacity-value">100%</span>'
-                + '</div>'
-                + '<input type="range" id="edwa-layer-opacity" class="edwa-layer-opacity-slider" min="0" max="100" value="100" />'
-                + '</div>'
                 + '<div class="edwa-layer-bulk-actions">'
                 + '<button type="button" class="edwa-layer-bulk-btn" id="edwa-layer-select-all">Select all</button>'
                 + '<button type="button" class="edwa-layer-bulk-btn" id="edwa-layer-clear-all">Clear all</button>'
@@ -1532,12 +1475,9 @@ def add_featured_overlay_layer_panel(
                 }
             });
 
-            var opacitySlider = document.getElementById("edwa-layer-opacity");
-            var opacityValue = document.getElementById("edwa-layer-opacity-value");
             var selectAllBtn = document.getElementById("edwa-layer-select-all");
             var clearAllBtn = document.getElementById("edwa-layer-clear-all");
             var syncing = false;
-            var mapRef = window["{{ this.map_var }}"];
 
             function activityInputs() {
                 return edwaFeaturedOverlayInputs(section);
@@ -1560,13 +1500,6 @@ def add_featured_overlay_layer_panel(
                 });
                 syncing = false;
             }
-            function syncOpacity() {
-                var alpha = Number(opacitySlider.value || 100) / 100;
-                opacityValue.textContent = String(Math.round(alpha * 100)) + "%";
-                edwaSetMapOverlayOpacity(mapRef, alpha);
-            }
-            opacitySlider.addEventListener("input", syncOpacity);
-            opacitySlider.addEventListener("change", syncOpacity);
             selectAllBtn.addEventListener("click", function(ev) {
                 ev.preventDefault();
                 var targets = activityInputs().concat(featuredInputs());
@@ -1576,7 +1509,6 @@ def add_featured_overlay_layer_panel(
                 ev.preventDefault();
                 setInputsChecked(allInputs().filter(function(i) { return i.checked; }), false);
             });
-            syncOpacity();
         }
         document.addEventListener("DOMContentLoaded", function() {
             edwaInstallFeaturedOverlayPanel();
@@ -1592,7 +1524,6 @@ def add_featured_overlay_layer_panel(
     panel.featured_matcher = featured_matcher
     panel.featured_title = featured_title
     panel.section_title = section_title
-    panel.map_var = m.get_name()
     m.get_root().add_child(panel)
 
 
