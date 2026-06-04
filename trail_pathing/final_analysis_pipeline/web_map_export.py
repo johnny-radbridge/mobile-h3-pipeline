@@ -996,12 +996,22 @@ class LazyH3MapLoader(MacroElement):
                     meta.tooltipFields.forEach(function(field, i) {
                         var label = meta.tooltipAliases[i] || field;
                         var val = p[field];
-                        if (val !== undefined && val !== null) {
+                        if (val !== undefined && val !== null && String(val).trim() !== "") {
                             lines.push("<b>" + label + ":</b> " + val);
                         }
                     });
                     if (lines.length) {
-                        layer.bindTooltip(lines.join("<br>"), {sticky: true});
+                        layer.bindTooltip(lines.join("<br>"), {
+                            sticky: true,
+                            direction: "top",
+                            opacity: 0.96,
+                        });
+                        layer.on("mouseover", function() {
+                            layer.openTooltip();
+                        });
+                        layer.on("mouseout", function() {
+                            layer.closeTooltip();
+                        });
                     }
                 };
             }
