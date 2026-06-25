@@ -91,6 +91,32 @@
                 color: #fff;
                 border-color: #24292f;
             }
+            .edwa-year-toggle {
+                display: flex;
+                gap: 3px;
+                margin: 0 0 8px;
+                flex-wrap: wrap;
+            }
+            .edwa-year-btn {
+                flex: 1;
+                min-width: 46px;
+                font: 10px/1.25 -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+                padding: 4px 4px;
+                border: 1px solid #c9d1d9;
+                border-radius: 4px;
+                background: #fff;
+                color: #24292f;
+                cursor: pointer;
+            }
+            .edwa-year-btn.edwa-active {
+                background: #0969da;
+                color: #fff;
+                border-color: #0969da;
+            }
+            .edwa-year-btn:disabled {
+                opacity: 0.55;
+                cursor: not-allowed;
+            }
             .edwa-panel-section-title {
                 display: block;
                 margin: 8px 0 4px;
@@ -377,10 +403,43 @@
     
         (function() {
             var mapRef = map_41404afbfb9999c1f7f74b080ee8b08b;
+            var YEAR_CONFIG = {
+                defaultYear: "2025",
+                years: [
+                    { id: "all_years", label: "All years" },
+                    { id: "2022", label: "2022" },
+                    { id: "2023", label: "2023" },
+                    { id: "2024", label: "2024" },
+                    { id: "2025", label: "2025" },
+                ],
+                resolveUrl: function(yearId, meta) {
+                    var parts = meta.geojsonUrl.split("/");
+                    var filename = parts.pop();
+                    return parts.concat(yearId + "_" + filename).join("/");
+                },
+            };
             var layers = [{"id": "all_all_recreation", "groupVar": "feature_group_cb0e7bfd08ee1a89b572f0de4e486509", "geojsonUrl": "h3_device_hours_map_data/all_all_recreation.json", "vmin": 1.0, "vmax": 34.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": true, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3ComprehensivePane"}, {"id": "all_ski", "groupVar": "feature_group_d0787573e338bd18daf967af3b6be962", "geojsonUrl": "h3_device_hours_map_data/all_ski.json", "vmin": 1.0, "vmax": 13.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_trails", "groupVar": "feature_group_ee43e2c592c4559b7c5939c70158b744", "geojsonUrl": "h3_device_hours_map_data/all_trails.json", "vmin": 1.0, "vmax": 11.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_ohv", "groupVar": "feature_group_be56c7c41de7f3af0255899933ccbec0", "geojsonUrl": "h3_device_hours_map_data/all_ohv.json", "vmin": 1.0, "vmax": 2.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_golf", "groupVar": "feature_group_dc5daedf2ecccfc5c71ce108915c87ac", "geojsonUrl": "h3_device_hours_map_data/all_golf.json", "vmin": 1.0, "vmax": 39.920000000000016, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_camping", "groupVar": "feature_group_3c5325e0d709ea488076edd9d200b8a8", "geojsonUrl": "h3_device_hours_map_data/all_camping.json", "vmin": 1.0, "vmax": 72.79999999999995, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_farm", "groupVar": "feature_group_0c26a0d3146f1aeffe338598143f56da", "geojsonUrl": "h3_device_hours_map_data/all_farm.json", "vmin": 1.0, "vmax": 21.680000000000007, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_lakes", "groupVar": "feature_group_d9c8a646daecec087b408c781a29f978", "geojsonUrl": "h3_device_hours_map_data/all_lakes.json", "vmin": 1.0, "vmax": 34.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_rivers_and_streams", "groupVar": "feature_group_5f93550bcca228cd6066b419f7991010", "geojsonUrl": "h3_device_hours_map_data/all_rivers_and_streams.json", "vmin": 1.0, "vmax": 8.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_whitewater", "groupVar": "feature_group_70520d393487fb001baf416fc2351ef0", "geojsonUrl": "h3_device_hours_map_data/all_whitewater.json", "vmin": 1.0, "vmax": 4.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_local_parks", "groupVar": "feature_group_fc29b38014a48b421c683bab06fa81f2", "geojsonUrl": "h3_device_hours_map_data/all_local_parks.json", "vmin": 1.0, "vmax": 50.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_state_parks", "groupVar": "feature_group_5840c67e259874d7cfd8beb6a32d967e", "geojsonUrl": "h3_device_hours_map_data/all_state_parks.json", "vmin": 1.0, "vmax": 67.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_blm_land", "groupVar": "feature_group_e6a814569c40674bd2a2c12328be235c", "geojsonUrl": "h3_device_hours_map_data/all_blm_land.json", "vmin": 1.0, "vmax": 7.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_usfs_land", "groupVar": "feature_group_e73963d8550473da593321e06406481a", "geojsonUrl": "h3_device_hours_map_data/all_usfs_land.json", "vmin": 1.0, "vmax": 9.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_cdfw_land", "groupVar": "feature_group_b55c821da0a697fb2a71d5a18c27d3cf", "geojsonUrl": "h3_device_hours_map_data/all_cdfw_land.json", "vmin": 1.0, "vmax": 4.040000000000001, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}, {"id": "all_private_conservation", "groupVar": "feature_group_4e1db04f87b4e05be0f67ea4bd4cdfbd", "geojsonUrl": "h3_device_hours_map_data/all_private_conservation.json", "vmin": 1.0, "vmax": 4.0, "colors": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsHeat": ["#6baed6", "#4292c6", "#2171b5", "#084594", "#fdbb84", "#fd8d3c", "#e6550d", "#d62728", "#a50f15"], "colorsLight": ["#eff3ff", "#c6dbef", "#6baed6", "#3182bd", "#fee0d2", "#fcbba1", "#fc9272", "#de2d26", "#a50f15"], "valueField": "device_hours", "tooltipFields": ["included_activities"], "tooltipAliases": ["Included activities"], "comprehensive": false, "strokeHeat": {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92}, "strokeLight": {"color": "#4a5568", "weight": 0.35, "opacity": 0.1, "fillOpacity": 0.88}, "colorGammaHeat": 0.65, "colorGammaLight": 1.0, "scale": "log1p", "colorFloor": 0.32, "blueCap": 3.0, "blueSpan": 0.3, "mapPane": "h3DetailPane"}];
             var loaded = {};
             var geoLayers = {};
             var STROKE = {"color": "#1a1a2e", "weight": 0.15, "opacity": 0.12, "fillOpacity": 0.92};
+            window.edwaH3ActiveYear = YEAR_CONFIG.defaultYear;
+            layers.forEach(function(meta) {
+                meta.vmin = 0.0;
+                meta.vmax = 100.0;
+                meta.valueField = "visitation_index";
+                meta.tooltipFields = ["included_activities", "visitation_index"];
+                meta.tooltipAliases = ["Activity", "Relative intensity"];
+                meta.colorsHeat = ["#fee5d9", "#fcae91", "#fb6a4a", "#ef3b2c", "#cb181d"];
+                meta.colorsLight = ["#fff5f0", "#fcbba1", "#fb6a4a", "#ef3b2c", "#cb181d"];
+                meta.colors = meta.colorsHeat;
+                meta.colorBreaks = [0.0, 20.0, 40.0, 60.0, 80.0];
+                meta.colorGammaHeat = 1.0;
+                meta.colorGammaLight = 1.0;
+                delete meta.scale;
+                delete meta.colorFloor;
+                delete meta.blueCap;
+                delete meta.blueSpan;
+            });
 
             function hexToRgb(hex) {
                 var h = hex.replace("#", "");
@@ -454,6 +513,25 @@
                 }
                 return t;
             }
+            function steppedColor(meta, value, colors) {
+                var breaks = meta.colorBreaks || null;
+                if (!breaks || !breaks.length) {
+                    return null;
+                }
+                if (!isFinite(value)) {
+                    value = breaks[0];
+                }
+                var idx = 0;
+                for (var i = 1; i < breaks.length; i++) {
+                    if (value >= breaks[i]) {
+                        idx = i;
+                    } else {
+                        break;
+                    }
+                }
+                idx = Math.max(0, Math.min(colors.length - 1, idx));
+                return colors[idx];
+            }
             function styleFor(meta) {
                 return function(feature) {
                     var value = Number(feature.properties[meta.valueField]);
@@ -466,7 +544,7 @@
                     }
                     var stroke = pal.stroke;
                     return {
-                        fillColor: mixHex(pal.colors, t),
+                        fillColor: steppedColor(meta, value, pal.colors) || mixHex(pal.colors, t),
                         color: stroke.color,
                         weight: stroke.weight,
                         opacity: stroke.opacity * alpha,
@@ -486,11 +564,11 @@
             function ensureH3Panes() {
                 if (!mapRef.getPane("h3DetailPane")) {
                     mapRef.createPane("h3DetailPane");
-                    mapRef.getPane("h3DetailPane").style.zIndex = 420;
+                    mapRef.getPane("h3DetailPane").style.zIndex = 640;
                 }
                 if (!mapRef.getPane("h3ComprehensivePane")) {
                     mapRef.createPane("h3ComprehensivePane");
-                    mapRef.getPane("h3ComprehensivePane").style.zIndex = 640;
+                    mapRef.getPane("h3ComprehensivePane").style.zIndex = 420;
                 }
             }
             function tooltipFor(meta) {
@@ -520,6 +598,8 @@
                 };
             }
             function loadLayer(meta) {
+                var activeYear = window.edwaH3ActiveYear || YEAR_CONFIG.defaultYear;
+                var targetUrl = YEAR_CONFIG.resolveUrl(activeYear, meta);
                 if (loaded[meta.id]) {
                     var cached = geoLayers[meta.id];
                     if (cached && meta.groupLayer && !meta.groupLayer.hasLayer(cached)) {
@@ -531,10 +611,17 @@
                     return Promise.resolve();
                 }
                 var group = meta.groupLayer;
-                return fetch(meta.geojsonUrl).then(function(r) {
-                    if (!r.ok) throw new Error("Failed to load " + meta.geojsonUrl);
+                return fetch(targetUrl).then(function(r) {
+                    if (r.status === 404) {
+                        loaded[meta.id] = true;
+                        meta.activeGeojsonUrl = targetUrl;
+                        meta.missingGeojsonUrl = targetUrl;
+                        return null;
+                    }
+                    if (!r.ok) throw new Error("Failed to load " + targetUrl);
                     return r.json();
                 }).then(function(data) {
+                    if (!data) return;
                     ensureH3Panes();
                     var gjOpts = {
                         style: styleFor(meta),
@@ -546,6 +633,7 @@
                     var gj = L.geoJSON(data, gjOpts);
                     geoLayers[meta.id] = gj;
                     loaded[meta.id] = true;
+                    meta.activeGeojsonUrl = targetUrl;
                     if (group && mapRef.hasLayer(group)) {
                         gj.addTo(group);
                         requestAnimationFrame(function() {
@@ -557,6 +645,11 @@
             layers.forEach(function(meta) {
                 meta.groupLayer = window[meta.groupVar];
             });
+            window.edwaH3YearConfig = YEAR_CONFIG;
+            window.edwaH3LoadedLayers = loaded;
+            window.edwaH3GeoLayers = geoLayers;
+            window.edwaH3LayersMeta = layers;
+            window.edwaH3LoadLayer = loadLayer;
             mapRef.on("overlayadd", function(e) {
                 var meta = layers.find(function(m) { return m.groupLayer === e.layer; });
                 if (!meta) return;
@@ -604,6 +697,49 @@
             window.edwaH3OverlayOpacity = alpha;
             if (window.edwaH3RestyleAll) window.edwaH3RestyleAll();
         }
+        function edwaH3SetYear(yearId) {
+            if (!yearId || window.edwaH3ActiveYear === yearId) return;
+            window.edwaH3ActiveYear = yearId;
+
+            Object.keys(window).forEach(function(key) {
+                if (!/^feature_group_/.test(key)) return;
+                var group = window[key];
+                if (!group || !group.eachLayer) return;
+                var layersToRemove = [];
+                group.eachLayer(function(layer) {
+                    layersToRemove.push(layer);
+                });
+                layersToRemove.forEach(function(layer) {
+                    group.removeLayer(layer);
+                });
+            });
+
+            var layerButtons = document.querySelectorAll(".edwa-year-btn");
+            layerButtons.forEach(function(button) {
+                button.classList.toggle("edwa-active", button.dataset.yearId === yearId);
+            });
+
+            if (window.edwaH3RestyleAll) window.edwaH3RestyleAll();
+
+            var mapRef = window["map_41404afbfb9999c1f7f74b080ee8b08b"];
+            if (!mapRef || !mapRef.eachLayer) return;
+            Object.keys(window).forEach(function(key) {
+                if (!/^feature_group_/.test(key)) return;
+                var overlayGroup = window[key];
+                if (overlayGroup && mapRef.hasLayer(overlayGroup)) {
+                    var meta = (window.edwaH3LayersMeta || []).find(function(item) {
+                        return item.groupLayer === overlayGroup;
+                    });
+                    if (meta) {
+                        delete window.edwaH3LoadedLayers[meta.id];
+                        delete window.edwaH3GeoLayers[meta.id];
+                        window.edwaH3LoadLayer(meta).catch(function(err) {
+                            console.error("H3 year switch failed:", meta.id, err);
+                        });
+                    }
+                }
+            });
+        }
         function edwaOverlayInputs(section) {
             return Array.prototype.slice.call(
                 section.querySelectorAll("input.leaflet-control-layers-selector")
@@ -623,6 +759,8 @@
                 + '<button type="button" class="edwa-basemap-btn" id="edwa-basemap-dark">Dark heatmap</button>'
                 + '<button type="button" class="edwa-basemap-btn edwa-active" id="edwa-basemap-light">Light map</button>'
                 + '</div>'
+                + '<span class="edwa-panel-section-title">Year</span>'
+                + '<div class="edwa-year-toggle" id="edwa-year-toggle"></div>'
                 + '<span class="edwa-panel-section-title">All recreation (deduplicated)</span>'
                 + '<div class="edwa-all-recreation-layers" id="edwa-all-recreation-layers"></div>'
                 + '<span class="edwa-panel-section-title">By activity / land</span>'
@@ -653,6 +791,19 @@
             });
             document.getElementById("edwa-basemap-light").addEventListener("click", function() {
                 edwaH3SetBasemap("light");
+            });
+
+            var yearToggle = document.getElementById("edwa-year-toggle");
+            window.edwaH3YearConfig.years.forEach(function(year) {
+                var button = document.createElement("button");
+                button.type = "button";
+                button.className = "edwa-year-btn" + (year.id === window.edwaH3YearConfig.defaultYear ? " edwa-active" : "");
+                button.dataset.yearId = year.id;
+                button.textContent = year.label;
+                button.addEventListener("click", function() {
+                    edwaH3SetYear(year.id);
+                });
+                yearToggle.appendChild(button);
             });
 
             var opacitySlider = document.getElementById("edwa-layer-opacity");
