@@ -127,6 +127,9 @@
                 gap: 10px;
                 margin-top: 6px;
             }
+            .edwa-activity-layer-header {
+                padding: 0 8px 4px;
+            }
             .edwa-layer-bulk-btn {
                 background: none;
                 border: none;
@@ -137,7 +140,8 @@
                 text-decoration: underline;
             }
             .edwa-layer-opacity {
-                margin-top: 8px;
+                padding: 8px 8px 6px;
+                border-top: 1px solid #eaeef2;
             }
             .edwa-layer-opacity-header {
                 display: flex;
@@ -159,10 +163,73 @@
                 width: 100%;
                 margin: 0;
             }
+            .edwa-control-collapse-toggle {
+                position: absolute;
+                top: 6px;
+                right: 6px;
+                z-index: 3;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 24px;
+                height: 24px;
+                padding: 0;
+                border: 1px solid transparent;
+                border-radius: 999px;
+                background: rgba(255, 255, 255, 0.75);
+                color: #57606a;
+                cursor: pointer;
+            }
+            .edwa-control-collapse-toggle::before {
+                content: "";
+                display: block;
+                width: 7px;
+                height: 7px;
+                border: solid currentColor;
+                border-width: 0 2px 2px 0;
+                transform: rotate(-135deg);
+                transition: transform 120ms ease;
+            }
+            .edwa-control-collapse-toggle:hover,
+            .edwa-control-collapse-toggle:focus-visible {
+                color: #24292f;
+                background: #f6f8fa;
+                border-color: #d0d7de;
+                outline: none;
+            }
+            .edwa-control-collapse-toggle:focus-visible {
+                box-shadow: 0 0 0 2px rgba(9, 105, 218, 0.2);
+            }
+            .leaflet-control-layers-expanded {
+                position: relative;
+                max-height: calc(100vh - 20px);
+                overflow: visible;
+            }
             .leaflet-control-layers-expanded .leaflet-control-layers-list {
-                max-height: min(70vh, 520px);
-                overflow-y: auto;
-                overflow-x: hidden;
+                max-height: none;
+                overflow: visible;
+            }
+            .leaflet-control-layers-expanded.edwa-control-panel-collapsed {
+                width: 34px;
+                height: 34px;
+                min-width: 0;
+                overflow: hidden;
+                padding: 0;
+            }
+            .leaflet-control-layers-expanded.edwa-control-panel-collapsed .edwa-control-collapse-toggle {
+                top: 0;
+                right: 0;
+                width: 34px;
+                height: 34px;
+                border: 0;
+                border-radius: 4px;
+                background: #fff;
+            }
+            .leaflet-control-layers-expanded.edwa-control-panel-collapsed .edwa-control-collapse-toggle::before {
+                transform: rotate(45deg);
+            }
+            .leaflet-control-layers-expanded.edwa-control-panel-collapsed .leaflet-control-layers-list {
+                display: none;
             }
             .leaflet-control-layers label {
                 display: block;
@@ -523,6 +590,53 @@
                 idx = Math.max(0, Math.min(colors.length - 1, idx));
                 return colors[idx];
             }
+            function splitActivityLabels(value) {
+                if (value === undefined || value === null) return [];
+                return String(value).split(",").map(function(label) {
+                    return label.trim();
+                }).filter(Boolean);
+            }
+            function uniqueLabels(labels) {
+                var seen = {};
+                var out = [];
+                labels.forEach(function(label) {
+                    if (!seen[label]) {
+                        seen[label] = true;
+                        out.push(label);
+                    }
+                });
+                return out;
+            }
+            function activeDetailActivityLabelsForH3(h3Cell, fallback) {
+                if (!h3Cell) return splitActivityLabels(fallback);
+                var labels = [];
+                layers.forEach(function(layerMeta) {
+                    if (layerMeta.comprehensive) return;
+                    if (!layerMeta.groupLayer || !mapRef.hasLayer(layerMeta.groupLayer)) return;
+                    var byCell = layerMeta.h3ActivityLabelByCell || {};
+                    if (!byCell[h3Cell]) return;
+                    labels = labels.concat(splitActivityLabels(byCell[h3Cell]));
+                });
+                return uniqueLabels(labels.length ? labels : splitActivityLabels(fallback));
+            }
+            function tooltipValueFor(meta, props, field) {
+                if (field === "included_activities" && !meta.comprehensive) {
+                    return activeDetailActivityLabelsForH3(props.h3, props[field]).join(", ");
+                }
+                return props[field];
+            }
+            function tooltipHtml(meta, feature) {
+                var p = feature.properties || {};
+                var lines = [];
+                meta.tooltipFields.forEach(function(field, i) {
+                    var label = meta.tooltipAliases[i] || field;
+                    var val = tooltipValueFor(meta, p, field);
+                    if (val !== undefined && val !== null && String(val).trim() !== "") {
+                        lines.push("<b>" + label + ":</b> " + val);
+                    }
+                });
+                return lines.join("<br>");
+            }
             function styleFor(meta) {
                 return function(feature) {
                     var value = Number(feature.properties[meta.valueField]);
@@ -564,22 +678,14 @@
             }
             function tooltipFor(meta) {
                 return function(feature, layer) {
-                    var p = feature.properties || {};
-                    var lines = [];
-                    meta.tooltipFields.forEach(function(field, i) {
-                        var label = meta.tooltipAliases[i] || field;
-                        var val = p[field];
-                        if (val !== undefined && val !== null && String(val).trim() !== "") {
-                            lines.push("<b>" + label + ":</b> " + val);
-                        }
-                    });
-                    if (lines.length) {
-                        layer.bindTooltip(lines.join("<br>"), {
+                    if (tooltipHtml(meta, feature)) {
+                        layer.bindTooltip("", {
                             sticky: true,
                             direction: "top",
                             opacity: 0.96,
                         });
                         layer.on("mouseover", function() {
+                            layer.setTooltipContent(tooltipHtml(meta, feature));
                             layer.openTooltip();
                         });
                         layer.on("mouseout", function() {
@@ -622,6 +728,13 @@
                         gjOpts.pane = meta.mapPane;
                     }
                     var gj = L.geoJSON(data, gjOpts);
+                    meta.h3ActivityLabelByCell = {};
+                    (data.features || []).forEach(function(feature) {
+                        var props = feature.properties || {};
+                        if (props.h3 && props.included_activities) {
+                            meta.h3ActivityLabelByCell[props.h3] = props.included_activities;
+                        }
+                    });
                     geoLayers[meta.id] = gj;
                     loaded[meta.id] = true;
                     meta.activeGeojsonUrl = targetUrl;
@@ -657,7 +770,7 @@
                 }
             });
             mapRef.whenReady(function() {
-                window.edwaH3ColorMode = window.edwaH3ColorMode || "dark";
+                window.edwaH3ColorMode = window.edwaH3ColorMode || "light";
                 ensureH3Panes();
                 layers.forEach(function(meta) {
                     if (meta.groupLayer && mapRef.hasLayer(meta.groupLayer)) {
@@ -685,8 +798,14 @@
             window.edwaH3BasemapMode = mode;
             window.edwaH3ColorMode = "light";
             var tile = window["tile_layer_c6f3b4699563d1e9d2c5dcb9efb6b5b0"];
+            if (!tile && typeof tile_layer_c6f3b4699563d1e9d2c5dcb9efb6b5b0 !== "undefined") {
+                tile = tile_layer_c6f3b4699563d1e9d2c5dcb9efb6b5b0;
+            }
             if (tile && tile.setUrl) {
                 var mapRef = window["map_41404afbfb9999c1f7f74b080ee8b08b"];
+                if (!mapRef && typeof map_41404afbfb9999c1f7f74b080ee8b08b !== "undefined") {
+                    mapRef = map_41404afbfb9999c1f7f74b080ee8b08b;
+                }
                 if (mapRef && mapRef.attributionControl && tile.getAttribution) {
                     mapRef.attributionControl.removeAttribution(tile.getAttribution());
                 }
@@ -738,6 +857,7 @@
                     if (meta) {
                         delete window.edwaH3LoadedLayers[meta.id];
                         delete window.edwaH3GeoLayers[meta.id];
+                        delete meta.h3ActivityLabelByCell;
                         window.edwaH3LoadLayer(meta).catch(function(err) {
                             console.error("H3 year switch failed:", meta.id, err);
                         });
@@ -751,6 +871,24 @@
             ).filter(function(input) {
                 return input.layerId !== undefined;
             });
+        }
+        function edwaInstallControlCollapse() {
+            var control = document.querySelector(".leaflet-control-layers-expanded");
+            if (!control || document.getElementById("edwa-control-collapse-toggle")) return;
+            var button = document.createElement("button");
+            button.type = "button";
+            button.id = "edwa-control-collapse-toggle";
+            button.className = "edwa-control-collapse-toggle";
+            button.title = "Collapse controls";
+            button.setAttribute("aria-label", "Collapse controls");
+            button.addEventListener("click", function(ev) {
+                ev.preventDefault();
+                ev.stopPropagation();
+                var collapsed = control.classList.toggle("edwa-control-panel-collapsed");
+                button.title = collapsed ? "Expand controls" : "Collapse controls";
+                button.setAttribute("aria-label", button.title);
+            });
+            control.insertBefore(button, control.firstChild);
         }
         function edwaInstallH3LayerPanel() {
             var list = document.querySelector(".leaflet-control-layers-list");
@@ -767,20 +905,8 @@
                 + '</select>'
                 + '<span class="edwa-panel-section-title">Year</span>'
                 + '<div class="edwa-year-toggle" id="edwa-year-toggle"></div>'
-                + '<span class="edwa-panel-section-title">All recreation (deduplicated)</span>'
-                + '<div class="edwa-all-recreation-layers" id="edwa-all-recreation-layers"></div>'
-                + '<span class="edwa-panel-section-title">By activity / land</span>'
-                + '<div class="edwa-layer-opacity">'
-                + '<div class="edwa-layer-opacity-header">'
-                + '<span class="edwa-layer-opacity-label">Layer transparency</span>'
-                + '<span class="edwa-layer-opacity-value" id="edwa-layer-opacity-value">100%</span>'
-                + '</div>'
-                + '<input type="range" id="edwa-layer-opacity" class="edwa-layer-opacity-slider" min="0" max="100" value="100" />'
-                + '</div>'
-                + '<div class="edwa-layer-bulk-actions">'
-                + '<button type="button" class="edwa-layer-bulk-btn" id="edwa-layer-select-all">Select all</button>'
-                + '<button type="button" class="edwa-layer-bulk-btn" id="edwa-layer-clear-all">Clear all</button>'
-                + '</div>';
+                + '<span class="edwa-panel-section-title">Layers</span>'
+                + '<div class="edwa-all-recreation-layers" id="edwa-all-recreation-layers"></div>';
             list.insertBefore(wrap, section);
 
             var allRecHost = document.getElementById("edwa-all-recreation-layers");
@@ -789,6 +915,25 @@
                     allRecHost.appendChild(label);
                 }
             });
+            var activityHeader = document.createElement("div");
+            activityHeader.className = "edwa-activity-layer-header";
+            activityHeader.innerHTML = ''
+                + '<span class="edwa-panel-section-title">By activity / land</span>'
+                + '<div class="edwa-layer-bulk-actions">'
+                + '<button type="button" class="edwa-layer-bulk-btn" id="edwa-layer-select-all">Select all</button>'
+                + '<button type="button" class="edwa-layer-bulk-btn" id="edwa-layer-clear-all">Clear all</button>'
+                + '</div>';
+            section.insertBefore(activityHeader, section.firstChild);
+
+            var opacityWrap = document.createElement("div");
+            opacityWrap.className = "edwa-layer-opacity";
+            opacityWrap.innerHTML = ''
+                + '<div class="edwa-layer-opacity-header">'
+                + '<span class="edwa-layer-opacity-label">Layer transparency</span>'
+                + '<span class="edwa-layer-opacity-value" id="edwa-layer-opacity-value">100%</span>'
+                + '</div>'
+                + '<input type="range" id="edwa-layer-opacity" class="edwa-layer-opacity-slider" min="0" max="100" value="100" />';
+            list.insertBefore(opacityWrap, section.nextSibling);
 
             window.edwaH3ColorMode = "light";
             edwaH3SetBasemap("light");
@@ -836,6 +981,11 @@
                 });
                 syncing = false;
             }
+            if (!window.edwaH3InitializedDefaultLayers) {
+                setInputsChecked(activityInputs().filter(function(input) { return input.checked; }), false);
+                setInputsChecked(allRecreationInputs(), true);
+                window.edwaH3InitializedDefaultLayers = true;
+            }
             function syncOpacity() {
                 var alpha = Number(opacitySlider.value || 100) / 100;
                 opacityValue.textContent = String(Math.round(alpha * 100)) + "%";
@@ -855,8 +1005,11 @@
             syncOpacity();
         }
         document.addEventListener("DOMContentLoaded", function() {
+            edwaInstallControlCollapse();
             edwaInstallH3LayerPanel();
+            setTimeout(edwaInstallControlCollapse, 300);
             setTimeout(edwaInstallH3LayerPanel, 300);
+            setTimeout(edwaInstallControlCollapse, 800);
             setTimeout(edwaInstallH3LayerPanel, 800);
         });
         

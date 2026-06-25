@@ -24,7 +24,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_d5cbd47f701fbdaa66709a46a1c764c4 {
+                #map_23bcb82a1f5724bd2464eaa12e2ef76f {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -61,7 +61,7 @@
 <body>
     
     
-            <div class="folium-map" id="map_d5cbd47f701fbdaa66709a46a1c764c4" ></div>
+            <div class="folium-map" id="map_23bcb82a1f5724bd2464eaa12e2ef76f" ></div>
         
     
         <style>
@@ -86,7 +86,8 @@
                 gap: 6px;
                 margin-bottom: 8px;
             }
-            .edwa-year-btn {
+            .edwa-year-btn,
+            .edwa-geography-btn {
                 font: 11px/1.3 -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
                 padding: 5px 8px;
                 border: 1px solid #c9d1d9;
@@ -95,10 +96,24 @@
                 color: #24292f;
                 cursor: pointer;
             }
-            .edwa-year-btn.edwa-active {
+            .edwa-year-btn.edwa-active,
+            .edwa-geography-btn.edwa-active {
                 background: #24292f;
                 color: #fff;
                 border-color: #24292f;
+            }
+            .edwa-geography-toggle {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 6px;
+                margin-bottom: 8px;
+            }
+            .edwa-featured-layers label {
+                display: block;
+                font-weight: 600;
+                margin: 2px 0 8px;
+                white-space: normal;
+                word-break: break-word;
             }
             .edwa-layer-bulk-actions {
                 display: flex;
@@ -118,10 +133,73 @@
             .edwa-layer-bulk-btn:hover {
                 color: #24292f;
             }
+            .edwa-control-collapse-toggle {
+                position: absolute;
+                top: 6px;
+                right: 6px;
+                z-index: 3;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 24px;
+                height: 24px;
+                padding: 0;
+                border: 1px solid transparent;
+                border-radius: 999px;
+                background: rgba(255, 255, 255, 0.75);
+                color: #57606a;
+                cursor: pointer;
+            }
+            .edwa-control-collapse-toggle::before {
+                content: "";
+                display: block;
+                width: 7px;
+                height: 7px;
+                border: solid currentColor;
+                border-width: 0 2px 2px 0;
+                transform: rotate(-135deg);
+                transition: transform 120ms ease;
+            }
+            .edwa-control-collapse-toggle:hover,
+            .edwa-control-collapse-toggle:focus-visible {
+                color: #24292f;
+                background: #f6f8fa;
+                border-color: #d0d7de;
+                outline: none;
+            }
+            .edwa-control-collapse-toggle:focus-visible {
+                box-shadow: 0 0 0 2px rgba(9, 105, 218, 0.2);
+            }
+            .leaflet-control-layers-expanded {
+                position: relative;
+                max-height: calc(100vh - 20px);
+                overflow: visible;
+            }
             .leaflet-control-layers-expanded .leaflet-control-layers-list {
-                max-height: min(70vh, 520px);
-                overflow-y: auto;
-                overflow-x: hidden;
+                max-height: none;
+                overflow: visible;
+            }
+            .leaflet-control-layers-expanded.edwa-control-panel-collapsed {
+                width: 34px;
+                height: 34px;
+                min-width: 0;
+                overflow: hidden;
+                padding: 0;
+            }
+            .leaflet-control-layers-expanded.edwa-control-panel-collapsed .edwa-control-collapse-toggle {
+                top: 0;
+                right: 0;
+                width: 34px;
+                height: 34px;
+                border: 0;
+                border-radius: 4px;
+                background: #fff;
+            }
+            .leaflet-control-layers-expanded.edwa-control-panel-collapsed .edwa-control-collapse-toggle::before {
+                transform: rotate(45deg);
+            }
+            .leaflet-control-layers-expanded.edwa-control-panel-collapsed .leaflet-control-layers-list {
+                display: none;
             }
             .leaflet-control-layers label {
                 display: block;
@@ -134,8 +212,8 @@
 <script>
     
     
-            var map_d5cbd47f701fbdaa66709a46a1c764c4 = L.map(
-                "map_d5cbd47f701fbdaa66709a46a1c764c4",
+            var map_23bcb82a1f5724bd2464eaa12e2ef76f = L.map(
+                "map_23bcb82a1f5724bd2464eaa12e2ef76f",
                 {
                     center: [38.785402, -120.564308],
                     crs: L.CRS.EPSG3857,
@@ -147,13 +225,13 @@
 
                 }
             );
-            L.control.scale().addTo(map_d5cbd47f701fbdaa66709a46a1c764c4);
+            L.control.scale().addTo(map_23bcb82a1f5724bd2464eaa12e2ef76f);
 
             
 
         
     
-            var tile_layer_85b4f15b038932115f6d1526841c3f1d = L.tileLayer(
+            var tile_layer_a59b56153da59807716291de3e03317c = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -170,141 +248,148 @@
             );
         
     
-            tile_layer_85b4f15b038932115f6d1526841c3f1d.addTo(map_d5cbd47f701fbdaa66709a46a1c764c4);
+            tile_layer_a59b56153da59807716291de3e03317c.addTo(map_23bcb82a1f5724bd2464eaa12e2ef76f);
         
     
-            var feature_group_4c9af8056ebc7f2e537f6db1d9f6c746 = L.featureGroup(
+            var feature_group_bb74dde81241ad6a77657a7dac31a2be = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_8e1c6d274439d199391a14a7672c1dae = L.featureGroup(
+            var feature_group_8399bf4b38d0a914d3a215771906c567 = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_8e1c6d274439d199391a14a7672c1dae.addTo(map_d5cbd47f701fbdaa66709a46a1c764c4);
-        
-    
-            var feature_group_902921a161507fdf91d566fb0cfb416b = L.featureGroup(
+            var feature_group_cd4b9addd1367f82bf93f7ce91d93ff1 = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_718436c31ae537ee88f378da03e4abba = L.featureGroup(
+            var feature_group_db7abda125b8229bf63fe3a241999ce1 = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_7566d87ac61ecbbd3e43d041db03b2e0 = L.featureGroup(
+            var feature_group_6fc64f7f55b53c7de2cef7fe152a0f36 = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_40545f7a8d7ad438de62965f144b7c2a = L.featureGroup(
+            var feature_group_e591c73516507424fd2dad45f5dd8932 = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_f07691e875571585d936745f87c41b1a = L.featureGroup(
+            var feature_group_8cd9742788543d5017071ada38c6a19f = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_5f22a875b2217f5b112695332012483e = L.featureGroup(
+            var feature_group_75027e95fc6843f2e5dcc40d11500890 = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_bb0ada0ffd0e2993fbb838304b7e5475 = L.featureGroup(
+            var feature_group_c03eb2d206e00811a84a6d5df22a7bad = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_7a8f9ddeb7c2e22b528979195c9e5e46 = L.featureGroup(
+            var feature_group_8169fc603c7767f0df478bf49f4a694f = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_abd8abaf1035d9919d4beaa276361988 = L.featureGroup(
+            var feature_group_b15772ad01daa5702f89c1fe1dec7359 = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_40dea0091e48f05c5f16ca3c54798868 = L.featureGroup(
+            var feature_group_6091b2085a8e30fc7093b0d0baefd6e5 = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_71077aab4eb7d7e5fda6580e67fe7030 = L.featureGroup(
+            var feature_group_780e7e8a9abbecae748a386494c46473 = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_8fc3368c49f8fcc5e286e1ef8d0efc28 = L.featureGroup(
+            var feature_group_7e98d9edbb3b1df4117bb353bbecda14 = L.featureGroup(
                 {
 }
             );
         
     
-            var feature_group_c6ca517260e384a1bde366d549708c5d = L.featureGroup(
+            var feature_group_024a5080ca20cec7f9ab20be4d21d469 = L.featureGroup(
                 {
 }
             );
         
     
-            var layer_control_927510ec0a028afcf82c9da4eeed76d1_layers = {
+            var feature_group_234493fbf34a212d1a053765f7ce883b = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var layer_control_777ae861abde419121b729653281baf1_layers = {
                 base_layers : {
                 },
                 overlays :  {
-                    "Ski" : feature_group_4c9af8056ebc7f2e537f6db1d9f6c746,
-                    "Trails" : feature_group_8e1c6d274439d199391a14a7672c1dae,
-                    "OHV" : feature_group_902921a161507fdf91d566fb0cfb416b,
-                    "Golf" : feature_group_718436c31ae537ee88f378da03e4abba,
-                    "Camping" : feature_group_7566d87ac61ecbbd3e43d041db03b2e0,
-                    "Farm visits" : feature_group_40545f7a8d7ad438de62965f144b7c2a,
-                    "Lakes" : feature_group_f07691e875571585d936745f87c41b1a,
-                    "Rivers \u0026 streams" : feature_group_5f22a875b2217f5b112695332012483e,
-                    "Whitewater" : feature_group_bb0ada0ffd0e2993fbb838304b7e5475,
-                    "Local parks" : feature_group_7a8f9ddeb7c2e22b528979195c9e5e46,
-                    "State parks" : feature_group_abd8abaf1035d9919d4beaa276361988,
-                    "BLM land" : feature_group_40dea0091e48f05c5f16ca3c54798868,
-                    "USFS land" : feature_group_71077aab4eb7d7e5fda6580e67fe7030,
-                    "CDFW land" : feature_group_8fc3368c49f8fcc5e286e1ef8d0efc28,
-                    "Private conservation" : feature_group_c6ca517260e384a1bde366d549708c5d,
+                    "Ski" : feature_group_bb74dde81241ad6a77657a7dac31a2be,
+                    "Trails" : feature_group_8399bf4b38d0a914d3a215771906c567,
+                    "OHV" : feature_group_cd4b9addd1367f82bf93f7ce91d93ff1,
+                    "Golf" : feature_group_db7abda125b8229bf63fe3a241999ce1,
+                    "Camping" : feature_group_6fc64f7f55b53c7de2cef7fe152a0f36,
+                    "Farm visits" : feature_group_e591c73516507424fd2dad45f5dd8932,
+                    "Lakes" : feature_group_8cd9742788543d5017071ada38c6a19f,
+                    "Rivers \u0026 streams" : feature_group_75027e95fc6843f2e5dcc40d11500890,
+                    "Whitewater" : feature_group_c03eb2d206e00811a84a6d5df22a7bad,
+                    "Local parks" : feature_group_8169fc603c7767f0df478bf49f4a694f,
+                    "State parks" : feature_group_b15772ad01daa5702f89c1fe1dec7359,
+                    "BLM land" : feature_group_6091b2085a8e30fc7093b0d0baefd6e5,
+                    "USFS land" : feature_group_780e7e8a9abbecae748a386494c46473,
+                    "CDFW land" : feature_group_7e98d9edbb3b1df4117bb353bbecda14,
+                    "Private conservation" : feature_group_024a5080ca20cec7f9ab20be4d21d469,
+                    "All recreation" : feature_group_234493fbf34a212d1a053765f7ce883b,
                 },
             };
-            let layer_control_927510ec0a028afcf82c9da4eeed76d1 = L.control.layers(
-                layer_control_927510ec0a028afcf82c9da4eeed76d1_layers.base_layers,
-                layer_control_927510ec0a028afcf82c9da4eeed76d1_layers.overlays,
+            let layer_control_777ae861abde419121b729653281baf1 = L.control.layers(
+                layer_control_777ae861abde419121b729653281baf1_layers.base_layers,
+                layer_control_777ae861abde419121b729653281baf1_layers.overlays,
                 {
   "position": "topright",
   "collapsed": false,
   "autoZIndex": true,
 }
-            ).addTo(map_d5cbd47f701fbdaa66709a46a1c764c4);
+            ).addTo(map_23bcb82a1f5724bd2464eaa12e2ef76f);
 
         
     
         (function() {
-            var mapRef = map_d5cbd47f701fbdaa66709a46a1c764c4;
-            var layers = [{"id": "ski", "groupVar": "feature_group_4c9af8056ebc7f2e537f6db1d9f6c746", "yearUrls": {"2022": "origin_county_map_data/2022_ski.json", "2023": "origin_county_map_data/2023_ski.json", "2024": "origin_county_map_data/2024_ski.json", "2025": "origin_county_map_data/2025_ski.json", "2026": "origin_county_map_data/2026_ski.json"}, "vmin": 1.0, "vmax": 1341.0, "colors": ["#f7fcf5", "#c7e9c0", "#74c476", "#238b45", "#00441b"], "valueField": "unique_device_localdate_id_count", "tooltipFields": ["NAMELSAD", "GEOID", "unique_device_localdate_id_count"], "tooltipAliases": ["County", "GEOID", "Unique device-days"]}, {"id": "trails", "groupVar": "feature_group_8e1c6d274439d199391a14a7672c1dae", "yearUrls": {"2022": "origin_county_map_data/2022_trails.json", "2023": "origin_county_map_data/2023_trails.json", "2024": "origin_county_map_data/2024_trails.json", "2025": "origin_county_map_data/2025_trails.json", "2026": "origin_county_map_data/2026_trails.json"}, "vmin": 1.0, "vmax": 42140.0, "colors": ["#fff5f0", "#fcbba1", "#fb6a4a", "#cb181d", "#67000d"], "valueField": "unique_device_localdate_id_count", "tooltipFields": ["NAMELSAD", "GEOID", "unique_device_localdate_id_count"], "tooltipAliases": ["County", "GEOID", "Unique device-days"]}, {"id": "ohv", "groupVar": "feature_group_902921a161507fdf91d566fb0cfb416b", "yearUrls": {"2022": "origin_county_map_data/2022_ohv.json", "2023": "origin_county_map_data/2023_ohv.json", "2024": "origin_county_map_data/2024_ohv.json", "2025": "origin_county_map_data/2025_ohv.json", "2026": "origin_county_map_data/2026_ohv.json"}, "vmin": 1.0, "vmax": 1558.0, "colors": ["#f7fcfd", "#9ecae1", "#3182bd", "#08519c", "#08306b"], "valueField": "unique_device_localdate_id_count", "tooltipFields": ["NAMELSAD", "GEOID", "unique_device_localdate_id_count"], "tooltipAliases": ["County", "GEOID", "Unique device-days"]}, {"id": "golf", "groupVar": "feature_group_718436c31ae537ee88f378da03e4abba", "yearUrls": {"2022": "origin_county_map_data/2022_golf.json", "2023": "origin_county_map_data/2023_golf.json", "2024": "origin_county_map_data/2024_golf.json", "2025": "origin_county_map_data/2025_golf.json", "2026": "origin_county_map_data/2026_golf.json"}, "vmin": 1.0, "vmax": 12825.0, "colors": ["#f7fcf0", "#addd8e", "#41ab5d", "#006837"], "valueField": "unique_device_localdate_id_count", "tooltipFields": ["NAMELSAD", "GEOID", "unique_device_localdate_id_count"], "tooltipAliases": ["County", "GEOID", "Unique device-days"]}, {"id": "camping", "groupVar": "feature_group_7566d87ac61ecbbd3e43d041db03b2e0", "yearUrls": {"2022": "origin_county_map_data/2022_camping.json", "2023": "origin_county_map_data/2023_camping.json", "2024": "origin_county_map_data/2024_camping.json", "2025": "origin_county_map_data/2025_camping.json", "2026": "origin_county_map_data/2026_camping.json"}, "vmin": 1.0, "vmax": 12859.0, "colors": ["#fff7ec", "#fdd49e", "#fdbb84", "#e34a33", "#7f0000"], "valueField": "unique_device_localdate_id_count", "tooltipFields": ["NAMELSAD", "GEOID", "unique_device_localdate_id_count"], "tooltipAliases": ["County", "GEOID", "Unique device-days"]}, {"id": "farm", "groupVar": "feature_group_40545f7a8d7ad438de62965f144b7c2a", "yearUrls": {"2022": "origin_county_map_data/2022_farm.json", "2023": "origin_county_map_data/2023_farm.json", "2024": "origin_county_map_data/2024_farm.json", "2025": "origin_county_map_data/2025_farm.json", "2026": "origin_county_map_data/2026_farm.json"}, "vmin": 1.0, "vmax": 3022.0, "colors": ["#fff7f3", "#fde0dd", "#fa9fb5", "#c51b8a", "#7a0177"], "valueField": "unique_device_localdate_id_count", "tooltipFields": ["NAMELSAD", "GEOID", "unique_device_localdate_id_count"], "tooltipAliases": ["County", "GEOID", "Unique device-days"]}, {"id": "lakes", "groupVar": "feature_group_f07691e875571585d936745f87c41b1a", "yearUrls": {"2022": "origin_county_map_data/2022_lakes.json", "2023": "origin_county_map_data/2023_lakes.json", "2024": "origin_county_map_data/2024_lakes.json", "2025": "origin_county_map_data/2025_lakes.json", "2026": "origin_county_map_data/2026_lakes.json"}, "vmin": 1.0, "vmax": 30384.0, "colors": ["#f7fbff", "#c6dbef", "#6baed6", "#2171b5", "#08306b"], "valueField": "unique_device_localdate_id_count", "tooltipFields": ["NAMELSAD", "GEOID", "unique_device_localdate_id_count"], "tooltipAliases": ["County", "GEOID", "Unique device-days"]}, {"id": "rivers_and_streams", "groupVar": "feature_group_5f22a875b2217f5b112695332012483e", "yearUrls": {"2022": "origin_county_map_data/2022_rivers_and_streams.json", "2023": "origin_county_map_data/2023_rivers_and_streams.json", "2024": "origin_county_map_data/2024_rivers_and_streams.json", "2025": "origin_county_map_data/2025_rivers_and_streams.json", "2026": "origin_county_map_data/2026_rivers_and_streams.json"}, "vmin": 1.0, "vmax": 5159.0, "colors": ["#f0f9e8", "#bae4bc", "#74c476", "#238b45", "#005a32"], "valueField": "unique_device_localdate_id_count", "tooltipFields": ["NAMELSAD", "GEOID", "unique_device_localdate_id_count"], "tooltipAliases": ["County", "GEOID", "Unique device-days"]}, {"id": "whitewater", "groupVar": "feature_group_bb0ada0ffd0e2993fbb838304b7e5475", "yearUrls": {"2022": "origin_county_map_data/2022_whitewater.json", "2023": "origin_county_map_data/2023_whitewater.json", "2024": "origin_county_map_data/2024_whitewater.json", "2025": "origin_county_map_data/2025_whitewater.json", "2026": "origin_county_map_data/2026_whitewater.json"}, "vmin": 1.0, "vmax": 1089.0, "colors": ["#edf8fb", "#b2e2e2", "#66c2a4", "#238b45", "#005824"], "valueField": "unique_device_localdate_id_count", "tooltipFields": ["NAMELSAD", "GEOID", "unique_device_localdate_id_count"], "tooltipAliases": ["County", "GEOID", "Unique device-days"]}, {"id": "local_parks", "groupVar": "feature_group_7a8f9ddeb7c2e22b528979195c9e5e46", "yearUrls": {"2022": "origin_county_map_data/2022_local_parks.json", "2023": "origin_county_map_data/2023_local_parks.json", "2024": "origin_county_map_data/2024_local_parks.json", "2025": "origin_county_map_data/2025_local_parks.json", "2026": "origin_county_map_data/2026_local_parks.json"}, "vmin": 1.0, "vmax": 142271.0, "colors": ["#f2f0f7", "#cbc9e2", "#9e9ac8", "#756bb1", "#54278f"], "valueField": "unique_device_localdate_id_count", "tooltipFields": ["NAMELSAD", "GEOID", "unique_device_localdate_id_count"], "tooltipAliases": ["County", "GEOID", "Unique device-days"]}, {"id": "state_parks", "groupVar": "feature_group_abd8abaf1035d9919d4beaa276361988", "yearUrls": {"2022": "origin_county_map_data/2022_state_parks.json", "2023": "origin_county_map_data/2023_state_parks.json", "2024": "origin_county_map_data/2024_state_parks.json", "2025": "origin_county_map_data/2025_state_parks.json", "2026": "origin_county_map_data/2026_state_parks.json"}, "vmin": 1.0, "vmax": 148827.0, "colors": ["#fff5eb", "#fdd0a2", "#fd8d3c", "#d94801", "#7f2704"], "valueField": "unique_device_localdate_id_count", "tooltipFields": ["NAMELSAD", "GEOID", "unique_device_localdate_id_count"], "tooltipAliases": ["County", "GEOID", "Unique device-days"]}, {"id": "blm_land", "groupVar": "feature_group_40dea0091e48f05c5f16ca3c54798868", "yearUrls": {"2022": "origin_county_map_data/2022_blm_land.json", "2023": "origin_county_map_data/2023_blm_land.json", "2024": "origin_county_map_data/2024_blm_land.json", "2025": "origin_county_map_data/2025_blm_land.json", "2026": "origin_county_map_data/2026_blm_land.json"}, "vmin": 1.0, "vmax": 4578.0, "colors": ["#ffffe5", "#fff7bc", "#fec44f", "#d95f0e", "#993404"], "valueField": "unique_device_localdate_id_count", "tooltipFields": ["NAMELSAD", "GEOID", "unique_device_localdate_id_count"], "tooltipAliases": ["County", "GEOID", "Unique device-days"]}, {"id": "usfs_land", "groupVar": "feature_group_71077aab4eb7d7e5fda6580e67fe7030", "yearUrls": {"2022": "origin_county_map_data/2022_usfs_land.json", "2023": "origin_county_map_data/2023_usfs_land.json", "2024": "origin_county_map_data/2024_usfs_land.json", "2025": "origin_county_map_data/2025_usfs_land.json", "2026": "origin_county_map_data/2026_usfs_land.json"}, "vmin": 1.0, "vmax": 33906.0, "colors": ["#f7fcf5", "#bae4b3", "#78c679", "#31a354", "#006d2c"], "valueField": "unique_device_localdate_id_count", "tooltipFields": ["NAMELSAD", "GEOID", "unique_device_localdate_id_count"], "tooltipAliases": ["County", "GEOID", "Unique device-days"]}, {"id": "cdfw_land", "groupVar": "feature_group_8fc3368c49f8fcc5e286e1ef8d0efc28", "yearUrls": {"2022": "origin_county_map_data/2022_cdfw_land.json", "2023": "origin_county_map_data/2023_cdfw_land.json", "2024": "origin_county_map_data/2024_cdfw_land.json", "2025": "origin_county_map_data/2025_cdfw_land.json", "2026": "origin_county_map_data/2026_cdfw_land.json"}, "vmin": 1.0, "vmax": 344.0, "colors": ["#fef0d9", "#fdcc8a", "#fc8d59", "#d7301f", "#990000"], "valueField": "unique_device_localdate_id_count", "tooltipFields": ["NAMELSAD", "GEOID", "unique_device_localdate_id_count"], "tooltipAliases": ["County", "GEOID", "Unique device-days"]}, {"id": "private_conservation", "groupVar": "feature_group_c6ca517260e384a1bde366d549708c5d", "yearUrls": {"2022": "origin_county_map_data/2022_private_conservation.json", "2023": "origin_county_map_data/2023_private_conservation.json", "2024": "origin_county_map_data/2024_private_conservation.json", "2025": "origin_county_map_data/2025_private_conservation.json", "2026": "origin_county_map_data/2026_private_conservation.json"}, "vmin": 1.0, "vmax": 811.0, "colors": ["#edf8e9", "#bae4b3", "#74c476", "#31a354", "#006d2c"], "valueField": "unique_device_localdate_id_count", "tooltipFields": ["NAMELSAD", "GEOID", "unique_device_localdate_id_count"], "tooltipAliases": ["County", "GEOID", "Unique device-days"]}];
-            var years = [{"id": "2022", "label": "2022"}, {"id": "2023", "label": "2023"}, {"id": "2024", "label": "2024"}, {"id": "2025", "label": "2025"}, {"id": "2026", "label": "2026"}];
+            var mapRef = map_23bcb82a1f5724bd2464eaa12e2ef76f;
+            var layers = [{"id": "ski", "groupVar": "feature_group_bb74dde81241ad6a77657a7dac31a2be", "geoYearUrls": {"country": {"2022": "origin_map_data/country_2022_ski.json", "2023": "origin_map_data/country_2023_ski.json", "2024": "origin_map_data/country_2024_ski.json", "2025": "origin_map_data/country_2025_ski.json"}, "county": {"2022": "origin_map_data/county_2022_ski.json", "2023": "origin_map_data/county_2023_ski.json", "2024": "origin_map_data/county_2024_ski.json", "2025": "origin_map_data/county_2025_ski.json"}}, "vmin": 0.0, "vmax": 100.0, "colors": ["#f7fcf0", "#d9f0a3", "#addd8e", "#78c679", "#41ab5d", "#238443", "#006837", "#004529"], "colorBreaks": [0.0, 12.5, 25.0, 37.5, 50.0, 62.5, 75.0, 87.5, 100.0], "valueField": "relative_intensity", "rawValueField": "unique_device_localdate_id_count", "tooltipFields": ["origin_name", "unique_device_localdate_id_count", "relative_intensity"], "tooltipAliases": ["Origin", "Unique device-days", "Relative intensity"]}, {"id": "trails", "groupVar": "feature_group_8399bf4b38d0a914d3a215771906c567", "geoYearUrls": {"country": {"2022": "origin_map_data/country_2022_trails.json", "2023": "origin_map_data/country_2023_trails.json", "2024": "origin_map_data/country_2024_trails.json", "2025": "origin_map_data/country_2025_trails.json"}, "county": {"2022": "origin_map_data/county_2022_trails.json", "2023": "origin_map_data/county_2023_trails.json", "2024": "origin_map_data/county_2024_trails.json", "2025": "origin_map_data/county_2025_trails.json"}}, "vmin": 0.0, "vmax": 100.0, "colors": ["#f7fcf0", "#d9f0a3", "#addd8e", "#78c679", "#41ab5d", "#238443", "#006837", "#004529"], "colorBreaks": [0.0, 12.5, 25.0, 37.5, 50.0, 62.5, 75.0, 87.5, 100.0], "valueField": "relative_intensity", "rawValueField": "unique_device_localdate_id_count", "tooltipFields": ["origin_name", "unique_device_localdate_id_count", "relative_intensity"], "tooltipAliases": ["Origin", "Unique device-days", "Relative intensity"]}, {"id": "ohv", "groupVar": "feature_group_cd4b9addd1367f82bf93f7ce91d93ff1", "geoYearUrls": {"country": {"2022": "origin_map_data/country_2022_ohv.json", "2023": "origin_map_data/country_2023_ohv.json", "2024": "origin_map_data/country_2024_ohv.json", "2025": "origin_map_data/country_2025_ohv.json"}, "county": {"2022": "origin_map_data/county_2022_ohv.json", "2023": "origin_map_data/county_2023_ohv.json", "2024": "origin_map_data/county_2024_ohv.json", "2025": "origin_map_data/county_2025_ohv.json"}}, "vmin": 0.0, "vmax": 100.0, "colors": ["#f7fcf0", "#d9f0a3", "#addd8e", "#78c679", "#41ab5d", "#238443", "#006837", "#004529"], "colorBreaks": [0.0, 12.5, 25.0, 37.5, 50.0, 62.5, 75.0, 87.5, 100.0], "valueField": "relative_intensity", "rawValueField": "unique_device_localdate_id_count", "tooltipFields": ["origin_name", "unique_device_localdate_id_count", "relative_intensity"], "tooltipAliases": ["Origin", "Unique device-days", "Relative intensity"]}, {"id": "golf", "groupVar": "feature_group_db7abda125b8229bf63fe3a241999ce1", "geoYearUrls": {"country": {"2022": "origin_map_data/country_2022_golf.json", "2023": "origin_map_data/country_2023_golf.json", "2024": "origin_map_data/country_2024_golf.json", "2025": "origin_map_data/country_2025_golf.json"}, "county": {"2022": "origin_map_data/county_2022_golf.json", "2023": "origin_map_data/county_2023_golf.json", "2024": "origin_map_data/county_2024_golf.json", "2025": "origin_map_data/county_2025_golf.json"}}, "vmin": 0.0, "vmax": 100.0, "colors": ["#f7fcf0", "#d9f0a3", "#addd8e", "#78c679", "#41ab5d", "#238443", "#006837", "#004529"], "colorBreaks": [0.0, 12.5, 25.0, 37.5, 50.0, 62.5, 75.0, 87.5, 100.0], "valueField": "relative_intensity", "rawValueField": "unique_device_localdate_id_count", "tooltipFields": ["origin_name", "unique_device_localdate_id_count", "relative_intensity"], "tooltipAliases": ["Origin", "Unique device-days", "Relative intensity"]}, {"id": "camping", "groupVar": "feature_group_6fc64f7f55b53c7de2cef7fe152a0f36", "geoYearUrls": {"country": {"2022": "origin_map_data/country_2022_camping.json", "2023": "origin_map_data/country_2023_camping.json", "2024": "origin_map_data/country_2024_camping.json", "2025": "origin_map_data/country_2025_camping.json"}, "county": {"2022": "origin_map_data/county_2022_camping.json", "2023": "origin_map_data/county_2023_camping.json", "2024": "origin_map_data/county_2024_camping.json", "2025": "origin_map_data/county_2025_camping.json"}}, "vmin": 0.0, "vmax": 100.0, "colors": ["#f7fcf0", "#d9f0a3", "#addd8e", "#78c679", "#41ab5d", "#238443", "#006837", "#004529"], "colorBreaks": [0.0, 12.5, 25.0, 37.5, 50.0, 62.5, 75.0, 87.5, 100.0], "valueField": "relative_intensity", "rawValueField": "unique_device_localdate_id_count", "tooltipFields": ["origin_name", "unique_device_localdate_id_count", "relative_intensity"], "tooltipAliases": ["Origin", "Unique device-days", "Relative intensity"]}, {"id": "farm", "groupVar": "feature_group_e591c73516507424fd2dad45f5dd8932", "geoYearUrls": {"country": {"2022": "origin_map_data/country_2022_farm.json", "2023": "origin_map_data/country_2023_farm.json", "2024": "origin_map_data/country_2024_farm.json", "2025": "origin_map_data/country_2025_farm.json"}, "county": {"2022": "origin_map_data/county_2022_farm.json", "2023": "origin_map_data/county_2023_farm.json", "2024": "origin_map_data/county_2024_farm.json", "2025": "origin_map_data/county_2025_farm.json"}}, "vmin": 0.0, "vmax": 100.0, "colors": ["#f7fcf0", "#d9f0a3", "#addd8e", "#78c679", "#41ab5d", "#238443", "#006837", "#004529"], "colorBreaks": [0.0, 12.5, 25.0, 37.5, 50.0, 62.5, 75.0, 87.5, 100.0], "valueField": "relative_intensity", "rawValueField": "unique_device_localdate_id_count", "tooltipFields": ["origin_name", "unique_device_localdate_id_count", "relative_intensity"], "tooltipAliases": ["Origin", "Unique device-days", "Relative intensity"]}, {"id": "lakes", "groupVar": "feature_group_8cd9742788543d5017071ada38c6a19f", "geoYearUrls": {"country": {"2022": "origin_map_data/country_2022_lakes.json", "2023": "origin_map_data/country_2023_lakes.json", "2024": "origin_map_data/country_2024_lakes.json", "2025": "origin_map_data/country_2025_lakes.json"}, "county": {"2022": "origin_map_data/county_2022_lakes.json", "2023": "origin_map_data/county_2023_lakes.json", "2024": "origin_map_data/county_2024_lakes.json", "2025": "origin_map_data/county_2025_lakes.json"}}, "vmin": 0.0, "vmax": 100.0, "colors": ["#f7fcf0", "#d9f0a3", "#addd8e", "#78c679", "#41ab5d", "#238443", "#006837", "#004529"], "colorBreaks": [0.0, 12.5, 25.0, 37.5, 50.0, 62.5, 75.0, 87.5, 100.0], "valueField": "relative_intensity", "rawValueField": "unique_device_localdate_id_count", "tooltipFields": ["origin_name", "unique_device_localdate_id_count", "relative_intensity"], "tooltipAliases": ["Origin", "Unique device-days", "Relative intensity"]}, {"id": "rivers_and_streams", "groupVar": "feature_group_75027e95fc6843f2e5dcc40d11500890", "geoYearUrls": {"country": {"2022": "origin_map_data/country_2022_rivers_and_streams.json", "2023": "origin_map_data/country_2023_rivers_and_streams.json", "2024": "origin_map_data/country_2024_rivers_and_streams.json", "2025": "origin_map_data/country_2025_rivers_and_streams.json"}, "county": {"2022": "origin_map_data/county_2022_rivers_and_streams.json", "2023": "origin_map_data/county_2023_rivers_and_streams.json", "2024": "origin_map_data/county_2024_rivers_and_streams.json", "2025": "origin_map_data/county_2025_rivers_and_streams.json"}}, "vmin": 0.0, "vmax": 100.0, "colors": ["#f7fcf0", "#d9f0a3", "#addd8e", "#78c679", "#41ab5d", "#238443", "#006837", "#004529"], "colorBreaks": [0.0, 12.5, 25.0, 37.5, 50.0, 62.5, 75.0, 87.5, 100.0], "valueField": "relative_intensity", "rawValueField": "unique_device_localdate_id_count", "tooltipFields": ["origin_name", "unique_device_localdate_id_count", "relative_intensity"], "tooltipAliases": ["Origin", "Unique device-days", "Relative intensity"]}, {"id": "whitewater", "groupVar": "feature_group_c03eb2d206e00811a84a6d5df22a7bad", "geoYearUrls": {"country": {"2022": "origin_map_data/country_2022_whitewater.json", "2023": "origin_map_data/country_2023_whitewater.json", "2024": "origin_map_data/country_2024_whitewater.json", "2025": "origin_map_data/country_2025_whitewater.json"}, "county": {"2022": "origin_map_data/county_2022_whitewater.json", "2023": "origin_map_data/county_2023_whitewater.json", "2024": "origin_map_data/county_2024_whitewater.json", "2025": "origin_map_data/county_2025_whitewater.json"}}, "vmin": 0.0, "vmax": 100.0, "colors": ["#f7fcf0", "#d9f0a3", "#addd8e", "#78c679", "#41ab5d", "#238443", "#006837", "#004529"], "colorBreaks": [0.0, 12.5, 25.0, 37.5, 50.0, 62.5, 75.0, 87.5, 100.0], "valueField": "relative_intensity", "rawValueField": "unique_device_localdate_id_count", "tooltipFields": ["origin_name", "unique_device_localdate_id_count", "relative_intensity"], "tooltipAliases": ["Origin", "Unique device-days", "Relative intensity"]}, {"id": "local_parks", "groupVar": "feature_group_8169fc603c7767f0df478bf49f4a694f", "geoYearUrls": {"country": {"2022": "origin_map_data/country_2022_local_parks.json", "2023": "origin_map_data/country_2023_local_parks.json", "2024": "origin_map_data/country_2024_local_parks.json", "2025": "origin_map_data/country_2025_local_parks.json"}, "county": {"2022": "origin_map_data/county_2022_local_parks.json", "2023": "origin_map_data/county_2023_local_parks.json", "2024": "origin_map_data/county_2024_local_parks.json", "2025": "origin_map_data/county_2025_local_parks.json"}}, "vmin": 0.0, "vmax": 100.0, "colors": ["#f7fcf0", "#d9f0a3", "#addd8e", "#78c679", "#41ab5d", "#238443", "#006837", "#004529"], "colorBreaks": [0.0, 12.5, 25.0, 37.5, 50.0, 62.5, 75.0, 87.5, 100.0], "valueField": "relative_intensity", "rawValueField": "unique_device_localdate_id_count", "tooltipFields": ["origin_name", "unique_device_localdate_id_count", "relative_intensity"], "tooltipAliases": ["Origin", "Unique device-days", "Relative intensity"]}, {"id": "state_parks", "groupVar": "feature_group_b15772ad01daa5702f89c1fe1dec7359", "geoYearUrls": {"country": {"2022": "origin_map_data/country_2022_state_parks.json", "2023": "origin_map_data/country_2023_state_parks.json", "2024": "origin_map_data/country_2024_state_parks.json", "2025": "origin_map_data/country_2025_state_parks.json"}, "county": {"2022": "origin_map_data/county_2022_state_parks.json", "2023": "origin_map_data/county_2023_state_parks.json", "2024": "origin_map_data/county_2024_state_parks.json", "2025": "origin_map_data/county_2025_state_parks.json"}}, "vmin": 0.0, "vmax": 100.0, "colors": ["#f7fcf0", "#d9f0a3", "#addd8e", "#78c679", "#41ab5d", "#238443", "#006837", "#004529"], "colorBreaks": [0.0, 12.5, 25.0, 37.5, 50.0, 62.5, 75.0, 87.5, 100.0], "valueField": "relative_intensity", "rawValueField": "unique_device_localdate_id_count", "tooltipFields": ["origin_name", "unique_device_localdate_id_count", "relative_intensity"], "tooltipAliases": ["Origin", "Unique device-days", "Relative intensity"]}, {"id": "blm_land", "groupVar": "feature_group_6091b2085a8e30fc7093b0d0baefd6e5", "geoYearUrls": {"country": {"2022": "origin_map_data/country_2022_blm_land.json", "2023": "origin_map_data/country_2023_blm_land.json", "2024": "origin_map_data/country_2024_blm_land.json", "2025": "origin_map_data/country_2025_blm_land.json"}, "county": {"2022": "origin_map_data/county_2022_blm_land.json", "2023": "origin_map_data/county_2023_blm_land.json", "2024": "origin_map_data/county_2024_blm_land.json", "2025": "origin_map_data/county_2025_blm_land.json"}}, "vmin": 0.0, "vmax": 100.0, "colors": ["#f7fcf0", "#d9f0a3", "#addd8e", "#78c679", "#41ab5d", "#238443", "#006837", "#004529"], "colorBreaks": [0.0, 12.5, 25.0, 37.5, 50.0, 62.5, 75.0, 87.5, 100.0], "valueField": "relative_intensity", "rawValueField": "unique_device_localdate_id_count", "tooltipFields": ["origin_name", "unique_device_localdate_id_count", "relative_intensity"], "tooltipAliases": ["Origin", "Unique device-days", "Relative intensity"]}, {"id": "usfs_land", "groupVar": "feature_group_780e7e8a9abbecae748a386494c46473", "geoYearUrls": {"country": {"2022": "origin_map_data/country_2022_usfs_land.json", "2023": "origin_map_data/country_2023_usfs_land.json", "2024": "origin_map_data/country_2024_usfs_land.json", "2025": "origin_map_data/country_2025_usfs_land.json"}, "county": {"2022": "origin_map_data/county_2022_usfs_land.json", "2023": "origin_map_data/county_2023_usfs_land.json", "2024": "origin_map_data/county_2024_usfs_land.json", "2025": "origin_map_data/county_2025_usfs_land.json"}}, "vmin": 0.0, "vmax": 100.0, "colors": ["#f7fcf0", "#d9f0a3", "#addd8e", "#78c679", "#41ab5d", "#238443", "#006837", "#004529"], "colorBreaks": [0.0, 12.5, 25.0, 37.5, 50.0, 62.5, 75.0, 87.5, 100.0], "valueField": "relative_intensity", "rawValueField": "unique_device_localdate_id_count", "tooltipFields": ["origin_name", "unique_device_localdate_id_count", "relative_intensity"], "tooltipAliases": ["Origin", "Unique device-days", "Relative intensity"]}, {"id": "cdfw_land", "groupVar": "feature_group_7e98d9edbb3b1df4117bb353bbecda14", "geoYearUrls": {"country": {"2022": "origin_map_data/country_2022_cdfw_land.json", "2023": "origin_map_data/country_2023_cdfw_land.json", "2024": "origin_map_data/country_2024_cdfw_land.json", "2025": "origin_map_data/country_2025_cdfw_land.json"}, "county": {"2022": "origin_map_data/county_2022_cdfw_land.json", "2023": "origin_map_data/county_2023_cdfw_land.json", "2024": "origin_map_data/county_2024_cdfw_land.json", "2025": "origin_map_data/county_2025_cdfw_land.json"}}, "vmin": 0.0, "vmax": 100.0, "colors": ["#f7fcf0", "#d9f0a3", "#addd8e", "#78c679", "#41ab5d", "#238443", "#006837", "#004529"], "colorBreaks": [0.0, 12.5, 25.0, 37.5, 50.0, 62.5, 75.0, 87.5, 100.0], "valueField": "relative_intensity", "rawValueField": "unique_device_localdate_id_count", "tooltipFields": ["origin_name", "unique_device_localdate_id_count", "relative_intensity"], "tooltipAliases": ["Origin", "Unique device-days", "Relative intensity"]}, {"id": "private_conservation", "groupVar": "feature_group_024a5080ca20cec7f9ab20be4d21d469", "geoYearUrls": {"country": {"2022": "origin_map_data/country_2022_private_conservation.json", "2023": "origin_map_data/country_2023_private_conservation.json", "2024": "origin_map_data/country_2024_private_conservation.json", "2025": "origin_map_data/country_2025_private_conservation.json"}, "county": {"2022": "origin_map_data/county_2022_private_conservation.json", "2023": "origin_map_data/county_2023_private_conservation.json", "2024": "origin_map_data/county_2024_private_conservation.json", "2025": "origin_map_data/county_2025_private_conservation.json"}}, "vmin": 0.0, "vmax": 100.0, "colors": ["#f7fcf0", "#d9f0a3", "#addd8e", "#78c679", "#41ab5d", "#238443", "#006837", "#004529"], "colorBreaks": [0.0, 12.5, 25.0, 37.5, 50.0, 62.5, 75.0, 87.5, 100.0], "valueField": "relative_intensity", "rawValueField": "unique_device_localdate_id_count", "tooltipFields": ["origin_name", "unique_device_localdate_id_count", "relative_intensity"], "tooltipAliases": ["Origin", "Unique device-days", "Relative intensity"]}, {"id": "all_recreation", "groupVar": "feature_group_234493fbf34a212d1a053765f7ce883b", "geoYearUrls": {"country": {"2022": "origin_map_data/country_2022_all_recreation.json", "2023": "origin_map_data/country_2023_all_recreation.json", "2024": "origin_map_data/country_2024_all_recreation.json", "2025": "origin_map_data/country_2025_all_recreation.json"}, "county": {"2022": "origin_map_data/county_2022_all_recreation.json", "2023": "origin_map_data/county_2023_all_recreation.json", "2024": "origin_map_data/county_2024_all_recreation.json", "2025": "origin_map_data/county_2025_all_recreation.json"}}, "vmin": 0.0, "vmax": 100.0, "colors": ["#f7fcf0", "#d9f0a3", "#addd8e", "#78c679", "#41ab5d", "#238443", "#006837", "#004529"], "colorBreaks": [0.0, 12.5, 25.0, 37.5, 50.0, 62.5, 75.0, 87.5, 100.0], "valueField": "relative_intensity", "rawValueField": "unique_device_localdate_id_count", "tooltipFields": ["origin_name", "unique_device_localdate_id_count", "relative_intensity"], "tooltipAliases": ["Origin", "Unique device-days", "Relative intensity"]}];
+            var years = [{"id": "2022", "label": "2022"}, {"id": "2023", "label": "2023"}, {"id": "2024", "label": "2024"}, {"id": "2025", "label": "2025"}];
+            var geographies = [{"id": "county", "label": "County"}, {"id": "country", "label": "Country"}];
             var defaultYear = "2025";
+            var defaultGeography = "county";
             var geoLayers = {};
+            var pendingGeoLoads = {};
             var STROKE = {"color": "#4a5568", "weight": 0.55, "opacity": 0.55, "fillOpacity": 0.72};
             var HIGHLIGHT = {"color": "#1f2937", "weight": 1.0, "opacity": 0.9, "fillOpacity": 0.86};
 
@@ -340,11 +425,30 @@
                 }
                 return Math.max(0, Math.min(1, (value - lo) / (hi - lo)));
             }
+            function steppedColor(meta, value) {
+                var breaks = meta.colorBreaks || null;
+                if (!breaks || !breaks.length) {
+                    return mixHex(meta.colors, normalizedT(meta, value));
+                }
+                if (!isFinite(value)) {
+                    value = breaks[0];
+                }
+                var idx = 0;
+                for (var i = 1; i < breaks.length; i++) {
+                    if (value >= breaks[i]) {
+                        idx = i;
+                    } else {
+                        break;
+                    }
+                }
+                idx = Math.max(0, Math.min(meta.colors.length - 1, idx));
+                return meta.colors[idx];
+            }
             function styleFor(meta) {
                 return function(feature) {
                     var value = Number(feature.properties[meta.valueField]);
                     return {
-                        fillColor: mixHex(meta.colors, normalizedT(meta, value)),
+                        fillColor: steppedColor(meta, value),
                         color: STROKE.color,
                         weight: STROKE.weight,
                         opacity: STROKE.opacity,
@@ -378,11 +482,17 @@
             function activeYear() {
                 return window.edwaOriginActiveYear || defaultYear;
             }
+            function activeGeography() {
+                return window.edwaOriginActiveGeography || defaultGeography;
+            }
+            function activeCacheKey() {
+                return (activeGeography() || "default") + "::" + activeYear();
+            }
             function detachYearLayers(meta) {
-                var byYear = geoLayers[meta.id];
-                if (!byYear || !meta.groupLayer) return;
-                Object.keys(byYear).forEach(function(yearId) {
-                    var gj = byYear[yearId];
+                var cache = geoLayers[meta.id];
+                if (!cache || !meta.groupLayer) return;
+                Object.keys(cache).forEach(function(cacheKey) {
+                    var gj = cache[cacheKey];
                     if (gj && meta.groupLayer.hasLayer(gj)) {
                         meta.groupLayer.removeLayer(gj);
                     }
@@ -394,20 +504,34 @@
                 }
                 return geoLayers[meta.id];
             }
+            function ensurePendingLoadCache(meta) {
+                if (!pendingGeoLoads[meta.id]) {
+                    pendingGeoLoads[meta.id] = {};
+                }
+                return pendingGeoLoads[meta.id];
+            }
             function loadLayer(meta) {
                 var yearId = activeYear();
-                var yearUrl = meta.yearUrls ? meta.yearUrls[yearId] : null;
+                var geographyId = activeGeography();
+                var yearUrl = meta.geoYearUrls && geographyId
+                    ? ((meta.geoYearUrls[geographyId] || {})[yearId] || null)
+                    : (meta.yearUrls ? meta.yearUrls[yearId] : null);
+                var cacheKey = activeCacheKey();
                 detachYearLayers(meta);
                 if (!yearUrl || !meta.groupLayer || !mapRef.hasLayer(meta.groupLayer)) {
                     return Promise.resolve();
                 }
                 var cache = ensureLayerCache(meta);
-                var cached = cache[yearId];
+                var cached = cache[cacheKey];
                 if (cached) {
                     cached.addTo(meta.groupLayer);
                     return Promise.resolve();
                 }
-                return fetch(yearUrl).then(function(r) {
+                var pendingCache = ensurePendingLoadCache(meta);
+                if (pendingCache[cacheKey]) {
+                    return pendingCache[cacheKey];
+                }
+                var request = fetch(yearUrl).then(function(r) {
                     if (!r.ok) throw new Error("Failed to load " + yearUrl);
                     return r.json();
                 }).then(function(data) {
@@ -416,11 +540,18 @@
                         highlightFunction: highlightStyle,
                         onEachFeature: tooltipFor(meta),
                     });
-                    cache[yearId] = gj;
-                    if (meta.groupLayer && mapRef.hasLayer(meta.groupLayer)) {
+                    cache[cacheKey] = gj;
+                    if (cacheKey === activeCacheKey() && meta.groupLayer && mapRef.hasLayer(meta.groupLayer)) {
                         gj.addTo(meta.groupLayer);
                     }
                 });
+                pendingCache[cacheKey] = request;
+                request.then(function() {
+                    delete pendingCache[cacheKey];
+                }, function() {
+                    delete pendingCache[cacheKey];
+                });
+                return request;
             }
             function refreshVisibleLayers() {
                 layers.forEach(function(meta) {
@@ -438,18 +569,45 @@
                     button.classList.toggle("edwa-active", button.dataset.yearId === yearId);
                 });
             }
+            function syncGeographyButtons(geographyId) {
+                Array.prototype.slice.call(document.querySelectorAll(".edwa-geography-btn")).forEach(function(button) {
+                    button.classList.toggle("edwa-active", button.dataset.geographyId === geographyId);
+                });
+            }
             function setYear(yearId) {
                 if (!yearId || window.edwaOriginActiveYear === yearId) return;
                 window.edwaOriginActiveYear = yearId;
                 syncYearButtons(yearId);
                 refreshVisibleLayers();
             }
+            function setGeography(geographyId) {
+                if (!geographyId || window.edwaOriginActiveGeography === geographyId) return;
+                window.edwaOriginActiveGeography = geographyId;
+                syncGeographyButtons(geographyId);
+                refreshVisibleLayers();
+            }
             function overlayInputs(section) {
                 return Array.prototype.slice.call(
                     section.querySelectorAll("input.leaflet-control-layers-selector")
-                ).filter(function(input) {
-                    return input.layerId !== undefined;
+                );
+            }
+            function installControlCollapse() {
+                var control = document.querySelector(".leaflet-control-layers-expanded");
+                if (!control || document.getElementById("edwa-control-collapse-toggle")) return;
+                var button = document.createElement("button");
+                button.type = "button";
+                button.id = "edwa-control-collapse-toggle";
+                button.className = "edwa-control-collapse-toggle";
+                button.title = "Collapse controls";
+                button.setAttribute("aria-label", "Collapse controls");
+                button.addEventListener("click", function(ev) {
+                    ev.preventDefault();
+                    ev.stopPropagation();
+                    var collapsed = control.classList.toggle("edwa-control-panel-collapsed");
+                    button.title = collapsed ? "Expand controls" : "Collapse controls";
+                    button.setAttribute("aria-label", button.title);
                 });
+                control.insertBefore(button, control.firstChild);
             }
             function installPanel() {
                 if (document.getElementById("edwa-year-toggle")) return;
@@ -460,13 +618,33 @@
                 var wrap = document.createElement("div");
                 wrap.className = "edwa-origin-year-wrap";
                 wrap.innerHTML = ''
-                    + '<span class="edwa-panel-section-title">Year</span>'
+                    + '<span class="edwa-panel-section-title">Origin View</span>'
+                    + (geographies.length ? '<div class="edwa-geography-toggle" id="edwa-geography-toggle"></div>' : '')
                     + '<div class="edwa-year-toggle" id="edwa-year-toggle"></div>'
+                    + '<span class="edwa-panel-section-title">All recreation</span>'
+                    + '<div class="edwa-featured-layers" id="edwa-featured-layers"></div>'
+                    + '<span class="edwa-panel-section-title">By activity / land</span>'
                     + '<div class="edwa-layer-bulk-actions">'
                     + '<button type="button" class="edwa-layer-bulk-btn" id="edwa-layer-select-all">Select all</button>'
                     + '<button type="button" class="edwa-layer-bulk-btn" id="edwa-layer-clear-all">Clear all</button>'
                     + '</div>';
                 list.insertBefore(wrap, section);
+
+                var geographyToggle = document.getElementById("edwa-geography-toggle");
+                if (geographyToggle) {
+                    geographies.forEach(function(geography) {
+                        var button = document.createElement("button");
+                        button.type = "button";
+                        button.className = "edwa-geography-btn"
+                            + (geography.id === activeGeography() ? " edwa-active" : "");
+                        button.dataset.geographyId = geography.id;
+                        button.textContent = geography.label;
+                        button.addEventListener("click", function() {
+                            setGeography(geography.id);
+                        });
+                        geographyToggle.appendChild(button);
+                    });
+                }
 
                 var yearToggle = document.getElementById("edwa-year-toggle");
                 years.forEach(function(year) {
@@ -483,24 +661,50 @@
 
                 var selectAllBtn = document.getElementById("edwa-layer-select-all");
                 var clearAllBtn = document.getElementById("edwa-layer-clear-all");
+                var featuredHost = document.getElementById("edwa-featured-layers");
+                if (featuredHost) {
+                    Array.prototype.slice.call(section.querySelectorAll("label")).forEach(function(label) {
+                        if (/all recreation/i.test((label.textContent || "").trim())) {
+                            featuredHost.appendChild(label);
+                        }
+                    });
+                }
+                function activityInputs() {
+                    return overlayInputs(section);
+                }
+                function featuredInputs() {
+                    return featuredHost
+                        ? overlayInputs(featuredHost)
+                        : [];
+                }
+                function allInputs() {
+                    return featuredInputs().concat(activityInputs());
+                }
                 function setInputsChecked(inputs, on) {
                     inputs.forEach(function(input) {
                         if (input.checked !== on) input.click();
                     });
                 }
+                if (!window.edwaOriginInitializedDefaultLayers && featuredInputs().length) {
+                    setInputsChecked(activityInputs().filter(function(input) { return input.checked; }), false);
+                    setInputsChecked(featuredInputs(), true);
+                    window.edwaOriginInitializedDefaultLayers = true;
+                }
                 selectAllBtn.addEventListener("click", function(ev) {
                     ev.preventDefault();
-                    setInputsChecked(overlayInputs(section), true);
+                    setInputsChecked(allInputs(), true);
                 });
                 clearAllBtn.addEventListener("click", function(ev) {
                     ev.preventDefault();
-                    setInputsChecked(overlayInputs(section).filter(function(input) { return input.checked; }), false);
+                    setInputsChecked(allInputs().filter(function(input) { return input.checked; }), false);
                 });
                 syncYearButtons(activeYear());
             }
 
             window.edwaOriginActiveYear = window.edwaOriginActiveYear || defaultYear;
+            window.edwaOriginActiveGeography = window.edwaOriginActiveGeography || defaultGeography;
             window.edwaOriginSetYear = setYear;
+            window.edwaOriginSetGeography = setGeography;
             layers.forEach(function(meta) {
                 meta.groupLayer = window[meta.groupVar];
             });
@@ -517,13 +721,18 @@
                 detachYearLayers(meta);
             });
             document.addEventListener("DOMContentLoaded", function() {
+                installControlCollapse();
                 installPanel();
+                setTimeout(installControlCollapse, 300);
                 setTimeout(installPanel, 300);
+                setTimeout(installControlCollapse, 800);
                 setTimeout(installPanel, 800);
             });
             mapRef.whenReady(function() {
+                installControlCollapse();
                 installPanel();
                 syncYearButtons(activeYear());
+                syncGeographyButtons(activeGeography());
                 refreshVisibleLayers();
             });
         })();
